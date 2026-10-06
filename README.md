@@ -13,6 +13,7 @@ PHYSIQUE
 -> SEMANTIC OBJECTS
 -> RUNTIME
 -> APPLICATION / CONTENT
+-> NETWORK / REMOTE MACHINES
 -> UNIVERSAL INTERACTION
 -> MODALITY
 
@@ -27,37 +28,36 @@ PHYSIQUE
 -> PROJECTION
 -> PHYSIQUE
 
-## Spécificité de ZERO
+## Communication entre machines
 
-L'accessibilité n'est pas un service ajouté après coup.
+Une autre machine n'est pas une simple adresse réseau.
 
-Tout objet machine ou logiciel doit être, par construction :
+PC ZERO
+<-> réseau
+<-> iPhone / PC / tablette / serveur / périphérique / future machine ZERO
 
-- identifiable ;
-- observable ;
-- compréhensible selon les informations disponibles ;
-- navigable ;
-- actionnable selon ses capacités ;
-- interruptible ;
-- capable de produire un résultat ou un refus sémantique ;
-- projetable vers plusieurs modalités.
+ZERO représente la machine distante comme une entité sémantique avec identité, état, capacités, événements, observations, relations, sécurité et incertitude.
 
-Les modalités peuvent être visuelles, vocales, braille, clavier, tactile, automatisées ou futures.
+Le fait d'être sur le même réseau ne donne pas automatiquement l'autorisation d'agir.
 
-## Communication machine
+## Accessibilité
 
-ZERO doit pouvoir communiquer sémantiquement avec le CPU, le GPU, le moniteur, l'audio, les entrées, la mémoire, le stockage, le réseau, le firmware et les périphériques.
+L'accessibilité est native jusque dans les communications distantes.
 
-Cela ne donne pas automatiquement tous les droits : observer, naviguer, modifier et administrer restent des capacités distinctes.
+Un objet local ou distant peut être projeté vers :
 
-## Monde inconnu
+- parole ;
+- braille ;
+- clavier ;
+- affichage ;
+- tactile ;
+- automatisation ;
+- futures modalités.
 
-Un périphérique ou contenu inconnu n'est pas automatiquement inaccessible.
-
-Le système conserve au minimum son existence, ses observations, ses frontières connues, ses capacités éventuelles et son incertitude.
+La distance, le protocole ou le périphérique ne doivent pas détruire le sens.
 
 ## Règle fondamentale
 
-> Le sens ne doit pas être détruit par une couche inférieure avant que l'utilisateur puisse y accéder.
+> Le sens ne doit pas être détruit par une couche inférieure, un périphérique ou une communication réseau avant que l'utilisateur puisse y accéder.
 
-Le dépôt actuel définit progressivement la machine, le langage et l'accessibilité comme une seule architecture.
+Le langage doit donc communiquer avec la machine locale et avec les autres machines, tout en conservant identité, sécurité, événements et accessibilité.
