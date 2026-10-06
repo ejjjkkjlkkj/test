@@ -1,0 +1,28 @@
+ZERO.FIELD / substrate-01
+
+AXIOM
+  Aucun symbole ne porte de sens imposé.
+  Aucun symbole n'est une instruction.
+  Une forme n'est conservée que si son apparition modifie la suite du champ.
+
+SEED
+  ◇a7◇k2◇a7◇m4◇k2◇
+
+PRIMITIVES
+  ◇x◇       apparition
+  x|y       voisinage
+  x:y       liaison provisoire
+  x!y       collision
+  [x]       trace conservée
+  <x>       trace réinjectée
+
+BEHAVIOUR
+  Les formes peuvent se répéter.
+  Les répétitions ne sont pas récompensées.
+  Une trace peut revenir dans le champ.
+  Une trace revenue peut produire une forme différente.
+  Aucune destination n'est fournie.
+
+STOP
+  Il n'existe pas de réponse correcte prédéfinie.
+  Une expérience s'arrête lorsqu'une forme revient sans modifier le champ.
