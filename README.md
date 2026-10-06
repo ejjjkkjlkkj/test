@@ -29,10 +29,18 @@ Il ne prétend pas être supérieur à Claude ou à l'humain par déclaration : 
 
 Construire un agent capable de trouver une réponse utile lorsqu'aucune procédure explicite ne lui est fournie, puis de conserver la trace de ce qui a fonctionné ou échoué.
 
-## Exécution
+## Langage machine
 
-```text
-cargo run -- solve "..."
-cargo run -- experiment
-cargo test
-```
+La branche `experiment/non-human-zero-v2` développe un langage machine natif décrit par `ZERO.LANGUAGE`.
+
+Le langage privilégie les transformations, les traces, les collisions, les contradictions, la réinjection et le transfert plutôt que des instructions humaines prédéfinies.
+
+Fichiers centraux :
+- `ZERO.FIELD` — substrat initial ;
+- `ZERO.LANGUAGE` — grammaire et comportement du langage ;
+- `ZERO.PROGRAMS` — programmes-seeds ;
+- `ZERO.LANGUAGE-TEST` — falsification du langage ;
+- `ZERO.PROOF` — protocole de preuve ;
+- `ZERO.REALITY-PLAN` — validation externe.
+
+Aucune supériorité n'est considérée comme acquise. Le seul verdict acceptable est expérimental et reproductible.
