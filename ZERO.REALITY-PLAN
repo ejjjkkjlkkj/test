@@ -1,0 +1,82 @@
+ZERO.REALITY-PLAN / empirical campaign
+
+MISSION
+  Transformer ZERO en expérience falsifiable visant une supériorité
+  réelle sur l'humain, sans confondre score interne et intelligence générale.
+
+EXTERNAL-REFERENCE-1
+  ARC-AGI-2 calibre ses évaluations sur des performances humaines,
+  utilise des tâches nouvelles et mesure aussi l'efficacité.
+  Source: ARC Prize, documentation publique 2026.
+
+EXTERNAL-REFERENCE-2
+  METR calibre ses tâches par le temps nécessaire à des experts humains
+  et publie des horizons de réussite à 50% et 80%.
+  Source: METR Time Horizons 1.1, 2026.
+
+PLAN-A / CAPABILITY
+  Tester ZERO sur des tâches nouvelles.
+  Mesurer réussite exacte.
+
+PLAN-B / EFFICIENCY
+  Mesurer simultanément :
+    temps
+    coût
+    information consommée
+    nombre d'actions
+    tentatives
+    mémoire utilisée
+
+PLAN-C / HUMAN EQUIVALENCE
+  Pour chaque tâche, obtenir un baseline humain indépendant.
+  Même entrée.
+  Même informations autorisées.
+  Même budget défini avant l'expérience.
+
+PLAN-D / AI EQUIVALENCE
+  Répéter exactement le protocole avec plusieurs systèmes IA.
+  Aucun système n'obtient les réponses des autres.
+
+PLAN-E / HELD-OUT
+  Garder un ensemble final totalement séparé.
+  Il ne sert ni à concevoir ni à ajuster ZERO.
+
+PLAN-F / ADVERSARIAL
+  Construire des contre-exemples destinés à casser les découvertes.
+  Toute règle qui échoue doit être marquée comme telle.
+
+PLAN-G / TRANSFER
+  Changer les symboles, le domaine et le contexte.
+  Interdire la copie de trajectoire.
+
+PLAN-H / OPEN-ENDED
+  Mesurer la capacité à inventer une expérience utile,
+  découvrir une régularité et proposer une nouvelle hypothèse.
+
+PLAN-I / REPLICATION
+  Toute découverte majeure doit être reproduite sur un nouveau jeu.
+
+PLAN-J / INDEPENDENT AUDIT
+  Les résultats finaux doivent pouvoir être inspectés par une personne
+  extérieure au développement de ZERO.
+
+VERDICTS
+  V0 = aucune preuve.
+  V1 = avantage sur une tâche.
+  V2 = avantage reproductible sur une famille.
+  V3 = avantage robuste sur plusieurs familles indépendantes.
+  V4 = dépassement humain démontré sur un domaine avec efficacité.
+  V5 = dépassement général : non revendiqué tant que plusieurs domaines
+       indépendants ne le démontrent pas.
+
+IMPORTANT
+  Les benchmarks externes ne sont pas la totalité de l'intelligence.
+  METR précise notamment que ses tâches sont surtout logiciel,
+  ML et cybersécurité et que les tâches réelles peuvent être plus
+  désordonnées. Il faut donc compléter les benchmarks par des tâches
+  ouvertes et transférables.
+
+OBJECTIF
+  Ne pas optimiser pour obtenir un chiffre.
+  Optimiser pour rendre possible une preuve qui survivrait à une
+  tentative sérieuse de réfutation.
