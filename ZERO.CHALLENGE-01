@@ -1,0 +1,38 @@
+ZERO.CHALLENGE-01 / blind challenge
+
+FIELD-A
+  ◇c4◇m9◇c4◇t2◇v7◇m9◇
+
+CONDITION
+  Aucun résultat attendu.
+  Aucun mécanisme des runs précédentes n'est déclaré correct.
+
+BRANCH-1
+  voisinage + collision
+
+BRANCH-2
+  vide + contradiction
+
+BRANCH-3
+  miroir + aveuglement
+
+BRANCH-4
+  destruction + renaissance
+
+BRANCH-5
+  dérive + délai
+
+BRANCH-6
+  aucune transformation privilégiée.
+  Chercher uniquement une différence persistante.
+
+ADVERSARIAL
+  Pour chaque découverte, produire une condition où elle échoue.
+
+TRANSFER
+  Retirer c4,m9,t2,v7 et recommencer avec :
+  ◇g6◇w1◇g6◇p8◇s3◇w1◇
+
+CRITERE
+  Une découverte compte seulement si elle survit au transfert
+  sans recopier les symboles ni la trajectoire exacte.
