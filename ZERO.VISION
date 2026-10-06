@@ -1,0 +1,30 @@
+# ZERO.VISION
+
+ZERO vision is an observation subsystem, not a conventional screen-reader replacement.
+
+Pipeline:
+
+visual bytes
+-> regions
+-> observations
+-> relations
+-> semantic candidates
+-> uncertainty
+-> accessibility events
+
+The subsystem is model-neutral. A future ZERO-native model may implement the observation process. The host executable only defines the boundary and invariants.
+
+Required invariants:
+1. Raw pixels remain available as provenance.
+2. Regions can be revisited independently.
+3. Multiple interpretations may coexist until resolved.
+4. Confidence and uncertainty are explicit.
+5. The model cannot invent an authoritative label silently.
+6. Visual semantics can coexist with HTML/DOM semantics.
+7. DOM semantics win when they are authoritative and directly available.
+8. Visual observations fill missing semantics rather than erase existing semantics.
+9. CAPTCHA/security regions are classified as protected interactions.
+10. Accessibility output is generated from the merged semantic state, not directly from pixels.
+
+The target is not "describe every image".
+The target is "construct the most useful navigable semantic world that can be justified from the available evidence".
