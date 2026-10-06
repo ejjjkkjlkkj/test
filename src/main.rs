@@ -1,3 +1,4 @@
+mod challenge;
 mod core;
 mod memory;
 mod world;
@@ -15,8 +16,7 @@ fn main() {
                 eprintln!("usage: cargo run -- solve \"problem\"");
                 std::process::exit(2);
             }
-            let result = mind.solve(&problem);
-            println!("{}", result.render());
+            println!("{}", mind.solve(&problem).render());
         }
         Some("experiment") => {
             for problem in [
@@ -28,10 +28,12 @@ fn main() {
                 println!("{}", mind.solve(problem).render());
             }
         }
+        Some("benchmark") => println!("{}", challenge::run(&mut mind)),
         _ => {
             println!("TEST experimental intelligence core");
             println!("  solve <problem>");
             println!("  experiment");
+            println!("  benchmark");
         }
     }
 }
