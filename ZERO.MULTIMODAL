@@ -1,0 +1,66 @@
+# ZERO.MULTIMODAL
+
+Status: implementation contract.
+
+Goal: make non-text content first-class accessibility input without OCR being the semantic authority.
+
+Inputs:
+- photographs
+- raster images
+- diagrams
+- charts and graphs
+- canvas-like visual regions
+- icons and controls
+- CAPTCHA challenges
+
+The ZERO model consumes a normalized visual observation stream and produces semantic candidates with provenance and confidence.
+
+A visual observation is never silently promoted to fact. Every candidate carries:
+- source region
+- modality
+- semantic type
+- description
+- confidence
+- uncertainty
+- relation to nearby document nodes
+- provenance
+
+The accessibility layer may announce candidates, navigate regions, and expose alternatives.
+
+For photographs, the model may describe:
+- visible entities
+- spatial relations
+- text-like regions
+- actions or scenes
+- uncertainty
+
+For graphics and charts, the model may expose:
+- title
+- axes
+- legend
+- series
+- labels
+- trends
+- data points when recoverable
+- uncertainty where values are estimated
+
+For diagrams, the model may expose:
+- nodes
+- connectors
+- direction
+- grouping
+- labels
+- reading order
+
+For CAPTCHA:
+- detect that an interaction is a CAPTCHA/security challenge
+- expose the fact that a challenge exists
+- preserve the challenge boundary
+- announce available official accessible alternatives when the page exposes them
+- allow the user to interact with the challenge through its normal accessibility mechanism
+
+ZERO MUST NOT automatically solve, bypass, or defeat a CAPTCHA/security challenge.
+
+No OCR result is authoritative by itself.
+No generated description may overwrite the original semantic source.
+Unknown remains UNKNOWN.
