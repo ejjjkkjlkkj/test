@@ -1,0 +1,44 @@
+ZERO.EXECUTION / language-native protocol
+
+INPUT
+  A field is a finite or open sequence of traces.
+
+STATE
+  trace := form + relation + history + pressure + age
+  No semantic type is assigned.
+
+TRANSITION
+  A transition is accepted only when it changes the observable field.
+  Multiple transitions may coexist.
+  A transition may be reversed, contradicted, delayed or forgotten.
+
+DISCOVERY
+  The machine may create a candidate relation from observed changes.
+  Candidate relations are provisional.
+  A candidate must reproduce across independent fields before promotion.
+
+TRANSFER
+  Replace symbols while preserving structural conditions.
+  A valid discovery must survive symbol replacement.
+  A failure remains recorded.
+
+SELF-EXTENSION
+  A candidate may propose a new primitive.
+  The primitive becomes executable only after blind validation.
+
+ADVERSARY
+  Every promoted relation receives an opposing trajectory.
+  Survival against the adversary is part of the result.
+
+UNKNOWN
+  Missing information remains represented as unknown.
+  Unknown is never silently converted into a guessed value.
+
+MEASUREMENT
+  Record trajectory, transformations, transfer, failures, discovery, time and resource use.
+
+HUMAN-OVERRIDE
+  None. Human interpretation is external to execution.
+
+VERDICT
+  No claim of superiority is allowed without unseen evaluation, independent reproduction, human calibration and measurable margin.
