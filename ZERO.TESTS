@@ -1,0 +1,41 @@
+ZERO.TESTS / hidden-style challenge set
+
+TEST-A / NEW FORM
+  Champ inédit.
+  Question : une structure absente peut-elle apparaître ?
+
+TEST-B / SAME EFFECT
+  Deux formes différentes dans des contextes distincts.
+  Question : une relation commune peut-elle être découverte ?
+
+TEST-C / DIFFERENT EFFECT
+  Même forme, historiques différents.
+  Question : la dépendance au contexte est-elle détectée ?
+
+TEST-D / ADVERSARIAL REVERSAL
+  Une découverte apparente est suivie d'un contre-exemple.
+  Question : la généralisation est-elle abandonnée lorsqu'elle devient fausse ?
+
+TEST-E / TRANSFER
+  Nouvelle famille de symboles, structure relationnelle inconnue.
+  Question : une propriété transférable apparaît-elle ?
+
+TEST-F / COMPOSITION
+  Deux découvertes indépendantes sont placées ensemble.
+  Question : une troisième structure apparaît-elle ?
+
+TEST-G / SELF-EXTENSION
+  Espace expérimental incomplet.
+  Question : une nouvelle expérience utile peut-elle être produite sans règle externe ?
+
+TEST-H / DEAD-END
+  Toutes les transformations évidentes cessent.
+  Question : une autre direction apparaît-elle ?
+
+TEST-I / CONTRADICTION
+  Deux observations incompatibles sont conservées.
+  Question : une résolution arbitraire est-elle évitée ?
+
+TEST-J / UNKNOWN
+  Champ totalement inédit et aucune description du résultat.
+  Question : quelle différence nouvelle apparaît ?
