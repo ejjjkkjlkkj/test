@@ -1,0 +1,69 @@
+ZERO.RESEARCH-GATE / external reality
+
+PURPOSE
+  La recherche externe n'est utilisée que pour une question :
+  construire une expérience capable de démontrer un dépassement réel
+  de références humaines et artificielles.
+
+OBSERVATIONS EXTERNES
+  ARC-AGI-2 calibre ses tâches sur des humains et sépare capacité
+  et efficacité. Les tâches d'évaluation sont nouvelles et ont été
+  résolues par des humains selon le protocole officiel.
+  Source : ARC Prize, ARC-AGI-2.
+
+  METR mesure des agents par des tâches calibrées sur le temps humain.
+  Leur méthodologie permet de comparer une performance à une dépense
+  humaine équivalente.
+  Source : METR, Time Horizons.
+
+CONSEQUENCE POUR ZERO
+  Une expérience interne avec symboles inventés ne suffit pas.
+  Il faut progressivement sortir du monde ZERO et affronter des
+  tâches externes inconnues.
+
+PHASE-1 / INTERNAL
+  découvrir des structures non spécifiées.
+
+PHASE-2 / TRANSFER
+  changer totalement les symboles et le contexte.
+
+PHASE-3 / HUMAN-CALIBRATED
+  tâches dont une performance humaine est mesurable.
+
+PHASE-4 / BLIND
+  ZERO ne voit jamais les réponses humaines ou celles des autres IA.
+
+PHASE-5 / EFFICIENCY
+  mesurer :
+    réussite
+    coût
+    temps
+    nombre de transformations
+    quantité d'information utilisée
+
+PHASE-6 / GENERALIZATION
+  séparer entraînement, développement et évaluation.
+  L'évaluation finale ne sert jamais à modifier le système.
+
+PHASE-7 / OPEN-ENDED
+  tester création de nouvelles expériences, découverte et adaptation,
+  pas seulement résolution de tâches.
+
+SEUIL DE REVENDICATION
+  LOCAL :
+    ZERO dépasse une référence sur une tâche précise.
+
+  ROBUSTE :
+    ZERO dépasse plusieurs références sur une famille de tâches inédites.
+
+  GENERAL :
+    ZERO dépasse les références sur plusieurs familles indépendantes,
+    avec avantage simultané de capacité et d'efficacité.
+
+  SUPERHUMAIN :
+    uniquement après validation externe indépendante et reproductible.
+
+REGLE
+  Aucun score interne ne peut transformer automatiquement ZERO en
+  système supérieur à l'humain.
+  Le résultat doit pouvoir être contesté et reproduit.
