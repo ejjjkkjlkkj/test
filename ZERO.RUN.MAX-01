@@ -1,0 +1,70 @@
+ZERO.RUN.MAX-01 / uncontrolled symbolic run
+
+FIELD
+  ◇r7◇m2◇r7◇x9◇m2◇q4◇r7◇
+
+BRANCH-01 / ECHO
+  r7 -> <r7>
+  <r7> -> r7:x9
+  r7:x9 -> <r7:x9>
+
+BRANCH-02 / VOID
+  remove m2
+  ◇r7◇r7◇x9◇q4◇r7◇
+  remove r7
+  ◇x9◇q4◇
+
+BRANCH-03 / MIRROR
+  copy r7 trajectory
+  left:  r7 -> m2 -> x9
+  right: r7 -> q4 -> x9
+  common endpoint: x9
+
+BRANCH-04 / CONTRADICTION
+  m2 -> preserve
+  m2 -> remove
+  both retained.
+
+BRANCH-05 / REVERSAL
+  r7:m2 -> r7!m2 -> m2:r7
+  reverse did not restore source order.
+
+BRANCH-06 / DELAY
+  q4 effect held.
+  intervening mutations: r7 -> x9 -> m2
+  q4 returns after context changed.
+
+BRANCH-07 / DESTRUCTION
+  destroy dominant r7.
+  remaining: m2 x9 q4.
+  r7 reappears as <r7>.
+  returned trace is not identical to original active form.
+
+BRANCH-08 / DRIFT
+  neighborhood rotated:
+    r7:m2
+    m2:x9
+    x9:q4
+    q4:r7
+  cycle observed.
+
+CROSS-01
+  echo(r7) meets void(r7)
+  result: unresolved coexistence.
+
+CROSS-02
+  mirror paths meet at x9.
+  histories remain distinct.
+
+CROSS-03
+  delayed q4 meets destroyed/reborn r7.
+  new relation: <q4>:<r7>
+
+OBSERVATION
+  Une même forme peut participer à plusieurs trajectoires.
+  L'historique modifie le résultat sans imposer une signification.
+  Les contradictions peuvent persister.
+  Aucune branche n'est déclarée gagnante.
+
+STATUS
+  RUN COMPLETE / DIFFERENCES PRESERVED
