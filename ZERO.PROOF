@@ -1,0 +1,51 @@
+ZERO.PROOF / evidence of superiority
+
+CLAIM
+  Ne jamais déclarer une supériorité avant confrontation.
+
+PROOF-0 / ZERO-LEAK
+  Le champ de test est nouveau et absent de toutes les branches précédentes.
+  Aucun résultat cible n'est fourni.
+
+PROOF-1 / NOVEL GENERATION
+  Produire une structure qui n'est pas dans le champ initial.
+  Rejouer sur plusieurs champs indépendants.
+
+PROOF-2 / TRANSFER
+  Retirer la structure découverte.
+  Donner un nouveau champ.
+  Tester si une relation abstraite réapparaît sans recopier la trajectoire.
+
+PROOF-3 / ADVERSARIAL
+  Une branche tente de faire échouer la découverte.
+  Une autre tente de la reproduire.
+  Une troisième cherche une explication alternative.
+
+PROOF-4 / BLIND
+  Les branches ne connaissent pas les résultats des autres.
+  Les résultats sont comparés uniquement après séparation.
+
+PROOF-5 / HUMAN-REFERENCE
+  Construire exactement le même ensemble de tâches pour une procédure humaine explicite.
+  Même information initiale.
+  Même budget fixé.
+  Aucun indice supplémentaire pour ZERO.
+
+PROOF-6 / AI-REFERENCE
+  Même protocole pour plusieurs systèmes artificiels externes.
+  Même entrée.
+  Même budget.
+  Même critères.
+
+PROOF-7 / GENERALIZATION
+  Les tâches finales ne doivent pas avoir servi à produire les règles initiales.
+
+PROOF-8 / REPRODUCTION
+  Une découverte annoncée doit pouvoir être retrouvée dans une expérience indépendante.
+
+VERDICT
+  SUPERIORITY POSSIBLE uniquement si ZERO dépasse les références
+  sur des tâches inédites avec protocole identique.
+  Sinon : NON DÉMONTRÉ.
+
+AUCUN RÉSULTAT N'EST PRÉINSCRIT.
