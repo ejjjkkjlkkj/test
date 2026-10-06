@@ -1,0 +1,26 @@
+ZERO.FAILURE / exploration des échecs
+
+Aucun échec n'est supprimé.
+
+CATÉGORIES
+  aucune mutation
+  mutation annulée
+  boucle
+  explosion de branches
+  disparition totale
+  contradiction persistante
+  structure dominante
+  structure stérile
+  retour identique
+  retour différent
+  perte de trace
+  dépendance excessive au contexte
+
+ANTI-ERREUR
+  Une branche qui échoue devient une entrée expérimentale.
+  Une branche stable n'est pas considérée comme supérieure.
+  Une branche chaotique n'est pas considérée comme supérieure.
+
+QUESTION
+  Que produit une méthode lorsqu'on lui retire précisément
+  la condition qui semblait la faire fonctionner ?
