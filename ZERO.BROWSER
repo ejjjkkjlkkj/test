@@ -1,0 +1,59 @@
+ZERO browser / accessibility-first network client
+
+PURPOSE
+  First concrete software target of ZERO.
+  Build an accessible browser able to reach Tor services while exposing a screen-reader-native interface.
+
+CONSTRAINTS
+  No Python.
+  No Rust.
+  No JavaScript.
+  No OCR as the primary accessibility mechanism.
+  No dependence on an existing screen reader as the core accessibility layer.
+  Tor connectivity must use the standard Tor protocol/client boundary; never expose or implement onion-service abuse controls as a bypass.
+
+ARCHITECTURE
+  NETWORK
+    HTTP(S) and Tor-aware transport are isolated from presentation.
+  DOCUMENT
+    Parse pages into a semantic document tree.
+  ACCESS
+    Convert the document tree into stable roles, names, states and relationships.
+  SPEECH
+    Native speech queue with interruption, priority and replay.
+  BRAILLE
+    Parallel semantic stream; never derived from speech output.
+  KEYBOARD
+    Complete keyboard navigation with deterministic focus movement.
+  HISTORY
+    Navigation history is structural state, not opaque screen pixels.
+  UNKNOWN
+    Unsupported or ambiguous semantics remain explicit.
+
+SCREEN-READER CORE
+  The browser must contain its own accessibility engine.
+  It exposes:
+    heading navigation
+    landmark navigation
+    link navigation
+    form controls
+    tables
+    lists
+    dialogs
+    status changes
+    focus changes
+    document position
+    selection
+    errors
+  Speech and braille consume the same semantic event stream.
+
+SECURITY
+  Do not weaken Tor anonymity guarantees.
+  Never silently reveal onion destinations, credentials, cookies or private keys.
+  Keep network identity, document identity and accessibility state separated.
+  All privileged operations require explicit user action.
+
+SUCCESS
+  A blind user can install, start, connect to Tor, navigate a document,
+  move through its semantic structure, enter a form, hear changes,
+  and recover focus entirely from keyboard and screen-reader output.
