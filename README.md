@@ -1,38 +1,22 @@
-# TEST — Experimental Intelligence Core
+# ZERO — Universal Accessibility Language
 
-Projet expérimental construit from scratch.
+This repository is restarted around one invariant:
 
-## Intention
+> Every thing expressible, executed, observed, produced, or encountered by the language is intrinsically accessible.
 
-Explorer une architecture d'intelligence qui ne cherche pas à reproduire directement les méthodes humaines ou les architectures LLM classiques.
+Accessibility is not an API, library, annotation, plugin, screen-reader mode, or optional layer. It is part of the language model itself.
 
-Le moteur travaille par :
-- expériences concurrentes ;
-- mémoire d'épisodes ;
-- hypothèses révisables ;
-- contradictions explicites ;
-- recherche de transformations ;
-- sélection par conséquences observées ;
-- auto-révision du comportement.
+## Design constraints
 
-Il ne prétend pas être supérieur à Claude ou à l'humain par déclaration : la supériorité doit être démontrée par des tests reproductibles.
+- No JavaScript.
+- No Python.
+- No dependency on Rust, C, LLVM, DOM, UIA, MSAA, ARIA, Electron, Qt, GTK, or another existing accessibility foundation.
+- The language is not modeled as a human-facing programming language first.
+- Accessibility must remain valid for unknown and future object types.
+- One semantic object may be projected to speech, braille, keyboard, visual, audio, haptic, or another interface without changing its meaning.
 
-## Contraintes
+## First target
 
-- zéro modèle pré-entraîné ;
-- zéro API d'IA externe ;
-- zéro copie d'algorithme existant comme cœur du système ;
-- pas de dépendance à un théorème mathématique ;
-- expérimentation mesurable et réversible.
+Build the language model first. Then build its native execution model. Then use it to construct an accessible browser and its universal perception/interaction engine.
 
-## Première cible
-
-Construire un agent capable de trouver une réponse utile lorsqu'aucune procédure explicite ne lui est fournie, puis de conserver la trace de ce qui a fonctionné ou échoué.
-
-## Exécution
-
-```text
-cargo run -- solve "..."
-cargo run -- experiment
-cargo test
-```
+Nothing is considered accessible merely because a screen reader can announce it.
