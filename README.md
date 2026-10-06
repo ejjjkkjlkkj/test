@@ -1,22 +1,42 @@
-# ZERO — Universal Accessibility Language
+# ZERO — Universal Accessible Machine Language
 
-This repository is restarted around one invariant:
+This project starts from the machine itself.
 
-> Every thing expressible, executed, observed, produced, or encountered by the language is intrinsically accessible.
+The objective is not to make an inaccessible machine accessible later through an application, screen reader, browser, or accessibility API.
 
-Accessibility is not an API, library, annotation, plugin, screen-reader mode, or optional layer. It is part of the language model itself.
+The objective is to design a language and machine model in which accessibility exists from the first layer.
 
-## Design constraints
+## Core thesis
 
-- No JavaScript.
-- No Python.
-- No dependency on Rust, C, LLVM, DOM, UIA, MSAA, ARIA, Electron, Qt, GTK, or another existing accessibility foundation.
-- The language is not modeled as a human-facing programming language first.
-- Accessibility must remain valid for unknown and future object types.
-- One semantic object may be projected to speech, braille, keyboard, visual, audio, haptic, or another interface without changing its meaning.
+> Accessibility begins at the machine.
 
-## First target
+The stack is:
 
-Build the language model first. Then build its native execution model. Then use it to construct an accessible browser and its universal perception/interaction engine.
+MACHINE
+-> MACHINE SEMANTICS
+-> LANGUAGE
+-> RUNTIME
+-> APPLICATION
+-> CONTENT
+-> USER
 
-Nothing is considered accessible merely because a screen reader can announce it.
+Every layer must preserve semantic accessibility.
+
+## Universal requirement
+
+Anything the system can represent, execute, observe, display, hear, receive, transmit, store, or control must have an intrinsic semantic representation and an equivalent interaction path.
+
+This includes hardware, firmware, operating environments, applications, websites, images, photographs, graphics, video, audio, games, CAPTCHA, unknown objects, and future technologies.
+
+## No afterthought
+
+Accessibility is not a plugin.
+It is not a screen-reader API.
+It is not a browser feature.
+It is not a UI layer.
+
+It is a property of the machine-language model itself.
+
+## Current objective
+
+Design the machine semantics and language core first, then implement the smallest native execution model capable of proving the invariants.

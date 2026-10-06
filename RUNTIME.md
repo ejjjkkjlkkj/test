@@ -1,10 +1,12 @@
 # Native Runtime
 
-The runtime is responsible for making intrinsic accessibility unavoidable.
+The runtime sits on top of a semantic machine, not on top of an inaccessible hardware abstraction.
 
 Pipeline:
 
-SOURCE
+PHYSICAL / VIRTUAL MACHINE
+-> MACHINE SEMANTICS
+-> LANGUAGE
 -> SEMANTIC OBJECT GRAPH
 -> EXECUTION
 -> OBSERVATION
@@ -13,6 +15,9 @@ SOURCE
 
 The runtime owns:
 
+- machine semantic ingestion
+- device discovery
+- boot-state representation
 - focus and navigation semantics
 - object discovery
 - state changes
@@ -25,14 +30,20 @@ The runtime owns:
 
 There is no separate accessibility subsystem.
 
-## Interruption
+## Machine events
 
-Any active presentation can be interrupted without destroying semantic state.
+Hardware events become semantic events before application logic consumes them.
 
-## Equivalence
+Examples:
 
-If an operation is possible visually, the semantic graph must expose an equivalent operation through the universal interaction model unless the operation itself is inherently unavailable.
+key press -> key event
+audio arrival -> audio event
+device insertion -> device event
+display change -> visual-state event
+firmware failure -> boot-failure event
 
-## Security
+The event retains meaning and provenance.
 
-Semantic exposure must respect the object's security boundary. Accessibility never means unauthorized disclosure.
+## Safety
+
+Machine operations carry explicit capability and security semantics. Accessibility never means unrestricted hardware access.
