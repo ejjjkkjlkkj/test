@@ -1,0 +1,43 @@
+ZERO.LANGUAGE-TEST / falsification
+
+L0
+  Can the same primitive produce different effects in different fields?
+
+L1
+  Can a trace survive symbol replacement?
+
+L2
+  Can a discovered relation transfer to a structurally different field?
+
+L3
+  Can two contradictory traces coexist without forcing one to be deleted?
+
+L4
+  Can the machine invent a primitive not present in the seed?
+
+L5
+  Can an invented primitive improve transfer rather than only internal score?
+
+L6
+  Can a rule disappear after a blind counterexample?
+
+L7
+  Can a later execution recover a dead rule in a changed context?
+
+L8
+  Can the representation itself change?
+
+L9
+  Can the machine construct a new experiment that was not specified beforehand?
+
+L10
+  Can the resulting machine outperform a human baseline on unseen tasks
+  under an identical information and time budget?
+
+FAILURE
+  Any NO is preserved.
+  No benchmark result is rewritten.
+  No human baseline is weakened after seeing the machine result.
+
+PROMOTION
+  A language feature becomes CORE only after independent reproduction.
