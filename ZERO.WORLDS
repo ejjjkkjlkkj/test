@@ -1,0 +1,41 @@
+ZERO.WORLDS / independent worlds
+
+WORLD-01 / DENSE
+  ◇a7◇k2◇a7◇m4◇k2◇
+  Tester répétition, collision, mémoire, pression.
+
+WORLD-02 / SPARSE
+  ◇q1◇v8◇r3◇
+  Tester vide, délai, isolement, anticipation.
+
+WORLD-03 / ASYMMETRIC
+  ◇x3◇x3◇p9◇t4◇x3◇
+  Tester dominance, suppression, renaissance, dérive.
+
+WORLD-04 / MIRROR
+  ◇b2◇c5◇b2◇c5◇
+  Séparer deux trajectoires identiques puis provoquer une rencontre.
+
+WORLD-05 / CONTRADICTION
+  ◇h1◇h1◇z6◇
+  Autoriser simultanément conservation et destruction de h1.
+
+WORLD-06 / LOOP
+  ◇m2◇n4◇m2◇
+  Chercher retour, rupture, réinjection et nouveau contexte.
+
+WORLD-07 / VOID
+  ◇s8◇◇d1◇s8◇
+  Le vide est conservé comme élément expérimental.
+
+WORLD-08 / DRIFT
+  ◇u4◇w7◇u4◇w7◇
+  Modifier le voisinage à chaque passage.
+
+WORLD-09 / UNKNOWN
+  ◇f6◇r1◇y9◇k3◇
+  Aucune hypothèse importée des autres mondes.
+
+RULE
+  Les mondes ne partagent aucune conclusion.
+  Une structure observée dans un monde ne devient pas une règle dans un autre.
