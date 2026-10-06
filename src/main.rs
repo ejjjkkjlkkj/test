@@ -1,10 +1,13 @@
+mod archive;
 mod challenge;
 mod core;
 mod discovery;
 mod evaluator;
 mod experiment;
+mod generator;
 mod memory;
 mod operator;
+mod operator_lang;
 mod search;
 mod world;
 
