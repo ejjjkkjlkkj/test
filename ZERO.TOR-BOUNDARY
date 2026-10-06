@@ -1,0 +1,26 @@
+ZERO Tor boundary
+
+GOAL
+  Define a narrow, auditable boundary between the browser and Tor transport.
+
+RULES
+  Browser code does not bypass Tor security controls.
+  Tor transport is isolated from rendering and accessibility.
+  DNS, proxy and connection failures remain explicit.
+  Onion destinations are treated as destinations, not as semantic privileges.
+  No automatic identity disclosure.
+  No automatic credential submission.
+
+ACCESSIBILITY
+  Connection state is exposed as semantic events:
+    disconnected
+    connecting
+    connected
+    blocked
+    failed
+    retrying
+
+VERIFICATION
+  Test first against local/non-sensitive endpoints.
+  Then test Tor connectivity in a controlled environment.
+  Do not claim anonymity merely because a connection succeeded.
