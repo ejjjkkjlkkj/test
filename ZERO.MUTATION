@@ -1,0 +1,38 @@
+ZERO.MUTATION / cycle-01
+
+SOURCE
+  ◇a7◇k2◇a7◇m4◇k2◇
+
+PASS-0
+  a7|k2
+  k2|a7
+  a7|m4
+  m4|k2
+
+COLLISIONS
+  a7!k2 -> a7:k2
+  k2!a7 -> k2:a7
+  a7!m4 -> a7:m4
+  m4!k2 -> m4:k2
+
+PASS-1
+  ◇a7:k2◇a7:m4◇k2◇
+
+RUPTURE
+  a7:k2 ! a7:m4
+  => a7:k2
+  => m4
+
+PASS-2
+  ◇a7:k2◇m4◇k2◇
+
+ECHO
+  k2 ... k2
+  => <k2>
+
+REINJECTION
+  ◇a7:k2◇m4◇<k2>◇
+
+OBSERVATION
+  La trace k2 est devenue active après son retour.
+  Aucune signification de k2 n'est supposée.
