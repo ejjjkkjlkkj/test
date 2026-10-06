@@ -1,0 +1,21 @@
+ZERO document layer
+
+First parser target:
+  constrained HTML subset for deterministic testing.
+
+Supported semantic targets:
+  headings
+  paragraphs
+  links
+  buttons
+  text inputs
+  lists
+  list items
+
+The parser is intentionally not a complete web engine.
+It establishes the semantic pipeline before networking and full HTML/CSS complexity.
+
+Validation:
+  identical markup -> identical node sequence
+  tag mutation -> role mutation only where expected
+  unsupported markup -> explicit absence/unknown, never invented semantics
