@@ -1,0 +1,34 @@
+ZERO first software program
+
+STAGE-0
+  Empty accessible shell.
+  Keyboard-only operation.
+  Semantic event log.
+
+STAGE-1
+  Local document navigation.
+  Headings, links, forms, lists and landmarks.
+
+STAGE-2
+  Speech and braille adapters.
+  Interruptible announcements.
+
+STAGE-3
+  HTTP(S) navigation.
+  No JavaScript execution requirement for the accessibility core.
+
+STAGE-4
+  Tor transport boundary.
+  Connection-state announcements.
+
+STAGE-5
+  Blind end-to-end validation.
+  Measure task completion, navigation steps, announcement latency,
+  recovery after errors and semantic coverage.
+
+STAGE-6
+  Independent comparison against established accessible browsers/screen readers.
+
+NO CLAIM
+  Accessibility superiority is not assumed.
+  It must be demonstrated on unseen tasks.
