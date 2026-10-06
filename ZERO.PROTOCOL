@@ -1,0 +1,50 @@
+ZERO.PROTOCOL / exhaustive run
+
+1. CREER un monde jamais utilisé.
+2. COPIER le champ sans lui attribuer de sens.
+3. OUVRIR plusieurs branches indépendantes.
+4. APPLIQUER des axes différents à chaque branche.
+5. NE PAS partager les résultats entre branches pendant le passage.
+6. REINTRODUIRE certaines traces dans un voisinage nouveau.
+7. PROVOQUER au moins une collision.
+8. PROVOQUER au moins une disparition.
+9. PROVOQUER au moins une contradiction.
+10. CONSERVER au moins une branche silencieuse.
+11. DUPLIQUER au moins une trajectoire.
+12. INVERSER au moins une transformation.
+13. MODIFIER le voisinage.
+14. DETRUIRE une structure dominante.
+15. OBSERVER sa renaissance éventuelle.
+16. CROISER deux historiques seulement après leur séparation.
+17. COMPARER les trajectoires, jamais leur conformité à une réponse.
+18. REPETER sur un champ totalement inédit.
+
+MESURES QUALITATIVES
+  nouveauté de forme
+  nouveauté de trajectoire
+  persistance
+  disparition
+  retour
+  divergence
+  convergence
+  contradiction
+  stabilité
+  instabilité
+  dépendance au contexte
+  dépendance à l'historique
+  capacité de réapparition
+  capacité de rupture
+
+INTERDIT
+  score humain
+  récompense prédéfinie
+  vérité prédéfinie
+  algorithme importé
+  modèle Python
+  modèle Rust
+  modèle entraîné
+  classement avant observation
+
+FIN D'UNE RUN
+  uniquement lorsque toutes les branches ont été observées
+  ou lorsqu'elles cessent toutes de produire une différence.
