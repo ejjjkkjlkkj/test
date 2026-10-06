@@ -1,0 +1,19 @@
+# ZERO.CAPTCHA
+
+CAPTCHA handling is an accessibility boundary, not a benchmark for automatic challenge solving.
+
+ZERO may:
+- detect and classify a CAPTCHA
+- expose that the interaction is protected
+- announce the challenge type when justified
+- navigate to an official accessible alternative exposed by the site
+- preserve keyboard focus and semantic context
+- let the user complete the challenge normally
+
+ZERO must not:
+- automatically solve a CAPTCHA
+- infer challenge answers from pixels for automatic submission
+- bypass anti-bot protections
+- submit an answer without explicit user action
+
+The model can improve accessibility around the challenge without becoming a security-bypass system.
