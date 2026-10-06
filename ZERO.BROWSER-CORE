@@ -1,0 +1,94 @@
+ZERO.BROWSER-CORE / first executable specification
+
+OBJECTIVE
+  Produce the smallest real browser core that can later host the ZERO screen reader.
+  The core must be independent from speech, braille and network transport.
+
+MODEL
+  DOCUMENT
+    NODE
+      identity
+      role
+      name
+      state
+      value
+      parent
+      children
+      relations
+
+  FOCUS
+    exactly one active target or NONE
+    movement is deterministic
+    every movement emits an accessibility event
+
+  EVENT
+    kind
+    target
+    before
+    after
+    cause
+    sequence
+
+  OUTPUT
+    semantic event stream is canonical
+    speech is a consumer
+    braille is a consumer
+    logging is a consumer
+
+MINIMUM EVENTS
+  DOCUMENT-START
+  DOCUMENT-END
+  FOCUS-ENTER
+  FOCUS-LEAVE
+  VALUE-CHANGE
+  STATE-CHANGE
+  ALERT
+  ERROR
+  UNKNOWN
+
+MINIMUM ROLES
+  DOCUMENT
+  HEADING
+  PARAGRAPH
+  LINK
+  BUTTON
+  TEXTBOX
+  CHECKBOX
+  RADIO
+  LIST
+  LIST-ITEM
+  TABLE
+  ROW
+  CELL
+  DIALOG
+  ALERT
+
+KEYBOARD
+  NEXT
+  PREVIOUS
+  ACTIVATE
+  ESCAPE
+  FIRST
+  LAST
+  BACK
+  FORWARD
+
+INVARIANTS
+  No pixel/OCR dependency.
+  No speech output is parsed to recover semantics.
+  No invented label is silently treated as authoritative.
+  Unknown state is preserved.
+  Every externally visible state transition is observable in the event stream.
+  The core remains usable without a speech engine.
+
+VALIDATION
+  Feed a deterministic document fixture.
+  Replay identical keyboard sequences.
+  Require identical semantic event sequences.
+  Mutate labels, ordering and nesting independently.
+  Verify that navigation follows structure rather than visual coordinates.
+
+NEXT
+  Implement this model in an approved non-Python, non-Rust, non-JavaScript host.
+  Do not select the host merely for convenience; benchmark accessibility latency,
+  semantic coverage and portability first.
