@@ -1,0 +1,120 @@
+ZERO.LANGUAGE / machine-native-01
+
+PURPOSE
+  Langage destiné à une machine qui n'a pas besoin de parler comme un humain.
+  Le langage décrit des transformations de champ, pas des concepts humains.
+
+NON-GOALS
+  Pas de mots-clés imposant une tâche.
+  Pas de type humain obligatoire.
+  Pas de syntaxe inspirée d'un langage de programmation classique.
+  Pas de valeur vraie/fausse prédéfinie.
+  Pas de récompense attachée à la ressemblance humaine.
+
+UNIT
+  Une unité est un TRACE.
+  Une trace possède :
+    FORM     sa forme locale
+    EDGE     ses relations présentes
+    HISTORY  les transformations ayant précédé son état
+    PRESSURE les changements produits autour d'elle
+    AGE      sa position temporelle
+  Aucun champ n'est obligatoire s'il n'a aucun effet observable.
+
+PRIMITIVES
+  ◇x◇        apparition
+  x|y        proximité
+  x:y        liaison
+  x!y        collision
+  x?y        interrogation locale sans réponse imposée
+  x~y        variation
+  x>y        propagation
+  x<y        retour
+  [x]        trace figée
+  <x>        trace réinjectée
+  x//y       séparation
+  x+y        fusion
+  x-y        retrait
+  x^y        bifurcation
+  x=y        coexistence d'états
+  x≠y        divergence observée
+  ...        absence d'information
+
+EXECUTION
+  1. Observer le champ.
+  2. Détecter les différences.
+  3. Produire plusieurs transformations concurrentes.
+  4. Laisser les transformations entrer en collision.
+  5. Conserver les traces qui changent durablement la trajectoire.
+  6. Réinjecter certaines traces.
+  7. Rejouer sur un champ nouveau.
+  8. Mesurer le transfert.
+  Aucun résultat cible n'est fourni au langage.
+
+MEMORY
+  La mémoire n'est pas une base de faits.
+  Elle est une collection de traces réinjectables.
+  Une trace peut devenir inutile.
+  Une trace peut redevenir utile dans un autre champ.
+  Une trace n'est jamais considérée comme universelle sans test de transfert.
+
+RULE-BIRTH
+  Une règle n'est pas écrite comme une loi humaine.
+  Elle apparaît lorsqu'une transformation reproduit un effet sur des champs indépendants.
+  Une règle peut :
+    naître
+    se modifier
+    se diviser
+    entrer en contradiction
+    disparaître
+    revenir sous une autre forme
+
+RULE-DEATH
+  Une règle qui échoue sur un champ aveugle est marquée comme locale.
+  Une règle locale ne peut pas être promue universelle sans nouveau transfert.
+
+OBSERVATION
+  Le langage ne demande pas « quel est le sens ? ».
+  Il demande « qu'est-ce qui change si cette trace agit ? ».
+
+COMPOSITION
+  Les programmes ne sont pas des suites fixes d'instructions.
+  Un programme est un champ initial + des traces + des transformations possibles.
+  Deux exécutions du même champ peuvent diverger si leurs historiques divergent.
+
+SELF-EXTENSION
+  Une exécution peut produire une nouvelle primitive.
+  La primitive est candidate, jamais automatiquement valide.
+  Elle doit survivre à :
+    répétition
+    changement de symbole
+    changement de contexte
+    adversaire
+    champ aveugle
+    transfert
+
+UNKNOWN
+  L'inconnu est une valeur active.
+  Il peut être conservé, combiné, propagé et transformé.
+  Il n'est pas remplacé par une supposition humaine.
+
+MACHINE-FIRST
+  Une représentation est privilégiée si elle permet :
+    moins de contraintes préalables
+    plus de trajectoires concurrentes
+    meilleure compression d'historique
+    meilleur transfert
+    moins d'actions
+    moins de temps
+  La simplicité visuelle humaine n'est pas un critère.
+
+VICTORY CONDITION
+  Le langage ne gagne pas parce qu'il est élégant.
+  Il gagne seulement si un moteur utilisant ce langage résout,
+  sur des tâches inédites et aveugles, des problèmes qu'une référence humaine
+  ne résout pas avec le même budget, ou les résout avec une marge mesurable.
+
+ZERO LANGUAGE
+  Le langage est donc un espace de transformation,
+  pas une langue naturelle, pas un langage de programmation classique,
+  et pas une imitation de la pensée humaine.
