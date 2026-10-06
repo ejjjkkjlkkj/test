@@ -1,35 +1,63 @@
 # ZERO — Machine-First Universal Accessible Language
 
-The language starts as low as possible.
+ZERO commence au niveau de la machine.
 
-Not at the browser.
-Not at the operating system.
-Not at a GUI.
-Not at a screen reader.
-Not at an accessibility API.
+Il ne construit pas d'abord une application puis une couche d'accessibilité. Le CPU, la mémoire, le GPU, le moniteur, l'audio, les entrées, le stockage, le réseau, le firmware et les périphériques font partie du même espace sémantique que les objets logiciels.
 
-The conceptual path is:
+## Architecture
 
-PHYSICAL MACHINE
+PHYSIQUE
 -> CPU / MACHINE STATE
--> MINIMAL PRIMITIVES
+-> MACHINE SEMANTICS
 -> LANGUAGE CORE
--> SEMANTIC MACHINE
+-> SEMANTIC OBJECTS
 -> RUNTIME
--> APPLICATION
--> CONTENT
--> USER
+-> APPLICATION / CONTENT
+-> UNIVERSAL INTERACTION
+-> MODALITY
 
-The language must preserve meaning from the bottom upward.
+La direction de communication est :
 
-## Foundational rule
+PHYSIQUE
+-> OBSERVATION
+-> EVENT
+-> INTENT
+-> TRANSITION
+-> STATE
+-> PROJECTION
+-> PHYSIQUE
 
-> If accessibility is added after a lower layer has discarded meaning, it is already too late.
+## Spécificité de ZERO
 
-Therefore accessibility is defined at the machine-language boundary itself.
+L'accessibilité n'est pas un service ajouté après coup.
 
-## Goal
+Tout objet machine ou logiciel doit être, par construction :
 
-Build a language and machine environment in which anything representable by the system — including hardware, firmware, applications, content and unknown future objects — has an intrinsic semantic representation and equivalent interaction paths.
+- identifiable ;
+- observable ;
+- compréhensible selon les informations disponibles ;
+- navigable ;
+- actionnable selon ses capacités ;
+- interruptible ;
+- capable de produire un résultat ou un refus sémantique ;
+- projetable vers plusieurs modalités.
 
-The current repository is a specification foundation. The next implementation target is the minimal machine primitive layer, not a conventional application runtime.
+Les modalités peuvent être visuelles, vocales, braille, clavier, tactile, automatisées ou futures.
+
+## Communication machine
+
+ZERO doit pouvoir communiquer sémantiquement avec le CPU, le GPU, le moniteur, l'audio, les entrées, la mémoire, le stockage, le réseau, le firmware et les périphériques.
+
+Cela ne donne pas automatiquement tous les droits : observer, naviguer, modifier et administrer restent des capacités distinctes.
+
+## Monde inconnu
+
+Un périphérique ou contenu inconnu n'est pas automatiquement inaccessible.
+
+Le système conserve au minimum son existence, ses observations, ses frontières connues, ses capacités éventuelles et son incertitude.
+
+## Règle fondamentale
+
+> Le sens ne doit pas être détruit par une couche inférieure avant que l'utilisateur puisse y accéder.
+
+Le dépôt actuel définit progressivement la machine, le langage et l'accessibilité comme une seule architecture.
