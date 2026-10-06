@@ -23,6 +23,7 @@ fn main() {
             println!("{}",mind.solve(&problem).render());
         }
         Some("experiment")=>println!("{}",experiment::run()),
+        Some("discover")=>println!("{}",experiment::run()),
         Some("benchmark")=>println!("{}",challenge::run(&mut mind)),
         _=>println!("TEST experimental intelligence core\n  solve <problem>\n  experiment\n  benchmark"),
     }
