@@ -1,0 +1,19 @@
+ZERO speech layer / first adapter
+
+The semantic event stream is canonical.
+Speech is only a consumer.
+
+Requirements:
+  interruptible announcements
+  deterministic event ordering
+  no parsing of synthesized audio
+  no OCR
+  no dependency on an external screen reader
+  speech failure must not destroy semantic state
+
+Current implementation target:
+  browser-core/zero_reader.c
+
+Next:
+  replace diagnostic output with an actual platform speech backend,
+  while preserving the exact semantic event interface.
