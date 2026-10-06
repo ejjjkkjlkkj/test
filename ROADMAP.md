@@ -1,50 +1,39 @@
 # Roadmap ZERO
 
-ZERO est poussé simultanément dans quatre directions : machine, langage, monde et accessibilité.
+## A — Fondations
+Sémantique, objets, identité, mémoire, événements, transitions, capacités, sécurité, accessibilité.
 
-## 0 — Fondations
+## B — Machine
+CPU, mémoire, GPU, moniteur, audio, entrées, stockage, firmware, énergie et périphériques.
 
-Sémantique, invariants, objets, transitions, capacités, événements, mémoire.
+## C — Langage
+Représentation native, syntaxe, exécution, erreurs, interruptions et introspection.
 
-## 1 — Machine réelle
+## D — Interaction
+Navigation universelle, voix, braille, clavier, visuel, tactile et futures modalités.
 
-CPU, mémoire, firmware, GPU, moniteur, audio, entrées, stockage, énergie, sécurité et périphériques.
+## E — Réseau
+Découverte, identité, authentification, capacités, protocole ZERO, sessions et machines distantes.
 
-## 2 — Langage-machine
+## F — Monde
+Texte, image, photo, graphique, tableau, vidéo, audio, carte, document, jeu, formulaire, CAPTCHA, applications et objets inconnus.
 
-Représentation native, exécution minimale, communication directe avec l'état machine et primitives sémantiques.
+## G — Navigateur
+Navigateur natif ZERO, web sémantique, contenu distant et interactions.
 
-## 3 — Interaction native
+## H — Outils
+Chargeur, inspecteur, débogueur, observateur machine, gestionnaire de périphériques et outils de construction.
 
-Navigation, interruption, parole, braille, clavier, affichage, tactile et futures modalités sur le même noyau.
+## I — Auto-hébergement
+ZERO construit son propre environnement.
 
-## 4 — Réseau
+## J — Validation réelle
+Machine réelle, plusieurs périphériques, plusieurs machines, réseau local, appareils inconnus, contenu réel.
 
-Machines locales et distantes, découverte, identité, authentification, capacités, événements, sessions et communication bidirectionnelle.
+## K — Extension
+Nouvelles architectures CPU, nouveaux GPU, nouvelles modalités, nouveaux réseaux, nouveaux objets.
 
-## 5 — Monde des objets
-
-Texte, image, photo, graphique, tableau, vidéo, audio, carte, document, formulaire, jeu, CAPTCHA, application et objets inconnus.
-
-## 6 — Navigateur ZERO
-
-Web et interfaces distantes comme objets sémantiques, avec navigation et interaction natives.
-
-## 7 — Applications
-
-Construire des applications directement dans le langage sans abandonner les invariants machine/accessibilité.
-
-## 8 — Auto-hébergement
-
-ZERO construit et maintient son propre environnement.
-
-## 9 — Monde inconnu
-
-Tester sur matériel, réseaux, périphériques, contenus et machines non prévus.
-
-### Invariant global
-
-Chaque étape doit préserver :
+Chaque étape doit conserver :
 
 IDENTITY
 MEANING
