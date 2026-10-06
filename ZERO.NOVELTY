@@ -1,0 +1,23 @@
+ZERO.NOVELTY / recherche de nouveauté
+
+Une nouveauté peut être :
+  forme nouvelle
+  ordre nouveau
+  relation nouvelle
+  trajectoire nouvelle
+  interaction nouvelle
+  retour nouveau
+  contradiction nouvelle
+  disparition nouvelle
+  réapparition nouvelle
+  comportement nouveau sous même forme
+  comportement identique sous forme différente
+
+INTERDICTION
+  Ne pas appeler une sortie "nouvelle" uniquement parce qu'elle est inconnue.
+
+TEST
+  Rejouer sur un champ indépendant.
+  Si la structure persiste, elle devient une observation reproductible.
+  Si elle disparaît, elle reste une observation contextuelle.
+  Dans les deux cas, conserver le résultat.
