@@ -1,0 +1,74 @@
+ZERO.EXTREMES / maximal exploration
+
+Aucune approche n'est sacrée.
+
+ETATS
+  vide total
+  singleton
+  paire
+  chaîne
+  boucle
+  masse répétée
+  alternance
+  asymétrie
+  symétrie
+  rupture
+  bruit symbolique
+  champ quasi-stable
+  champ instable
+
+TRANSFORMATIONS
+  ajouter
+  retirer
+  déplacer
+  inverser
+  dupliquer
+  fusionner
+  séparer
+  retarder
+  accélérer
+  cacher
+  révéler
+  réinjecter
+  remplacer
+  permuter
+  croiser
+  annuler
+  ressusciter
+  contaminer
+  isoler
+
+TEMPS
+  immédiat
+  retardé
+  répété
+  cyclique
+  non cyclique
+  interruption
+  retour
+  retour différent
+  mémoire longue
+  oubli brutal
+
+CONTEXTE
+  même forme / contexte différent
+  contexte identique / forme différente
+  historique identique / voisinage différent
+  historique différent / voisinage identique
+  aucune histoire accessible
+  histoire partiellement accessible
+
+INTERACTIONS
+  aucune
+  paire
+  groupe
+  chaîne
+  collision multiple
+  collision simultanée
+  collision retardée
+  collision après oubli
+  collision après destruction
+
+RÈGLE MAXIMALE
+  Toute configuration non interdite est expérimentable.
+  Une observation n'est jamais convertie automatiquement en loi.
