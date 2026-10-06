@@ -1,0 +1,28 @@
+ZERO.SCORECARD / falsifiable ledger
+
+Pour chaque test, enregistrer seulement :
+  INPUT-KNOWN       oui/non
+  OUTPUT-NEW        oui/non
+  REPRODUCED        oui/non
+  TRANSFERRED       oui/non
+  ADVERSARIAL-SURVIVED oui/non
+  BLIND-SURVIVED    oui/non
+  HUMAN-REFERENCE   résultat
+  AI-REFERENCE      résultat
+  FAILURE           description
+
+REGLE
+  Un oui sans trace expérimentale est ignoré.
+  Un résultat non reproductible reste hypothèse.
+  Une victoire sur une tâche connue ne démontre pas une supériorité générale.
+  Une victoire sur une tâche inconnue doit être reproduite.
+
+VERDICT FINAL
+  NON DÉMONTRÉ
+  ou
+  AVANTAGE LOCAL DÉMONTRÉ
+  ou
+  AVANTAGE ROBUSTE DÉMONTRÉ
+
+INTERDICTION
+  Toute affirmation de supériorité sans protocole est rejetée.
