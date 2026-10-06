@@ -1,0 +1,59 @@
+ZERO.RUN.MAX-02 / blind and adversarial run
+
+FIELD
+  ◇p1◇v4◇p1◇z8◇n3◇v4◇
+
+BLIND-A
+  sees only local neighborhood.
+  p1 -> v4
+  v4 -> z8
+
+BLIND-B
+  sees only local neighborhood.
+  p1 -> n3
+  n3 -> v4
+
+Neither branch receives the other's history.
+
+ADVERSARY-A
+  proposes: preserve p1.
+ADVERSARY-B
+  proposes: remove p1.
+ADVERSARY-C
+  proposes: replace p1 by a trace.
+  p1 -> <p1>
+
+SAME-FORM / DIFFERENT-HISTORY
+  p1 from initial field -> v4
+  p1 after trace return -> z8
+  same surface form, different continuation.
+
+DIFFERENT-FORM / SAME-EFFECT
+  v4 -> z8
+  <p1> -> z8
+  two forms reach one observed continuation.
+
+DESTRUCTION
+  remove every visible p1.
+  residual field: ◇v4◇z8◇n3◇v4◇
+
+REBIRTH
+  <p1> injected into residual field.
+  <p1> -> n3
+
+CONTRADICTION
+  p1 preserved
+  p1 removed
+  both branches continue independently.
+
+CROSSING
+  blind histories meet at v4.
+  no branch absorbs the other.
+
+OBSERVATION
+  Isolation creates trajectories unavailable to a shared-history branch.
+  The same surface form is not sufficient to predict continuation.
+  No universal rule extracted.
+
+STATUS
+  RUN COMPLETE / BLINDNESS + ADVERSARIAL DIVERGENCE
