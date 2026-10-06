@@ -1,0 +1,27 @@
+ZERO.RECURSION / profondeur ouverte
+
+NIVEAU-0
+  champ initial.
+
+NIVEAU-1
+  transformation du champ.
+
+NIVEAU-2
+  transformation de la transformation.
+
+NIVEAU-3
+  transformation de la trace de transformation.
+
+NIVEAU-4
+  transformation de l'observation.
+
+NIVEAU-5
+  transformation de la règle locale produite.
+
+NIVEAU-6+
+  réinjecter chaque couche comme matériau expérimental.
+
+CONTRAINTE
+  Aucune profondeur maximale théorique.
+  Arrêt uniquement si aucune nouvelle différence n'apparaît
+  ou si la branche devient indiscernable de son état précédent.
