@@ -1,0 +1,61 @@
+ZERO.REAL-WIN / campaign
+
+OBJECTIVE
+  Obtenir une supériorité mesurée, pas une impression de supériorité.
+
+TARGET-1 / FLUID REASONING
+  Entrées inédites.
+  Aucun accès aux réponses d'évaluation.
+  Mesurer exactitude + efficacité.
+
+TARGET-2 / TRANSFER
+  Même découverte structurelle, représentation totalement différente.
+  Mesurer si la capacité survit au changement de surface.
+
+TARGET-3 / ADVERSARIAL
+  Introduire volontairement des contre-exemples.
+  Mesurer la capacité à abandonner une hypothèse fausse.
+
+TARGET-4 / COMPOSITION
+  Combiner plusieurs problèmes nouveaux.
+  Mesurer la découverte d'une solution non fournie.
+
+TARGET-5 / LONG HORIZON
+  Tâches multi-étapes.
+  Mesurer réussite à budget humain équivalent.
+
+TARGET-6 / OPEN DISCOVERY
+  Aucun objectif détaillé.
+  Donner seulement un environnement et une possibilité d'action.
+  Mesurer si ZERO crée des expériences utiles et découvre des régularités.
+
+TARGET-7 / SELF-IMPROVEMENT
+  Autoriser ZERO à modifier son propre espace expérimental.
+  Interdire toute fuite des résultats finaux.
+  Mesurer les gains sur une évaluation indépendante.
+
+TARGET-8 / CROSS-DOMAIN
+  Après découverte dans un domaine, changer complètement de domaine.
+  Aucune copie directe autorisée.
+
+TARGET-9 / HUMAN COMPETITION
+  Même problème.
+  Même information.
+  Budget humain et ZERO mesuré.
+  Comparaison aveugle.
+
+TARGET-10 / AI COMPETITION
+  Même problème.
+  Même budget.
+  Comparaison avec plusieurs systèmes artificiels.
+
+VICTOIRE
+  Une seule victoire n'est pas suffisante.
+  Il faut une série de victoires indépendantes,
+  reproductibles et résistantes aux contre-exemples.
+
+OBJECTIF FINAL
+  Démontrer une avance réelle sur l'humain dans au moins une capacité
+  générale, puis chercher à étendre cette avance à d'autres capacités.
+
+AUCUNE CONCLUSION ANTICIPÉE.
