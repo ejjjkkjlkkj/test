@@ -1,0 +1,52 @@
+ZERO.COVERAGE / total experimental space
+
+PURPOSE
+  Explorer le champ sans choisir une famille humaine comme modèle.
+  Toute transformation est une hypothèse locale, jamais une vérité.
+
+AXES
+  01 apparition
+  02 disparition
+  03 voisinage
+  04 liaison
+  05 collision
+  06 séparation
+  07 fusion
+  08 répétition
+  09 écho
+  10 mémoire
+  11 oubli
+  12 réinjection
+  13 délai
+  14 anticipation
+  15 inversion
+  16 miroir
+  17 divergence
+  18 contradiction
+  19 silence
+  20 vide
+  21 pression
+  22 dérive
+  23 destruction
+  24 renaissance
+  25 aveuglement
+  26 rencontre
+  27 compression
+  28 expansion
+  29 permutation
+  30 rotation
+  31 substitution
+  32 conservation
+  33 instabilité
+  34 stabilité
+  35 récursion
+  36 boucle
+  37 rupture
+  38 croisement
+  39 ignorance
+  40 contexte
+
+COUVERTURE
+  Chaque RUN déclare les axes utilisés.
+  Aucun axe n'est validé par réputation ou théorie humaine.
+  Un axe reste ouvert tant qu'un champ nouveau ne l'a pas confronté.
