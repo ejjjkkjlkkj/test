@@ -1,42 +1,35 @@
-# ZERO — Universal Accessible Machine Language
+# ZERO — Machine-First Universal Accessible Language
 
-This project starts from the machine itself.
+The language starts as low as possible.
 
-The objective is not to make an inaccessible machine accessible later through an application, screen reader, browser, or accessibility API.
+Not at the browser.
+Not at the operating system.
+Not at a GUI.
+Not at a screen reader.
+Not at an accessibility API.
 
-The objective is to design a language and machine model in which accessibility exists from the first layer.
+The conceptual path is:
 
-## Core thesis
-
-> Accessibility begins at the machine.
-
-The stack is:
-
-MACHINE
--> MACHINE SEMANTICS
--> LANGUAGE
+PHYSICAL MACHINE
+-> CPU / MACHINE STATE
+-> MINIMAL PRIMITIVES
+-> LANGUAGE CORE
+-> SEMANTIC MACHINE
 -> RUNTIME
 -> APPLICATION
 -> CONTENT
 -> USER
 
-Every layer must preserve semantic accessibility.
+The language must preserve meaning from the bottom upward.
 
-## Universal requirement
+## Foundational rule
 
-Anything the system can represent, execute, observe, display, hear, receive, transmit, store, or control must have an intrinsic semantic representation and an equivalent interaction path.
+> If accessibility is added after a lower layer has discarded meaning, it is already too late.
 
-This includes hardware, firmware, operating environments, applications, websites, images, photographs, graphics, video, audio, games, CAPTCHA, unknown objects, and future technologies.
+Therefore accessibility is defined at the machine-language boundary itself.
 
-## No afterthought
+## Goal
 
-Accessibility is not a plugin.
-It is not a screen-reader API.
-It is not a browser feature.
-It is not a UI layer.
+Build a language and machine environment in which anything representable by the system — including hardware, firmware, applications, content and unknown future objects — has an intrinsic semantic representation and equivalent interaction paths.
 
-It is a property of the machine-language model itself.
-
-## Current objective
-
-Design the machine semantics and language core first, then implement the smallest native execution model capable of proving the invariants.
+The current repository is a specification foundation. The next implementation target is the minimal machine primitive layer, not a conventional application runtime.
