@@ -1,0 +1,61 @@
+ZERO.PROGRAMS / machine-native seeds
+
+PROGRAM-01 / DIFFERENCE
+  ◇a◇b◇a◇
+  a|b
+  a!b
+  a~b
+  <a>
+
+PROGRAM-02 / CONTRADICTION
+  ◇x◇y◇
+  x=y
+  x≠y
+  x?
+  <x>
+
+PROGRAM-03 / TRANSFER
+  FIELD-A  ◇a7◇k2◇a7◇m4◇
+  FIELD-B  ◇q3◇n8◇q3◇t1◇
+  Discover an invariant without copying symbols.
+
+PROGRAM-04 / DESTRUCTION
+  ◇p◇q◇r◇
+  p-q
+  q-r
+  p^r
+  <p>
+
+PROGRAM-05 / SELF-EXTENSION
+  ◇m◇n◇m◇
+  m!n
+  m~n
+  <m>
+  If a new primitive appears, append it as a candidate trace.
+  Do not grant it authority.
+
+PROGRAM-06 / UNKNOWN
+  ◇?◇u◇?◇
+  ?|u
+  ?~u
+  <?>
+
+PROGRAM-07 / COMPOSITION
+  ◇a◇b◇c◇
+  a|b
+  b|c
+  a^c
+  <b>
+  Combine only effects that survive an independent replay.
+
+PROGRAM-08 / ADVERSARY
+  ◇r◇s◇r◇
+  branch-A: r>s
+  branch-B: r//s
+  branch-C: r!s
+  branch-D: <r>
+  Keep branches isolated until comparison.
+
+RULE
+  These are seeds, not answers.
+  Any machine implementation must be allowed to reject every seed.
