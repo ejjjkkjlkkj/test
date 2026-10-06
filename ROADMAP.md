@@ -1,31 +1,58 @@
-# Roadmap
+# Roadmap ZERO
 
-## Phase 0 — Foundations
+ZERO est poussé simultanément dans quatre directions : machine, langage, monde et accessibilité.
 
-Define the smallest machine-independent semantic primitives.
+## 0 — Fondations
 
-## Phase 1 — Machine bootstrap
+Sémantique, invariants, objets, transitions, capacités, événements, mémoire.
 
-Construct the minimal execution environment directly against the machine boundary.
+## 1 — Machine réelle
 
-## Phase 2 — Semantic machine
+CPU, mémoire, firmware, GPU, moniteur, audio, entrées, stockage, énergie, sécurité et périphériques.
 
-Expose CPU state, memory, devices, events, storage, input/output, firmware state, power and security as semantic objects.
+## 2 — Langage-machine
 
-## Phase 3 — Native language
+Représentation native, exécution minimale, communication directe avec l'état machine et primitives sémantiques.
 
-Define syntax, representation and execution without inheriting an existing high-level runtime.
+## 3 — Interaction native
 
-## Phase 4 — Universal interaction
+Navigation, interruption, parole, braille, clavier, affichage, tactile et futures modalités sur le même noyau.
 
-Build speech, braille, keyboard, visual and other projections over the same semantic model.
+## 4 — Réseau
 
-## Phase 5 — Native applications
+Machines locales et distantes, découverte, identité, authentification, capacités, événements, sessions et communication bidirectionnelle.
 
-Build the browser and other applications directly on the language.
+## 5 — Monde des objets
 
-## Phase 6 — Unknown-world validation
+Texte, image, photo, graphique, tableau, vidéo, audio, carte, document, formulaire, jeu, CAPTCHA, application et objets inconnus.
 
-Test arbitrary hardware, unknown devices, images, documents, applications, web content, games, CAPTCHA and future object types.
+## 6 — Navigateur ZERO
 
-Every phase is invalid if it breaks the foundational accessibility invariants.
+Web et interfaces distantes comme objets sémantiques, avec navigation et interaction natives.
+
+## 7 — Applications
+
+Construire des applications directement dans le langage sans abandonner les invariants machine/accessibilité.
+
+## 8 — Auto-hébergement
+
+ZERO construit et maintient son propre environnement.
+
+## 9 — Monde inconnu
+
+Tester sur matériel, réseaux, périphériques, contenus et machines non prévus.
+
+### Invariant global
+
+Chaque étape doit préserver :
+
+IDENTITY
+MEANING
+STATE
+RELATIONS
+CAPABILITIES
+EVENTS
+OBSERVATIONS
+SECURITY
+UNCERTAINTY
+ACCESSIBILITY

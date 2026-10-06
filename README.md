@@ -1,8 +1,6 @@
 # ZERO — Machine-First Universal Accessible Language
 
-ZERO commence au niveau de la machine.
-
-Il ne construit pas d'abord une application puis une couche d'accessibilité. Le CPU, la mémoire, le GPU, le moniteur, l'audio, les entrées, le stockage, le réseau, le firmware et les périphériques font partie du même espace sémantique que les objets logiciels.
+ZERO commence au niveau de la machine et s'étend jusqu'au monde distribué.
 
 ## Architecture
 
@@ -12,41 +10,34 @@ PHYSIQUE
 -> LANGUAGE CORE
 -> SEMANTIC OBJECTS
 -> RUNTIME
--> APPLICATION / CONTENT
 -> NETWORK / REMOTE MACHINES
+-> APPLICATION / CONTENT
 -> UNIVERSAL INTERACTION
 -> MODALITY
 
-La direction de communication est :
+ZERO doit communiquer avec la machine locale : CPU, mémoire, GPU, moniteur, audio, entrées, stockage, firmware et périphériques.
 
-PHYSIQUE
--> OBSERVATION
--> EVENT
--> INTENT
--> TRANSITION
--> STATE
--> PROJECTION
--> PHYSIQUE
+ZERO doit aussi communiquer avec d'autres machines :
 
-## Communication entre machines
+PC
+<-> iPhone
+<-> tablette
+<-> PC
+<-> serveur
+<-> périphérique
+<-> future machine ZERO
 
-Une autre machine n'est pas une simple adresse réseau.
-
-PC ZERO
-<-> réseau
-<-> iPhone / PC / tablette / serveur / périphérique / future machine ZERO
-
-ZERO représente la machine distante comme une entité sémantique avec identité, état, capacités, événements, observations, relations, sécurité et incertitude.
-
-Le fait d'être sur le même réseau ne donne pas automatiquement l'autorisation d'agir.
+Une machine distante est un objet sémantique distant, jamais une simple adresse réseau.
 
 ## Accessibilité
 
-L'accessibilité est native jusque dans les communications distantes.
+L'accessibilité n'est pas une couche ajoutée après coup.
 
-Un objet local ou distant peut être projeté vers :
+Elle est présente dans le noyau de chaque objet, machine locale ou distante, contenu, événement, résultat et interaction.
 
-- parole ;
+Les mêmes objets et transitions peuvent être projetés vers :
+
+- voix ;
 - braille ;
 - clavier ;
 - affichage ;
@@ -54,10 +45,36 @@ Un objet local ou distant peut être projeté vers :
 - automatisation ;
 - futures modalités.
 
-La distance, le protocole ou le périphérique ne doivent pas détruire le sens.
+## Monde réel
 
-## Règle fondamentale
+ZERO vise :
 
-> Le sens ne doit pas être détruit par une couche inférieure, un périphérique ou une communication réseau avant que l'utilisateur puisse y accéder.
+- CPU ;
+- GPU ;
+- moniteurs ;
+- périphériques ;
+- réseau ;
+- autres machines ;
+- texte ;
+- image ;
+- photo ;
+- graphique ;
+- tableau ;
+- vidéo ;
+- audio ;
+- carte ;
+- document ;
+- jeu ;
+- formulaire ;
+- CAPTCHA ;
+- applications ;
+- web ;
+- objets inconnus.
 
-Le langage doit donc communiquer avec la machine locale et avec les autres machines, tout en conservant identité, sécurité, événements et accessibilité.
+## Règle
+
+> Le langage, la machine, la communication et l'accessibilité doivent former une seule architecture sémantique.
+
+L'objectif n'est donc pas seulement de créer un langage.
+
+L'objectif est de créer un modèle de machine capable de communiquer avec son environnement sans sacrifier le sens, la sécurité ou l'accessibilité.
