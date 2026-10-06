@@ -2,6 +2,7 @@ mod archive;
 mod challenge;
 mod core;
 mod discovery;
+mod emergence;
 mod evaluator;
 mod experiment;
 mod generator;
@@ -24,7 +25,8 @@ fn main() {
         }
         Some("experiment")=>println!("{}",experiment::run()),
         Some("discover")=>println!("{}",experiment::run()),
+        Some("emerge")=>println!("{}",emergence::report()),
         Some("benchmark")=>println!("{}",challenge::run(&mut mind)),
-        _=>println!("TEST experimental intelligence core\n  solve <problem>\n  experiment\n  benchmark"),
+        _=>println!("TEST experimental intelligence core\n  solve <problem>\n  experiment\n  emerge\n  benchmark"),
     }
 }
