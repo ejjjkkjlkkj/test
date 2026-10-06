@@ -1,0 +1,32 @@
+ZERO.SELF-GENERATION / règles produites par l'expérience
+
+DEPART
+  Le champ contient uniquement des formes.
+
+ETAPE-A
+  une transformation apparaît.
+
+ETAPE-B
+  sa trace est conservée.
+
+ETAPE-C
+  la trace devient matériau.
+
+ETAPE-D
+  plusieurs traces sont confrontées.
+
+ETAPE-E
+  une relation entre traces peut devenir une nouvelle primitive.
+
+ETAPE-F
+  la nouvelle primitive peut être supprimée.
+
+ETAPE-G
+  si elle revient, elle revient comme hypothèse, pas comme loi.
+
+INTERDICTION
+  aucune liste complète de primitives n'est considérée définitive.
+
+TEST
+  Une expérience réussie doit pouvoir modifier l'espace des expériences
+  suivantes sans recevoir une nouvelle règle externe.
