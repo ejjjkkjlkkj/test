@@ -33,11 +33,12 @@ func Transition(state SemanticState, result Result) (SemanticState, error) {
 
 // EngineReceipt is the complete deterministic bootstrap output of one semantic operation.
 type EngineReceipt struct {
-	Canonical string
+	Canonical     string
 	Authorization Authorization
-	Result Result
-	Previous SemanticState
-	Next SemanticState
+	Result        Result
+	Previous      SemanticState
+	Next          SemanticState
+	Transitioned  bool
 }
 
 // ExecuteRecord performs decode/validate, authorization, semantic execution and state transition.
