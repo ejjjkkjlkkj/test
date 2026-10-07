@@ -31,6 +31,9 @@ jobs:
       - name: Run ZERO machine ISA
         shell: pwsh
         run: ./tests/zero-machine-isa.ps1
+      - name: Run ZERO universal execution
+        shell: pwsh
+        run: ./tests/zero-universal-execution.ps1
       - name: Run repository-wide acceptance gate
         shell: pwsh
         run: ./tests/zero-repository-gate.ps1
