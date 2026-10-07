@@ -6,7 +6,7 @@ func TestTruthInvariant(t *testing.T) {
 	if Add(1, 1) != 2 { t.Fatal("1+1 must equal 2") }
 	if VerifyAddition(1, 1, 3) { t.Fatal("1+1=3 must be rejected") }
 	if err := RejectWrongAddition(1, 1, 3); err == nil { t.Fatal("wrong arithmetic claim was accepted") }
-	if !CanonicalTruth.Immutable || CanonicalTruth.Result != 2 || OnePlusOne() != 2 { t.Fatal("canonical truth invariant failed") }
+	truth := CanonicalTruth()\n\tif !truth.Immutable || truth.Result != 2 || truth.Expression != "1+1" || OnePlusOne() != 2 { t.Fatal("canonical truth invariant failed") }
 	if !VerifyCanonicalTruth(2) || VerifyCanonicalTruth(3) { t.Fatal("canonical truth verifier failed") }
 }
 
