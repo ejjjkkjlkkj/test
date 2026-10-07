@@ -2,7 +2,28 @@
 
 ## Statut
 
-DEFINED / IMPLEMENTATION CONTRACT
+CONTRACT = DEFINED
+BOOTSTRAP IMPLEMENTATION = IMPLEMENTED
+BOOTSTRAP TESTS = DEFINED (execution status supplied by CI)
+HARDWARE = NOT_PROVEN
+
+## Référence normative
+
+L'unité d'entrée est le RECORD défini par `ZERO-MACHINE-FORMAT.md`.
+
+Il contient exactement, dans cet ordre :
+
+1. VERSION
+2. TYPE
+3. IDENTITY
+4. SEQUENCE
+5. TIME
+6. SOURCE
+7. TARGET
+8. PAYLOAD
+9. PROOF
+
+L'implémentation bootstrap Go sous `bootstrap/go` sert uniquement à vérifier cette représentation. Go n'est pas le langage fondamental de ZERO.
 
 ## Pipeline
 
@@ -13,140 +34,110 @@ INPUT
 → EVENT
 → RESULT
 
-Chaque étape produit un état explicite. Une étape en erreur arrête la transition correspondante.
-
-## Entrée
-
-Un record ZERO doit contenir au minimum :
-
-TYPE
-ID
-SOURCE
-TARGET
-SEQUENCE
-STATE
-PAYLOAD
-PROOF
+Une erreur d'une étape ne peut pas être transformée silencieusement en succès.
 
 ## Validation
 
-Le validateur rejette :
+Le validateur rejette au minimum :
 
 - un champ obligatoire absent ;
-- une séquence invalide ;
-- un état inconnu ;
-- une preuve déclarée sans définition correspondante ;
-- une livraison déclarée DELIVERED sans observation de livraison ;
+- une séquence non numérique ;
+- un enregistrement mal formé ;
+- un échappement invalide ;
 - une contradiction interne.
 
-Le validateur ne complète pas silencieusement une donnée absente.
+Une donnée absente reste absente. Une donnée inconnue reste UNKNOWN.
 
 ## Transition
 
-Une transition est :
+`STATE + INPUT + RULE_VERSION → NEW_STATE`
 
-STATE + INPUT + RULE → NEW_STATE
-
-La transition doit être déterministe pour un même état, une même entrée et une même version de règle.
+Pour une même entrée, un même état et une même version de règle, le résultat doit être identique.
 
 Une contradiction produit :
 
-ERROR
-CONTRADICTION
-INVALID
+`CONTRADICTION`
 
-et ne choisit jamais arbitrairement un résultat.
+et ne peut jamais produire arbitrairement `DELIVERED`, `SUCCESS` ou un autre état favorable.
 
-## Événement
+## Événement et résultat
 
-Chaque transition acceptée peut produire un événement structuré :
+Une transition acceptée doit conserver :
 
-EVENT
-ID
-SOURCE
-TARGET
-SEQUENCE
-PREVIOUS_STATE
-NEW_STATE
-RESULT
-PROOF
-
-L'événement conserve la provenance.
-
-## Résultat
-
-Un résultat possède au minimum :
-
-STATUS
-VALUE
-SOURCE_EVENT
-PROOF
-
-Valeurs minimales :
-
-SUCCESS
-REJECTED
-FAILED
-DEFERRED
-UNKNOWN
-CONTRADICTION
+- l'identité de la source ;
+- la séquence ;
+- l'état précédent ;
+- l'état suivant ;
+- le résultat ;
+- le niveau de preuve.
 
 ## Transport
 
-Le transport intervient après la construction du message sémantique.
+Le transport est extérieur au sens du RECORD.
 
-EXECUTE(message) ne dépend pas du transport.
+`SEMANTICS(message)` ne change pas quand le transport change.
 
-SEND(message, transport) produit un résultat de livraison sans modifier le message source.
+Les états de livraison restent distincts :
 
-## Invariant fondamental
+`DELIVERED`
+`DEFERRED`
+`FAILED`
+`UNKNOWN`
 
-Pour tout transport T :
-
-SEMANTICS(SEND(M,T)) = SEMANTICS(M)
-
-si SEND retourne un message ou une représentation de message.
-
-En cas d'échec :
-
-DELIVERY != DELIVERED
-
-Le message original reste inchangé.
+Ni DEFERRED ni FAILED ne signifient DELIVERED.
 
 ## Accessibilité
 
-Les résultats de l'exécuteur sont projetables vers :
+Une projection peut cibler :
 
 VOICE
 BRAILLE
 KEYBOARD
 DISPLAY
 TOUCH
+POINTER
 NETWORK
 AUTOMATION
 
-La projection ne modifie jamais RESULT.
+Toutes les projections doivent recevoir la même structure sémantique. Aucune projection ne peut augmenter la preuve ou modifier le résultat.
+
+## Reproductibilité
+
+La validation bootstrap doit être reproductible à partir :
+
+- du dépôt ;
+- de la version de Go déclarée ;
+- des fichiers du bootstrap ;
+- des vecteurs versionnés ;
+- des tests versionnés.
+
+Le workflow GitHub Actions correspondant ne constitue pas une preuve matérielle.
 
 ## Preuve
 
-L'exécuteur ne peut annoncer qu'un niveau effectivement établi.
+`DEFINED != IMPLEMENTED != TESTED != EXECUTED != OBSERVED != PROVEN`
 
-DEFINED n'est pas EXECUTED.
-EXECUTED n'est pas OBSERVED.
-OBSERVED n'est pas HARDWARE.
-HARDWARE n'est pas RF_PROVEN.
+Un test logiciel réussi prouve uniquement le comportement testé de cette implémentation.
 
-## Premier objectif d'implémentation
+Il ne prouve pas automatiquement :
 
-Créer une implémentation minimale capable de :
+- CPU universel ;
+- autre architecture ;
+- téléphone ;
+- radio ;
+- réseau réel ;
+- satellite ;
+- fonctionnement hors ligne physique ;
+- fonctionnement aérien ;
+- accessibilité de tout matériel.
 
-1. lire un record ;
-2. valider ses champs ;
-3. effectuer une transition déterministe ;
-4. produire un événement ;
-5. produire un résultat ;
-6. rejeter une contradiction ;
-7. conserver UNKNOWN ;
-8. ne pas confondre livraison et exécution.
+## Objectif suivant
 
-Cette implémentation devra ensuite être testée par les vecteurs existants.
+Faire correspondre les vecteurs de transport et de round-trip au RECORD canonique, puis ajouter :
+
+1. vérification de séquence sur flux ;
+2. conservation explicite des champs inconnus ;
+3. génération d'événements ;
+4. résultat sérialisable ;
+5. tests croisés encodeur/décodeur ;
+6. tests d'accessibilité sans changement sémantique.
