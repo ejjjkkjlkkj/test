@@ -52,12 +52,11 @@ func ExecuteRecord(line, actor, operation string, state SemanticState) (EngineRe
 	if err != nil {
 		return EngineReceipt{}, err
 	}
-	req := ExecutionRequest{
-		Operation: Instruction(operation),
-		Actor: actor,
-		Target: record.Target,
-	}
-	decision := Authorize(req)
+	decision := AuthorizeSemantic(SemanticRequest{
+		Operation: operation,
+		Actor:     actor,
+		Target:    record.Target,
+	})
 	if !decision.Allowed {
 		return EngineReceipt{Canonical: canonical, Authorization: decision}, errors.New(decision.Reason)
 	}
