@@ -5,7 +5,6 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"io"
 	"os"
 	"strings"
 
@@ -26,8 +25,7 @@ func main() {
 		return
 	}
 
-	fmt.Fprintf(os.Stderr, "ZERO AI | Ollama=%s | model=%s
-", client.Host, client.Model)
+	fmt.Fprintf(os.Stderr, "ZERO AI | Ollama=%s | model=%s\n", client.Host, client.Model)
 	fmt.Fprintln(os.Stderr, "Enter a prompt. Ctrl+Z then Enter exits on Windows; Ctrl+D exits on Unix.")
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
@@ -62,5 +60,3 @@ func envOr(name, fallback string) string {
 	}
 	return fallback
 }
-
-var _ io.Reader
