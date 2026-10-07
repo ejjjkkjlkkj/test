@@ -34,26 +34,26 @@ jobs:
       - uses: actions/checkout@v4
       - name: Verify repository integrity
         run: git fsck --full --strict
-      - name: Build C11 browser core with hardening
+      - name: Build hardened campaign binary
         working-directory: browser-core
         run: |
-          cc -std=c11 -Wall -Wextra -Wpedantic -Wconversion -Wshadow -Werror              -fstack-protector-strong -D_FORTIFY_SOURCE=3              -O2 -o zero-core main.c zero_core.c zero_dom.c zero_media.c zero_reader.c
-      - name: Run shard
+          cc -std=c11 -Wall -Wextra -Wpedantic -Wconversion -Wshadow -Werror              -fstack-protector-strong -D_FORTIFY_SOURCE=3 -O2              -o zero-campaign zero_campaign.c zero_core.c
+      - name: Run exact shard
         env:
           ZERO_SHARD: ${{ matrix.shard }}
           ZERO_CASES_PER_SHARD: 16777216
-        run: |
-          echo "Shard=$ZERO_SHARD"
-          echo "Cases=$ZERO_CASES_PER_SHARD"
-          echo "The executable stress harness must fail closed on any invariant violation."
-          test -x browser-core/zero-core
-      - name: Emit immutable shard manifest
+        working-directory: browser-core
+        run: ./zero-campaign
+      - name: Emit shard manifest
+        env:
+          ZERO_SHARD: ${{ matrix.shard }}
         run: |
           mkdir -p artifacts
           {
             echo "shard=${ZERO_SHARD}"
             echo "cases=16777216"
             echo "commit=${GITHUB_SHA}"
+            echo "campaign=2^32"
           } > artifacts/shard-${{ matrix.shard }}.txt
       - uses: actions/upload-artifact@v4
         with:
