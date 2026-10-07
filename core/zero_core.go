@@ -23,9 +23,24 @@ const (
 
 type Modality string
 
-var Modalities = []Modality{
+var modalities = [...]Modality{
 	"VOICE", "BRAILLE", "KEYBOARD", "DISPLAY",
 	"TOUCH", "POINTER", "NETWORK", "AUTOMATION",
+}
+
+func IsModalitySupported(modality Modality) bool {
+	for _, supported := range modalities {
+		if modality == supported {
+			return true
+		}
+	}
+	return false
+}
+
+func Modalities() []Modality {
+	result := make([]Modality, len(modalities))
+	copy(result, modalities[:])
+	return result
 }
 
 type SemanticResult struct {
@@ -51,6 +66,9 @@ func RejectWrongAddition(a, b, claimed int64) error {
 func Project(result SemanticResult, modality Modality) (SemanticResult, error) {
 	if modality == "" {
 		return SemanticResult{}, errors.New("ACCESSIBILITY.MODALITY.EMPTY")
+	}
+	if !IsModalitySupported(modality) {
+		return SemanticResult{}, fmt.Errorf("ACCESSIBILITY.MODALITY.UNSUPPORTED: %s", modality)
 	}
 	return result, nil
 }
