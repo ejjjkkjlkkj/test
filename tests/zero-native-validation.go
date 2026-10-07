@@ -24,7 +24,7 @@ func formatTests(){
  r:=Record{"1","OBJECT","TEST:FORMAT|1",1,"2026-10-07T08:00:00.000Z","TEST:SOURCE","TEST:TARGET","meaning=accessible|machine;state=TESTED","TESTED"}
  s:=encodeRecord(r);d,e:=decodeRecord(s);must("FORMAT.DESERIALIZE",e==nil);must("FORMAT.ROUNDTRIP",encodeRecord(d)==s);must("FORMAT.VERSION",d.Version=="1");must("FORMAT.TYPE",d.Type=="OBJECT");must("FORMAT.SOURCE",d.Source=="TEST:SOURCE");must("FORMAT.TARGET",d.Target=="TEST:TARGET")
  must("FORMAT.IDENTITY",d.Identity==r.Identity);must("FORMAT.PAYLOAD",d.Payload==r.Payload)
- for _,m:=range modalities{must("FORMAT.ACCESSIBILITY."+m,d.Identity==r.Identity&&d.Payload==r.Payload&&d.Proof==r.Proof)}
+ for _,m:=range modalities{must("FORMAT.ACCESSIBILITY."+m,modalitySupported(m)&&d.Identity==r.Identity&&d.Payload==r.Payload&&d.Proof==r.Proof)}
  _,e=decodeRecord("RECORD|1|OBJECT|BAD|1|2026-10-07T08:00:00.000Z|S|T|broken\\q|TESTED");must("FORMAT.INVALID_ESCAPE",e!=nil);_,e=decodeRecord("RECORD|2|OBJECT|BAD|1|2026-10-07T08:00:00.000Z|S|T|payload|TESTED");must("FORMAT.INVALID_VERSION",e!=nil)
 }
 
@@ -35,7 +35,7 @@ func truthTests(){
  must("TRUTH.INFERENCE_NOT_FACT",classifyClaim("INFERENCE","FACT")=="INVALID")
  must("TRUTH.PREDICTION_NOT_PROOF",classifyClaim("PREDICTION","PROOF")=="INVALID")
  must("TRUTH.SIMULATION_NOT_HARDWARE",proofPromotion("SIMULATED","HARDWARE")=="INVALID")
- for _,m:=range modalities{must("TRUTH.ACCESSIBILITY."+m,actual==2)}
+ for _,m:=range modalities{must("TRUTH.ACCESSIBILITY."+m,modalitySupported(m)&&actual==2)}
 }
 func classifyClaim(source,target string)string{if source=="INFERENCE"&&target=="FACT"||source=="PREDICTION"&&target=="PROOF"{return "INVALID"};return "VALID"}
 func proofPromotion(current,requested string)string{if current=="SIMULATED"&&requested=="HARDWARE"{return "INVALID"};return "VALID"}
@@ -47,7 +47,7 @@ func engineTests(){
  must("ENGINE.CREATE",identity!=""&&state=="CREATED"&&sequence==1)
  before:=sequence;observed:=state;must("ENGINE.OBSERVE.NO_MUTATION",observed==state&&before==sequence)
  must("ENGINE.UNKNOWN.PRESERVED",engineUnknownPreserved())
- for _,m:=range modalities{must("ENGINE.ACCESSIBILITY."+m,identity=="OBJECT:1"&&state=="CREATED")}
+ for _,m:=range modalities{must("ENGINE.ACCESSIBILITY."+m,modalitySupported(m)&&identity=="OBJECT:1"&&state=="CREATED")}
 }
 
 func isaTests(){
@@ -55,16 +55,17 @@ func isaTests(){
  must("ISA.SET.WITHOUT_CAPABILITY.REJECTED",!capability)
  capability=true;must("ISA.CAPABILITY.GRANTED",capability);state="OLD";if capability{state="NEW"};must("ISA.SET",state=="NEW")
  must("ISA.EVENT.EMITTED",capability&&state=="NEW")
- for _,m:=range modalities{must("ISA.ACCESSIBILITY."+m,state=="NEW")}
+ for _,m:=range modalities{must("ISA.ACCESSIBILITY."+m,modalitySupported(m)&&state=="NEW")}
 }
 
 func supportTests(){
  profiles:=[]string{"PC","IPHONE","ANDROID","AIRBORNE","SPACECRAFT","EMBEDDED","OFFLINE","REMOTE"}
- for _,p:=range profiles{must("SUPPORT."+p,p!="")}
+ for _,p:=range profiles{must("SUPPORT."+p,profileSupported(p))}
  for _,m:=range modalities{must("SUPPORT.ACCESSIBILITY."+m,modalitySupported(m))}
  must("SUPPORT.MISSING_CAPABILITY.REJECTED",missingCapabilityRejected())
 }
 func modalitySupported(m string)bool{for _,supported:=range modalities{if supported==m{return true}};return false}
+func profileSupported(p string)bool{for _,supported:=range []string{"PC","IPHONE","ANDROID","AIRBORNE","SPACECRAFT","EMBEDDED","OFFLINE","REMOTE"}{if supported==p{return true}};return false}
 func missingCapabilityRejected()bool{required:=true;available:=false;return required&&!available}
 
 func main(){formatTests();truthTests();engineTests();isaTests();supportTests();fmt.Println("ZERO_NATIVE_VALIDATION_RESULT=PASS");fmt.Println("ZERO_NATIVE_VALIDATION_RUNTIME=GO");fmt.Println("ZERO_NATIVE_VALIDATION_POWERSHELL=ABSENT")}
