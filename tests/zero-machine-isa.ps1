@@ -99,7 +99,7 @@ if ($set.State -ne 'COMPLETED' -or $state.Objects['OBJ:ISA:1'].State -ne 'ACTIVE
 foreach($m in @('VOICE','BRAILLE','KEYBOARD','DISPLAY','TOUCH','POINTER','NETWORK','AUTOMATION')){
     $p=Project-Result $set $m
     foreach($k in @('Operation','State','Identity','Proof')){
-        if ([string]$p[$k] -cne [string]$set[$k]) { throw "ACCESSIBILITY.FAIL:${m}:$k" }
+        if ($p.Modality -cne $m -or [string]$p[$k] -cne [string]$set[$k]) { throw "ACCESSIBILITY.FAIL:${m}:$k" }
     }
 }
 
