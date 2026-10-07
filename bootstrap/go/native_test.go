@@ -53,3 +53,19 @@ func FuzzDecodeNativeNeverPanics(f *testing.F) {
 		_, _ = DecodeNative(data)
 	})
 }
+
+
+func TestNativeAndCanonicalRepresentationsAgree(t *testing.T) {
+	canonical := "RECORD|1|OBJECT|same|42|UNKNOWN|ZERO|WORLD|payload|DEFINED"
+	r, err := Decode(canonical)
+	if err != nil { t.Fatal(err) }
+	data, err := EncodeNative(r)
+	if err != nil { t.Fatal(err) }
+	decoded, err := DecodeNative(data)
+	if err != nil { t.Fatal(err) }
+	canonicalAgain, err := Encode(decoded)
+	if err != nil { t.Fatal(err) }
+	if canonicalAgain != canonical {
+		t.Fatalf("native representation changed canonical meaning: %q != %q", canonicalAgain, canonical)
+	}
+}
