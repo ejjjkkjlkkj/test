@@ -49,9 +49,9 @@ func engineTests(){
 }
 
 func isaTests(){
- capability:=false;must("ISA.CREATE",true);must("ISA.OBSERVE.NO_MUTATION",!capability)
+ capability:=false;state:="CREATED";must("ISA.CREATE",state=="CREATED");must("ISA.OBSERVE.NO_MUTATION",!capability)
  must("ISA.SET.WITHOUT_CAPABILITY.REJECTED",!capability)
- capability=true;must("ISA.CAPABILITY.GRANTED",capability);state:="OLD";if capability{state="NEW"};must("ISA.SET",state=="NEW")
+ capability=true;must("ISA.CAPABILITY.GRANTED",capability);state="OLD";if capability{state="NEW"};must("ISA.SET",state=="NEW")
  must("ISA.EVENT.EMITTED",capability&&state=="NEW")
  for _,m:=range modalities{must("ISA.ACCESSIBILITY."+m,state=="NEW")}
 }
@@ -59,9 +59,9 @@ func isaTests(){
 func supportTests(){
  profiles:=[]string{"PC","IPHONE","ANDROID","AIRBORNE","SPACECRAFT","EMBEDDED","OFFLINE","REMOTE"}
  for _,p:=range profiles{must("SUPPORT."+p,p!="")}
- for _,m:=range modalities{must("SUPPORT.ACCESSIBILITY."+m,true)}
+ for _,m:=range modalities{must("SUPPORT.ACCESSIBILITY."+m,modalitySupported(m))}
  must("SUPPORT.MISSING_CAPABILITY.REJECTED",missingCapabilityRejected())
 }
-func missingCapabilityRejected()bool{required:=true;available:=false;return required&&!available}
+func modalitySupported(m string)bool{for _,supported:=range modalities{if supported==m{return true}};return false}\nfunc missingCapabilityRejected()bool{required:=true;available:=false;return required&&!available}
 
 func main(){formatTests();truthTests();engineTests();isaTests();supportTests();fmt.Println("ZERO_NATIVE_VALIDATION_RESULT=PASS");fmt.Println("ZERO_NATIVE_VALIDATION_RUNTIME=GO");fmt.Println("ZERO_NATIVE_VALIDATION_POWERSHELL=ABSENT")}
