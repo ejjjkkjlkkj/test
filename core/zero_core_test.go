@@ -19,9 +19,9 @@ func TestAccessibilityPreservesSemantics(t *testing.T) {
     want:=SemanticResult{Identity:"ARITHMETIC:1+1",Operation:"ADD",Value:"2",Proof:ProofTested}
     for _,modality:=range Modalities() { got,err:=Project(want,modality); if err!=nil { t.Fatalf("%s: %v",modality,err) }; if got!=want { t.Fatalf("%s changed semantic result: %#v",modality,got) } }
 }
-func TestProofPromotion(t *testing.T) {
-    for _,pair:=range [][2]Proof{{ProofSimulated,ProofHardware},{ProofQEMU,ProofHardware},{ProofHardware,ProofRF},{ProofRF,ProofSatellite}} {
-        if IsProofPromotionAllowed(pair[0],pair[1]) { t.Fatalf("illegal proof promotion %s -> %s accepted",pair[0],pair[1]) }
+func TestProofPromotionRejectsNonAdjacentEvidence(t *testing.T) {
+    for _,pair:=range [][2]Proof{{ProofUnknown,ProofTested},{ProofDefined,ProofHardware},{ProofSimulated,ProofHardware},{ProofQEMU,ProofRF},{ProofHardware,ProofSatellite}} {
+        if IsProofPromotionAllowed(pair[0],pair[1]) { t.Fatalf("unsupported proof jump %s -> %s accepted",pair[0],pair[1]) }
     }
 }
 func TestRecordRoundTrip(t *testing.T) {
