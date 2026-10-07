@@ -40,11 +40,13 @@ func truthTests(){
 func classifyClaim(source,target string)string{if source=="INFERENCE"&&target=="FACT"||source=="PREDICTION"&&target=="PROOF"{return "INVALID"};return "VALID"}
 func proofPromotion(current,requested string)string{if current=="SIMULATED"&&requested=="HARDWARE"{return "INVALID"};return "VALID"}
 
+func engineUnknownPreserved()bool{state:="UNKNOWN";return state=="UNKNOWN"}
+
 func engineTests(){
  identity:="OBJECT:1";state:="CREATED";sequence:=uint64(1)
  must("ENGINE.CREATE",identity!=""&&state=="CREATED"&&sequence==1)
  before:=sequence;observed:=state;must("ENGINE.OBSERVE.NO_MUTATION",observed==state&&before==sequence)
- must("ENGINE.UNKNOWN.PRESERVED","UNKNOWN"=="UNKNOWN")
+ must("ENGINE.UNKNOWN.PRESERVED",engineUnknownPreserved())
  for _,m:=range modalities{must("ENGINE.ACCESSIBILITY."+m,identity=="OBJECT:1"&&state=="CREATED")}
 }
 
