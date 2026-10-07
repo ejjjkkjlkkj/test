@@ -1,34 +1,36 @@
 package core
 
-// TruthInvariant is deliberately independent of hardware, operating system,
-// runtime identity, clock, network, GPU and external services.
-//
-// Mathematical semantics are not configurable runtime state.
+// TruthInvariant is a read-only description of the normative mathematical
+// invariant. The actual value is held in an unexported constant so callers
+// cannot mutate the source of truth at runtime.
 type TruthInvariant struct {
 	Expression string
 	Result     int64
 	Immutable  bool
 }
 
+const canonicalOnePlusOne int64 = 2
+
 var CanonicalTruth = TruthInvariant{
 	Expression: "1+1",
-	Result:     2,
+	Result:     canonicalOnePlusOne,
 	Immutable:  true,
 }
 
-// OnePlusOne is the canonical semantic invariant. No hardware capability,
-// environment value or external input participates in its definition.
+// OnePlusOne returns the canonical mathematical invariant.
+// Hardware, OS, runtime identity, clock, network, GPU and external input
+// cannot participate in its definition.
 func OnePlusOne() int64 {
-	return CanonicalTruth.Result
+	return canonicalOnePlusOne
 }
 
 // VerifyCanonicalTruth rejects any claim that contradicts the invariant.
 func VerifyCanonicalTruth(claimed int64) bool {
-	return claimed == CanonicalTruth.Result
+	return claimed == canonicalOnePlusOne
 }
 
-// TruthCannotBePromotedOrOverridden prevents treating execution context as a
-// source of mathematical truth.
+// TruthCannotBePromotedOrOverridden verifies that execution context cannot
+// replace the normative invariant.
 func TruthCannotBePromotedOrOverridden() bool {
-	return CanonicalTruth.Immutable && OnePlusOne() == 2
+	return canonicalOnePlusOne == 2
 }
