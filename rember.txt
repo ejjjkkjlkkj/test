@@ -1,50 +1,5 @@
 ZERO — ÉTAT DE REPRISE
-
-Date de mise à jour: 2026-10-07
-Dépôt: ejjjkkjlkkj/test
-Branche de travail: work/zero-native-materialization-20261007
-HEAD de travail: 71877ebf42d73a942e3d4f21ed8b321009638890
-Base main observée: c237acf9a87a101ea6d5ac0164c9c8ee4494be51
-
-BUT
-Construire ZERO depuis zéro: machine, langage, communication, monde et accessibilité native sont une seule architecture sémantique.
-
-CONTRAINTES
-- Les langages classiques servent uniquement au bootstrap/validation; ils ne sont pas la fondation conceptuelle de ZERO.
-- Pas de DOM, API d'accessibilité ou représentation graphique comme source de vérité.
-- Aucune modalité privilégiée: voix, braille, clavier, visuel, tactile, automatisation ou futures modalités.
-- Accessibilité et sécurité restent distinctes.
-- Les objets inconnus restent représentés et inspectables.
-- Erreurs, refus, interruptions et incertitudes sont sémantiques.
-- Machine locale et machine distante suivent le même modèle.
-- Aucune preuve matérielle n'est déduite des tests bootstrap.
-
-ARCHITECTURE
-PHYSIQUE -> MACHINE -> SENS -> LANGAGE -> OBJET -> RELATION -> INTERACTION -> MONDE
-Noyau: IDENTITY + MEANING + STRUCTURE + STATE + RELATIONS + CAPABILITIES + EVENTS + OBSERVATIONS + PROJECTIONS + SECURITY + UNCERTAINTY
-Entrée: PHYSICAL -> OBSERVATION -> EVENT -> INTENT -> TRANSITION
-Sortie: STATE -> RESULT -> PROJECTION -> PHYSICAL
-
-ÉTAT ACTUEL PROUVÉ
-- représentation canonique RECORD déterministe;
-- représentation binaire native ZER0 avec encodeur/décodeur Go;
-- ISA minimale et mémoire bornée;
-- autorisation ISA et autorisation sémantique distinctes;
-- événements déterministes;
-- transitions d'état et contradictions non-transitionnelles;
-- pipeline sémantique complet;
-- exécution directe d'un RECORD canonique;
-- exécution d'un RECORD natif via le même pipeline;
-- CLI bootstrap stdin/stdout;
-- tests unitaires, déterministes et fuzz de non-panique;
-- CI ZERO validation et ZERO bootstrap validation PASS sur le HEAD courant.
-
-FRONTIÈRE DE PREUVE
-Le PASS actuel concerne le bootstrap logiciel reproductible.
-NON PROUVÉ: CPU natif, noyau/hyperviseur, isolation matérielle, sécurité physique, radio, fonctionnement matériel sans bootstrap.
-
-PROCHAINE ÉTAPE
-Connecter progressivement la représentation native à davantage de vecteurs d'exécution et renforcer les gates de conformité, sans confondre bootstrap logiciel et preuve matérielle.
-
-RÈGLE DE REPRISE
-Toute nouvelle fonctionnalité doit avoir une implémentation identifiable, un test exécutable, une preuve CI correspondante lorsque applicable et une frontière de preuve explicite.
+Ce fichier historique est conservé sans suppression.
+La référence actuelle est RESTART-STATE.md.
+Branche d'intégration active: work/integration-clean-20261007.
+La base main reste inchangée; les branches sources restent intactes.

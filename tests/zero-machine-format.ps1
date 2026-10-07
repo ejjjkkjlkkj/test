@@ -17,7 +17,19 @@ function Split-ZeroFields([string]$Line) {
 
 function Encode-ZeroField([string]$Value) {
     if ($null -eq $Value) { return '' }
-    $Value -replace "\\", "\\\\" -replace "\|", "\\|" -replace "`r", "\\r" -replace "`n", "\\n" -replace "`t", "\\t"
+
+    $buffer = [System.Text.StringBuilder]::new()
+    foreach ($c in $Value.ToCharArray()) {
+        switch ($c) {
+            '\' { [void]$buffer.Append('\\') }
+            '|'  { [void]$buffer.Append('\|') }
+            ([char]13) { [void]$buffer.Append('\r') }
+            ([char]10) { [void]$buffer.Append('\n') }
+            ([char]9)  { [void]$buffer.Append('\t') }
+            default { [void]$buffer.Append($c) }
+        }
+    }
+    $buffer.ToString()
 }
 
 function Decode-ZeroField([string]$Value) {
