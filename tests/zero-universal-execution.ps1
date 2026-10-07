@@ -53,6 +53,8 @@ function Test-SemanticEquivalence($A, $B) {
     if ($A.Result.ObjectId -ne $B.Result.ObjectId) { return $false }
     if ($A.Result.Meaning -ne $B.Result.Meaning) { return $false }
     if ($A.Result.Value -ne $B.Result.Value) { return $false }
+    if ($A.Accessible -ne $B.Accessible) { return $false }
+    if ($A.Proven -ne $B.Proven) { return $false }
     return $true
 }
 
