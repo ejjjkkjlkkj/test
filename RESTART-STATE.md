@@ -2,7 +2,7 @@ ZERO — ÉTAT DE REPRISE
 Date de sauvegarde: 2026-10-07
 Dépôt: ejjjkkjlkkj/test
 Branche: work/ci-reproducible-validation
-Dernier état connu: 7b198a3825ad39681542314c3bf04f51e01c80ab
+Dernier état connu: a12c86dbcae30a63f5ca3604a561bfaae47b3d70
 
 BUT
 Construire ZERO depuis zéro: machine, langage, communication, monde et accessibilité native sont une seule architecture sémantique.
