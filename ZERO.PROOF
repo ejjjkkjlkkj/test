@@ -51,9 +51,9 @@ B1
   Required: refinement/correctness proof.
 
 B2
-  browser-core/zero_core.c stores last_event in a global object.
-  This creates cross-instance/shared-state risk.
-  Required: event state owned by ZeroCore or a formally protected equivalent.
+  FIXED in the native prototype: event state is now owned by ZeroCore and
+  zero_last_event() requires the owning core instance. The remaining obligation
+  is to prove the isolation property and add an adversarial two-instance test.
 
 B3
   ZERO.EXECUTION says a transition is accepted only when it changes the
@@ -62,9 +62,20 @@ B3
 
 B4
   The current proof model does not yet cover memory safety, device authority,
-  network authority, GPU/display authority, parser correctness, or hostile
-  external effects.
+  network authority, GPU/display authority, parser correctness, side channels,
+  accessibility preservation, recovery, or hostile external effects.
   Required: additional formal models and refinement proofs.
+
+B5
+  The experimental Rust discovery engine, C browser prototype and Rocq model
+  remain separate evidence domains. Required: a shared semantic contract and
+  refinement chain.
+
+SUPERSET
+
+  docs/PROPERTY-SUPERSET.md defines P01-P35, extending I0-I10 with authority,
+  mediation, provenance, concurrency, device effects, compiler preservation,
+  accessibility, self-extension containment, recovery and proof composition.
 
 PROMOTION RULE
 
