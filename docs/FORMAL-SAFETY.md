@@ -106,3 +106,18 @@ The strongest defensible claim is:
 "ZERO satisfies the stated security/safety specification for the formally modeled core under the stated machine and environment assumptions."
 
 Absolute real-world infallibility is not a meaningful test result because the physical machine, compiler, firmware, hardware, specification, and environment introduce assumptions outside the language semantics.
+
+## Extreme verification target
+
+The campaign target is exactly 10^74 deterministic logical cases.
+
+This number is deliberately far beyond ordinary exhaustive testing. The
+campaign SHALL use mathematical range coverage rather than pretending that a
+finite runner can materialize all cases at once.
+
+A verifier must prove coverage of [0,10^74) from non-overlapping range
+manifests. Execution and proof remain separate verdicts.
+
+10^74 PASS cases still do not establish a universal theorem. Universal
+security claims require machine-checked proofs over the formal semantics and
+a refinement proof connecting those semantics to the implementation.
