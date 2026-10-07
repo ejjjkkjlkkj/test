@@ -22,6 +22,9 @@ jobs:
       - name: Run mandatory accessibility gate
         shell: pwsh
         run: ./tests/zero-accessibility-gate.ps1
+      - name: Run hardware-independent truth portability
+        shell: pwsh
+        run: ./tests/zero-truth-portability.ps1
       - name: Run ZERO reference engine
         shell: pwsh
         run: ./tests/zero-reference-engine.ps1
