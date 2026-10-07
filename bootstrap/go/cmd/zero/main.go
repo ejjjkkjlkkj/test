@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"os"
 
-	zero "github.com/ejjjkkjlkkj/test/bootstrap/go"
+	zero "zero-bootstrap"
 )
 
 type output struct {
