@@ -41,13 +41,7 @@ type EngineReceipt struct {
 	Transitioned  bool
 }
 
-// ExecuteRecord performs decode/validate, authorization, semantic execution and state transition.
-// It is intentionally a pure reference pipeline around the existing deterministic primitives.
-func ExecuteRecord(line, actor, operation string, state SemanticState) (EngineReceipt, error) {
-	record, err := Decode(line)
-	if err != nil {
-		return EngineReceipt{}, err
-	}
+func executeRecord(record Record, actor, operation string, state SemanticState) (EngineReceipt, error) {
 	canonical, err := Encode(record)
 	if err != nil {
 		return EngineReceipt{}, err
@@ -80,4 +74,22 @@ func ExecuteRecord(line, actor, operation string, state SemanticState) (EngineRe
 		Canonical: canonical, Authorization: decision, Result: result,
 		Previous: state, Next: next, Transitioned: true,
 	}, nil
+}
+
+// ExecuteRecord performs decode/validate, authorization, semantic execution and state transition.
+func ExecuteRecord(line, actor, operation string, state SemanticState) (EngineReceipt, error) {
+	record, err := Decode(line)
+	if err != nil {
+		return EngineReceipt{}, err
+	}
+	return executeRecord(record, actor, operation, state)
+}
+
+// ExecuteNativeRecord performs native decode followed by the same deterministic semantic pipeline.
+func ExecuteNativeRecord(data []byte, actor, operation string, state SemanticState) (EngineReceipt, error) {
+	record, err := DecodeNative(data)
+	if err != nil {
+		return EngineReceipt{}, err
+	}
+	return executeRecord(record, actor, operation, state)
 }
