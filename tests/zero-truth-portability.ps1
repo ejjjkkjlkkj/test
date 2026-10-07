@@ -47,6 +47,7 @@ $modalities = @(
 )
 
 foreach ($modality in $modalities) {
+    if ($modality -notin $modalities) { throw "UNKNOWN MODALITY: $modality" }
     $semanticResult = [pscustomobject]@{
         identity = 'ARITHMETIC:1+1'
         operation = 'ADD'
