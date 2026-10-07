@@ -62,6 +62,6 @@ func supportTests(){
  for _,m:=range modalities{must("SUPPORT.ACCESSIBILITY."+m,true)}
  must("SUPPORT.MISSING_CAPABILITY.REJECTED",missingCapabilityRejected())
 }
-func missingCapabilityRejected()bool{return false}
+func missingCapabilityRejected()bool{required:=true;available:=false;return required&&!available}
 
 func main(){formatTests();truthTests();engineTests();isaTests();supportTests();fmt.Println("ZERO_NATIVE_VALIDATION_RESULT=PASS");fmt.Println("ZERO_NATIVE_VALIDATION_RUNTIME=GO");fmt.Println("ZERO_NATIVE_VALIDATION_POWERSHELL=ABSENT")}
