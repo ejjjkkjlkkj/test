@@ -60,3 +60,32 @@ func TestModalitiesCannotMutateCoreRegistry(t *testing.T) {
 		t.Fatal("VOICE modality disappeared")
 	}
 }
+
+func TestProofPromotionRequiresAdjacentEvidence(t *testing.T) {
+	allowed := [][2]Proof{
+		{ProofUnknown, ProofDefined},
+		{ProofDefined, ProofImplemented},
+		{ProofImplemented, ProofTested},
+		{ProofTested, ProofSimulated},
+		{ProofSimulated, ProofQEMU},
+		{ProofQEMU, ProofHardware},
+		{ProofHardware, ProofRF},
+		{ProofRF, ProofSatellite},
+	}
+	for _, pair := range allowed {
+		if !IsProofPromotionAllowed(pair[0], pair[1]) {
+			t.Fatalf("valid adjacent promotion %s -> %s rejected", pair[0], pair[1])
+		}
+	}
+	for _, pair := range [][2]Proof{
+		{ProofUnknown, ProofTested},
+		{ProofDefined, ProofHardware},
+		{ProofSimulated, ProofHardware},
+		{ProofQEMU, ProofRF},
+		{ProofHardware, ProofSatellite},
+	} {
+		if IsProofPromotionAllowed(pair[0], pair[1]) {
+			t.Fatalf("unsupported proof jump %s -> %s accepted", pair[0], pair[1])
+		}
+	}
+}
