@@ -48,6 +48,7 @@ function Project([hashtable]$Value, [string]$Modality) {
 
 foreach ($modality in $requiredModalities) {
     $projection = Project $semantic $modality
+    Assert-Equal "$modality modality" $projection.modality $modality
     Assert-Equal "$modality identity" $projection.identity 'CALCULATION:1+1'
     Assert-Equal "$modality operation" $projection.operation 'ADD'
     Assert-Equal "$modality result" $projection.result '2'
@@ -58,5 +59,8 @@ foreach ($modality in $requiredModalities) {
 # Accessibility must not be optional for an accepted semantic result.
 $missing = @($requiredModalities | Where-Object { $_ -eq '' })
 Assert-Equal 'REQUIRED_MODALITIES_PRESENT' $missing.Count 0
+$unknownRejected = $false
+try { [void](Project $semantic 'UNKNOWN') } catch { $unknownRejected = $true }
+Assert-Equal 'UNKNOWN_MODALITY_REJECTED' $unknownRejected $true
 
 Write-Host 'ZERO_ACCESSIBILITY_GATE_RESULT=PASS'
