@@ -64,6 +64,12 @@ func ExecuteRecord(line, actor, operation string, state SemanticState) (EngineRe
 	if state.Identity == "" {
 		state = SemanticState{Identity: record.Identity, Status: result.Previous}
 	}
+	if result.Status == "CONTRADICTION" {
+		return EngineReceipt{
+			Canonical: canonical, Authorization: decision, Result: result,
+			Previous: state, Next: state, Transitioned: false,
+		}, nil
+	}
 	next, err := Transition(state, result)
 	if err != nil {
 		return EngineReceipt{
@@ -71,10 +77,7 @@ func ExecuteRecord(line, actor, operation string, state SemanticState) (EngineRe
 		}, err
 	}
 	return EngineReceipt{
-		Canonical: canonical,
-		Authorization: decision,
-		Result: result,
-		Previous: state,
-		Next: next,
+		Canonical: canonical, Authorization: decision, Result: result,
+		Previous: state, Next: next, Transitioned: true,
 	}, nil
 }
