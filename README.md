@@ -69,3 +69,13 @@ Construire progressivement une machine et un langage qui ne perdent pas le sens 
 Le projet ne consiste donc pas à ajouter une accessibilité à un langage.
 
 Il consiste à rendre **le langage lui-même, la machine elle-même et leurs communications intrinsèquement accessibles**.
+
+## Release candidate
+
+Version courante : `0.1.0-rc.1`.
+
+Le `main` release-bound est validé par les tests bootstrap/core, la validation native ZERO et les validateurs de format, vérité, exécution universelle, machine, moteur de référence, support physique, portabilité de vérité et accessibilité.
+
+Le workflow `.github/workflows/release-gate.yml` rejoue ces contrôles lorsqu'un tag `v*` est publié. Le tag doit correspondre exactement au contenu de `VERSION`.
+
+Les preuves logicielles ne constituent pas automatiquement des preuves matérielles, RF, radio, satellite ou de liaison physique réelle.
