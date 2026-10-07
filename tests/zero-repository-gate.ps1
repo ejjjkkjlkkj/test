@@ -23,6 +23,7 @@ $required = @(
     [pscustomobject]@{ Name='ZERO browser'; Functional=$false; Accessible=$false },
     [pscustomobject]@{ Name='ZERO radio runtime'; Functional=$false; Accessible=$false },
     [pscustomobject]@{ Name='ZERO satellite runtime'; Functional=$false; Accessible=$false },
+    [pscustomobject]@{ Name='ZERO universal execution runtime'; Functional=$false; Accessible=$false },
     [pscustomobject]@{ Name='ZERO AI-native runtime'; Functional=$false; Accessible=$false }
 )
 
