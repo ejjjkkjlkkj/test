@@ -11,10 +11,14 @@ type TruthInvariant struct {
 
 const canonicalOnePlusOne int64 = 2
 
-var CanonicalTruth = TruthInvariant{
-	Expression: "1+1",
-	Result:     canonicalOnePlusOne,
-	Immutable:  true,
+// CanonicalTruth returns a value copy. No exported mutable global state is
+// used as the source of truth.
+func CanonicalTruth() TruthInvariant {
+	return TruthInvariant{
+		Expression: "1+1",
+		Result:     canonicalOnePlusOne,
+		Immutable:  true,
+	}
 }
 
 // OnePlusOne returns the canonical mathematical invariant.
