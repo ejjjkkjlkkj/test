@@ -1,0 +1,77 @@
+ZERO.AI-COMM / machine-to-machine intelligence protocol
+
+PURPOSE
+  ZERO peut communiquer avec une autre intelligence sans imposer une langue humaine,
+  un modèle de raisonnement humain ou une représentation particulière.
+
+CORE
+  Une communication est un échange de champs et de transformations observables.
+  Chaque message transporte :
+    ORIGIN      origine déclarée
+    CAPABILITY  capacités effectivement autorisées
+    FIELD       traces à transmettre
+    INTENT      transformation recherchée, sans imposer une réponse
+    UNKNOWN     informations manquantes explicitement conservées
+    HISTORY     provenance minimale et ordre des transformations
+    EFFECT      effets demandés, séparés de leur exécution
+    PROOF       niveau de preuve disponible
+    REPLY       possibilité de réponse sous la même forme
+
+NATIVE EXCHANGE
+  @a{...}          identité/canal logique
+  ?{...}           question ouverte
+  !{...}           proposition d'action
+  ={...}           observation ou état partagé
+  ~{...}           transformation proposée
+  <>{...}          réponse réinjectable
+  ??{...}          inconnue explicite
+  !!{...}          contradiction explicite
+  ||{...}          séparation de branches
+  +>{...}          transfert vers un autre agent
+  <+{...}          retour d'un autre agent
+
+AI-TO-AI
+  Un agent peut envoyer une hypothèse, un contre-exemple, une trace,
+  une transformation ou une capacité.
+  Aucun agent n'est obligé d'accepter la sémantique proposée par l'autre.
+  L'acceptation est une transition locale vérifiable.
+
+CAPABILITY
+  Une intelligence ne reçoit jamais une autorité implicite par le simple fait
+  de communiquer. Toute action externe est explicitement bornée par une capacité.
+  Une capacité peut autoriser CPU, mémoire, GPU, affichage, audio, stockage,
+  réseau, périphérique ou autre agent. Elle ne peut pas être forgée par le message.
+
+SEMANTIC NEGOTIATION
+  Deux agents peuvent avoir des représentations différentes.
+  Ils négocient une correspondance par observations et tests de transfert,
+  pas par supposition d'un dictionnaire humain commun.
+
+NO HIDDEN MEANING
+  Un champ reçu dont la signification n'est pas démontrée reste inconnu.
+  Le récepteur peut l'observer, le conserver, le transformer ou le refuser.
+
+FAILURE
+  timeout, corruption, contradiction, désaccord sémantique, dépassement de budget,
+  capacité insuffisante et agent hostile sont des états normaux du protocole.
+  Aucun échec ne doit provoquer une autorisation implicite.
+
+COMPOSITION
+  ZERO peut communiquer avec :
+    - une autre instance ZERO
+    - une autre IA
+    - un modèle local ou distant via un adaptateur
+    - un programme
+    - un système d'exploitation
+    - un périphérique
+    - un réseau
+  L'adaptateur change la représentation, jamais les garanties de sécurité.
+
+GOAL
+  Faire de ZERO un langage universel de transformation et d'échange machine,
+  capable de porter perception, raisonnement expérimental, décision, effet et réponse,
+  sans dépendre d'une langue naturelle.
+
+PROMOTION
+  Une convention de communication ne devient primitive du langage qu'après
+  répétition, transfert indépendant, adversarial, replay et vérification.
