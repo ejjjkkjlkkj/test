@@ -16,6 +16,30 @@ type Authorization struct {
 	Reason  string
 }
 
+// SemanticRequest describes authorization for the canonical record execution layer.
+type SemanticRequest struct {
+	Operation string
+	Actor     string
+	Target    string
+}
+
+// AuthorizeSemantic applies the explicit semantic operation allowlist.
+// Unknown operations are rejected instead of being converted into UNKNOWN implicitly.
+func AuthorizeSemantic(req SemanticRequest) Authorization {
+	if req.Actor == "" {
+		return Authorization{Reason: "missing actor"}
+	}
+	if req.Target == "" {
+		return Authorization{Reason: "missing target"}
+	}
+	switch req.Operation {
+	case "OBSERVE", "SET_STATE:DELIVERED", "DELIVERY:DEFERRED", "DELIVERY:FAILED":
+		return Authorization{Allowed: true, Reason: "allowed"}
+	default:
+		return Authorization{Reason: "unknown semantic operation"}
+	}
+}
+
 // Event is the deterministic observation emitted after an accepted instruction.
 type Event struct {
 	Operation Instruction
