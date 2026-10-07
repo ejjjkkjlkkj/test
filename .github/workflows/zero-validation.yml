@@ -16,3 +16,6 @@ jobs:
       - name: Run reference validator
         shell: pwsh
         run: ./tests/zero-reference-validator.ps1
+      - name: Run deterministic truth invariants
+        shell: pwsh
+        run: ./tests/zero-truth-invariants.ps1
