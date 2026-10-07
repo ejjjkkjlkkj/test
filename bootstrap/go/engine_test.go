@@ -89,3 +89,17 @@ func TestExecuteRecordRejectsUnknownSemanticOperation(t *testing.T) {
 		t.Fatalf("semantic execution occurred after rejection: %+v", receipt)
 	}
 }
+
+
+func TestExecuteRecordPreservesProvidedStateIdentity(t *testing.T) {
+	line := "RECORD|1|EVENT|id|11|UNKNOWN|source|target|payload|proof"
+	state := SemanticState{Identity: "id", Status: "OBSERVED", Sequence: 7}
+	receipt, err := ExecuteRecord(line, "actor", "OBSERVE", state)
+	if err != nil { t.Fatal(err) }
+	if receipt.Previous != state {
+		t.Fatalf("provided state was replaced: %+v", receipt.Previous)
+	}
+	if receipt.Next.Sequence != 8 || receipt.Next.Status != "OBSERVED" {
+		t.Fatalf("unexpected next state: %+v", receipt.Next)
+	}
+}
