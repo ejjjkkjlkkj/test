@@ -16,11 +16,11 @@ function Split-ZeroRecord([string]$Line) {
             continue
         }
         if ($c -eq '\') { $escaped = $true; continue }
-        if ($c -eq '|') { $fields.Add($buffer.ToString()); $buffer.Clear(); continue }
+        if ($c -eq '|') { [void]$fields.Add($buffer.ToString()); [void]$buffer.Clear(); continue }
         [void]$buffer.Append($c)
     }
     if ($escaped) { throw 'FORMAT.ESCAPE' }
-    $fields.Add($buffer.ToString())
+    [void]$fields.Add($buffer.ToString())
     return ,$fields.ToArray()
 }
 function Decode-Zero([string]$Value) {
