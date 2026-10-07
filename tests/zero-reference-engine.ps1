@@ -66,7 +66,7 @@ if ($machine.Sequence -ne 1) { throw 'ENGINE.SEQUENCE.FAIL' }
 $modalities=@('VOICE','BRAILLE','KEYBOARD','DISPLAY','TOUCH','POINTER','NETWORK','AUTOMATION')
 foreach ($m in $modalities) {
     $p=Convert-ZeroProjection $created $m
-    if ($p.Identity -ne $created.Identity -or $p.Operation -ne $created.Operation -or
+    if ($p.Modality -ne $m -or $p.Identity -ne $created.Identity -or
         $p.Result -ne $created.Result -or $p.State -ne $created.State -or $p.Proof -ne $created.Proof) {
         throw "ACCESSIBILITY.PROJECTION.FAIL:$m"
     }
