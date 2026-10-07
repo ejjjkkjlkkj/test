@@ -56,3 +56,4 @@ jobs:
           ./tests/zero-physical-support.ps1
           ./tests/zero-truth-portability.ps1
           ./tests/zero-accessibility-gate.ps1
+          ./tests/no-local-ai.ps1
