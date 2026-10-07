@@ -34,6 +34,9 @@ jobs:
       - name: Run ZERO universal execution
         shell: pwsh
         run: ./tests/zero-universal-execution.ps1
+      - name: Run ZERO physical support
+        shell: pwsh
+        run: ./tests/zero-physical-support.ps1
       - name: Run repository-wide acceptance gate
         shell: pwsh
         run: ./tests/zero-repository-gate.ps1
