@@ -22,3 +22,6 @@ jobs:
       - name: Run mandatory accessibility gate
         shell: pwsh
         run: ./tests/zero-accessibility-gate.ps1
+      - name: Run repository-wide acceptance gate
+        shell: pwsh
+        run: ./tests/zero-repository-gate.ps1
