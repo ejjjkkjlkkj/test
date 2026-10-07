@@ -46,7 +46,6 @@ func TestExecuteRecordRejectsBeforeSemanticExecution(t *testing.T) {
 	}
 }
 
-
 func TestExecuteRecordAllowsSemanticDeliveryOperations(t *testing.T) {
 	line := "RECORD|1|DELIVERY|id|8|2026-10-07T12:00:00Z|source|target|payload|proof"
 	for _, operation := range []string{"DELIVERY:DEFERRED", "DELIVERY:FAILED"} {
@@ -64,13 +63,9 @@ func TestExecuteRecordContradictionIsDeterministicAndNonTransitioning(t *testing
 	line := "RECORD|1|DELIVERY|id|9|2026-10-07T12:00:00Z|source|target|payload|proof"
 	state := SemanticState{Identity: "id", Status: "CREATED", Sequence: 4}
 	first, err := ExecuteRecord(line, "actor", "SET_STATE:DELIVERED", state)
-	if err != nil {
-		t.Fatal(err)
-	}
+	if err != nil { t.Fatal(err) }
 	second, err := ExecuteRecord(line, "actor", "SET_STATE:DELIVERED", state)
-	if err != nil {
-		t.Fatal(err)
-	}
+	if err != nil { t.Fatal(err) }
 	if first.Result.Status != "CONTRADICTION" || first.Transitioned {
 		t.Fatalf("contradiction unexpectedly transitioned: %+v", first)
 	}
@@ -82,14 +77,11 @@ func TestExecuteRecordContradictionIsDeterministicAndNonTransitioning(t *testing
 func TestExecuteRecordRejectsUnknownSemanticOperation(t *testing.T) {
 	line := "RECORD|1|OBSERVE|id|10|2026-10-07T12:00:00Z|source|target|payload|proof"
 	receipt, err := ExecuteRecord(line, "actor", "UNKNOWN_OPERATION", SemanticState{})
-	if err == nil {
-		t.Fatal("unknown semantic operation accepted")
-	}
+	if err == nil { t.Fatal("unknown semantic operation accepted") }
 	if receipt.Authorization.Allowed || receipt.Result.Status != "" {
 		t.Fatalf("semantic execution occurred after rejection: %+v", receipt)
 	}
 }
-
 
 func TestExecuteRecordPreservesProvidedStateIdentity(t *testing.T) {
 	line := "RECORD|1|EVENT|id|11|UNKNOWN|source|target|payload|proof"
@@ -101,5 +93,28 @@ func TestExecuteRecordPreservesProvidedStateIdentity(t *testing.T) {
 	}
 	if receipt.Next.Sequence != 8 || receipt.Next.Status != "OBSERVED" {
 		t.Fatalf("unexpected next state: %+v", receipt.Next)
+	}
+}
+
+func TestExecuteNativeRecordUsesSameSemanticPipeline(t *testing.T) {
+	record := Record{
+		Version: "1", Type: "OBSERVE", Identity: "native-id", Sequence: 12,
+		Time: "2026-10-07T12:00:00Z", Source: "source", Target: "target",
+		Payload: "payload", Proof: "proof",
+	}
+	data, err := EncodeNative(record)
+	if err != nil { t.Fatal(err) }
+	receipt, err := ExecuteNativeRecord(data, "actor", "OBSERVE", SemanticState{})
+	if err != nil { t.Fatal(err) }
+	if !receipt.Authorization.Allowed || !receipt.Transitioned {
+		t.Fatalf("native record did not execute: %+v", receipt)
+	}
+	canonical, err := Encode(record)
+	if err != nil { t.Fatal(err) }
+	if receipt.Canonical != canonical {
+		t.Fatalf("native execution changed canonical representation: %q != %q", receipt.Canonical, canonical)
+	}
+	if receipt.Next.Identity != record.Identity || receipt.Next.Status != "OBSERVED" || receipt.Next.Sequence != 1 {
+		t.Fatalf("unexpected native next state: %+v", receipt.Next)
 	}
 }
