@@ -18,14 +18,14 @@ func enc(s string)string{var b strings.Builder;for _,r:=range s{switch r{case '\
 func dec(s string)(string,error){var b strings.Builder;esc:=false;for _,r:=range s{if esc{switch r{case '\\','|':b.WriteRune(r);case 'n':b.WriteByte('\n');case 'r':b.WriteByte('\r');case 't':b.WriteByte('\t');default:return "",errors.New("FORMAT.ESCAPE")};esc=false}else if r=='\\'{esc=true}else{b.WriteRune(r)}};if esc{return "",errors.New("FORMAT.ESCAPE")};return b.String(),nil}
 func split(s string)([]string,error){var a []string;var b strings.Builder;esc:=false;for _,r:=range s{if esc{b.WriteRune('\\');b.WriteRune(r);esc=false}else if r=='\\'{esc=true}else if r=='|'{a=append(a,b.String());b.Reset()}else{b.WriteRune(r)}};if esc{return nil,errors.New("FORMAT.ESCAPE")};return append(a,b.String()),nil}
 func encodeRecord(r Record)string{v:=[]string{"RECORD",r.Version,r.Type,r.Identity,strconv.FormatInt(r.Sequence,10),r.Time,r.Source,r.Target,r.Payload,r.Proof};for i:=range v{v[i]=enc(v[i])};return strings.Join(v,"|")}
-func decodeRecord(s string)(Record,error){f,e:=split(s);if e!=nil||len(f)!=10||f[0]!="RECORD"{return Record{},errors.New("FORMAT.RECORD")};v:=make([]string,10);for i:=1;i<10;i++{v[i],e=dec(f[i]);if e!=nil{return Record{},e}};n,e:=strconv.ParseInt(v[4],10,64);if e!=nil{return Record{},e};if _,e=time.Parse(time.RFC3339Nano,v[5]);e!=nil{return Record{},e};return Record{v[1],v[2],v[3],n,v[5],v[6],v[7],v[8],v[9]},nil}
+func decodeRecord(s string)(Record,error){f,e:=split(s);if e!=nil||len(f)!=10||f[0]!="RECORD"{return Record{},errors.New("FORMAT.RECORD")};v:=make([]string,10);for i:=1;i<10;i++{v[i],e=dec(f[i]);if e!=nil{return Record{},e}};if v[1]!="1"{return Record{},errors.New("FORMAT.VERSION")};if v[2]==""||v[3]==""||v[6]==""||v[7]==""||v[9]==""{return Record{},errors.New("FORMAT.FIELD")};n,e:=strconv.ParseInt(v[4],10,64);if e!=nil||n<0{return Record{},errors.New("FORMAT.SEQUENCE")};if v[5]!="UNKNOWN"{if _,e=time.Parse(time.RFC3339Nano,v[5]);e!=nil{return Record{},errors.New("FORMAT.TIME")}};return Record{v[1],v[2],v[3],n,v[5],v[6],v[7],v[8],v[9]},nil}
 
 func formatTests(){
  r:=Record{"1","OBJECT","TEST:FORMAT|1",1,"2026-10-07T08:00:00.000Z","TEST:SOURCE","TEST:TARGET","meaning=accessible|machine;state=TESTED","TESTED"}
- s:=encodeRecord(r);d,e:=decodeRecord(s);must("FORMAT.DESERIALIZE",e==nil);must("FORMAT.ROUNDTRIP",encodeRecord(d)==s);must("FORMAT.VERSION",d.Version=="1")
+ s:=encodeRecord(r);d,e:=decodeRecord(s);must("FORMAT.DESERIALIZE",e==nil);must("FORMAT.ROUNDTRIP",encodeRecord(d)==s);must("FORMAT.VERSION",d.Version=="1");must("FORMAT.TYPE",d.Type=="OBJECT");must("FORMAT.SOURCE",d.Source=="TEST:SOURCE");must("FORMAT.TARGET",d.Target=="TEST:TARGET")
  must("FORMAT.IDENTITY",d.Identity==r.Identity);must("FORMAT.PAYLOAD",d.Payload==r.Payload)
  for _,m:=range modalities{must("FORMAT.ACCESSIBILITY."+m,d.Identity==r.Identity&&d.Payload==r.Payload&&d.Proof==r.Proof)}
- _,e=decodeRecord("RECORD|1|OBJECT|BAD|1|2026-10-07T08:00:00.000Z|S|T|broken\\q|TESTED");must("FORMAT.INVALID_ESCAPE",e!=nil)
+ _,e=decodeRecord("RECORD|1|OBJECT|BAD|1|2026-10-07T08:00:00.000Z|S|T|broken\\q|TESTED");must("FORMAT.INVALID_ESCAPE",e!=nil);_,e=decodeRecord("RECORD|2|OBJECT|BAD|1|2026-10-07T08:00:00.000Z|S|T|payload|TESTED");must("FORMAT.INVALID_VERSION",e!=nil)
 }
 
 func truthTests(){
