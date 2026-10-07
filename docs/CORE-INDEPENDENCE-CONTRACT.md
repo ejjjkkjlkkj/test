@@ -62,8 +62,14 @@ Le système ne complète jamais silencieusement une donnée absente.
 
 Le cœur ne doit jamais exécuter une action simplement parce qu'une IA la demande. Capacité et autorisation restent obligatoires.
 
-## I. Critère de non-dépendance
+## I. Objectif de fiabilité
+
+La fiabilité d'ingénierie visée est **99,99 %**. Elle concerne l'exécution et la robustesse du système dans les conditions couvertes par les preuves.
+
+Elle ne constitue pas une probabilité appliquée à la vérité mathématique. `1 + 1 = 2` reste un invariant formel indépendant du niveau de fiabilité physique.
+
+## J. Critère de non-dépendance
 
 Le cœur est considéré matériellement indépendant si ses tests de vérité, sérialisation, projection d'accessibilité et logique sémantique passent sans lire une identité matérielle particulière.
 
-Ce contrat est permanent pour la version normative correspondante.
+Ce contrat est permanent pour la version normative correspondante.\n\nUne panne physique peut empêcher une exécution, mais elle ne peut ni définir ni modifier la sémantique.
