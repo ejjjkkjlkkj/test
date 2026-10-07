@@ -1,0 +1,971 @@
+ZERO HARDWARE RADIO AUDIT
+DATE: 2026-10-07T08:43:24.9742235+02:00
+COMPUTER: DESKTOP-7DJUUFJ
+
+======================================================================
+SYSTEME
+======================================================================
+
+
+Manufacturer        : ASUSTeK COMPUTER INC.
+Model               : VivoBook_ASUSLaptop M1603QA
+SystemType          : x64-based PC
+TotalPhysicalMemory : 42309189632
+
+
+
+
+======================================================================
+BIOS
+======================================================================
+
+
+Manufacturer      : American Megatrends International, LLC.
+SMBIOSBIOSVersion : M1603QA.308
+ReleaseDate       : 22/05/2023 02:00:00
+
+
+
+
+======================================================================
+CPU
+======================================================================
+
+
+Name                      : AMD Ryzen 7 5800H with Radeon Graphics         
+Manufacturer              : AuthenticAMD
+NumberOfCores             : 8
+NumberOfLogicalProcessors : 16
+MaxClockSpeed             : 3201
+
+
+
+
+======================================================================
+PCI PCIe
+======================================================================
+
+Status Class           FriendlyName                                               InstanceId                                                    
+------ -----           ------------                                               ----------                                                    
+OK     USB             Contrôleur hôte AMD USB 3.10 eXtensible - 1.10 (Microsoft) PCI\VEN_1022&DEV_1639&SUBSYS_201F1043&REV_00\4&12C9051D&0&0341
+OK     USB             Contrôleur hôte AMD USB 3.10 eXtensible - 1.10 (Microsoft) PCI\VEN_1022&DEV_1639&SUBSYS_201F1043&REV_00\4&12C9051D&0&0441
+OK     System          Pont processeur hôte standard PCI                          PCI\VEN_1022&DEV_166B&SUBSYS_00000000&REV_00\3&11583659&0&C1  
+OK     System          Contrôleur High Definition Audio                           PCI\VEN_1022&DEV_15E3&SUBSYS_17EF1043&REV_00\4&12C9051D&0&0641
+OK     Display         AMD Radeon(TM) Graphics                                    PCI\VEN_1002&DEV_1638&SUBSYS_12AD1043&REV_C5\4&12C9051D&0&0041
+OK     System          Pont processeur hôte standard PCI                          PCI\VEN_1022&DEV_1670&SUBSYS_00000000&REV_00\3&11583659&0&C6  
+OK     System          Pont ISA standard PCI                                      PCI\VEN_1022&DEV_790E&SUBSYS_10A31043&REV_51\3&11583659&0&A3  
+OK     System          Pont processeur hôte standard PCI                          PCI\VEN_1022&DEV_1630&SUBSYS_16301022&REV_00\3&11583659&0&00  
+OK     System          Pont processeur hôte standard PCI                          PCI\VEN_1022&DEV_166D&SUBSYS_00000000&REV_00\3&11583659&0&C3  
+OK     System          AMD SMBus                                                  PCI\VEN_1022&DEV_790B&SUBSYS_10A31043&REV_51\3&11583659&0&A0  
+OK     SecurityDevices AMD PSP 10.0 Device                                        PCI\VEN_1022&DEV_15DF&SUBSYS_15DF1022&REV_00\4&12C9051D&0&0241
+OK     System          Contrôleur High Definition Audio                           PCI\VEN_1002&DEV_1637&SUBSYS_16371002&REV_00\4&12C9051D&0&0141
+OK     System          Pont processeur hôte standard PCI                          PCI\VEN_1022&DEV_166A&SUBSYS_00000000&REV_00\3&11583659&0&C0  
+OK     Net             MediaTek Wi-Fi 6 MT7921 Wireless LAN Card                  PCI\VEN_14C3&DEV_7961&SUBSYS_46801A3B&REV_00\4&303B37F5&0&0012
+OK     System          Pont processeur hôte standard PCI                          PCI\VEN_1022&DEV_166F&SUBSYS_00000000&REV_00\3&11583659&0&C5  
+OK     System          Pont processeur hôte standard PCI                          PCI\VEN_1022&DEV_166C&SUBSYS_00000000&REV_00\3&11583659&0&C2  
+OK     System          Pont processeur hôte standard PCI                          PCI\VEN_1022&DEV_1632&SUBSYS_00000000&REV_00\3&11583659&0&08  
+OK     System          Pont processeur hôte standard PCI                          PCI\VEN_1022&DEV_1632&SUBSYS_00000000&REV_00\3&11583659&0&10  
+OK     System          Pont processeur hôte standard PCI                          PCI\VEN_1022&DEV_1632&SUBSYS_00000000&REV_00\3&11583659&0&40  
+OK     System          Pont processeur hôte standard PCI                          PCI\VEN_1022&DEV_1671&SUBSYS_00000000&REV_00\3&11583659&0&C7  
+OK     SCSIAdapter     Contrôleur NVM Express standard                            PCI\VEN_8086&DEV_F1AA&SUBSYS_390F8086&REV_03\4&AC7D6AB&0&0014 
+OK     System          Port racine PCI Express                                    PCI\VEN_1022&DEV_1635&SUBSYS_16351022&REV_00\3&11583659&0&41  
+OK     System          AMD Audio CoProcessor                                      PCI\VEN_1022&DEV_15E2&SUBSYS_10A31043&REV_01\4&12C9051D&0&0541
+OK     System          Port racine PCI Express                                    PCI\VEN_1022&DEV_1634&SUBSYS_14531022&REV_00\3&11583659&0&12  
+OK     System          Port racine PCI Express                                    PCI\VEN_1022&DEV_1634&SUBSYS_14531022&REV_00\3&11583659&0&14  
+OK     System          Pont processeur hôte standard PCI                          PCI\VEN_1022&DEV_166E&SUBSYS_00000000&REV_00\3&11583659&0&C4  
+
+
+
+======================================================================
+USB
+======================================================================
+
+Status Class     FriendlyName               InstanceId                                   
+------ -----     ------------               ----------                                   
+OK     USB       Hub USB racine (USB 3.0)   USB\ROOT_HUB30\5&315B279C&0&0                
+OK     USB       Périphérique USB composite USB\VID_13D3&PID_3563\000000000              
+OK     USB       Hub USB racine (USB 3.0)   USB\ROOT_HUB30\5&18C1FFF2&0&0                
+OK     Bluetooth MediaTek Bluetooth Adapter USB\VID_13D3&PID_3563&MI_00\7&1D754FA2&0&0000
+
+
+
+======================================================================
+ADAPTATEURS RESEAU
+======================================================================
+
+
+Name                 : VMware Network Adapter VMnet19
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet19
+Status               : Up
+MacAddress           : 00-50-56-C0-00-13
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet10
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet10
+Status               : Up
+MacAddress           : 00-50-56-C0-00-0A
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet9
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet9
+Status               : Up
+MacAddress           : 00-50-56-C0-00-09
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet7
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet7
+Status               : Up
+MacAddress           : 00-50-56-C0-00-07
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet4
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet4
+Status               : Up
+MacAddress           : 00-50-56-C0-00-04
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet13
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet13
+Status               : Up
+MacAddress           : 00-50-56-C0-00-0D
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet2
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet2
+Status               : Up
+MacAddress           : 00-50-56-C0-00-02
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet3
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet3
+Status               : Up
+MacAddress           : 00-50-56-C0-00-03
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet16
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet16
+Status               : Up
+MacAddress           : 00-50-56-C0-00-10
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : Connexion réseau Bluetooth
+InterfaceDescription : Bluetooth Device (Personal Area Network)
+Status               : Disconnected
+MacAddress           : 14-13-33-E1-0A-46
+LinkSpeed            : 3 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : BlueTooth
+
+Name                 : Wi-Fi
+InterfaceDescription : MediaTek Wi-Fi 6 MT7921 Wireless LAN Card
+Status               : Up
+MacAddress           : 14-13-33-E1-0A-47
+LinkSpeed            : 108 Mbps
+MediaType            : Native 802.11
+PhysicalMediaType    : Native 802.11
+
+Name                 : VMware Network Adapter VMnet14
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet14
+Status               : Up
+MacAddress           : 00-50-56-C0-00-0E
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet1
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet1
+Status               : Up
+MacAddress           : 00-50-56-C0-00-01
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet17
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet17
+Status               : Up
+MacAddress           : 00-50-56-C0-00-11
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet15
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet15
+Status               : Up
+MacAddress           : 00-50-56-C0-00-0F
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet8
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet8
+Status               : Up
+MacAddress           : 00-50-56-C0-00-08
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet18
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet18
+Status               : Up
+MacAddress           : 00-50-56-C0-00-12
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet12
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet12
+Status               : Up
+MacAddress           : 00-50-56-C0-00-0C
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet5
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet5
+Status               : Up
+MacAddress           : 00-50-56-C0-00-05
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet6
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet6
+Status               : Up
+MacAddress           : 00-50-56-C0-00-06
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+Name                 : VMware Network Adapter VMnet11
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet11
+Status               : Up
+MacAddress           : 00-50-56-C0-00-0B
+LinkSpeed            : 100 Mbps
+MediaType            : 802.3
+PhysicalMediaType    : 802.3
+
+
+
+
+======================================================================
+WIFI
+======================================================================
+
+
+Name                 : Wi-Fi
+InterfaceDescription : MediaTek Wi-Fi 6 MT7921 Wireless LAN Card
+Status               : Up
+LinkSpeed            : 108 Mbps
+MacAddress           : 14-13-33-E1-0A-47
+
+
+
+
+======================================================================
+WIFI DRIVERS
+======================================================================
+
+Nom de lÔÇÖinterface┬á: Wi-Fi
+
+    Pilote                         : MediaTek Wi-Fi 6 MT7921 Wireless LAN Card
+    Fournisseur                      : MediaTek, Inc.
+    Fournisseur                    : MediaTek, Inc.
+    Date                           : 19/03/2025
+    Version                        : 3.0.1.1335
+    Fichier INF                    : oem20.inf
+    Type                           : pilote Wi-Fi natif
+    Types de radios pris en charge┬á: 802.11b 802.11a 802.11g 802.11n 802.11ac 802.11ax
+    Prise en charge du mode FIPS 140┬á: oui
+    Protection des trames de gestion 802.11w prise en charge┬á: Oui
+    R├®seau h├®berg├® pris en charge┬á: non
+    Authentification et chiffrement pris en charge en mode infrastructure┬á:
+                                Ouvrir           Aucun
+                                Ouvrir           WEP-40bit
+                                Ouvrir           WEP 104 bits
+                                Ouvrir           WEP
+                                WPA-Entreprise   TKIP
+                                WPA-Entreprise   CCMP
+                                WPA3-Personnel   CCMP
+                                OWE              CCMP
+                                WPA-Personnel    TKIP
+                                WPA-Personnel    CCMP
+                                WPA2┬á-┬áEntreprise TKIP
+                                WPA2┬á-┬áEntreprise CCMP
+                                WPA2┬á-┬áPersonnel TKIP
+                                WPA2┬á-┬áPersonnel CCMP
+                                WPA3-Entreprise  CCMP
+                                WPA3-Entreprise  TKIP
+    Nombre de bandes prises en charge┬á: 2
+                                2,4┬áGHz [ 0 m├®gahertz ÔÇô 0 m├®gahertz]
+                                5┬áGHz [ 0 m├®gahertz ÔÇô 0 m├®gahertz]
+    Service fabricant pr├®sent┬á     : Oui
+    OUI carte fabricant  ┬á     : [00 00 00], type : [00]
+    Chemin DLL extens. fabricant  ┬á: C:\WINDOWS\system32\mtkihvx.dll
+    ClSID extensibilit├® IU fab.   ┬á: {00000000-0000-0000-0000-000000000000}
+    CLSID diagnostics fabricant   ┬á: {00000000-0000-0000-0000-000000000000}
+    Affichage sans fil pris en charge : Oui (Pilote de graphiques : Oui, Pilote Wi-Fi : Oui)
+
+
+======================================================================
+WIFI INTERFACES
+======================================================================
+
+Il existe 1 interface sur le syst├¿me┬á: 
+
+    Nom                   : Wi-Fi
+    Description            : MediaTek Wi-Fi 6 MT7921 Wireless LAN Card
+    GUID                   : 84585a01-29f0-4f25-a4ea-f88bd514448b
+    Adresse physique       : 14:13:33:e1:0a:47
+    Type dÔÇÖinterface         : Primaire
+    ├ëtat                  : connect├®
+    SSID                  : DFC
+       Point d'acc├¿s dÔÇÖidentificateur SSID (Service Set Identifier)                 : c8:7f:2b:b7:79:20
+    Bande                   : 5┬áGHz
+    Canal                : 100
+    chiffrement Akm connect├® : [ akm = 00-0f-ac┬á:02, chiffrement = 00-0f-ac┬á:04 ]
+    Type de r├®seau          ┬á: Infrastructure
+    Type de radio            ┬á: 802.11ax
+    Authentification        ┬á: WPA2┬á-┬áPersonnel
+    Chiffrement                 : CCMP
+    Mode de connexion        : Connexion automatique
+    R├®ception (Mbits/s)   ┬á: 144.1
+    Transmission (Mbits/s)  ┬á: 108
+    Signal                ┬á: 45% 
+    Rssi                   : -79
+    Profil               ┬á: DFC 
+    QoS MSCS configur├® : 0
+    Carte QoS configur├®e : 0
+    Mappage QoS autoris├® par la strat├®gie : 0
+
+
+======================================================================
+WWAN CELLULAIRE MODEM
+======================================================================
+
+Status Class                 FriendlyName                             InstanceId                                                                       
+------ -----                 ------------                             ----------                                                                       
+OK     SoftwareComponent     Realtek Hardware Support Application     SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKHSA&6&199D3EEE&0    
+OK     MEDIA                 Realtek(R) Audio                         HDAUDIO\FUNC_01&VEN_10EC&DEV_0256&SUBSYS_104317EF&REV_1000\5&1B620135&0&0001     
+OK     SoftwareComponent     Realtek Audio Universal Service          SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKSRV&6&199D3EEE&0    
+OK     AudioEndpoint         Réseau de microphones (Realtek(R) Audio) SWD\MMDEVAPI\{0.0.1.00000000}.{15034B38-658C-46DE-8209-1BBD12E2167D}             
+OK     SoftwareComponent     Realtek Asio Component                   SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKASIO&6&199D3EEE&0   
+OK     AudioProcessingObject Realtek Audio Effects Component          SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKAPO&6&199D3EEE&0    
+OK     AudioEndpoint         Haut-parleurs (Realtek(R) Audio)         SWD\MMDEVAPI\{0.0.0.00000000}.{F6AC206D-11C2-4614-82EC-67A2D9E38548}             
+OK     SoftwareComponent     Realtek OVWrap2 Component                SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKOVWRAP2&6&199D3EEE&0
+OK     AudioProcessingObject Realtek Audio Effects Component (INT)    SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKINTAPO&6&199D3EEE&0 
+
+
+
+======================================================================
+RADIO
+======================================================================
+
+Status Class                 FriendlyName                              InstanceId                                                                       
+------ -----                 ------------                              ----------                                                                       
+OK     SoftwareComponent     Realtek Hardware Support Application      SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKHSA&6&199D3EEE&0    
+OK     Bluetooth             Service d’attribut générique Bluetooth LE BTHLEDEVICE\{0000FEB9-0000-1000-8000-00805F9B34FB}_F414BFEE759D\A&305EE65&0&0031 
+OK     MEDIA                 Realtek(R) Audio                          HDAUDIO\FUNC_01&VEN_10EC&DEV_0256&SUBSYS_104317EF&REV_1000\5&1B620135&0&0001     
+OK     Bluetooth             Énumérateur Microsoft Bluetooth LE        BTH\MS_BTHLE\8&D0E70E&0&3                                                        
+OK     SoftwareComponent     Realtek Audio Universal Service           SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKSRV&6&199D3EEE&0    
+OK     SoftwareDevice        Wi-Fi                                     SWD\RADIO\{84585A01-29F0-4F25-A4EA-F88BD514448B}                                 
+OK     Bluetooth             Bluetooth Device (RFCOMM Protocol TDI)    BTH\MS_RFCOMM\8&D0E70E&0&0                                                       
+OK     Net                   Microsoft Wi-Fi Direct Virtual Adapter    {5D624F94-8850-40C3-A3FA-A4FD2080BAF3}\VWIFIMP_WFD\5&49DE17&0&11                 
+OK     Net                   Microsoft Wi-Fi Direct Virtual Adapter #2 {5D624F94-8850-40C3-A3FA-A4FD2080BAF3}\VWIFIMP_WFD\5&49DE17&0&12                 
+OK     Bluetooth             Service d’attribut générique Bluetooth LE BTHLEDEVICE\{0000A00A-0000-1000-8000-00805F9B34FB}_F414BFEE759D\A&305EE65&0&000C 
+OK     SoftwareDevice        Microsoft Radio Device Enumeration Bus    SWD\RADIO\{3DB5895D-CC28-44B3-AD3D-6F01A782B8D2}                                 
+OK     AudioEndpoint         Réseau de microphones (Realtek(R) Audio)  SWD\MMDEVAPI\{0.0.1.00000000}.{15034B38-658C-46DE-8209-1BBD12E2167D}             
+OK     SoftwareComponent     Realtek Asio Component                    SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKASIO&6&199D3EEE&0   
+OK     Net                   MediaTek Wi-Fi 6 MT7921 Wireless LAN Card PCI\VEN_14C3&DEV_7961&SUBSYS_46801A3B&REV_00\4&303B37F5&0&0012                   
+OK     AudioProcessingObject Realtek Audio Effects Component           SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKAPO&6&199D3EEE&0    
+OK     Bluetooth             Service d’attribut générique Bluetooth LE BTHLEDEVICE\{0000FD56-0000-1000-8000-00805F9B34FB}_B0C7DEEDECD5\A&14243091&0&001E
+OK     Net                   Bluetooth Device (Personal Area Network)  BTH\MS_BTHPAN\8&D0E70E&0&2                                                       
+OK     AudioEndpoint         Haut-parleurs (Realtek(R) Audio)          SWD\MMDEVAPI\{0.0.0.00000000}.{F6AC206D-11C2-4614-82EC-67A2D9E38548}             
+OK     SoftwareDevice        Bluetooth                                 SWD\RADIO\BLUETOOTH_141333E10A46                                                 
+OK     Bluetooth             Énumérateur Microsoft Bluetooth           BTH\MS_BTHBRB\8&D0E70E&0&1                                                       
+OK     Bluetooth             MediaTek Bluetooth Adapter                USB\VID_13D3&PID_3563&MI_00\7&1D754FA2&0&0000                                    
+OK     Bluetooth             Service d’attribut générique Bluetooth LE BTHLEDEVICE\{948652E2-D03B-11E8-A8D5-F2801F1B9FD1}_B0C7DEEDECD5\A&14243091&0&0017
+OK     SoftwareComponent     Realtek OVWrap2 Component                 SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKOVWRAP2&6&199D3EEE&0
+OK     AudioProcessingObject Realtek Audio Effects Component (INT)     SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKINTAPO&6&199D3EEE&0 
+OK     Bluetooth             Service d’attribut générique Bluetooth LE BTHLEDEVICE\{0000FD31-0000-1000-8000-00805F9B34FB}_F414BFEE759D\A&305EE65&0&004A 
+
+
+
+======================================================================
+BLUETOOTH
+======================================================================
+
+Status Class          FriendlyName                              InstanceId                                                                       
+------ -----          ------------                              ----------                                                                       
+OK     Bluetooth      Profil d’attribut générique               BTHLEDEVICE\{00001801-0000-1000-8000-00805F9B34FB}_F414BFEE759D\A&305EE65&0&0001 
+OK     Bluetooth      Service d’attribut générique Bluetooth LE BTHLEDEVICE\{0000FEB9-0000-1000-8000-00805F9B34FB}_F414BFEE759D\A&305EE65&0&0031 
+OK     Bluetooth      ResMed Device                             BTHLE\DEV_B0C7DEEDECD5\9&22DC0FF&0&B0C7DEEDECD5                                  
+OK     Bluetooth      Énumérateur Microsoft Bluetooth LE        BTH\MS_BTHLE\8&D0E70E&0&3                                                        
+OK     Bluetooth      Profil d’accès générique                  BTHLEDEVICE\{00001800-0000-1000-8000-00805F9B34FB}_F414BFEE759D\A&305EE65&0&0005 
+OK     Bluetooth      Bluetooth Device (RFCOMM Protocol TDI)    BTH\MS_RFCOMM\8&D0E70E&0&0                                                       
+OK     Bluetooth      Service d’attribut générique Bluetooth LE BTHLEDEVICE\{0000A00A-0000-1000-8000-00805F9B34FB}_F414BFEE759D\A&305EE65&0&000C 
+OK     Bluetooth      LGE_BLECOMBO                              BTHLE\DEV_F414BFEE759D\9&22DC0FF&0&F414BFEE759D                                  
+OK     Bluetooth      Service d’attribut générique Bluetooth LE BTHLEDEVICE\{0000FD56-0000-1000-8000-00805F9B34FB}_B0C7DEEDECD5\A&14243091&0&001E
+OK     Net            Bluetooth Device (Personal Area Network)  BTH\MS_BTHPAN\8&D0E70E&0&2                                                       
+OK     Bluetooth      Profil d’attribut générique               BTHLEDEVICE\{00001801-0000-1000-8000-00805F9B34FB}_B0C7DEEDECD5\A&14243091&0&0001
+OK     SoftwareDevice Bluetooth                                 SWD\RADIO\BLUETOOTH_141333E10A46                                                 
+OK     Bluetooth      Énumérateur Microsoft Bluetooth           BTH\MS_BTHBRB\8&D0E70E&0&1                                                       
+OK     Bluetooth      Profil d’accès générique                  BTHLEDEVICE\{00001800-0000-1000-8000-00805F9B34FB}_B0C7DEEDECD5\A&14243091&0&0009
+OK     Bluetooth      Service d’informations de périphérique    BTHLEDEVICE\{0000180A-0000-1000-8000-00805F9B34FB}_B0C7DEEDECD5\A&14243091&0&000E
+OK     Bluetooth      MediaTek Bluetooth Adapter                USB\VID_13D3&PID_3563&MI_00\7&1D754FA2&0&0000                                    
+OK     Bluetooth      Service d’attribut générique Bluetooth LE BTHLEDEVICE\{948652E2-D03B-11E8-A8D5-F2801F1B9FD1}_B0C7DEEDECD5\A&14243091&0&0017
+OK     Bluetooth      Service d’attribut générique Bluetooth LE BTHLEDEVICE\{0000FD31-0000-1000-8000-00805F9B34FB}_F414BFEE759D\A&305EE65&0&004A 
+
+
+
+======================================================================
+ACPI
+======================================================================
+
+Status Class           FriendlyName                                             InstanceId                                                                                       
+------ -----           ------------                                             ----------                                                                                       
+OK     System          Haut-parleur système                                     ACPI\PNP0800\4&235D84A0&0                                                                        
+OK     Battery         Batterie à méthode de contrôle compatible ACPI Microsoft ACPI\PNP0C0A\0                                                                                   
+OK     System          ASUS System Control Interface v3                         ACPI\ASUS2018\2&DABA3FF&0                                                                        
+OK     System          Compteur d'événement de haute précision                  ACPI\PNP0103\2&DABA3FF&0                                                                         
+OK     System          Contrôleur embarqué compatible ACPI Microsoft            ACPI\PNP0C09\4&235D84A0&0                                                                        
+OK     System          Zone thermique ACPI                                      ACPI\THERMALZONE\THRM                                                                            
+OK     System          Horloge système                                          ACPI\PNP0100\4&235D84A0&0                                                                        
+OK     System          AMD GPIO Controller                                      ACPI\AMDI0030\0                                                                                  
+OK     System          Périphérique conteneur de processeurs ACPI               ACPI\ACPI0010\1                                                                                  
+OK     Keyboard        Clavier PS/2 PC/AT étendu (101/102 touches)              ACPI\ATK3001\4&235D84A0&0                                                                        
+OK     Battery         Adaptateur secteur Microsoft                             ACPI\ACPI0003\5&C9A9803&0                                                                        
+OK     System          Couvercle ACPI                                           ACPI\PNP0C0D\5&C9A9803&0                                                                         
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\10
+OK     System          Carte système                                            ACPI\PNP0C01\C8                                                                                  
+OK     Computer        PC ACPI avec processeur x64                              ROOT\ACPI_HAL\0000                                                                               
+OK     System          Interface de gestion Microsoft Windows pour ACPI         ACPI\PNP0C14\AOD                                                                                 
+OK     System          Interface de gestion Microsoft Windows pour ACPI         ACPI\PNP0C14\ATK                                                                                 
+OK     System          Racine complexe PCI Express                              ACPI\PNP0A08\0                                                                                   
+OK     System          Système compatible ACPI Microsoft                        ACPI_HAL\PNP0C08\0                                                                               
+OK     System          Horloge système CMOS/en temps réel                       ACPI\PNP0B00\4&235D84A0&0                                                                        
+OK     System          Contrôleur d'interruptions programmable                  ACPI\PNP0000\4&235D84A0&0                                                                        
+OK     SecurityDevices Module de plateforme sécurisée 2.0                       ACPI\MSFT0101\1                                                                                  
+OK     System          AMD Micro PEP Device                                     ACPI\AMDI0005\1                                                                                  
+OK     System          Ressources de la carte mère                              ACPI\PNP0C02\15                                                                                  
+OK     System          Ressources de la carte mère                              ACPI\PNP0C02\90                                                                                  
+OK     System          Contrôleur d'accès direct à la mémoire                   ACPI\PNP0200\4&235D84A0&0                                                                        
+OK     System          Bouton d'alimentation ACPI                               ACPI\PNP0C0C\AA                                                                                  
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\1 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\2 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\3 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\4 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\5 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\6 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\7 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\8 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\9 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\A 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\B 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\C 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\D 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\E 
+OK     Processor       AMD Ryzen 7 5800H with Radeon Graphics                   ACPI\AUTHENTICAMD_-_AMD64_FAMILY_25_MODEL_80_-_AMD_RYZEN_7_5800H_WITH_RADEON_GRAPHICS_________\F 
+OK     System          AMD I2C Controller                                       ACPI\AMDI0010\3                                                                                  
+OK     HIDClass        Périphérique I2C HID                                     ACPI\ASUE1211\1                                                                                  
+OK     System          Ressources de la carte mère                              ACPI\PNP0C02\700                                                                                 
+OK     System          Ressources de la carte mère                              ACPI\PNP0C02\4&12C9051D&0                                                                        
+
+
+
+======================================================================
+PERIPHERIQUES RADIO NON OK
+======================================================================
+
+Status          Problem Class          FriendlyName                                 InstanceId                                                       
+------          ------- -----          ------------                                 ----------                                                       
+Unknown CM_PROB_PHANTOM Net            Realtek 8812BU Wireless LAN 802.11ac USB NIC USB\VID_0BDA&PID_B812\123456                                     
+Unknown CM_PROB_PHANTOM SoftwareDevice Wi-Fi 2                                      SWD\RADIO\{F15D4309-E83C-4571-9382-A086F3C6F21E}                 
+Unknown CM_PROB_PHANTOM Net            Microsoft Wi-Fi Direct Virtual Adapter #3    {5D624F94-8850-40C3-A3FA-A4FD2080BAF3}\VWIFIMP_WFD\7&5B70F54&0&13
+Unknown CM_PROB_PHANTOM Net            Microsoft Wi-Fi Direct Virtual Adapter #4    {5D624F94-8850-40C3-A3FA-A4FD2080BAF3}\VWIFIMP_WFD\7&5B70F54&0&14
+
+
+
+======================================================================
+IDENTIFIANTS HARDWARE RADIO
+======================================================================
+
+
+Name         : Realtek Hardware Support Application
+Manufacturer : Realtek
+PNPDeviceID  : SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKHSA&6&199D3EEE&0
+Status       : OK
+Service      : 
+
+Name         : Realtek(R) Audio
+Manufacturer : Realtek
+PNPDeviceID  : HDAUDIO\FUNC_01&VEN_10EC&DEV_0256&SUBSYS_104317EF&REV_1000\5&1B620135&0&0001
+Status       : OK
+Service      : IntcAzAudAddService
+
+Name         : Realtek Audio Universal Service
+Manufacturer : Realtek
+PNPDeviceID  : SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKSRV&6&199D3EEE&0
+Status       : OK
+Service      : 
+
+Name         : Wi-Fi
+Manufacturer : Microsoft
+PNPDeviceID  : SWD\RADIO\{84585A01-29F0-4F25-A4EA-F88BD514448B}
+Status       : OK
+Service      : 
+
+Name         : Microsoft Wi-Fi Direct Virtual Adapter
+Manufacturer : Microsoft
+PNPDeviceID  : {5D624F94-8850-40C3-A3FA-A4FD2080BAF3}\VWIFIMP_WFD\5&49DE17&0&11
+Status       : OK
+Service      : vwifimp
+
+Name         : Microsoft Wi-Fi Direct Virtual Adapter #2
+Manufacturer : Microsoft
+PNPDeviceID  : {5D624F94-8850-40C3-A3FA-A4FD2080BAF3}\VWIFIMP_WFD\5&49DE17&0&12
+Status       : OK
+Service      : vwifimp
+
+Name         : Réseau de microphones (Realtek(R) Audio)
+Manufacturer : Microsoft
+PNPDeviceID  : SWD\MMDEVAPI\{0.0.1.00000000}.{15034B38-658C-46DE-8209-1BBD12E2167D}
+Status       : OK
+Service      : 
+
+Name         : Realtek Asio Component
+Manufacturer : Realtek
+PNPDeviceID  : SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKASIO&6&199D3EEE&0
+Status       : OK
+Service      : 
+
+Name         : MediaTek Wi-Fi 6 MT7921 Wireless LAN Card
+Manufacturer : MediaTek, Inc.
+PNPDeviceID  : PCI\VEN_14C3&DEV_7961&SUBSYS_46801A3B&REV_00\4&303B37F5&0&0012
+Status       : OK
+Service      : mtkwlex
+
+Name         : Realtek Audio Effects Component
+Manufacturer : Realtek
+PNPDeviceID  : SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKAPO&6&199D3EEE&0
+Status       : OK
+Service      : 
+
+Name         : Haut-parleurs (Realtek(R) Audio)
+Manufacturer : Microsoft
+PNPDeviceID  : SWD\MMDEVAPI\{0.0.0.00000000}.{F6AC206D-11C2-4614-82EC-67A2D9E38548}
+Status       : OK
+Service      : 
+
+Name         : MediaTek Bluetooth Adapter
+Manufacturer : Mediatek Inc.
+PNPDeviceID  : USB\VID_13D3&PID_3563&MI_00\7&1D754FA2&0&0000
+Status       : OK
+Service      : BTHUSB
+
+Name         : Realtek OVWrap2 Component
+Manufacturer : Realtek
+PNPDeviceID  : SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKOVWRAP2&6&199D3EEE&0
+Status       : OK
+Service      : 
+
+Name         : Realtek Audio Effects Component (INT)
+Manufacturer : Realtek
+PNPDeviceID  : SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKINTAPO&6&199D3EEE&0
+Status       : OK
+Service      : 
+
+
+
+
+======================================================================
+CAPACITES IP
+======================================================================
+
+
+InterfaceAlias       : VMware Network Adapter VMnet15
+InterfaceIndex       : 11
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet15
+IPv4Address          : 192.168.156.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet17
+InterfaceIndex       : 18
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet17
+IPv4Address          : 192.168.140.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet11
+InterfaceIndex       : 2
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet11
+IPv4Address          : 192.168.154.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet1
+InterfaceIndex       : 20
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet1
+IPv4Address          : 192.168.102.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet14
+InterfaceIndex       : 21
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet14
+IPv4Address          : 192.168.19.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet16
+InterfaceIndex       : 24
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet16
+IPv4Address          : 192.168.2.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet3
+InterfaceIndex       : 25
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet3
+IPv4Address          : 192.168.170.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet2
+InterfaceIndex       : 29
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet2
+IPv4Address          : 192.168.48.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet13
+InterfaceIndex       : 30
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet13
+IPv4Address          : 192.168.239.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet4
+InterfaceIndex       : 33
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet4
+IPv4Address          : 192.168.115.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet7
+InterfaceIndex       : 34
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet7
+IPv4Address          : 192.168.237.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet9
+InterfaceIndex       : 35
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet9
+IPv4Address          : 192.168.42.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet10
+InterfaceIndex       : 36
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet10
+IPv4Address          : 192.168.70.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet19
+InterfaceIndex       : 38
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet19
+IPv4Address          : 192.168.86.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet6
+InterfaceIndex       : 4
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet6
+IPv4Address          : 192.168.95.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet5
+InterfaceIndex       : 5
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet5
+IPv4Address          : 192.168.139.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet12
+InterfaceIndex       : 6
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet12
+IPv4Address          : 192.168.147.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet18
+InterfaceIndex       : 8
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet18
+IPv4Address          : 192.168.246.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : VMware Network Adapter VMnet8
+InterfaceIndex       : 9
+InterfaceDescription : VMware Virtual Ethernet Adapter for VMnet8
+IPv4Address          : 192.168.32.1
+IPv6DefaultGateway   : 
+IPv4DefaultGateway   : 
+DNSServer            : fec0:0:0:ffff::1
+                       fec0:0:0:ffff::2
+                       fec0:0:0:ffff::3
+
+InterfaceAlias       : Wi-Fi
+InterfaceIndex       : 22
+InterfaceDescription : MediaTek Wi-Fi 6 MT7921 Wireless LAN Card
+NetProfile.Name      : DFC
+IPv6Address          : 2a01:cb0c:6cf:5d00:ebb2:f8cc:8a18:d881
+IPv4Address          : 192.168.1.16
+IPv6DefaultGateway   : fe80::ca7f:2bff:feb7:7920
+IPv4DefaultGateway   : 192.168.1.1
+DNSServer            : 2a01:cb0c:6cf:5d00:ca7f:2bff:feb7:7920
+                       fe80::ca7f:2bff:feb7:7920
+                       2a01:cb0c:6cf:5d00:ca7f:2bff:feb7:7920
+                       fe80::ca7f:2bff:feb7:7920
+                       192.168.1.1
+
+InterfaceAlias       : Connexion réseau Bluetooth
+InterfaceIndex       : 23
+InterfaceDescription : Bluetooth Device (Personal Area Network)
+NetAdapter.Status    : Disconnected
+
+
+
+
+======================================================================
+ROUTAGE
+======================================================================
+
+DestinationPrefix  NextHop     InterfaceAlias                 RouteMetric PolicyStore
+-----------------  -------     --------------                 ----------- -----------
+255.255.255.255/32 0.0.0.0     Connexion au réseau local* 10          256            
+255.255.255.255/32 0.0.0.0     Connexion au réseau local* 9           256            
+255.255.255.255/32 0.0.0.0     Wi-Fi                                  256            
+255.255.255.255/32 0.0.0.0     Connexion réseau Bluetooth             256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet19         256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet18         256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet17         256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet16         256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet15         256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet14         256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet13         256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet12         256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet11         256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet10         256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet9          256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet8          256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet7          256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet6          256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet5          256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet4          256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet3          256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet2          256            
+255.255.255.255/32 0.0.0.0     VMware Network Adapter VMnet1          256            
+255.255.255.255/32 0.0.0.0     Loopback Pseudo-Interface 1            256            
+224.0.0.0/4        0.0.0.0     Connexion au réseau local* 10          256            
+224.0.0.0/4        0.0.0.0     Connexion au réseau local* 9           256            
+224.0.0.0/4        0.0.0.0     Wi-Fi                                  256            
+224.0.0.0/4        0.0.0.0     Connexion réseau Bluetooth             256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet19         256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet18         256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet17         256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet16         256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet15         256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet14         256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet13         256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet12         256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet11         256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet10         256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet9          256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet8          256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet7          256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet6          256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet5          256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet4          256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet3          256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet2          256            
+224.0.0.0/4        0.0.0.0     VMware Network Adapter VMnet1          256            
+224.0.0.0/4        0.0.0.0     Loopback Pseudo-Interface 1            256            
+192.168.246.255/32 0.0.0.0     VMware Network Adapter VMnet18         256            
+192.168.246.1/32   0.0.0.0     VMware Network Adapter VMnet18         256            
+192.168.246.0/24   0.0.0.0     VMware Network Adapter VMnet18         256            
+192.168.239.255/32 0.0.0.0     VMware Network Adapter VMnet13         256            
+192.168.239.1/32   0.0.0.0     VMware Network Adapter VMnet13         256            
+192.168.239.0/24   0.0.0.0     VMware Network Adapter VMnet13         256            
+192.168.237.255/32 0.0.0.0     VMware Network Adapter VMnet7          256            
+192.168.237.1/32   0.0.0.0     VMware Network Adapter VMnet7          256            
+192.168.237.0/24   0.0.0.0     VMware Network Adapter VMnet7          256            
+192.168.170.255/32 0.0.0.0     VMware Network Adapter VMnet3          256            
+192.168.170.1/32   0.0.0.0     VMware Network Adapter VMnet3          256            
+192.168.170.0/24   0.0.0.0     VMware Network Adapter VMnet3          256            
+192.168.156.255/32 0.0.0.0     VMware Network Adapter VMnet15         256            
+192.168.156.1/32   0.0.0.0     VMware Network Adapter VMnet15         256            
+192.168.156.0/24   0.0.0.0     VMware Network Adapter VMnet15         256            
+192.168.154.255/32 0.0.0.0     VMware Network Adapter VMnet11         256            
+192.168.154.1/32   0.0.0.0     VMware Network Adapter VMnet11         256            
+192.168.154.0/24   0.0.0.0     VMware Network Adapter VMnet11         256            
+192.168.147.255/32 0.0.0.0     VMware Network Adapter VMnet12         256            
+192.168.147.1/32   0.0.0.0     VMware Network Adapter VMnet12         256            
+192.168.147.0/24   0.0.0.0     VMware Network Adapter VMnet12         256            
+192.168.140.255/32 0.0.0.0     VMware Network Adapter VMnet17         256            
+192.168.140.1/32   0.0.0.0     VMware Network Adapter VMnet17         256            
+192.168.140.0/24   0.0.0.0     VMware Network Adapter VMnet17         256            
+192.168.139.255/32 0.0.0.0     VMware Network Adapter VMnet5          256            
+192.168.139.1/32   0.0.0.0     VMware Network Adapter VMnet5          256            
+192.168.139.0/24   0.0.0.0     VMware Network Adapter VMnet5          256            
+192.168.115.255/32 0.0.0.0     VMware Network Adapter VMnet4          256            
+192.168.115.1/32   0.0.0.0     VMware Network Adapter VMnet4          256            
+192.168.115.0/24   0.0.0.0     VMware Network Adapter VMnet4          256            
+192.168.102.255/32 0.0.0.0     VMware Network Adapter VMnet1          256            
+192.168.102.1/32   0.0.0.0     VMware Network Adapter VMnet1          256            
+192.168.102.0/24   0.0.0.0     VMware Network Adapter VMnet1          256            
+192.168.95.255/32  0.0.0.0     VMware Network Adapter VMnet6          256            
+192.168.95.1/32    0.0.0.0     VMware Network Adapter VMnet6          256            
+192.168.95.0/24    0.0.0.0     VMware Network Adapter VMnet6          256            
+192.168.86.255/32  0.0.0.0     VMware Network Adapter VMnet19         256            
+192.168.86.1/32    0.0.0.0     VMware Network Adapter VMnet19         256            
+192.168.86.0/24    0.0.0.0     VMware Network Adapter VMnet19         256            
+192.168.70.255/32  0.0.0.0     VMware Network Adapter VMnet10         256            
+192.168.70.1/32    0.0.0.0     VMware Network Adapter VMnet10         256            
+192.168.70.0/24    0.0.0.0     VMware Network Adapter VMnet10         256            
+192.168.48.255/32  0.0.0.0     VMware Network Adapter VMnet2          256            
+192.168.48.1/32    0.0.0.0     VMware Network Adapter VMnet2          256            
+192.168.48.0/24    0.0.0.0     VMware Network Adapter VMnet2          256            
+192.168.42.255/32  0.0.0.0     VMware Network Adapter VMnet9          256            
+192.168.42.1/32    0.0.0.0     VMware Network Adapter VMnet9          256            
+192.168.42.0/24    0.0.0.0     VMware Network Adapter VMnet9          256            
+192.168.32.255/32  0.0.0.0     VMware Network Adapter VMnet8          256            
+192.168.32.1/32    0.0.0.0     VMware Network Adapter VMnet8          256            
+192.168.32.0/24    0.0.0.0     VMware Network Adapter VMnet8          256            
+192.168.19.255/32  0.0.0.0     VMware Network Adapter VMnet14         256            
+192.168.19.1/32    0.0.0.0     VMware Network Adapter VMnet14         256            
+192.168.19.0/24    0.0.0.0     VMware Network Adapter VMnet14         256            
+192.168.2.255/32   0.0.0.0     VMware Network Adapter VMnet16         256            
+192.168.2.1/32     0.0.0.0     VMware Network Adapter VMnet16         256            
+192.168.2.0/24     0.0.0.0     VMware Network Adapter VMnet16         256            
+192.168.1.255/32   0.0.0.0     Wi-Fi                                  256            
+192.168.1.16/32    0.0.0.0     Wi-Fi                                  256            
+192.168.1.0/24     0.0.0.0     Wi-Fi                                  256            
+127.255.255.255/32 0.0.0.0     Loopback Pseudo-Interface 1            256            
+127.0.0.1/32       0.0.0.0     Loopback Pseudo-Interface 1            256            
+127.0.0.0/8        0.0.0.0     Loopback Pseudo-Interface 1            256            
+0.0.0.0/0          192.168.1.1 Wi-Fi                                    0            
+
+
+
+======================================================================
+RESUME ZERO
+======================================================================
+RADIO CANDIDATES: 24
+
+Status Class                 FriendlyName                              InstanceId                                                                       
+------ -----                 ------------                              ----------                                                                       
+OK     SoftwareComponent     Realtek Hardware Support Application      SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKHSA&6&199D3EEE&0    
+OK     Bluetooth             Service d’attribut générique Bluetooth LE BTHLEDEVICE\{0000FEB9-0000-1000-8000-00805F9B34FB}_F414BFEE759D\A&305EE65&0&0031 
+OK     MEDIA                 Realtek(R) Audio                          HDAUDIO\FUNC_01&VEN_10EC&DEV_0256&SUBSYS_104317EF&REV_1000\5&1B620135&0&0001     
+OK     Bluetooth             Énumérateur Microsoft Bluetooth LE        BTH\MS_BTHLE\8&D0E70E&0&3                                                        
+OK     SoftwareComponent     Realtek Audio Universal Service           SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKSRV&6&199D3EEE&0    
+OK     SoftwareDevice        Wi-Fi                                     SWD\RADIO\{84585A01-29F0-4F25-A4EA-F88BD514448B}                                 
+OK     Bluetooth             Bluetooth Device (RFCOMM Protocol TDI)    BTH\MS_RFCOMM\8&D0E70E&0&0                                                       
+OK     Net                   Microsoft Wi-Fi Direct Virtual Adapter    {5D624F94-8850-40C3-A3FA-A4FD2080BAF3}\VWIFIMP_WFD\5&49DE17&0&11                 
+OK     Net                   Microsoft Wi-Fi Direct Virtual Adapter #2 {5D624F94-8850-40C3-A3FA-A4FD2080BAF3}\VWIFIMP_WFD\5&49DE17&0&12                 
+OK     Bluetooth             Service d’attribut générique Bluetooth LE BTHLEDEVICE\{0000A00A-0000-1000-8000-00805F9B34FB}_F414BFEE759D\A&305EE65&0&000C 
+OK     AudioEndpoint         Réseau de microphones (Realtek(R) Audio)  SWD\MMDEVAPI\{0.0.1.00000000}.{15034B38-658C-46DE-8209-1BBD12E2167D}             
+OK     SoftwareComponent     Realtek Asio Component                    SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKASIO&6&199D3EEE&0   
+OK     Net                   MediaTek Wi-Fi 6 MT7921 Wireless LAN Card PCI\VEN_14C3&DEV_7961&SUBSYS_46801A3B&REV_00\4&303B37F5&0&0012                   
+OK     AudioProcessingObject Realtek Audio Effects Component           SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKAPO&6&199D3EEE&0    
+OK     Bluetooth             Service d’attribut générique Bluetooth LE BTHLEDEVICE\{0000FD56-0000-1000-8000-00805F9B34FB}_B0C7DEEDECD5\A&14243091&0&001E
+OK     Net                   Bluetooth Device (Personal Area Network)  BTH\MS_BTHPAN\8&D0E70E&0&2                                                       
+OK     AudioEndpoint         Haut-parleurs (Realtek(R) Audio)          SWD\MMDEVAPI\{0.0.0.00000000}.{F6AC206D-11C2-4614-82EC-67A2D9E38548}             
+OK     SoftwareDevice        Bluetooth                                 SWD\RADIO\BLUETOOTH_141333E10A46                                                 
+OK     Bluetooth             Énumérateur Microsoft Bluetooth           BTH\MS_BTHBRB\8&D0E70E&0&1                                                       
+OK     Bluetooth             MediaTek Bluetooth Adapter                USB\VID_13D3&PID_3563&MI_00\7&1D754FA2&0&0000                                    
+OK     Bluetooth             Service d’attribut générique Bluetooth LE BTHLEDEVICE\{948652E2-D03B-11E8-A8D5-F2801F1B9FD1}_B0C7DEEDECD5\A&14243091&0&0017
+OK     SoftwareComponent     Realtek OVWrap2 Component                 SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKOVWRAP2&6&199D3EEE&0
+OK     AudioProcessingObject Realtek Audio Effects Component (INT)     SWD\DRIVERENUM\{C3A63EDD-2D27-4B66-B155-5E94B43D926A}#REALTEKINTAPO&6&199D3EEE&0 
+OK     Bluetooth             Service d’attribut générique Bluetooth LE BTHLEDEVICE\{0000FD31-0000-1000-8000-00805F9B34FB}_F414BFEE759D\A&305EE65&0&004A 
+
+
+
+FIN AUDIT
+LECTURE SEULE : aucune modification effectuee.
