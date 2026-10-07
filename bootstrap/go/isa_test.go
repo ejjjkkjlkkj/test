@@ -54,3 +54,15 @@ func TestMachineFailedMemoryOperationDoesNotAdvancePC(t *testing.T) {
 		t.Fatalf("failed write changed PC: %d -> %d", before, m.PC)
 	}
 }
+
+
+func TestMachinePCOverflowIsDeterministic(t *testing.T) {
+	m, err := NewMachine(1)
+	if err != nil { t.Fatal(err) }
+	m.PC = ^uint64(0)
+	result, err := m.Execute(OpStep, 0, 0, nil)
+	if err != nil { t.Fatal(err) }
+	if result.PCBefore != ^uint64(0) || result.PCAfter != 0 || m.PC != 0 {
+		t.Fatalf("unexpected uint64 PC wrap semantics: %+v PC=%d", result, m.PC)
+	}
+}
