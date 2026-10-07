@@ -74,9 +74,13 @@ function ConvertFrom-ZeroRecordLine([string]$Line) {
     if ([string]::IsNullOrEmpty($type) -or [string]::IsNullOrEmpty($identity)) { throw 'FORMAT.FIELD' }
     if ([string]::IsNullOrEmpty($source) -or [string]::IsNullOrEmpty($target)) { throw 'FORMAT.FIELD' }
     if ([string]::IsNullOrEmpty($proof)) { throw 'FORMAT.PROOF' }
+    $sequence=[int64](Decode-ZeroField $raw[4])
+    if ($sequence -lt 0) { throw 'FORMAT.SEQUENCE' }
+    if ($time -ne 'UNKNOWN') { try { [void][datetime]::Parse($time,[Globalization.CultureInfo]::InvariantCulture,[Globalization.DateTimeStyles]::RoundtripKind) } catch { throw 'FORMAT.TIME' } }
+    if ($proof -notin @('UNKNOWN','DEFINED','IMPLEMENTED','TESTED','SIMULATED','QEMU','HARDWARE','RF_PROVEN','SATELLITE_LINK_PROVEN')) { throw 'FORMAT.PROOF' }
     [ordered]@{
-        Version=Decode-ZeroField $raw[1]; Type=Decode-ZeroField $raw[2]; Identity=Decode-ZeroField $raw[3]
-        Sequence=[int64](Decode-ZeroField $raw[4]); Time=Decode-ZeroField $raw[5]
+        Version=$version; Type=$type; Identity=$identity
+        Sequence=$sequence; Time=$time
         Source=Decode-ZeroField $raw[6]; Target=Decode-ZeroField $raw[7]
         Payload=Decode-ZeroField $raw[8]; Proof=Decode-ZeroField $raw[9]
     }
@@ -111,6 +115,18 @@ $badVersion=$encoded -replace '^RECORD\|1\|','RECORD|2|'
 $rejectedVersion=$false
 try { [void](ConvertFrom-ZeroRecordLine $badVersion) } catch { $rejectedVersion=$true }
 if (-not $rejectedVersion) { throw 'INVALID_VERSION_ACCEPTED' }
+$badSequence=$encoded -replace '\|1\|2026-10-07T08:00:00.000Z\|','|-1|2026-10-07T08:00:00.000Z|'
+$rejectedSequence=$false
+try { [void](ConvertFrom-ZeroRecordLine $badSequence) } catch { $rejectedSequence=$true }
+if (-not $rejectedSequence) { throw 'INVALID_SEQUENCE_ACCEPTED' }
+$badProof=$encoded -replace '\|TESTED 'ZERO_MACHINE_SERIALIZER_RESULT=PASS'
+Write-Host 'ZERO_MACHINE_DESERIALIZER_RESULT=PASS'
+Write-Host 'ZERO_MACHINE_ROUNDTRIP_RESULT=PASS'
+Write-Host 'ZERO_MACHINE_ACCESSIBILITY=PASS'
+,'|INVALID_PROOF'
+$rejectedProof=$false
+try { [void](ConvertFrom-ZeroRecordLine $badProof) } catch { $rejectedProof=$true }
+if (-not $rejectedProof) { throw 'INVALID_PROOF_ACCEPTED' }
 
 Write-Host 'ZERO_MACHINE_SERIALIZER_RESULT=PASS'
 Write-Host 'ZERO_MACHINE_DESERIALIZER_RESULT=PASS'
