@@ -36,23 +36,23 @@ func main() {
 		receipt, err := zero.ExecuteRecord(line, *actor, *operation, zero.SemanticState{})
 		if err != nil {
 			_ = enc.Encode(output{
-				Canonical: receipt.Canonical,
+				Canonical:     receipt.Canonical,
 				Authorization: receipt.Authorization,
-				Result: receipt.Result,
-				Previous: receipt.Previous,
-				Next: receipt.Next,
-				Transitioned: receipt.Transitioned,
+				Result:        receipt.Result,
+				Previous:      receipt.Previous,
+				Next:          receipt.Next,
+				Transitioned:  receipt.Transitioned,
 			})
 			fmt.Fprintln(os.Stderr, "error:", err)
 			os.Exit(1)
 		}
 		if err := enc.Encode(output{
-			Canonical: receipt.Canonical,
+			Canonical:     receipt.Canonical,
 			Authorization: receipt.Authorization,
-			Result: receipt.Result,
-			Previous: receipt.Previous,
-			Next: receipt.Next,
-			Transitioned: receipt.Transitioned,
+			Result:        receipt.Result,
+			Previous:      receipt.Previous,
+			Next:          receipt.Next,
+			Transitioned:  receipt.Transitioned,
 		}); err != nil {
 			fmt.Fprintln(os.Stderr, "error:", err)
 			os.Exit(1)
