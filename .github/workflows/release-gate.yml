@@ -1,0 +1,52 @@
+name: ZERO release gate
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Go setup
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.23"
+          cache: false
+
+      - name: Verify version
+        shell: bash
+        run: |
+          test -f VERSION
+          test "v$(cat VERSION)" = "${GITHUB_REF_NAME}"
+
+      - name: Bootstrap tests
+        working-directory: bootstrap/go
+        run: go test ./...
+
+      - name: Core tests
+        run: go test ./core
+
+      - name: Native validation
+        run: go run ./tests/zero-native-validation.go
+
+      - name: Repository validators
+        shell: pwsh
+        run: |
+          ./tests/zero-reference-validator.ps1
+          ./tests/zero-truth-invariants.ps1
+          ./tests/zero-universal-execution.ps1
+          ./tests/zero-machine-format.ps1
+          ./tests/zero-machine-isa.ps1
+          ./tests/zero-reference-engine.ps1
+          ./tests/zero-physical-support.ps1
+          ./tests/zero-truth-portability.ps1
+          ./tests/zero-accessibility-gate.ps1
