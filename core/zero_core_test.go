@@ -20,7 +20,7 @@ func TestHardwareIndependentTruth(t *testing.T) {
 
 func TestAccessibilityPreservesSemantics(t *testing.T) {
 	want := SemanticResult{Identity: "ARITHMETIC:1+1", Operation: "ADD", Value: "2", Proof: ProofTested}
-	for _, modality := range Modalities {
+	for _, modality := range Modalities() {
 		got, err := Project(want, modality)
 		if err != nil { t.Fatalf("%s: %v", modality, err) }
 		if got != want { t.Fatalf("%s changed semantic result: %#v", modality, got) }
@@ -42,4 +42,21 @@ func TestRecordRoundTrip(t *testing.T) {
 
 func TestInvalidEscapeRejected(t *testing.T) {
 	if _, err := DecodeRecord("RECORD|1|OBJECT|x|1|UNKNOWN|ZERO|TEST|bad\\q|TESTED"); err == nil { t.Fatal("invalid escape accepted") }
+}
+
+func TestUnsupportedAccessibilityIsRejected(t *testing.T) {
+	if _, err := Project(SemanticResult{Identity: "TEST", Value: "2"}, "UNKNOWN_MODALITY"); err == nil {
+		t.Fatal("unsupported accessibility modality accepted")
+	}
+}
+
+func TestModalitiesCannotMutateCoreRegistry(t *testing.T) {
+	got := Modalities()
+	got[0] = "CORRUPTED"
+	if IsModalitySupported("CORRUPTED") {
+		t.Fatal("caller mutated core modality registry")
+	}
+	if !IsModalitySupported("VOICE") {
+		t.Fatal("VOICE modality disappeared")
+	}
 }
