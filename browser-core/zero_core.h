@@ -10,5 +10,5 @@ void zero_core_init(ZeroCore *core, ZeroNode *root);
 int zero_focus_first(ZeroCore *core);
 int zero_focus_next(ZeroCore *core);
 int zero_focus_previous(ZeroCore *core);
-const ZeroEvent *zero_last_event(void);
+const ZeroEvent *zero_last_event(const ZeroCore *core);
 #endif
