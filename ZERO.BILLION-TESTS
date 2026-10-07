@@ -1,59 +1,87 @@
-ZERO.BILLION-TESTS / verification campaign
-
-PURPOSE
-  Drive the ZERO core through a reproducible multi-billion-case campaign.
+ZERO.EXTREME-TESTS / verification campaign
 
 TARGET
-  2^32 = 4,294,967,296 logical test cases.
-
-EXECUTION MODEL
-  256 independent shards.
-  Each shard owns exactly 2^24 = 16,777,216 case identifiers.
-  case_id = shard << 24 | local_id.
-
-NO RANDOMNESS DEPENDENCY
-  Inputs are generated from case_id by a specified deterministic bijective mixer.
-  Every failing case is therefore reproducible from one integer.
-
-CAMPAIGN LAYERS
-  L0 parser / representation invariants
-  L1 transition invariants
-  L2 mutation and rollback
-  L3 unknown preservation
-  L4 history integrity
-  L5 capability isolation
-  L6 information-flow isolation
-  L7 resource exhaustion
-  L8 adversarial transformations
-  L9 replay equivalence
-  L10 metamorphic relations
-  L11 compiler/implementation differential checks
-  L12 boundary and hostile-device simulations
-
-PROMOTION GATE
-  A single failure blocks PROVEN.
-  A timeout is not a PASS.
-  A crash is not a PASS.
-  An unexecuted shard is not a PASS.
-  Missing artifact is not a PASS.
-
-EVIDENCE
-  Each shard emits:
-    shard id
-    first case
-    last case
-    executed count
-    failure count
-    failing case ids
-    implementation hash
-    specification hash
-    toolchain hash
-    timestamp
-
-GLOBAL RESULT
-  The campaign is EXHAUSTIVELY-TESTED only when all 256 shards have
-  independently verified PASS artifacts for the same source/specification digest.
+  10^74 = 100000000000000000000000000000000000000000000000000000000000000000000000000
+  total logical cases.
 
 IMPORTANT
-  This campaign is stress/exhaustive testing of finite generated domains.
-  It is not by itself a mathematical proof of arbitrary ZERO programs.
+  This target is a campaign specification, not a claim that 10^74 cases have
+  already executed. No completion claim is valid without complete signed
+  manifests covering the declared case space.
+
+CASE SPACE
+  The case identifier is an unsigned 256-bit integer.
+  Each identifier deterministically expands into:
+    parser input
+    transition sequence
+    authority graph
+    resource budget
+    device events
+    network events
+    mutation schedule
+    replay schedule
+    adversarial transformation
+
+  The expansion is deterministic: same specification digest + implementation
+  digest + case identifier => same generated case.
+
+PARTITIONING
+  The complete interval [0, 10^74) is partitioned into independently verifiable
+  contiguous ranges. Range size is implementation-defined and MUST NOT change
+  the mathematical coverage.
+
+  Every range manifest contains:
+    lower_bound
+    upper_bound
+    executed_count
+    specification_digest
+    implementation_digest
+    generator_digest
+    verifier_digest
+    result_digest
+
+COMPLETENESS
+  Coverage is valid only when:
+    1. ranges do not overlap;
+    2. ranges contain no gaps;
+    3. every range has a PASS/FAIL verdict;
+    4. every artifact binds to the exact source/specification digests;
+    5. an independent verifier reconstructs the complete interval.
+
+FAIL-CLOSED
+  failure, crash, timeout, missing artifact, verifier disagreement,
+  nondeterministic output, or unverifiable range => NOT-PROVEN.
+
+TEST CLASSES
+  T01 lexical/parser
+  T02 semantic transitions
+  T03 state invariants
+  T04 capability isolation
+  T05 information-flow isolation
+  T06 memory safety
+  T07 resource exhaustion
+  T08 rollback/atomicity
+  T09 immutable history
+  T10 deterministic replay
+  T11 compiler/refinement differential testing
+  T12 CPU boundary
+  T13 memory boundary
+  T14 GPU/display boundary
+  T15 audio boundary
+  T16 network boundary
+  T17 storage boundary
+  T18 hostile device behavior
+  T19 concurrency/interleavings
+  T20 fault injection
+  T21 metamorphic transformations
+  T22 mutation testing
+  T23 parser differential testing
+  T24 implementation differential testing
+
+PROOF RULE
+  10^74 tests provide extraordinary empirical coverage.
+  They do NOT by themselves prove arbitrary-program safety.
+  Formal proofs remain mandatory for the universal claims.
+
+STATUS
+  TARGET-DEFINED / NOT-YET-EXECUTED-IN-FULL.
