@@ -1,51 +1,78 @@
-ZERO.PROOF / evidence of superiority
+ZERO.PROOF / evidence of superiority and security
 
-CLAIM
-  Ne jamais déclarer une supériorité avant confrontation.
+STATUS / 2026-10-07
 
-PROOF-0 / ZERO-LEAK
-  Le champ de test est nouveau et absent de toutes les branches précédentes.
-  Aucun résultat cible n'est fourni.
+NOT-PROVEN for the complete language.
 
-PROOF-1 / NOVEL GENERATION
-  Produire une structure qui n'est pas dans le champ initial.
-  Rejouer sur plusieurs champs indépendants.
+The repository now separates:
+  PROVEN
+  EXHAUSTIVELY-TESTED
+  EMPIRICALLY-STRESS-TESTED
+  REPRODUCED
+  NOT-PROVEN
 
-PROOF-2 / TRANSFER
-  Retirer la structure découverte.
-  Donner un nouveau champ.
-  Tester si une relation abstraite réapparaît sans recopier la trajectoire.
+SECURITY GATE
 
-PROOF-3 / ADVERSARIAL
-  Une branche tente de faire échouer la découverte.
-  Une autre tente de la reproduire.
-  Une troisième cherche une explication alternative.
+No "infallible" claim is permitted.
 
-PROOF-4 / BLIND
-  Les branches ne connaissent pas les résultats des autres.
-  Les résultats sont comparés uniquement après séparation.
+A complete proof requires:
+  specification
+  formal semantics
+  machine-checked safety proofs
+  refinement proof from implementation to semantics
+  compiler/translator correctness where applicable
+  explicit hardware/environment assumptions
+  adversarial testing
+  independent reproduction
 
-PROOF-5 / HUMAN-REFERENCE
-  Construire exactement le même ensemble de tâches pour une procédure humaine explicite.
-  Même information initiale.
-  Même budget fixé.
-  Aucun indice supplémentaire pour ZERO.
+CURRENT MACHINE-CHECKED MODEL
 
-PROOF-6 / AI-REFERENCE
-  Même protocole pour plusieurs systèmes artificiels externes.
-  Même entrée.
-  Même budget.
-  Même critères.
+proof/ZeroSafety.v defines and proves:
+  - secret preservation
+  - public-step independence from secret state
+  - budget consumption
+  - budget precondition
 
-PROOF-7 / GENERALIZATION
-  Les tâches finales ne doivent pas avoir servi à produire les règles initiales.
+These are proofs of the abstract model only.
 
-PROOF-8 / REPRODUCTION
-  Une découverte annoncée doit pouvoir être retrouvée dans une expérience indépendante.
+CURRENT TEST CAMPAIGN
 
-VERDICT
-  SUPERIORITY POSSIBLE uniquement si ZERO dépasse les références
-  sur des tâches inédites avec protocole identique.
-  Sinon : NON DÉMONTRÉ.
+ZERO.BILLION-TESTS defines 256 shards x 2^24 cases = 2^32 cases.
+browser-core/zero_campaign.c is deterministic and reproducible from case_id.
+A local validation of the campaign logic executed 1,000,000 cases successfully.
 
-AUCUN RÉSULTAT N'EST PRÉINSCRIT.
+The 2^32 campaign is configured in GitHub Actions.
+It must not be reported as executed until every shard has a PASS artifact.
+
+KNOWN BLOCKERS
+
+B1
+  The current C implementation is not formally connected to proof/ZeroSafety.v.
+  Required: refinement/correctness proof.
+
+B2
+  browser-core/zero_core.c stores last_event in a global object.
+  This creates cross-instance/shared-state risk.
+  Required: event state owned by ZeroCore or a formally protected equivalent.
+
+B3
+  ZERO.EXECUTION says a transition is accepted only when it changes the
+  observable field, while some C paths can return without emitting a new event.
+  Required: reconcile the executable semantics and the language specification.
+
+B4
+  The current proof model does not yet cover memory safety, device authority,
+  network authority, GPU/display authority, parser correctness, or hostile
+  external effects.
+  Required: additional formal models and refinement proofs.
+
+PROMOTION RULE
+
+A property is CORE only when:
+  1. specified;
+  2. formally proved for the model;
+  3. connected to implementation by refinement proof;
+  4. adversarially tested;
+  5. independently reproduced.
+
+A benchmark can never upgrade NOT-PROVEN to PROVEN.
