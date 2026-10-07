@@ -17,7 +17,7 @@ func TestBuildRepositoryContextIsBoundedAndReadOnly(t *testing.T) {
 	before, err := os.ReadFile(filepath.Join(root, "main.go"))
 	if err != nil { t.Fatal(err) }
 
-	ctx, err := BuildRepositoryContext(root, ContextOptions{MaxBytes: 100, MaxFileBytes: 10})
+	ctx, err := BuildRepositoryContext(root, ContextOptions{MaxBytes: 100, MaxFileBytes: 16})
 	if err != nil { t.Fatal(err) }
 	if len(ctx.Files) != 1 || ctx.Files[0].Path != "main.go" {
 		t.Fatalf("unexpected files: %+v", ctx.Files)
