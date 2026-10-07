@@ -1,0 +1,30 @@
+name: ZERO formal proof
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "proof/**"
+      - "docs/FORMAL-SAFETY.md"
+      - "docs/PROOF-OBLIGATIONS.md"
+
+permissions:
+  contents: read
+
+jobs:
+  rocq:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rocq 9.3
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y opam
+          opam init --disable-sandboxing -y
+          opam switch create zero-proof 4.14.1 -y
+          eval $(opam env --switch=zero-proof)
+          opam install rocq-prover.9.3.0 -y
+      - name: Check machine-checked semantic proof
+        run: |
+          eval $(opam env --switch=zero-proof)
+          rocq proof/ZeroSafety.v
