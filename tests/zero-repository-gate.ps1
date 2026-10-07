@@ -9,12 +9,10 @@ $required = @(
     [pscustomobject]@{ Name='ZERO deterministic truth'; Functional=$true; Accessible=$true },
     [pscustomobject]@{ Name='ZERO accessibility projection'; Functional=$true; Accessible=$true },
 
-    # These are declared required but have no executable implementation yet.
+    # A unit is accepted only after its executable CI proof is successful.
     [pscustomobject]@{ Name='ZERO reference engine'; Functional=$true; Accessible=$true },
     [pscustomobject]@{ Name='ZERO machine ISA executor'; Functional=$true; Accessible=$true },
-    [pscustomobject]@{ Name='ZERO machine format serializer/deserializer'; Functional=$true; Accessible=$true },
-    [pscustomobject]@{ Name='ZERO machine serializer'; Functional=$false; Accessible=$false },
-    [pscustomobject]@{ Name='ZERO machine deserializer'; Functional=$false; Accessible=$false },
+    [pscustomobject]@{ Name='ZERO machine format serializer/deserializer'; Functional=$false; Accessible=$false },
     [pscustomobject]@{ Name='ZERO bootstrap runtime'; Functional=$false; Accessible=$false },
     [pscustomobject]@{ Name='ZERO native object runtime'; Functional=$false; Accessible=$false },
     [pscustomobject]@{ Name='ZERO event runtime'; Functional=$false; Accessible=$false },
