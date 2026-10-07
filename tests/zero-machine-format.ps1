@@ -63,6 +63,17 @@ function ConvertTo-ZeroRecordLine($Record) {
 function ConvertFrom-ZeroRecordLine([string]$Line) {
     $raw = Split-ZeroFields $Line
     if ($raw.Count -ne 10 -or $raw[0] -ne 'RECORD') { throw 'FORMAT.RECORD' }
+    $version=Decode-ZeroField $raw[1]
+    $type=Decode-ZeroField $raw[2]
+    $identity=Decode-ZeroField $raw[3]
+    $time=Decode-ZeroField $raw[5]
+    $source=Decode-ZeroField $raw[6]
+    $target=Decode-ZeroField $raw[7]
+    $proof=Decode-ZeroField $raw[9]
+    if ($version -ne '1') { throw 'FORMAT.VERSION' }
+    if ([string]::IsNullOrEmpty($type) -or [string]::IsNullOrEmpty($identity)) { throw 'FORMAT.FIELD' }
+    if ([string]::IsNullOrEmpty($source) -or [string]::IsNullOrEmpty($target)) { throw 'FORMAT.FIELD' }
+    if ([string]::IsNullOrEmpty($proof)) { throw 'FORMAT.PROOF' }
     [ordered]@{
         Version=Decode-ZeroField $raw[1]; Type=Decode-ZeroField $raw[2]; Identity=Decode-ZeroField $raw[3]
         Sequence=[int64](Decode-ZeroField $raw[4]); Time=Decode-ZeroField $raw[5]
@@ -89,13 +100,17 @@ if ((ConvertTo-ZeroRecordLine $decoded) -cne $encoded) { throw 'CANONICAL.FAIL' 
 
 foreach ($m in @('VOICE','BRAILLE','KEYBOARD','DISPLAY','TOUCH','POINTER','NETWORK','AUTOMATION')) {
     $projection=Convert-ZeroProjection $decoded $m
-    if ($projection.Identity -cne $decoded.Identity -or $projection.Type -cne $decoded.Type -or $projection.Payload -cne $decoded.Payload -or $projection.Proof -cne $decoded.Proof) { throw "ACCESSIBILITY.FAIL:$m" }
+    if ($projection.Modality -cne $m -or $projection.Identity -cne $decoded.Identity -or $projection.Type -cne $decoded.Type -or $projection.Payload -cne $decoded.Payload -or $projection.Proof -cne $decoded.Proof) { throw "ACCESSIBILITY.FAIL:$m" }
 }
 
 $bad='RECORD|1|OBJECT|BAD|1|2026-10-07T08:00:00.000Z|S|T|broken\q|TESTED'
 $rejected=$false
 try { [void](ConvertFrom-ZeroRecordLine $bad) } catch { $rejected=$true }
 if (-not $rejected) { throw 'INVALID_ESCAPE_ACCEPTED' }
+$badVersion=$encoded -replace '^RECORD\|1\|','RECORD|2|'
+$rejectedVersion=$false
+try { [void](ConvertFrom-ZeroRecordLine $badVersion) } catch { $rejectedVersion=$true }
+if (-not $rejectedVersion) { throw 'INVALID_VERSION_ACCEPTED' }
 
 Write-Host 'ZERO_MACHINE_SERIALIZER_RESULT=PASS'
 Write-Host 'ZERO_MACHINE_DESERIALIZER_RESULT=PASS'
