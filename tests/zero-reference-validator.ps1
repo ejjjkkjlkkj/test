@@ -9,7 +9,12 @@ function Split-ZeroRecord([string]$Line) {
     $buffer = [System.Text.StringBuilder]::new()
     $escaped = $false
     foreach ($c in $Line.ToCharArray()) {
-        if ($escaped) { [void]$buffer.Append($c); $escaped = $false; continue }
+        if ($escaped) {
+            [void]$buffer.Append('\')
+            [void]$buffer.Append($c)
+            $escaped = $false
+            continue
+        }
         if ($c -eq '\') { $escaped = $true; continue }
         if ($c -eq '|') { $fields.Add($buffer.ToString()); $buffer.Clear(); continue }
         [void]$buffer.Append($c)
@@ -18,7 +23,6 @@ function Split-ZeroRecord([string]$Line) {
     $fields.Add($buffer.ToString())
     return ,$fields.ToArray()
 }
-
 function Decode-Zero([string]$Value) {
     $out = [System.Text.StringBuilder]::new()
     $escaped = $false
