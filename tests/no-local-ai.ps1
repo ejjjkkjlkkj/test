@@ -3,10 +3,10 @@ $ErrorActionPreference = 'Stop'
 
 $root = Split-Path -Parent $PSScriptRoot
 $forbidden = @(
-    'ollama',
-    'zero-ai',
-    'local-ai',
-    'LOCAL-AI.md'
+    ('oll' + 'ama'),
+    ('zero-' + 'ai'),
+    ('local-' + 'ai'),
+    ('LOCAL-' + 'AI.md')
 )
 
 $extensions = @('.go','.md','.ps1','.zero','.txt','.json','.yml','.yaml','.c','.h','.sh')
@@ -25,8 +25,8 @@ foreach ($path in Get-ChildItem -LiteralPath $root -Recurse -File -Force) {
 }
 
 if ($violations.Count -gt 0) {
-    $violations | ForEach-Object { Write-Error "FORBIDDEN_LOCAL_AI: $_" }
+    $violations | ForEach-Object { Write-Error "FORBIDDEN_COMPONENT: $_" }
     exit 1
 }
 
-Write-Output 'ZERO_NO_LOCAL_AI_RESULT=PASS'
+Write-Output 'ZERO_COMPONENT_CLEAN_RESULT=PASS'
