@@ -3,7 +3,7 @@
 Date de mise à jour: 2026-10-07
 Dépôt: ejjjkkjlkkj/test
 Branche de référence: main
-HEAD de référence: c3a27a60650e46cec84576d98d4423d22e516639
+HEAD de référence: 6a12c69a50dce25349c28f41d7b2eb70d172967b
 
 ## But
 Construire ZERO depuis zéro: machine, langage, communication, monde et accessibilité native sont une seule architecture sémantique.
@@ -26,7 +26,8 @@ Construire ZERO depuis zéro: machine, langage, communication, monde et accessib
 - exécution canonique et native via le même pipeline;
 - CLI bootstrap stdin/stdout;
 - tests unitaires, déterministes et fuzz de non-panique;
-- CI reproductible sur push, pull request vers main et déclenchement manuel.
+- CI reproductible sur push, pull request vers main et déclenchement manuel;
+- suppression du composant produit local Ollama/AI du main release-bound.
 
 ## Frontière de preuve
 Le PASS actuel concerne le bootstrap logiciel reproductible.
