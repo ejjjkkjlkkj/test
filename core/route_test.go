@@ -19,7 +19,7 @@ func TestSelectRouteIsDeterministic(t *testing.T) {
     }
     first, ok := SelectRoute(caps)
     if !ok { t.Fatal("no route selected") }
-    for i:=0;i<100;i++ { got,ok:=SelectRoute(caps); if !ok || got!=first { t.Fatalf("selection changed: %s %v != %s %v",got,ok,first) } }
+    for i:=0;i<100;i++ { got,ok:=SelectRoute(caps); if !ok || got!=first { t.Fatalf("selection changed: %s %v != %s", got, ok, first) } }
     if first != TransportMesh { t.Fatalf("expected deterministic preferred route, got %s", first) }
 }
 
