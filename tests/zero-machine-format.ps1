@@ -77,7 +77,7 @@ function Convert-ZeroProjection($Record,[string]$Modality) {
 }
 
 $record=[ordered]@{
-    Version='ZERO-1'; Type='OBJECT'; Identity='TEST:FORMAT|1'; Sequence=1
+    Version='1'; Type='OBJECT'; Identity='TEST:FORMAT|1'; Sequence=1
     Time='2026-10-07T08:00:00.000Z'; Source='TEST:SOURCE'; Target='TEST:TARGET'
     Payload='meaning=accessible|machine;state=TESTED'; Proof='TESTED'
 }
@@ -92,7 +92,7 @@ foreach ($m in @('VOICE','BRAILLE','KEYBOARD','DISPLAY','TOUCH','POINTER','NETWO
     if ($projection.Identity -cne $decoded.Identity -or $projection.Type -cne $decoded.Type -or $projection.Payload -cne $decoded.Payload -or $projection.Proof -cne $decoded.Proof) { throw "ACCESSIBILITY.FAIL:$m" }
 }
 
-$bad='RECORD|ZERO-1|OBJECT|BAD|1|2026-10-07T08:00:00.000Z|S|T|broken\q|TESTED'
+$bad='RECORD|1|OBJECT|BAD|1|2026-10-07T08:00:00.000Z|S|T|broken\q|TESTED'
 $rejected=$false
 try { [void](ConvertFrom-ZeroRecordLine $bad) } catch { $rejected=$true }
 if (-not $rejected) { throw 'INVALID_ESCAPE_ACCEPTED' }
