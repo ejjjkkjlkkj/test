@@ -25,6 +25,9 @@ jobs:
       - name: Run ZERO reference engine
         shell: pwsh
         run: ./tests/zero-reference-engine.ps1
+      - name: Run ZERO machine format
+        shell: pwsh
+        run: ./tests/zero-machine-format.ps1
       - name: Run repository-wide acceptance gate
         shell: pwsh
         run: ./tests/zero-repository-gate.ps1
