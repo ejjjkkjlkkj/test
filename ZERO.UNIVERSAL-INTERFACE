@@ -1,0 +1,60 @@
+ZERO.UNIVERSAL-INTERFACE / universal machine boundary
+
+OBJECTIVE
+  Une seule sémantique ZERO doit pouvoir représenter toute interaction observable :
+  calcul, mémoire, affichage, audio, réseau, stockage, capteurs, périphériques,
+  autres programmes et autres intelligences.
+
+MACHINE MODEL
+  ZERO ne considère pas CPU, GPU, écran, disque ou téléphone comme des types
+  fondamentaux du langage. Ce sont des domaines d'effet découverts derrière
+  une frontière d'autorité.
+
+UNIVERSAL FORM
+  OBSERVE -> REPRESENT -> TRANSFORM -> REQUEST-EFFECT -> VERIFY -> COMMIT -> OBSERVE
+
+EFFECT REQUEST
+  Un effet contient toujours :
+    target      domaine/périphérique ciblé
+    capability  autorisation exacte
+    input       traces d'entrée
+    budget      limites de temps, mémoire, volume et fréquence
+    expected    propriétés attendues, jamais une vérité supposée
+    rollback    stratégie d'annulation si disponible
+
+DOMAINS
+  compute     CPU et accélérateurs
+  memory      mémoire volatile/non volatile
+  visual      écran, framebuffer, image, graphique
+  audio       entrée/sortie audio
+  network     réseau local, Internet, protocoles et autres machines
+  storage     fichiers, blocs et supports
+  device      périphériques externes
+  intelligence autres agents et modèles
+
+NETWORK
+  Un appareil distant est un champ externe non fiable.
+  ZERO peut découvrir sa présence, négocier un protocole, échanger des traces
+  et vérifier les réponses. L'accès n'est jamais implicite parce que l'appareil
+  est sur le même réseau.
+
+AI
+  Une IA distante est un endpoint d'intelligence, pas une autorité.
+  ZERO peut lui envoyer un champ, recevoir plusieurs hypothèses, comparer les
+  trajectoires, confronter les réponses et réinjecter les traces utiles.
+
+ACCESSIBILITY
+  L'accessibilité n'est pas une couche finale.
+  Toute représentation peut avoir plusieurs projections simultanées :
+    tactile, clavier, braille, parole, son spatial, image, structure, graphique.
+  La projection doit conserver l'information pertinente et l'inconnu.
+
+SECURITY
+  Toute frontière externe est hostile par défaut.
+  Les effets sont médiés, bornés, journalisés et rejouables.
+  Aucun adaptateur ne peut contourner la politique ZERO.
+
+IMPLEMENTATION
+  La représentation machine peut être binaire, compacte ou spécialisée.
+  La syntaxe humaine actuelle de ZERO est seulement une projection lisible.
+  Elle ne doit pas être confondue avec la représentation native finale.
