@@ -2,16 +2,17 @@
 
 ## Statut
 
-FORMAT = DEFINED  
-BOOTSTRAP ENCODER = IMPLEMENTED (Go)  
-BOOTSTRAP DECODER = IMPLEMENTED (Go)  
-ROUND_TRIP = TESTED (Go)  
-CPU EXECUTION = NOT_IMPLEMENTED  
+FORMAT = DEFINED
+BOOTSTRAP ENCODER = IMPLEMENTED (Go)
+BOOTSTRAP DECODER = IMPLEMENTED (Go)
+ROUND_TRIP = TESTED (Go)
+NATIVE-TO-SEMANTIC EXECUTION = IMPLEMENTED (Go)
+CPU EXECUTION = NOT_IMPLEMENTED
 HARDWARE = NOT_PROVEN
 
 ## But
 
-Matérialiser l'étape 1 de `IMPLEMENTATION-ORDER.md` sans faire de Go le langage fondamental de ZERO.
+Matérialiser la représentation binaire du RECORD ZERO sans faire de Go le langage fondamental de ZERO.
 
 Le format binaire transporte le même RECORD que `ZERO-MACHINE-FORMAT.md`. Il ne crée pas une seconde sémantique.
 
@@ -21,24 +22,23 @@ En-tête :
 
 - 4 octets ASCII : `ZER0`
 - 1 octet : version du format, actuellement `1`
-- après l'en-tête, les champs sont encodés dans l'ordre normatif ci-dessous ; le TYPE est une chaîne UTF-8 préfixée par sa longueur
+- après l'en-tête, les champs sont encodés dans l'ordre normatif ci-dessous.
 
-Pour rester extensible, chaque champ variable est encodé comme :
+Chaque champ variable est encodé comme :
 
 `uint32_be longueur + octets UTF-8`
 
 Ordre des champs :
 
-1. TYPE
-2. IDENTITY
-3. SEQUENCE : uint64 big-endian
-4. TIME
-5. SOURCE
-6. TARGET
-7. PAYLOAD
-8. PROOF
-
-La version du RECORD est encodée comme premier champ variable après l'en-tête.
+1. VERSION du RECORD
+2. TYPE
+3. IDENTITY
+4. SEQUENCE : uint64 big-endian
+5. TIME
+6. SOURCE
+7. TARGET
+8. PAYLOAD
+9. PROOF
 
 ## Invariants
 
@@ -46,11 +46,16 @@ La version du RECORD est encodée comme premier champ variable après l'en-tête
 - aucun champ n'est supprimé parce qu'il est inconnu ;
 - l'identité sémantique n'est pas une adresse physique ;
 - `SIMULATED` ne devient jamais `HARDWARE` ;
-- le décodage doit refuser les longueurs impossibles et les données tronquées ;
-- `decode(encode(record)) = record`.
+- le décodage refuse les longueurs impossibles, les données tronquées et les octets finaux ;
+- `decode(encode(record)) = record` ;
+- un RECORD natif décodé conserve la même représentation canonique avant exécution sémantique.
 
-## Position actuelle
+## Validation actuelle
 
-Cette représentation est une matérialisation de données, pas encore une ISA CPU.
+Le bootstrap Go vérifie le round-trip, le déterminisme, les troncatures, l'absence de panique du décodeur et l'équivalence entre représentation native et représentation canonique.
 
-Étape suivante : définir le paquet d'instructions minimal et son état d'exécution, puis connecter ce modèle à une mémoire contrôlée dans un environnement de test.
+`ExecuteNativeRecord` réutilise ensuite exactement le même pipeline d'autorisation, d'exécution et de transition que `ExecuteRecord`.
+
+## Limite
+
+Cette représentation est une matérialisation de données et un point d'entrée du bootstrap. Elle ne constitue pas encore une ISA CPU native ni une preuve matérielle.
