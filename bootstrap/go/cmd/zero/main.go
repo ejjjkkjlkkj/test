@@ -16,6 +16,7 @@ type output struct {
 	Result       zero.Result      `json:"result"`
 	Previous     zero.SemanticState `json:"previous"`
 	Next         zero.SemanticState `json:"next"`
+	Transitioned bool              `json:"transitioned"`
 }
 
 func main() {
@@ -40,6 +41,7 @@ func main() {
 				Result: receipt.Result,
 				Previous: receipt.Previous,
 				Next: receipt.Next,
+				Transitioned: receipt.Transitioned,
 			})
 			fmt.Fprintln(os.Stderr, "error:", err)
 			os.Exit(1)
@@ -50,6 +52,7 @@ func main() {
 			Result: receipt.Result,
 			Previous: receipt.Previous,
 			Next: receipt.Next,
+			Transitioned: receipt.Transitioned,
 		}); err != nil {
 			fmt.Fprintln(os.Stderr, "error:", err)
 			os.Exit(1)
