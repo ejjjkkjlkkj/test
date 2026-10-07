@@ -1,21 +1,23 @@
 ZERO — ÉTAT DE REPRISE
-Date de sauvegarde: 2026-10-06
+
+Date de mise à jour: 2026-10-07
 Dépôt: ejjjkkjlkkj/test
-Branche: main
-Dernier état connu: 7b198a3825ad39681542314c3bf04f51e01c80ab
+Branche de travail: work/zero-native-materialization-20261007
+HEAD de travail: 71877ebf42d73a942e3d4f21ed8b321009638890
+Base main observée: c237acf9a87a101ea6d5ac0164c9c8ee4494be51
 
 BUT
 Construire ZERO depuis zéro: machine, langage, communication, monde et accessibilité native sont une seule architecture sémantique.
 
 CONTRAINTES
-- Pas de Python, JavaScript, Rust, Java ou autre langage classique comme fondation.
-- Les outils externes servent seulement au bootstrap/validation.
+- Les langages classiques servent uniquement au bootstrap/validation; ils ne sont pas la fondation conceptuelle de ZERO.
 - Pas de DOM, API d'accessibilité ou représentation graphique comme source de vérité.
-- Aucune modalité privilégiée: voix, braille, clavier, visuel, tactile, automatisation, futures modalités.
+- Aucune modalité privilégiée: voix, braille, clavier, visuel, tactile, automatisation ou futures modalités.
 - Accessibilité et sécurité restent distinctes.
 - Les objets inconnus restent représentés et inspectables.
 - Erreurs, refus, interruptions et incertitudes sont sémantiques.
 - Machine locale et machine distante suivent le même modèle.
+- Aucune preuve matérielle n'est déduite des tests bootstrap.
 
 ARCHITECTURE
 PHYSIQUE -> MACHINE -> SENS -> LANGAGE -> OBJET -> RELATION -> INTERACTION -> MONDE
@@ -23,28 +25,26 @@ Noyau: IDENTITY + MEANING + STRUCTURE + STATE + RELATIONS + CAPABILITIES + EVENT
 Entrée: PHYSICAL -> OBSERVATION -> EVENT -> INTENT -> TRANSITION
 Sortie: STATE -> RESULT -> PROJECTION -> PHYSICAL
 
-COUVERTURE
-CPU, mémoire, GPU, écran, audio, clavier, stockage, firmware, boot, réseau, autres machines, texte, image/photo, graphique, tableau, vidéo, audio, carte, document, application, web, formulaire, CAPTCHA, objets inconnus.
+ÉTAT ACTUEL PROUVÉ
+- représentation canonique RECORD déterministe;
+- représentation binaire native ZER0 avec encodeur/décodeur Go;
+- ISA minimale et mémoire bornée;
+- autorisation ISA et autorisation sémantique distinctes;
+- événements déterministes;
+- transitions d'état et contradictions non-transitionnelles;
+- pipeline sémantique complet;
+- exécution directe d'un RECORD canonique;
+- exécution d'un RECORD natif via le même pipeline;
+- CLI bootstrap stdin/stdout;
+- tests unitaires, déterministes et fuzz de non-panique;
+- CI ZERO validation et ZERO bootstrap validation PASS sur le HEAD courant.
 
-ÉTAT DU DÉPÔT
-La base actuelle est une spécification détaillée. Les documents définissent déjà le noyau, l'exécution, la machine, les objets, l'interaction, le réseau, le protocole et le navigateur.
+FRONTIÈRE DE PREUVE
+Le PASS actuel concerne le bootstrap logiciel reproductible.
+NON PROUVÉ: CPU natif, noyau/hyperviseur, isolation matérielle, sécurité physique, radio, fonctionnement matériel sans bootstrap.
 
-PROCHAINE ÉTAPE OBLIGATOIRE
-Passer de la documentation à la matérialisation.
-1. Définir une représentation machine native minimale.
-2. Définir un premier format d'état sémantique indépendant d'un runtime classique.
-3. Définir un exécuteur minimal: charger, observer, transitionner, émettre événement/résultat, continuer/interrompre.
-4. Définir le bootstrap vers machine réelle ou environnement de test.
-5. Prouver CPU/mémoire.
-6. Ajouter progressivement I/O, périphériques et réseau.
-7. Construire ensuite environnement ZERO, navigateur ZERO et interaction universelle.
-8. Valider sur objets réels, inconnus et distants.
+PROCHAINE ÉTAPE
+Connecter progressivement la représentation native à davantage de vecteurs d'exécution et renforcer les gates de conformité, sans confondre bootstrap logiciel et preuve matérielle.
 
-ORDRE DE REPRISE
-Lire ZERO-CORE.md, BOOTSTRAP-CONTRACT.md, LANGUAGE-EXECUTION.md, MACHINE-STATE.md, TRANSITION.md, EVENTS.md, CAPABILITIES.md.
-Produire une réalisation minimale, pas seulement de nouveaux concepts.
-Conserver les documents existants.
-Noter séparément ce qui est réalisé et ce qui reste théorique.
-
-OBJECTIF DE REPRISE
-Faire passer ZERO de « spécification cohérente » à « premier système matérialisé ». Le premier objectif est le noyau capable de représenter, observer, transformer et communiquer avec la machine sans modèle d'application traditionnel.
+RÈGLE DE REPRISE
+Toute nouvelle fonctionnalité doit avoir une implémentation identifiable, un test exécutable, une preuve CI correspondante lorsque applicable et une frontière de preuve explicite.

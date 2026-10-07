@@ -56,3 +56,13 @@ func TestDeterministicExecution(t *testing.T) {
 		}
 	}
 }
+
+
+func FuzzDecodeNeverPanics(f *testing.F) {
+	f.Add("RECORD|1|EVENT|seed|1|UNKNOWN|LOCAL|REMOTE|payload|DEFINED")
+	f.Add("")
+	f.Add("RECORD")
+	f.Fuzz(func(t *testing.T, input string) {
+		_, _ = Decode(input)
+	})
+}
