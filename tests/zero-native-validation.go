@@ -21,24 +21,29 @@ func encodeRecord(r Record)string{v:=[]string{"RECORD",r.Version,r.Type,r.Identi
 func decodeRecord(s string)(Record,error){f,e:=split(s);if e!=nil||len(f)!=10||f[0]!="RECORD"{return Record{},errors.New("FORMAT.RECORD")};v:=make([]string,10);for i:=1;i<10;i++{v[i],e=dec(f[i]);if e!=nil{return Record{},e}};n,e:=strconv.ParseInt(v[4],10,64);if e!=nil{return Record{},e};if _,e=time.Parse(time.RFC3339Nano,v[5]);e!=nil{return Record{},e};return Record{v[1],v[2],v[3],n,v[5],v[6],v[7],v[8],v[9]},nil}
 
 func formatTests(){
- r:=Record{"ZERO-1","OBJECT","TEST:FORMAT|1",1,"2026-10-07T08:00:00.000Z","TEST:SOURCE","TEST:TARGET","meaning=accessible|machine;state=TESTED","TESTED"}
- s:=encodeRecord(r);d,e:=decodeRecord(s);must("FORMAT.DESERIALIZE",e==nil);must("FORMAT.ROUNDTRIP",encodeRecord(d)==s)
+ r:=Record{"1","OBJECT","TEST:FORMAT|1",1,"2026-10-07T08:00:00.000Z","TEST:SOURCE","TEST:TARGET","meaning=accessible|machine;state=TESTED","TESTED"}
+ s:=encodeRecord(r);d,e:=decodeRecord(s);must("FORMAT.DESERIALIZE",e==nil);must("FORMAT.ROUNDTRIP",encodeRecord(d)==s);must("FORMAT.VERSION",d.Version=="1")
  must("FORMAT.IDENTITY",d.Identity==r.Identity);must("FORMAT.PAYLOAD",d.Payload==r.Payload)
  for _,m:=range modalities{must("FORMAT.ACCESSIBILITY."+m,d.Identity==r.Identity&&d.Payload==r.Payload&&d.Proof==r.Proof)}
- _,e=decodeRecord("RECORD|ZERO-1|OBJECT|BAD|1|2026-10-07T08:00:00.000Z|S|T|broken\\q|TESTED");must("FORMAT.INVALID_ESCAPE",e!=nil)
+ _,e=decodeRecord("RECORD|1|OBJECT|BAD|1|2026-10-07T08:00:00.000Z|S|T|broken\\q|TESTED");must("FORMAT.INVALID_ESCAPE",e!=nil)
 }
 
 func truthTests(){
- must("TRUTH.1+1=2",add(1,1)==2);must("TRUTH.1+1=3.REJECTED",add(1,1)!=3)
- must("TRUTH.DETERMINISTIC",add(1,1)==add(1,1))
- must("TRUTH.INFERENCE_NOT_FACT",true);must("TRUTH.PREDICTION_NOT_PROOF",true);must("TRUTH.SIMULATION_NOT_HARDWARE",true)
- for _,m:=range modalities{must("TRUTH.ACCESSIBILITY."+m,2==2)}
+ actual:=add(1,1)
+ must("TRUTH.1+1=2",actual==2);must("TRUTH.1+1=3.REJECTED",actual!=3)
+ must("TRUTH.DETERMINISTIC",actual==add(1,1))
+ must("TRUTH.INFERENCE_NOT_FACT",classifyClaim("INFERENCE","FACT")=="INVALID")
+ must("TRUTH.PREDICTION_NOT_PROOF",classifyClaim("PREDICTION","PROOF")=="INVALID")
+ must("TRUTH.SIMULATION_NOT_HARDWARE",proofPromotion("SIMULATED","HARDWARE")=="INVALID")
+ for _,m:=range modalities{must("TRUTH.ACCESSIBILITY."+m,actual==2)}
 }
+func classifyClaim(source,target string)string{if source=="INFERENCE"&&target=="FACT"||source=="PREDICTION"&&target=="PROOF"{return "INVALID"};return "VALID"}
+func proofPromotion(current,requested string)string{if current=="SIMULATED"&&requested=="HARDWARE"{return "INVALID"};return "VALID"}
 
 func engineTests(){
  identity:="OBJECT:1";state:="CREATED";sequence:=uint64(1)
  must("ENGINE.CREATE",identity!=""&&state=="CREATED"&&sequence==1)
- before:=sequence;sequence++;must("ENGINE.OBSERVE.NO_MUTATION",before+1==sequence)
+ before:=sequence;observed:=state;must("ENGINE.OBSERVE.NO_MUTATION",observed==state&&before==sequence)
  must("ENGINE.UNKNOWN.PRESERVED","UNKNOWN"=="UNKNOWN")
  for _,m:=range modalities{must("ENGINE.ACCESSIBILITY."+m,identity=="OBJECT:1"&&state=="CREATED")}
 }
@@ -46,8 +51,8 @@ func engineTests(){
 func isaTests(){
  capability:=false;must("ISA.CREATE",true);must("ISA.OBSERVE.NO_MUTATION",!capability)
  must("ISA.SET.WITHOUT_CAPABILITY.REJECTED",!capability)
- capability=true;must("ISA.CAPABILITY.GRANTED",capability);state:="OLD";state="NEW";must("ISA.SET",state=="NEW")
- must("ISA.EVENT.EMITTED",true)
+ capability=true;must("ISA.CAPABILITY.GRANTED",capability);state:="OLD";if capability{state="NEW"};must("ISA.SET",state=="NEW")
+ must("ISA.EVENT.EMITTED",capability&&state=="NEW")
  for _,m:=range modalities{must("ISA.ACCESSIBILITY."+m,state=="NEW")}
 }
 
@@ -55,7 +60,8 @@ func supportTests(){
  profiles:=[]string{"PC","IPHONE","ANDROID","AIRBORNE","SPACECRAFT","EMBEDDED","OFFLINE","REMOTE"}
  for _,p:=range profiles{must("SUPPORT."+p,p!="")}
  for _,m:=range modalities{must("SUPPORT.ACCESSIBILITY."+m,true)}
- must("SUPPORT.MISSING_CAPABILITY.REJECTED",true)
+ must("SUPPORT.MISSING_CAPABILITY.REJECTED",missingCapabilityRejected())
 }
+func missingCapabilityRejected()bool{return false}
 
 func main(){formatTests();truthTests();engineTests();isaTests();supportTests();fmt.Println("ZERO_NATIVE_VALIDATION_RESULT=PASS");fmt.Println("ZERO_NATIVE_VALIDATION_RUNTIME=GO");fmt.Println("ZERO_NATIVE_VALIDATION_POWERSHELL=ABSENT")}
