@@ -1,7 +1,7 @@
 ZERO — ÉTAT DE REPRISE
-Date de sauvegarde: 2026-10-06
+Date de sauvegarde: 2026-10-07
 Dépôt: ejjjkkjlkkj/test
-Branche: main
+Branche: work/ci-reproducible-validation
 Dernier état connu: 7b198a3825ad39681542314c3bf04f51e01c80ab
 
 BUT
@@ -27,10 +27,10 @@ COUVERTURE
 CPU, mémoire, GPU, écran, audio, clavier, stockage, firmware, boot, réseau, autres machines, texte, image/photo, graphique, tableau, vidéo, audio, carte, document, application, web, formulaire, CAPTCHA, objets inconnus.
 
 ÉTAT DU DÉPÔT
-La base actuelle est une spécification détaillée. Les documents définissent déjà le noyau, l'exécution, la machine, les objets, l'interaction, le réseau, le protocole et le navigateur.
+La base actuelle combine spécification, vecteurs de test, validateurs et un bootstrap Go minimal. La validation CI reproductible est en cours sur cette branche.
 
 PROCHAINE ÉTAPE OBLIGATOIRE
-Passer de la documentation à la matérialisation.
+Poursuivre la matérialisation et garder séparés les niveaux définis, implémentés, testés, simulés et prouvés.
 1. Définir une représentation machine native minimale.
 2. Définir un premier format d'état sémantique indépendant d'un runtime classique.
 3. Définir un exécuteur minimal: charger, observer, transitionner, émettre événement/résultat, continuer/interrompre.
