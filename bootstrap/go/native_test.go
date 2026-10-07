@@ -38,3 +38,18 @@ func mustNativeEncode(r Record) []byte {
 	if err != nil { panic(err) }
 	return b
 }
+
+
+func FuzzDecodeNativeNeverPanics(f *testing.F) {
+	seed := mustNativeEncode(Record{
+		Version:"1", Type:"OBJECT", Identity:"seed", Sequence:1,
+		Time:"UNKNOWN", Source:"ZERO", Target:"WORLD",
+		Payload:"payload", Proof:"DEFINED",
+	})
+	f.Add(seed)
+	f.Add([]byte("ZER0"))
+	f.Add([]byte{})
+	f.Fuzz(func(t *testing.T, data []byte) {
+		_, _ = DecodeNative(data)
+	})
+}
