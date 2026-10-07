@@ -12,7 +12,7 @@ function Split-ZeroFields([string]$Line) {
     }
     if ($escaped) { throw 'FORMAT.ESCAPE' }
     [void]$fields.Add($buffer.ToString())
-    return $fields.ToArray()
+    return ,$fields.ToArray()
 }
 
 function Encode-ZeroField([string]$Value) {
@@ -49,7 +49,7 @@ function ConvertTo-ZeroRecordLine($Record) {
 }
 
 function ConvertFrom-ZeroRecordLine([string]$Line) {
-    $raw = @(Split-ZeroFields $Line)
+    $raw = Split-ZeroFields $Line
     if ($raw.Count -ne 10 -or $raw[0] -ne 'RECORD') { throw 'FORMAT.RECORD' }
     [ordered]@{
         Version=Decode-ZeroField $raw[1]; Type=Decode-ZeroField $raw[2]; Identity=Decode-ZeroField $raw[3]
