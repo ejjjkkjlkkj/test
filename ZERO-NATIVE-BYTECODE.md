@@ -21,7 +21,7 @@ En-tête :
 
 - 4 octets ASCII : `ZER0`
 - 1 octet : version du format, actuellement `1`
-- 1 octet : type logique du RECORD, conservé comme chaîne UTF-8
+- après l'en-tête, les champs sont encodés dans l'ordre normatif ci-dessous ; le TYPE est une chaîne UTF-8 préfixée par sa longueur
 
 Pour rester extensible, chaque champ variable est encodé comme :
 
