@@ -26,7 +26,13 @@ jobs:
         shell: bash
         run: |
           test -f VERSION
-          test "v$(cat VERSION)" = "${GITHUB_REF_NAME}"
+          version="$(tr -d '\r\n' < VERSION)"
+          test -n "$version"
+          if [ "${GITHUB_EVENT_NAME}" = "push" ]; then
+            test "v$version" = "${GITHUB_REF_NAME}"
+          else
+            echo "Manual release-gate execution: VERSION=$version"
+          fi
 
       - name: Bootstrap tests
         working-directory: bootstrap/go
