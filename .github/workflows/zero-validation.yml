@@ -67,3 +67,7 @@ jobs:
       - name: Accessibility validation
         shell: pwsh
         run: ./tests/zero-accessibility-gate.ps1
+
+      - name: Local component cleanliness
+        shell: pwsh
+        run: ./tests/no-local-ai.ps1
