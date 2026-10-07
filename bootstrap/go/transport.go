@@ -91,7 +91,7 @@ type RouteCapability struct {
 
 func SelectRoute(capabilities []RouteCapability) (Transport, bool) {
 	best := TransportNone
-	bestRank := len(capabilities) + 1
+	bestRank := int(^uint(0) >> 1)
 	for _, capability := range capabilities {
 		if !capability.Available || !capability.Reachable {
 			continue
