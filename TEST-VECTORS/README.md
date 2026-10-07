@@ -28,3 +28,8 @@ EXECUTION : NOT_EXECUTED
 SERIALIZER : NOT_IMPLEMENTED
 
 DESERIALIZER : NOT_IMPLEMENTED
+
+
+## Transport invariance
+
+`transport-invariance.zero` vérifie que le transport ne change pas le sens d'un message, que `DEFERRED` et `FAILED` ne deviennent pas `DELIVERED`, et qu'une catégorie `SATELLITE` ne crée pas automatiquement une preuve satellite. Ces vecteurs restent des données de validation et ne constituent pas une preuve de connectivité réelle.
