@@ -19,3 +19,6 @@ jobs:
       - name: Run deterministic truth invariants
         shell: pwsh
         run: ./tests/zero-truth-invariants.ps1
+      - name: Run mandatory accessibility gate
+        shell: pwsh
+        run: ./tests/zero-accessibility-gate.ps1
