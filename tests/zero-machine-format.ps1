@@ -17,7 +17,7 @@ function Split-ZeroFields([string]$Line) {
 
 function Encode-ZeroField([string]$Value) {
     if ($null -eq $Value) { return '' }
-    $Value.Replace('\','\\').Replace('|','\|').Replace([char]13,'\r').Replace([char]10,'\n').Replace([char]9,'\t')
+    $Value -replace "\\", "\\\\" -replace "\|", "\\|" -replace "`r", "\\r" -replace "`n", "\\n" -replace "`t", "\\t"
 }
 
 function Decode-ZeroField([string]$Value) {
