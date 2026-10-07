@@ -46,16 +46,20 @@ $modalities = @(
     'AUTOMATION'
 )
 
+function Project-Truth([string]$Modality) {
+    if ($Modality -notin $modalities) { throw "UNKNOWN MODALITY: $Modality" }
+    return [pscustomobject]@{ Modality=$Modality; Result=2; Truth='DETERMINISTIC' }
+}
+
 foreach ($modality in $modalities) {
-    if ($modality -notin $modalities) { throw "UNKNOWN MODALITY: $modality" }
-    $semanticResult = [pscustomobject]@{
+    $semanticResult = Project-Truth $modality [pscustomobject]@{
         identity = 'ARITHMETIC:1+1'
         operation = 'ADD'
         result = 2
         truth = 'DETERMINISTIC'
     }
 
-    if ($semanticResult.result -ne 2 -or $semanticResult.truth -ne 'DETERMINISTIC') {
+    if ($semanticResult.Modality -ne $modality -or $semanticResult.Result -ne 2 -or $semanticResult.Truth -ne 'DETERMINISTIC') {
         throw "ACCESSIBILITY $modality FAIL"
     }
     Write-Host "ACCESSIBILITY $modality PASS"
