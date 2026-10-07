@@ -74,7 +74,7 @@ Il consiste à rendre **le langage lui-même, la machine elle-même et leurs com
 
 Version courante : `0.1.0-rc.1`.
 
-Le `main` release-bound est validé par les tests bootstrap/core, la validation native ZERO et les validateurs de format, vérité, exécution universelle, machine, moteur de référence, support physique, portabilité de vérité et accessibilité.
+Le `main` release-bound est soumis aux tests bootstrap/core, à la validation native ZERO et aux validateurs de format, vérité, exécution universelle, machine, moteur de référence, support physique, portabilité de vérité et accessibilité. La validation effective dépend de l'exécution de la CI.
 
 Le workflow `.github/workflows/release-gate.yml` rejoue ces contrôles lorsqu'un tag `v*` est publié. Le tag doit correspondre exactement au contenu de `VERSION`.
 
