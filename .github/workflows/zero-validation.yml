@@ -8,10 +8,12 @@ permissions:
   contents: read
 
 jobs:
-  validator:
+  core:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Test hardware-independent core
+        run: go test ./core
       - name: Run native ZERO validation
         run: go run ./tests/zero-native-validation.go
