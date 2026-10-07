@@ -22,6 +22,9 @@ jobs:
       - name: Run mandatory accessibility gate
         shell: pwsh
         run: ./tests/zero-accessibility-gate.ps1
+      - name: Run ZERO reference engine
+        shell: pwsh
+        run: ./tests/zero-reference-engine.ps1
       - name: Run repository-wide acceptance gate
         shell: pwsh
         run: ./tests/zero-repository-gate.ps1
