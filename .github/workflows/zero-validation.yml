@@ -41,6 +41,26 @@ jobs:
         shell: pwsh
         run: ./tests/zero-universal-execution.ps1
 
+      - name: Machine format validation
+        shell: pwsh
+        run: ./tests/zero-machine-format.ps1
+
+      - name: Machine ISA validation
+        shell: pwsh
+        run: ./tests/zero-machine-isa.ps1
+
+      - name: Reference engine validation
+        shell: pwsh
+        run: ./tests/zero-reference-engine.ps1
+
+      - name: Physical support validation
+        shell: pwsh
+        run: ./tests/zero-physical-support.ps1
+
+      - name: Truth portability validation
+        shell: pwsh
+        run: ./tests/zero-truth-portability.ps1
+
       - name: Accessibility validation
         shell: pwsh
         run: ./tests/zero-accessibility-gate.ps1
