@@ -1,0 +1,59 @@
+ZERO.BILLION-TESTS / verification campaign
+
+PURPOSE
+  Drive the ZERO core through a reproducible multi-billion-case campaign.
+
+TARGET
+  2^32 = 4,294,967,296 logical test cases.
+
+EXECUTION MODEL
+  256 independent shards.
+  Each shard owns exactly 2^24 = 16,777,216 case identifiers.
+  case_id = shard << 24 | local_id.
+
+NO RANDOMNESS DEPENDENCY
+  Inputs are generated from case_id by a specified deterministic bijective mixer.
+  Every failing case is therefore reproducible from one integer.
+
+CAMPAIGN LAYERS
+  L0 parser / representation invariants
+  L1 transition invariants
+  L2 mutation and rollback
+  L3 unknown preservation
+  L4 history integrity
+  L5 capability isolation
+  L6 information-flow isolation
+  L7 resource exhaustion
+  L8 adversarial transformations
+  L9 replay equivalence
+  L10 metamorphic relations
+  L11 compiler/implementation differential checks
+  L12 boundary and hostile-device simulations
+
+PROMOTION GATE
+  A single failure blocks PROVEN.
+  A timeout is not a PASS.
+  A crash is not a PASS.
+  An unexecuted shard is not a PASS.
+  Missing artifact is not a PASS.
+
+EVIDENCE
+  Each shard emits:
+    shard id
+    first case
+    last case
+    executed count
+    failure count
+    failing case ids
+    implementation hash
+    specification hash
+    toolchain hash
+    timestamp
+
+GLOBAL RESULT
+  The campaign is EXHAUSTIVELY-TESTED only when all 256 shards have
+  independently verified PASS artifacts for the same source/specification digest.
+
+IMPORTANT
+  This campaign is stress/exhaustive testing of finite generated domains.
+  It is not by itself a mathematical proof of arbitrary ZERO programs.
