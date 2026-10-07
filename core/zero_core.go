@@ -73,20 +73,39 @@ func Project(result SemanticResult, modality Modality) (SemanticResult, error) {
 	return result, nil
 }
 
+func proofRank(proof Proof) int {
+	switch proof {
+	case ProofUnknown:
+		return 0
+	case ProofDefined:
+		return 1
+	case ProofImplemented:
+		return 2
+	case ProofTested:
+		return 3
+	case ProofSimulated:
+		return 4
+	case ProofQEMU:
+		return 5
+	case ProofHardware:
+		return 6
+	case ProofRF:
+		return 7
+	case ProofSatellite:
+		return 8
+	default:
+		return -1
+	}
+}
+
+// IsProofPromotionAllowed permits only adjacent evidence levels. A label
+// cannot be promoted merely because an execution environment claims it.
 func IsProofPromotionAllowed(from, to Proof) bool {
-	if from == ProofSimulated && to == ProofHardware {
+	fromRank, toRank := proofRank(from), proofRank(to)
+	if fromRank < 0 || toRank < 0 {
 		return false
 	}
-	if from == ProofQEMU && to == ProofHardware {
-		return false
-	}
-	if from == ProofHardware && to == ProofRF {
-		return false
-	}
-	if from == ProofRF && to == ProofSatellite {
-		return false
-	}
-	return true
+	return toRank == fromRank+1
 }
 
 type Record struct {
