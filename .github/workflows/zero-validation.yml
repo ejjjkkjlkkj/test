@@ -28,9 +28,8 @@ jobs:
       - name: Run ZERO reference engine
         shell: pwsh
         run: ./tests/zero-reference-engine.ps1
-      - name: Run ZERO machine format
-        shell: pwsh
-        run: ./tests/zero-machine-format.ps1
+      - name: Run ZERO machine format (Go)
+        run: go run ./tests/zero-machine-format.go
       - name: Run ZERO machine ISA
         shell: pwsh
         run: ./tests/zero-machine-isa.ps1
