@@ -1,0 +1,324 @@
+Two-factor Authentication
+Fifth-Generation Cellular Network
+Application Binary Interface
+Alternating Current
+Authenticated Code Module
+Average CPU power
+Analog-to-Digital Converter
+Alder Lake
+Advanced Error Reporting
+Advanced Encryption Standard
+Accelerated Graphics
+Port
+Advanced Host Controller
+Interface
+All In One
+Ambient Light Sensor
+Arithmetic Logic Unit
+x86-64
+ACPI Machine Language
+Advanced Platform Management Link
+Active Management Technology
+American National Standards Institute
+Application Programming Interface
+Apollo Lake
+Advanced Power Management
+AGESA PSP Output Buffer
+Accelerated Processing Unit
+Audio Return Channel
+Advanced RISC Machines
+Address Resolution Protocol
+Alert Standard Format
+ACPI Source Language
+Active State Power
+Management
+Advanced Technology Attachment
+ATA Packet Interface
+Advanced Technology eXtended
+Advanced Vector Extensions
+Base Address Register
+Baud
+BIOS boot specification
+Binary-Coded Decimal
+Binary Configuration Tool
+BIOS Data Area
+BUS, Device, Function
+Boot-Device Select
+Broadwell
+Boot Error Record Table
+Ball Grid Array
+Border Gateway Protocol
+Unreal mode
+Basic Input/Output
+System
+Built-in Self Test
+Bit-banging
+Bios & Kernel Developers’ guide
+Binary Large OBject
+Bus Master
+Baseboard Management Controller
+Bitmap
+Bill of Materials
+Boot Specification File
+Block Starting Symbol
+Bluetooth
+C-States
+Cache As RAM
+CrOS Board Information
+Content Delivery Network
+Card ElectroMechanical
+Coffee Lake
+Coverity ID
+Common Information Model
+Complex Instruction Set Computer
+Comet Lake
+Complementary Metal Oxide
+Semiconductor
+Cannon Lake
+Connectivity Integration
+Complex Programmable Logic Device
+Central Processing
+Unit
+CPU Identification
+C Run Time 0
+Cathode Ray Tube
+Camera Serial
+Interface
+Common Vulnerabilities and Exposures
+Cezanne
+ACPI Device power
+states
+Decode Control Register
+Display Data Channel
+Double Data Rate
+Dynamic Host Configuration Protocol
+Dual Inline Memory Module
+Dual inline package
+Direct Memory
+Access
+Desktop Management Interface
+Distributed Management Task Force
+Domain Name Service
+Denverton
+Dynamic Random Access Memory
+Digital Rights
+Management
+Differentiated System Descriptor
+Table
+MAY NOT BE
+COPIED
+Digital Signal Controller
+Digital subscriber line
+Digital Signal Processor
+Digital Video Interface
+Driver Execution Environment
+External Amplifier Power Down
+Embedded Controller
+Error Correction Code
+Extended Display Identification Data
+Extended Data
+Out
+Embedded DisplayPort
+Electrically Erasable Programmable ROM
+Extensible Firmware Interface
+Enhanced Host Controller Interface
+Elkhart Lake
+ElectroMagnetic
+Interference
+embedded MultiMedia
+Card
+Enhanced Read-Only File System
+Flash map
+Field-Programmable Gate Array
+framebuffer
+Fast Page Mode
+Floating-Point Unit
+Front-Side Bus
+Firmware Support Package Update Data
+File Transfer Protocol
+Graphics Address Remapping Table
+Gemini Lake
+Graphics Media
+Accelerator
+General Purpose Input/Output
+GUID Partition Table
+Graphics Processing Unit
+Google Summer of Code
+Graphics Translation Table
+Globally Unique IDentifier
+Horizontal Back Porch
+High Definition Audio
+High-Definition Multimedia Interface
+High Dynamic Range
+Host Embedded Controller Interface
+Horizontal Front Porch
+Human Interface
+Device
+High Precision Event Timer
+Hypertransport
+Inter-Integrated Circuit
+Inter-IC Sound
+I3c
+RISC-V Base Integer instruction set
+Infinity
+Fabric
+I/O Memory Management Unit
+Joint Test Action
+Group
+Kernel Configuration
+Low-Power DDR 5 SDRAM
+Low Pin
+count
+Long-Term
+Evolution
+Machine Check Architecture
+Management Component Transport Protocol
+MicroController
+Unit
+Mobile Industry Processor
+Interface
+MultiMedia
+Card
+Memory Mapped I/O
+MultiProcessor
+specification
+Memory Type and Range Register
+Linux documentation
+Mobile PCI Express Module
+Near Field
+Communication
+Next Generation Form
+Factor
+Number used once
+Non-Volatile Random Access Memory
+Original Design Manufacturer
+Original Equipment Manufacturer
+Open Host Controller
+Interface
+Processor Performance State
+Page Attribute
+Table
+Performance Acceleration
+Technology
+Intel: Protected Audio-Video
+Path
+Platform Controller Hub
+Peripheral Control
+Interconnect
+PCI Config
+space
+PCI Express
+Picasso
+PHYsical layer
+Programmable Interrupt
+Controller
+Personally Identifiable
+Information
+Programmed
+I/O
+PCI Interrupt Routing
+Table
+Programmable Interval
+Timer
+Plastic leaded chip
+carrier
+Phase-Locked
+Loop
+I/O port
+0x80
+Power-On Self
+Test
+Plain Old Telephone
+Service
+Revision control
+system
+Remote Direct Memory
+Access
+Radio-Frequency
+Interference
+Raptor Lake
+Sleep states
+S0 Low Power Idle
+Specific Absorption
+Rate
+Secure Digital
+Super I/O
+System Management
+BIOS
+System Management
+Bus
+System management
+mode
+Small-Outline Integrated
+Circuit
+Serial Presence
+Detect
+Serial Peripheral
+Interface
+Server System Infrastructure
+SSI Compact Electronics
+Bay
+SSI Enterprise Electronics
+Bay
+SSI Midrange Electronics
+Bay
+SSI Thin Electronics
+Bay
+Speech Signal Processor
+System-Top-Group
+Trusted Computing Group
+Thermal Design
+Power
+Trusted Execution
+Environment
+Translation Lookside
+Buffer
+Time Stamp
+Counter
+UnCacheable
+Microcode
+UEFI Development Kit
+Ultra DMA
+Universal Host Controller
+Interface
+Unified Media
+Interface
+Video BIOS
+Vboot Non-Volatile storage
+Google Verified Boot
+Video BIOS
+Table
+Video Electronics Standards Association
+Video Graphics Array
+Vendor Identifier
+Voltage Identifier
+VESA Local Bus
+Voice over IP
+Virtual Machine Extensions
+Vital Product Data
+Virtual Private Network
+Versatile Processor Unit
+Voltage Regulator
+Video Random Access Memory
+Voltage Regulator Module
+Tracking Termination Voltage
+Virtual UART
+Wide Area Network
+Write-Back
+Write-Combining
+World-facing Camera
+WatchDog Timer
+World Facing Camera
+Wireless Local Area Network
+Wireless WAN
+Write-Protect
+Wildcat Point
+Write-only
+Wake-on-LAN
+Write Through
+x86
+AMD64
+crossbar
+Extensible Host Controller Interface
+YCbCr
+Zero Insertion Force
