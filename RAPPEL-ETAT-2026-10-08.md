@@ -3,7 +3,7 @@
 ## Dépôt
 - Repository: ejjjkkjlkkj/test
 - Branche: main
-- HEAD validé: 75b2a34c99830c02d6dd108cf534777f3fcd3f34
+- HEAD logiciel validé: f62827d0b9f01a966a63c8b52dc0453127aecb26
 - Objectif: dépôt complet propre, cohérent, fonctionnel et préparé pour release.
 - Composant IA local: retiré de main. Ne pas le réintroduire.
 - Ne pas supprimer ni réécrire l'historique sans demande explicite.
@@ -23,6 +23,12 @@
 3. Nettoyage des références textuelles interdites dans les fichiers d'état.
 4. Introduction du nom neutre no-local-component.ps1 pour le contrôle de propreté, sans suppression du fichier historique existant.
 5. Mise à jour des workflows de validation et de release-gate pour utiliser le contrôle neutre.
+
+## État après audit de toutes les branches
+- Les arbres des 10 branches ont été relus.
+- Les fichiers spécifiques aux branches divergentes ont été inspectés.
+- Aucun contenu de branche divergente ne justifie une fusion automatique dans main.
+- ai/local-ollama reste explicitement hors de main.
 
 ## Prochaine étape
 - Vérifier le release-gate et les prérequis de publication.
