@@ -3,7 +3,7 @@
 Date de mise à jour: 2026-10-08
 Dépôt: ejjjkkjlkkj/test
 Branche de référence: main
-HEAD de référence: c329857826e426b390712df7db6cd4c6ac7f1d5c
+HEAD de référence: f53be6c6d00acc41e581ea437d282abe41ae91d1
 
 ## But
 Construire ZERO depuis zéro: machine, langage, communication, monde et accessibilité native sont une seule architecture sémantique.
@@ -30,12 +30,14 @@ Construire ZERO depuis zéro: machine, langage, communication, monde et accessib
 - CI reproductible sur push, pull request vers main et déclenchement manuel;
 - contrôle de propreté des composants locaux intégré à la validation.
 
-## État de validation au 2026-10-08
-- Bootstrap CI: PASS.
-- zero-truth-portability.ps1: PASS.
-- zero-machine-format.ps1: corrigé et exécuté dans la CI.
-- Validation complète: actuellement bloquée uniquement par une référence textuelle interdite dans le rappel d'état.
-- Release: NON VALIDÉE.
+## Validation CI du HEAD
+- Bootstrap: PASS.
+- ZERO validation: PASS.
+- Go: PASS.
+- Validators PowerShell: PASS.
+- Propreté des composants locaux: PASS.
+- Statut release: NON PUBLIÉ.
+- VERSION: 0.1.0-rc.1.
 
 ## Frontière de preuve
 Le PASS concerne le bootstrap logiciel reproductible.
