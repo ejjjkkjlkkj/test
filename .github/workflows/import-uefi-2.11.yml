@@ -1,0 +1,41 @@
+name: Import UEFI 2.11
+
+on:
+  push:
+    branches:
+      - import/uefi-spec-2.11
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Import UEFI Specification 2.11
+        shell: bash
+        run: |
+          set -euo pipefail
+          target="UEFI-Vocabulaire/UEFI_Spec_Final_2.11.pdf"
+          source="https://raw.githubusercontent.com/ejjjkkjlkkj/u/main/UEFI-Vocabulaire/UEFI_Spec_Final_2.11.pdf"
+
+          if [ -f "$target" ]; then
+            echo "Already present: $target"
+            exit 0
+          fi
+
+          mkdir -p "$(dirname "$target")"
+          curl --fail --location --retry 3 --output "$target" "$source"
+
+          test -s "$target"
+          echo "Imported $(stat -c%s "$target") bytes"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$target"
+          git commit -m "import: add UEFI Specification 2.11"
+          git push origin HEAD:import/uefi-spec-2.11
