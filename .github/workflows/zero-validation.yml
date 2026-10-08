@@ -70,4 +70,4 @@ jobs:
 
       - name: Local component cleanliness
         shell: pwsh
-        run: ./tests/no-local-ai.ps1
+        run: ./tests/no-local-component.ps1
