@@ -5,8 +5,8 @@ function Split-ZeroFields([string]$Line) {
     $buffer = [System.Text.StringBuilder]::new()
     $escaped = $false
     foreach ($c in $Line.ToCharArray()) {
-        if ($escaped) { [void]$buffer.Append('\\'); [void]$buffer.Append($c); $escaped = $false; continue }
-        if ($c -eq '\\') { $escaped = $true; continue }
+        if ($escaped) { [void]$buffer.Append('\'); [void]$buffer.Append($c); $escaped = $false; continue }
+        if ($c -eq '\') { $escaped = $true; continue }
         if ($c -eq '|') { [void]$fields.Add($buffer.ToString()); [void]$buffer.Clear(); continue }
         [void]$buffer.Append($c)
     }
@@ -17,14 +17,15 @@ function Split-ZeroFields([string]$Line) {
 
 function Encode-ZeroField([string]$Value) {
     if ($null -eq $Value) { return '' }
+
     $buffer = [System.Text.StringBuilder]::new()
     foreach ($c in $Value.ToCharArray()) {
         switch ($c) {
-            '\\' { [void]$buffer.Append('\\\\') }
-            '|'  { [void]$buffer.Append('\\|') }
-            ([char]13) { [void]$buffer.Append('\\r') }
-            ([char]10) { [void]$buffer.Append('\\n') }
-            ([char]9)  { [void]$buffer.Append('\\t') }
+            '\' { [void]$buffer.Append('\\') }
+            '|'  { [void]$buffer.Append('\|') }
+            ([char]13) { [void]$buffer.Append('\r') }
+            ([char]10) { [void]$buffer.Append('\n') }
+            ([char]9)  { [void]$buffer.Append('\t') }
             default { [void]$buffer.Append($c) }
         }
     }
@@ -37,7 +38,7 @@ function Decode-ZeroField([string]$Value) {
     foreach ($c in $Value.ToCharArray()) {
         if ($escaped) {
             switch ($c) {
-                '\\' { [void]$buffer.Append('\\') }
+                '\' { [void]$buffer.Append('\') }
                 '|' { [void]$buffer.Append('|') }
                 'n' { [void]$buffer.Append([char]10) }
                 'r' { [void]$buffer.Append([char]13) }
@@ -47,7 +48,7 @@ function Decode-ZeroField([string]$Value) {
             $escaped = $false
             continue
         }
-        if ($c -eq '\\') { $escaped = $true; continue }
+        if ($c -eq '\') { $escaped = $true; continue }
         [void]$buffer.Append($c)
     }
     if ($escaped) { throw 'FORMAT.ESCAPE' }
@@ -80,8 +81,8 @@ function ConvertFrom-ZeroRecordLine([string]$Line) {
     [ordered]@{
         Version=$version; Type=$type; Identity=$identity
         Sequence=$sequence; Time=$time
-        Source=$source; Target=$target
-        Payload=Decode-ZeroField $raw[8]; Proof=$proof
+        Source=Decode-ZeroField $raw[6]; Target=Decode-ZeroField $raw[7]
+        Payload=Decode-ZeroField $raw[8]; Proof=Decode-ZeroField $raw[9]
     }
 }
 
@@ -110,17 +111,14 @@ $bad='RECORD|1|OBJECT|BAD|1|2026-10-07T08:00:00.000Z|S|T|broken\q|TESTED'
 $rejected=$false
 try { [void](ConvertFrom-ZeroRecordLine $bad) } catch { $rejected=$true }
 if (-not $rejected) { throw 'INVALID_ESCAPE_ACCEPTED' }
-
 $badVersion=$encoded -replace '^RECORD\|1\|','RECORD|2|'
 $rejectedVersion=$false
 try { [void](ConvertFrom-ZeroRecordLine $badVersion) } catch { $rejectedVersion=$true }
 if (-not $rejectedVersion) { throw 'INVALID_VERSION_ACCEPTED' }
-
 $badSequence=$encoded -replace '\|1\|2026-10-07T08:00:00.000Z\|','|-1|2026-10-07T08:00:00.000Z|'
 $rejectedSequence=$false
 try { [void](ConvertFrom-ZeroRecordLine $badSequence) } catch { $rejectedSequence=$true }
 if (-not $rejectedSequence) { throw 'INVALID_SEQUENCE_ACCEPTED' }
-
 $badProof=$encoded -replace '\|TESTED$','|INVALID_PROOF'
 $rejectedProof=$false
 try { [void](ConvertFrom-ZeroRecordLine $badProof) } catch { $rejectedProof=$true }
