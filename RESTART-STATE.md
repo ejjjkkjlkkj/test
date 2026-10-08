@@ -1,9 +1,9 @@
 # ZERO — ÉTAT DE REPRISE
 
-Date de mise à jour: 2026-10-07
+Date de mise à jour: 2026-10-08
 Dépôt: ejjjkkjlkkj/test
 Branche de référence: main
-HEAD de référence: 6a12c69a50dce25349c28f41d7b2eb70d172967b
+HEAD de référence: c329857826e426b390712df7db6cd4c6ac7f1d5c
 
 ## But
 Construire ZERO depuis zéro: machine, langage, communication, monde et accessibilité native sont une seule architecture sémantique.
@@ -16,6 +16,7 @@ Construire ZERO depuis zéro: machine, langage, communication, monde et accessib
 - Les objets inconnus restent représentés et inspectables.
 - Erreurs, refus, interruptions et incertitudes sont sémantiques.
 - Aucune preuve matérielle n'est déduite des tests bootstrap.
+- Aucun composant IA local n'appartient au main release-bound.
 
 ## État validé
 - représentation canonique RECORD déterministe;
@@ -27,10 +28,17 @@ Construire ZERO depuis zéro: machine, langage, communication, monde et accessib
 - CLI bootstrap stdin/stdout;
 - tests unitaires, déterministes et fuzz de non-panique;
 - CI reproductible sur push, pull request vers main et déclenchement manuel;
-- suppression du composant produit local Ollama/AI du main release-bound.
+- contrôle de propreté des composants locaux intégré à la validation.
+
+## État de validation au 2026-10-08
+- Bootstrap CI: PASS.
+- zero-truth-portability.ps1: PASS.
+- zero-machine-format.ps1: corrigé et exécuté dans la CI.
+- Validation complète: actuellement bloquée uniquement par une référence textuelle interdite dans le rappel d'état.
+- Release: NON VALIDÉE.
 
 ## Frontière de preuve
-Le PASS actuel concerne le bootstrap logiciel reproductible.
+Le PASS concerne le bootstrap logiciel reproductible.
 NON PROUVÉ: CPU natif, noyau/hyperviseur, isolation matérielle, sécurité physique, radio et fonctionnement matériel sans bootstrap.
 
 ## Règle de reprise
