@@ -11,7 +11,6 @@ function Assert-Equal([string]$Name, $Actual, $Expected) {
     Write-Host "$Name PASS"
 }
 
-# The formal rule is deliberately executed without consulting any hardware profile.
 $profiles = @(
     'PC',
     'IPHONE',
@@ -23,6 +22,18 @@ $profiles = @(
     'REMOTE'
 )
 
+$modalities = @(
+    'VOICE',
+    'BRAILLE',
+    'KEYBOARD',
+    'DISPLAY',
+    'TOUCH',
+    'POINTER',
+    'NETWORK',
+    'AUTOMATION'
+)
+
+# The formal rule is deliberately executed without consulting any hardware profile.
 function Project-Truth([string]$Profile, [string]$Modality) {
     if ($Profile -notin $profiles) { throw "UNKNOWN PROFILE: $Profile" }
     if ($Modality -notin $modalities) { throw "UNKNOWN MODALITY: $Modality" }
@@ -41,18 +52,6 @@ if ($invalid -eq 3) {
     throw 'TRUTH CONTRADICTION: 1+1=3'
 }
 Write-Host 'TRUTH 1+1=3 REJECTED'
-
-# Accessibility projections must preserve the deterministic result.
-$modalities = @(
-    'VOICE',
-    'BRAILLE',
-    'KEYBOARD',
-    'DISPLAY',
-    'TOUCH',
-    'POINTER',
-    'NETWORK',
-    'AUTOMATION'
-)
 
 foreach ($modality in $modalities) {
     $semanticResult = Project-Truth 'PC' $modality
