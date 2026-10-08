@@ -3,7 +3,7 @@
 Date de mise à jour: 2026-10-08
 Dépôt: ejjjkkjlkkj/test
 Branche de référence: main
-HEAD de référence: f53be6c6d00acc41e581ea437d282abe41ae91d1
+HEAD de référence: 2800a18f48bd340db3facfc6558cd41c52ba6f92
 
 ## But
 Construire ZERO depuis zéro: machine, langage, communication, monde et accessibilité native sont une seule architecture sémantique.
