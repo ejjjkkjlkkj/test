@@ -3,7 +3,7 @@
 ## Dépôt
 - Repository: ejjjkkjlkkj/test
 - Branche: main
-- HEAD validé: f53be6c6d00acc41e581ea437d282abe41ae91d1
+- HEAD validé: 2800a18f48bd340db3facfc6558cd41c52ba6f92
 - Objectif: dépôt complet propre, cohérent, fonctionnel et préparé pour release.
 - Composant IA local: retiré de main. Ne pas le réintroduire.
 - Ne pas supprimer ni réécrire l'historique sans demande explicite.
