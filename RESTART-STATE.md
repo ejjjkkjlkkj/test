@@ -3,7 +3,7 @@
 Date de mise à jour: 2026-10-08
 Dépôt: ejjjkkjlkkj/test
 Branche de référence: main
-HEAD de référence: 5ba95254be3b1261ab51702292162e2e1a6d905e
+HEAD logiciel validé: f62827d0b9f01a966a63c8b52dc0453127aecb26
 
 ## But
 Construire ZERO depuis zéro: machine, langage, communication, monde et accessibilité native sont une seule architecture sémantique.
@@ -31,7 +31,7 @@ Construire ZERO depuis zéro: machine, langage, communication, monde et accessib
 - contrôle de propreté des composants locaux intégré à la validation.
 
 ## Validation CI du HEAD
-- HEAD: 5ba95254be3b1261ab51702292162e2e1a6d905e.
+- HEAD logiciel validé: f62827d0b9f01a966a63c8b52dc0453127aecb26.
 - Bootstrap: PASS, run 37740532597.
 - ZERO validation: PASS, run 37740532754.
 - Bootstrap: PASS.
