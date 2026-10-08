@@ -3,14 +3,14 @@
 ## Dépôt
 - Repository: ejjjkkjlkkj/test
 - Branche: main
-- HEAD validé: 2800a18f48bd340db3facfc6558cd41c52ba6f92
+- HEAD validé: 75b2a34c99830c02d6dd108cf534777f3fcd3f34
 - Objectif: dépôt complet propre, cohérent, fonctionnel et préparé pour release.
 - Composant IA local: retiré de main. Ne pas le réintroduire.
 - Ne pas supprimer ni réécrire l'historique sans demande explicite.
 
 ## Validation réelle
-- Bootstrap CI: PASS.
-- ZERO validation CI: PASS.
+- Bootstrap CI: PASS, run 37740532597.
+- ZERO validation CI: PASS, run 37740532754.
 - Contrôles Go: PASS.
 - Validators PowerShell: PASS.
 - Contrôle des composants locaux: PASS.
