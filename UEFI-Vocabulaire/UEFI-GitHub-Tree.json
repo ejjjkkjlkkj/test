@@ -1,0 +1,1884 @@
+{
+  "sha": "82804ed40f173589b372fa303d1e69956dcfa153",
+  "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/trees/82804ed40f173589b372fa303d1e69956dcfa153",
+  "tree": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62af15cda7d66b54a900b517904fe10d6101dcd1",
+      "size": 405,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/62af15cda7d66b54a900b517904fe10d6101dcd1"
+    },
+    {
+      "path": "source",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8cc56b7db5e48547c63940a4db9b41d44622d562",
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/trees/8cc56b7db5e48547c63940a4db9b41d44622d562"
+    },
+    {
+      "path": "source/01_Introduction.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d481754572fd9f81ec2bf5f499a51c8992c0405",
+      "size": 42573,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/1d481754572fd9f81ec2bf5f499a51c8992c0405"
+    },
+    {
+      "path": "source/02_Overview.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84cd13584e51dadce89396430510645be9423d6c",
+      "size": 164701,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/84cd13584e51dadce89396430510645be9423d6c"
+    },
+    {
+      "path": "source/03_Boot_Manager.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18e371a36f4e5d27186dd199a7b03ab136749997",
+      "size": 64708,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/18e371a36f4e5d27186dd199a7b03ab136749997"
+    },
+    {
+      "path": "source/04_EFI_System_Table.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0085d6884d05f77faab7ad091488180ad7a986b5",
+      "size": 50674,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/0085d6884d05f77faab7ad091488180ad7a986b5"
+    },
+    {
+      "path": "source/05_GUID_Partition_Table_Format.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad195675bf4f83b9140822c347834fcec72f4952",
+      "size": 29449,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/ad195675bf4f83b9140822c347834fcec72f4952"
+    },
+    {
+      "path": "source/06_Block_Transition_Table_Layout.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "327b7e6c1ed1b1af7f7a68d6d65b391b5c8ae6cc",
+      "size": 36340,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/327b7e6c1ed1b1af7f7a68d6d65b391b5c8ae6cc"
+    },
+    {
+      "path": "source/07_Services_Boot_Services.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f462a304a1c09e9ed78b78c9928494a5061979b",
+      "size": 207065,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/1f462a304a1c09e9ed78b78c9928494a5061979b"
+    },
+    {
+      "path": "source/08_Services_Runtime_Services.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "492f3d4089d089c8d576181b2fdc04add57c757e",
+      "size": 125635,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/492f3d4089d089c8d576181b2fdc04add57c757e"
+    },
+    {
+      "path": "source/09_Protocols_EFI_Loaded_Image.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be031ea6293688db81d70041db570b3c84bad948",
+      "size": 5997,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/be031ea6293688db81d70041db570b3c84bad948"
+    },
+    {
+      "path": "source/10_Protocols_Device_Path_Protocol.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d58db4d570e6b2a7b133d3684a97273723f86db",
+      "size": 179364,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/5d58db4d570e6b2a7b133d3684a97273723f86db"
+    },
+    {
+      "path": "source/11_Protocols_UEFI_Driver_Model.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "312fb1f54ecdf99ff60218fee9bdbe0f92b48445",
+      "size": 173920,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/312fb1f54ecdf99ff60218fee9bdbe0f92b48445"
+    },
+    {
+      "path": "source/12_Protocols_Console_Support.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8783ec3dcff9757104296b01bcd991eccf4ebac9",
+      "size": 134925,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/8783ec3dcff9757104296b01bcd991eccf4ebac9"
+    },
+    {
+      "path": "source/13_Protocols_Media_Access.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2da1e737990da9f479ebcb9894aabbf9cdeab26d",
+      "size": 320190,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/2da1e737990da9f479ebcb9894aabbf9cdeab26d"
+    },
+    {
+      "path": "source/14_Protocols_PCI_Bus_Support.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2145201c9956f062e73f90d0747fabd0d4e023df",
+      "size": 205426,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/2145201c9956f062e73f90d0747fabd0d4e023df"
+    },
+    {
+      "path": "source/15_Protocols_SCSI_Driver_Models_and_Bus_Support.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ceb5b113fc89fd32e2e6ed433b3e2e2b88af245",
+      "size": 85542,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/4ceb5b113fc89fd32e2e6ed433b3e2e2b88af245"
+    },
+    {
+      "path": "source/16_Protocols_iSCSI_Boot.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb70da627a303cf6b38f5b95d6a06facab90b104",
+      "size": 6963,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/cb70da627a303cf6b38f5b95d6a06facab90b104"
+    },
+    {
+      "path": "source/17_Protocols_USB_Support.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34b987c5e67fe69c9662b0a191eda50344a402e9",
+      "size": 163341,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/34b987c5e67fe69c9662b0a191eda50344a402e9"
+    },
+    {
+      "path": "source/18_Protocols_Debugger_Support.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db15f94e0f2fbce953699bd2b4af8dca4a1608d3",
+      "size": 58707,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/db15f94e0f2fbce953699bd2b4af8dca4a1608d3"
+    },
+    {
+      "path": "source/19_Protocols_Compression_Algorithm_Specification.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0ea1046b449a970575011925fc418e20321e608",
+      "size": 39452,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/f0ea1046b449a970575011925fc418e20321e608"
+    },
+    {
+      "path": "source/20_Protocols_ACPI_Protocols.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72462b033fe6fb6b62f7131504ada1cea235f232",
+      "size": 5034,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/72462b033fe6fb6b62f7131504ada1cea235f232"
+    },
+    {
+      "path": "source/21_Protocols_String_Services.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3294c3203f9fd9ef0457238ce55b235f941ad7b",
+      "size": 21375,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/e3294c3203f9fd9ef0457238ce55b235f941ad7b"
+    },
+    {
+      "path": "source/22_EFI_Byte_Code_Virtual_Machine.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67611e4663db1d13e051485429a7079c58ad50f1",
+      "size": 126425,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/67611e4663db1d13e051485429a7079c58ad50f1"
+    },
+    {
+      "path": "source/23_Firmware_Update_and_Reporting.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f52c8083bddc27e6436a1d40efa364730154883",
+      "size": 80756,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/0f52c8083bddc27e6436a1d40efa364730154883"
+    },
+    {
+      "path": "source/24_Network_Protocols_SNP_PXE_BIS.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af7aa299e3cbd7bd0e149a829f6fcebf91947b41",
+      "size": 260114,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/af7aa299e3cbd7bd0e149a829f6fcebf91947b41"
+    },
+    {
+      "path": "source/25_Network_Protocols_Managed_Network.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c550d20e4e27d5b1059a0e2f40862f44da1e5e5c",
+      "size": 32638,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/c550d20e4e27d5b1059a0e2f40862f44da1e5e5c"
+    },
+    {
+      "path": "source/26_Network_Protocols_Bluetooth.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ea5f9b2c1a15b5560f768d97adf8e9516325013",
+      "size": 126466,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/4ea5f9b2c1a15b5560f768d97adf8e9516325013"
+    },
+    {
+      "path": "source/27_Network_Protocols_VLAN_and_EAP.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "127eacd7ee8c889032da71bb783f9aae97954310",
+      "size": 121794,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/127eacd7ee8c889032da71bb783f9aae97954310"
+    },
+    {
+      "path": "source/28_Network_Protocols_TCP_IP_and_Configuration.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "53c85339e08030eac67b2e659f14ccfa8649072a",
+      "size": 311003,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/53c85339e08030eac67b2e659f14ccfa8649072a"
+    },
+    {
+      "path": "source/29_Network_Protocols_ARP_and_DHCP.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2889d1052a933fea4235b48f08d932f1f6ce8b0",
+      "size": 273138,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/d2889d1052a933fea4235b48f08d932f1f6ce8b0"
+    },
+    {
+      "path": "source/30_Network_Protocols_UDP_and_MTFTP.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c50e9e8e686c6e7c6884b5120db209fb0078f61e",
+      "size": 159823,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/c50e9e8e686c6e7c6884b5120db209fb0078f61e"
+    },
+    {
+      "path": "source/31_EFI_Redfish_Service_Support.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e89dc601437bdb29c3c318177696649573e3ea2a",
+      "size": 39103,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/e89dc601437bdb29c3c318177696649573e3ea2a"
+    },
+    {
+      "path": "source/32_Secure_Boot_and_Driver_Signing.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2009f12b8d884f0050139ef1c9ff549b34e5de31",
+      "size": 73065,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/2009f12b8d884f0050139ef1c9ff549b34e5de31"
+    },
+    {
+      "path": "source/33_Human_Interface_Infrastructure.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b8f0557f63a44810a71a9dbbd81199297159871",
+      "size": 357280,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/4b8f0557f63a44810a71a9dbbd81199297159871"
+    },
+    {
+      "path": "source/34_HII_Protocols.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6a35ae66be82b06853de97f76b3804cb7830248",
+      "size": 118968,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/b6a35ae66be82b06853de97f76b3804cb7830248"
+    },
+    {
+      "path": "source/35_HII_Configuration_Processing_and_Browser_Protocol.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b94a6e1c7fe447937a8d3562e3b414abba6fca7",
+      "size": 88906,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/6b94a6e1c7fe447937a8d3562e3b414abba6fca7"
+    },
+    {
+      "path": "source/36_User_Identification.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b52c2d17e1e3c47f71018ba936a96b2c763fbdbf",
+      "size": 87161,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/b52c2d17e1e3c47f71018ba936a96b2c763fbdbf"
+    },
+    {
+      "path": "source/37_Secure_Technologies.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "565d091c47e8d75ddd52761982c5332d72246c42",
+      "size": 200142,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/565d091c47e8d75ddd52761982c5332d72246c42"
+    },
+    {
+      "path": "source/38_Confidential_Computing.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d751e0b903b31f50f2a07849b5a48f06469e93e8",
+      "size": 14507,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/d751e0b903b31f50f2a07849b5a48f06469e93e8"
+    },
+    {
+      "path": "source/39_Micellaneous_Protocols.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a995195bab1b13b70b0f234ad64d1a2a09473c63",
+      "size": 7498,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/a995195bab1b13b70b0f234ad64d1a2a09473c63"
+    },
+    {
+      "path": "source/Apx_A_GUID_and_Time_Formats.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8edd31b2a6f08afe1d784db14f584ad6449f4978",
+      "size": 4044,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/8edd31b2a6f08afe1d784db14f584ad6449f4978"
+    },
+    {
+      "path": "source/Apx_B_Console.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04dcd54d004b2b8e537160d32eb136064a027ab9",
+      "size": 19609,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/04dcd54d004b2b8e537160d32eb136064a027ab9"
+    },
+    {
+      "path": "source/Apx_C_Device_Path_Examples.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ddd64adf9e1738e37481ed30298b3bce2aacbe52",
+      "size": 12735,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/ddd64adf9e1738e37481ed30298b3bce2aacbe52"
+    },
+    {
+      "path": "source/Apx_D_Status_Codes.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61a131a2d7c12527568fde4034fae8427a72283c",
+      "size": 6776,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/61a131a2d7c12527568fde4034fae8427a72283c"
+    },
+    {
+      "path": "source/Apx_E_Universal_Network_Driver_Interfaces.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3edaf8ef14937ceb6b57ac7173e60c028837cae9",
+      "size": 171006,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/3edaf8ef14937ceb6b57ac7173e60c028837cae9"
+    },
+    {
+      "path": "source/Apx_F_Using_the_Simple_Pointer_Protocol.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "265f0d8dddb173cc47a858cc42eb8df4c44221a0",
+      "size": 2415,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/265f0d8dddb173cc47a858cc42eb8df4c44221a0"
+    },
+    {
+      "path": "source/Apx_G_Using_the_EFI_Extended_SCSI_Pass_Thru_Protocol.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5431fa9cd7c1b106cba4e5075c5d6eb4f9c336d4",
+      "size": 4474,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/5431fa9cd7c1b106cba4e5075c5d6eb4f9c336d4"
+    },
+    {
+      "path": "source/Apx_H_Compression_Source_Code.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15986f6fce93b71933d11e785f0bbc1ef62b09e6",
+      "size": 26877,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/15986f6fce93b71933d11e785f0bbc1ef62b09e6"
+    },
+    {
+      "path": "source/Apx_I_Decompression_Source_Code.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cfa1ef0e637aaf49e430f1a01531be15da5f4465",
+      "size": 15715,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/cfa1ef0e637aaf49e430f1a01531be15da5f4465"
+    },
+    {
+      "path": "source/Apx_J_EFI_Byte_Code_Virtual_Machine_Opcode_List.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82516853180baf1d14ed2d5b244da6982ccb5e93",
+      "size": 5855,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/82516853180baf1d14ed2d5b244da6982ccb5e93"
+    },
+    {
+      "path": "source/Apx_K_Alphabetic_Function_Lists.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5859546040f3cf3761f3a985829ff4f8c2c537d8",
+      "size": 176,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/5859546040f3cf3761f3a985829ff4f8c2c537d8"
+    },
+    {
+      "path": "source/Apx_L_EFI_1.10_Protocol_Changes_and_Deprecation_List.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a71f3625d9136850e4196c1d14ff5608d4e60c3f",
+      "size": 4474,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/a71f3625d9136850e4196c1d14ff5608d4e60c3f"
+    },
+    {
+      "path": "source/Apx_M_Formats_Language_Codes_and_Language_Code_Arrays.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee0900b657442728f968972ce06ef03c0729dfaf",
+      "size": 2118,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/ee0900b657442728f968972ce06ef03c0729dfaf"
+    },
+    {
+      "path": "source/Apx_N_Common_Platform_Error_Record.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d50d89a780f37d15652e909ebbedf227d8ba8d58",
+      "size": 115200,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/d50d89a780f37d15652e909ebbedf227d8ba8d58"
+    },
+    {
+      "path": "source/Apx_O_UEFI_ACPI_Data_Table.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35b848c7dd426877cf660988cca7d02143e784c7",
+      "size": 4746,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/35b848c7dd426877cf660988cca7d02143e784c7"
+    },
+    {
+      "path": "source/Apx_P_Hardware_Error_Record_Persistence_Usage.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "edff1feb159090b78ecdebddbcea4801720361a5",
+      "size": 3989,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/edff1feb159090b78ecdebddbcea4801720361a5"
+    },
+    {
+      "path": "source/Apx_Q_References.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33d78dd7d5a0ca889895618fda03a39b47b9cc54",
+      "size": 20489,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/33d78dd7d5a0ca889895618fda03a39b47b9cc54"
+    },
+    {
+      "path": "source/Apx_R_Glossary.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "980fdd8ff15f0195ea8cf7cf2456a0ab7acb4039",
+      "size": 46530,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/980fdd8ff15f0195ea8cf7cf2456a0ab7acb4039"
+    },
+    {
+      "path": "source/Frontmatter",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fbb7e8d82b2ca89d76451ba8ce60b852eb48f630",
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/trees/fbb7e8d82b2ca89d76451ba8ce60b852eb48f630"
+    },
+    {
+      "path": "source/Frontmatter/Acknowledgments.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cd8b886a43d338a50ffba4f5d2a4933421ea0be",
+      "size": 2697,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/4cd8b886a43d338a50ffba4f5d2a4933421ea0be"
+    },
+    {
+      "path": "source/Frontmatter/List_of_Figures.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5acf40b4cacf844a15bd5d2448f43e1284925f7",
+      "size": 15036,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/c5acf40b4cacf844a15bd5d2448f43e1284925f7"
+    },
+    {
+      "path": "source/Frontmatter/List_of_Tables.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3a8a9723b3681caaaf5e1d4e7149577b606cfc6",
+      "size": 28433,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/f3a8a9723b3681caaaf5e1d4e7149577b606cfc6"
+    },
+    {
+      "path": "source/Frontmatter/Revision_History.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ace62e25643459a96d4df6975b3201001d4f8a8",
+      "size": 103362,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/2ace62e25643459a96d4df6975b3201001d4f8a8"
+    },
+    {
+      "path": "source/Images",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "796be28acf00e8deb339e5e32d78aaab896186de",
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/trees/796be28acf00e8deb339e5e32d78aaab896186de"
+    },
+    {
+      "path": "source/Images/Block_Transition_Table_Layout-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6b604535b107b7e87ae308b2143640bbc94f880",
+      "size": 25694,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/a6b604535b107b7e87ae308b2143640bbc94f880"
+    },
+    {
+      "path": "source/Images/Block_Transition_Table_Layout-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6ef5743188d82586a5920ed2a0727c358e75f98",
+      "size": 18385,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/f6ef5743188d82586a5920ed2a0727c358e75f98"
+    },
+    {
+      "path": "source/Images/Block_Transition_Table_Layout-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "abaa9f2b56f71a22b70885f6f94b3c86741a41e9",
+      "size": 55942,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/abaa9f2b56f71a22b70885f6f94b3c86741a41e9"
+    },
+    {
+      "path": "source/Images/Block_Transition_Table_Layout-5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "efe774a3b4cbdd2a84d30af7558292bdc65d8c1c",
+      "size": 51831,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/efe774a3b4cbdd2a84d30af7558292bdc65d8c1c"
+    },
+    {
+      "path": "source/Images/Block_Transition_Table_Layout-6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d368b5a8d97e5d561f43866965dedcd3d37174f5",
+      "size": 238876,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/d368b5a8d97e5d561f43866965dedcd3d37174f5"
+    },
+    {
+      "path": "source/Images/Common_Platform_Error_Record-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9191b2cbda6eeabe9589168c852ea5610d2f9c39",
+      "size": 4872,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/9191b2cbda6eeabe9589168c852ea5610d2f9c39"
+    },
+    {
+      "path": "source/Images/Device_Path_Examples-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11091e5b1b5049c9b630c4947729de228fe9718b",
+      "size": 21274,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/11091e5b1b5049c9b630c4947729de228fe9718b"
+    },
+    {
+      "path": "source/Images/Device_Path_Examples-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "378fb74ba241f4c0c04f876dfa9866c16359614e",
+      "size": 30463,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/378fb74ba241f4c0c04f876dfa9866c16359614e"
+    },
+    {
+      "path": "source/Images/Device_Path_Examples-5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2881de58a7ddcf2b381702994a5627b5cedf550b",
+      "size": 69071,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/2881de58a7ddcf2b381702994a5627b5cedf550b"
+    },
+    {
+      "path": "source/Images/EFI_Redfish_Service_Support-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04692d8ee356fce93f59089cf107211e0564b9f9",
+      "size": 31137,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/04692d8ee356fce93f59089cf107211e0564b9f9"
+    },
+    {
+      "path": "source/Images/EFI_Redfish_Service_Support-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51bbdcd4ff2ab62a3229c459581ed1cf9787672f",
+      "size": 124848,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/51bbdcd4ff2ab62a3229c459581ed1cf9787672f"
+    },
+    {
+      "path": "source/Images/EFI_Redfish_Service_Support-5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "083f3aa0b9313191ece3f4436187cc8dee892ece",
+      "size": 116760,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/083f3aa0b9313191ece3f4436187cc8dee892ece"
+    },
+    {
+      "path": "source/Images/EFI_Redfish_Service_Support-6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c83ed482583e9daa1026360b19d948da1b9ddd9f",
+      "size": 151833,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/c83ed482583e9daa1026360b19d948da1b9ddd9f"
+    },
+    {
+      "path": "source/Images/Firmware_Update_and_Reporting-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "478cfa0199621b1d81f5ca68aa15cf0675966fb1",
+      "size": 9363,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/478cfa0199621b1d81f5ca68aa15cf0675966fb1"
+    },
+    {
+      "path": "source/Images/Firmware_Update_and_Reporting-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3771843be60c2a33c891fc1675ac8191ef0bb77f",
+      "size": 20142,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/3771843be60c2a33c891fc1675ac8191ef0bb77f"
+    },
+    {
+      "path": "source/Images/Firmware_Update_and_Reporting-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03a844cc08a6d8dd7b4c9168c5a1a6c9f30e04cf",
+      "size": 151810,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/03a844cc08a6d8dd7b4c9168c5a1a6c9f30e04cf"
+    },
+    {
+      "path": "source/Images/Firmware_Update_and_Reporting-5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bc4f0068c43570affea07d89122e2f34f0f37d7",
+      "size": 25996,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/2bc4f0068c43570affea07d89122e2f34f0f37d7"
+    },
+    {
+      "path": "source/Images/Firmware_Update_and_Reporting-6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98d8140ba91977d0ac92498c35df1b5cc6d32442",
+      "size": 73296,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/98d8140ba91977d0ac92498c35df1b5cc6d32442"
+    },
+    {
+      "path": "source/Images/Firmware_Update_and_Reporting-7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a15a622b846c418f7b001e875324ddd53d4275ac",
+      "size": 50193,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/a15a622b846c418f7b001e875324ddd53d4275ac"
+    },
+    {
+      "path": "source/Images/GUID_Partition_Table_Format-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f582c5f7661624d8e1057f84ba96dd9f65de0b99",
+      "size": 20973,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/f582c5f7661624d8e1057f84ba96dd9f65de0b99"
+    },
+    {
+      "path": "source/Images/GUID_Partition_Table_Format-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29af0dfd0f1c5581d0c84773047b453aa5e6e9a6",
+      "size": 33209,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/29af0dfd0f1c5581d0c84773047b453aa5e6e9a6"
+    },
+    {
+      "path": "source/Images/GUID_Partition_Table_Format-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36333b3863e76fc2ca99ce8a1b0d086cc21a4945",
+      "size": 36027,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/36333b3863e76fc2ca99ce8a1b0d086cc21a4945"
+    },
+    {
+      "path": "source/Images/GUID_Partition_Table_Format-5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f0c982c09ac571528979e1e87cf71cdb312bd75",
+      "size": 53191,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/7f0c982c09ac571528979e1e87cf71cdb312bd75"
+    },
+    {
+      "path": "source/Images/HII-10.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca22fe99408489c3283e76be725c93f2d443c8eb",
+      "size": 327929,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/ca22fe99408489c3283e76be725c93f2d443c8eb"
+    },
+    {
+      "path": "source/Images/HII-11.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54076fc7be4d5754c7bd9173af70cf9e26579ca9",
+      "size": 300077,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/54076fc7be4d5754c7bd9173af70cf9e26579ca9"
+    },
+    {
+      "path": "source/Images/HII-12.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6dbec9bd28fed25980055418856bb554a2186ed",
+      "size": 304971,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/b6dbec9bd28fed25980055418856bb554a2186ed"
+    },
+    {
+      "path": "source/Images/HII-13.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69f802d5c601f673b6d838607b91f4780ca75f5a",
+      "size": 460518,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/69f802d5c601f673b6d838607b91f4780ca75f5a"
+    },
+    {
+      "path": "source/Images/HII-14.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2987e1ecfb843700c251b5c746716065abde5f2f",
+      "size": 8178,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/2987e1ecfb843700c251b5c746716065abde5f2f"
+    },
+    {
+      "path": "source/Images/HII-15.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56483fc93bd8aa32b945ee2099685b75a53b30dc",
+      "size": 22705,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/56483fc93bd8aa32b945ee2099685b75a53b30dc"
+    },
+    {
+      "path": "source/Images/HII-16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a8043a0a47b9edb7a9812b99a876c9f9e154e25",
+      "size": 68255,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/5a8043a0a47b9edb7a9812b99a876c9f9e154e25"
+    },
+    {
+      "path": "source/Images/HII-17.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "336795cdc9cc90fbca83ddbae3b049290970c5c7",
+      "size": 49907,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/336795cdc9cc90fbca83ddbae3b049290970c5c7"
+    },
+    {
+      "path": "source/Images/HII-18.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61db1a7d6bbd7cd522157aa27ad02a8ce22db7c5",
+      "size": 20378,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/61db1a7d6bbd7cd522157aa27ad02a8ce22db7c5"
+    },
+    {
+      "path": "source/Images/HII-19.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00e55ea17af711949aac81e7b39a314e10705725",
+      "size": 103298,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/00e55ea17af711949aac81e7b39a314e10705725"
+    },
+    {
+      "path": "source/Images/HII-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef1ccf9867d10e52706d243937016e2651fd2b69",
+      "size": 12455,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/ef1ccf9867d10e52706d243937016e2651fd2b69"
+    },
+    {
+      "path": "source/Images/HII-20.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "833bb94c75bfe7aef1af293da003e4b583bd2b6b",
+      "size": 33370,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/833bb94c75bfe7aef1af293da003e4b583bd2b6b"
+    },
+    {
+      "path": "source/Images/HII-21.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56a9b3193fd383f91ae0b8951f4dbc157fcd099c",
+      "size": 57067,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/56a9b3193fd383f91ae0b8951f4dbc157fcd099c"
+    },
+    {
+      "path": "source/Images/HII-22.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19808d6d05dd037c201aa1f27d8112727bd2965f",
+      "size": 546857,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/19808d6d05dd037c201aa1f27d8112727bd2965f"
+    },
+    {
+      "path": "source/Images/HII-23.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "695c81a4cec729a21aae86d6f9079932b035de80",
+      "size": 63187,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/695c81a4cec729a21aae86d6f9079932b035de80"
+    },
+    {
+      "path": "source/Images/HII-24.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d897686f0b0c1f078f0f0fdbaad02f9a3346bdcf",
+      "size": 62671,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/d897686f0b0c1f078f0f0fdbaad02f9a3346bdcf"
+    },
+    {
+      "path": "source/Images/HII-25.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b47eb136d64313c18ffeee7d4d5b5d0fa8a78f9c",
+      "size": 21982,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/b47eb136d64313c18ffeee7d4d5b5d0fa8a78f9c"
+    },
+    {
+      "path": "source/Images/HII-26.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f31cec5bacb00ed9695f1bb5f61940f42f61d616",
+      "size": 26391,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/f31cec5bacb00ed9695f1bb5f61940f42f61d616"
+    },
+    {
+      "path": "source/Images/HII-27.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ad519296414c5a6c8531bea371ec8136eab7595",
+      "size": 29736,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/0ad519296414c5a6c8531bea371ec8136eab7595"
+    },
+    {
+      "path": "source/Images/HII-28.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5bac969411b6f7e8f396a244b1ba47bcfabe792",
+      "size": 26852,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/b5bac969411b6f7e8f396a244b1ba47bcfabe792"
+    },
+    {
+      "path": "source/Images/HII-29.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf32882c5cdb0e35d0985e8845a97e74132a920b",
+      "size": 202976,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/bf32882c5cdb0e35d0985e8845a97e74132a920b"
+    },
+    {
+      "path": "source/Images/HII-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8006d2fbadca5092148859be9aaf10bbe627f32a",
+      "size": 16293,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/8006d2fbadca5092148859be9aaf10bbe627f32a"
+    },
+    {
+      "path": "source/Images/HII-30.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74fe810ad5a631fc30aaf64c70177c41a3ca851f",
+      "size": 38117,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/74fe810ad5a631fc30aaf64c70177c41a3ca851f"
+    },
+    {
+      "path": "source/Images/HII-31.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9af51678fe3aa253c576caf84afdf8bec21e5d3",
+      "size": 14146,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/d9af51678fe3aa253c576caf84afdf8bec21e5d3"
+    },
+    {
+      "path": "source/Images/HII-32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6469fb1ff1c0b6d71c14f3ed3668cf86f5a7882c",
+      "size": 31494,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/6469fb1ff1c0b6d71c14f3ed3668cf86f5a7882c"
+    },
+    {
+      "path": "source/Images/HII-33.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c9a25cdb115f713188c8df19354bc9e02ed493d",
+      "size": 56619,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/6c9a25cdb115f713188c8df19354bc9e02ed493d"
+    },
+    {
+      "path": "source/Images/HII-34.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60036f123bd121ce603bab06cb0d8b64f98ea6c1",
+      "size": 210342,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/60036f123bd121ce603bab06cb0d8b64f98ea6c1"
+    },
+    {
+      "path": "source/Images/HII-35.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64da0738e9ffe5b31be083a7c3c0707b28de084d",
+      "size": 34104,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/64da0738e9ffe5b31be083a7c3c0707b28de084d"
+    },
+    {
+      "path": "source/Images/HII-36.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84601beb6e22846f500a14811213549074047367",
+      "size": 32307,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/84601beb6e22846f500a14811213549074047367"
+    },
+    {
+      "path": "source/Images/HII-37.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15123c475d5394089b4d97c7545205a9b2f47a13",
+      "size": 38301,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/15123c475d5394089b4d97c7545205a9b2f47a13"
+    },
+    {
+      "path": "source/Images/HII-38.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c8b6982ff1d9ae6c2121f0a1d02015bf5686e0b3",
+      "size": 34714,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/c8b6982ff1d9ae6c2121f0a1d02015bf5686e0b3"
+    },
+    {
+      "path": "source/Images/HII-39.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a8fd45496ea08e2ab6e94c20bb9fbb63ed18fe7",
+      "size": 55644,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/9a8fd45496ea08e2ab6e94c20bb9fbb63ed18fe7"
+    },
+    {
+      "path": "source/Images/HII-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70adbcddc547e746e3e4872a4ed19681156a69cb",
+      "size": 23039,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/70adbcddc547e746e3e4872a4ed19681156a69cb"
+    },
+    {
+      "path": "source/Images/HII-40.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2550817f3ecd67ae23e5311af0896daebe2426ca",
+      "size": 30894,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/2550817f3ecd67ae23e5311af0896daebe2426ca"
+    },
+    {
+      "path": "source/Images/HII-41.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4e1ee9c13024fc0ba48eb18718b41ee0df90a81",
+      "size": 59349,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/b4e1ee9c13024fc0ba48eb18718b41ee0df90a81"
+    },
+    {
+      "path": "source/Images/HII-42.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "796a0b5543262f96850672831d4c07867d4cecfe",
+      "size": 64466,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/796a0b5543262f96850672831d4c07867d4cecfe"
+    },
+    {
+      "path": "source/Images/HII-43.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2916965223bd998fe25e00f83c6b846d5be76dc",
+      "size": 103664,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/b2916965223bd998fe25e00f83c6b846d5be76dc"
+    },
+    {
+      "path": "source/Images/HII-44.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48d9b9b09705d51de09efebccd123c751b137a85",
+      "size": 9405,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/48d9b9b09705d51de09efebccd123c751b137a85"
+    },
+    {
+      "path": "source/Images/HII-45.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "037500658d70324eda10deb5ce4df319706280d3",
+      "size": 9871,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/037500658d70324eda10deb5ce4df319706280d3"
+    },
+    {
+      "path": "source/Images/HII-46.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37867cc8decbf2843f4af90e41d135fdbf612968",
+      "size": 49566,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/37867cc8decbf2843f4af90e41d135fdbf612968"
+    },
+    {
+      "path": "source/Images/HII-47.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f6baba7b5116b2d9667cbc2c496c3a74555fa0f",
+      "size": 25567,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/3f6baba7b5116b2d9667cbc2c496c3a74555fa0f"
+    },
+    {
+      "path": "source/Images/HII-48.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad55feb3cbb6e6ed573c806e2d87725a10119c2e",
+      "size": 8806,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/ad55feb3cbb6e6ed573c806e2d87725a10119c2e"
+    },
+    {
+      "path": "source/Images/HII-49.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee3f98febdcbcb25e42f8d3587024adf25aa2ddc",
+      "size": 161923,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/ee3f98febdcbcb25e42f8d3587024adf25aa2ddc"
+    },
+    {
+      "path": "source/Images/HII-5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9206a193670145540fa8c759267a35a22003bf6",
+      "size": 29655,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/f9206a193670145540fa8c759267a35a22003bf6"
+    },
+    {
+      "path": "source/Images/HII-50.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25715e825fd966fee6a067aeefae4e89407325e9",
+      "size": 130467,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/25715e825fd966fee6a067aeefae4e89407325e9"
+    },
+    {
+      "path": "source/Images/HII-51.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38555c1702b9b682c702e24c01a51b949e06cfe5",
+      "size": 42473,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/38555c1702b9b682c702e24c01a51b949e06cfe5"
+    },
+    {
+      "path": "source/Images/HII-6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "81c8ddc46b73ec6a95e51a8151af843c559615b2",
+      "size": 265552,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/81c8ddc46b73ec6a95e51a8151af843c559615b2"
+    },
+    {
+      "path": "source/Images/HII-7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f50663f5304b40efda1f56248cf5b7e8a62dd73e",
+      "size": 325116,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/f50663f5304b40efda1f56248cf5b7e8a62dd73e"
+    },
+    {
+      "path": "source/Images/HII-8.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4786e8cbe2c38770dc9b53d7fdc5658d53caf79c",
+      "size": 262788,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/4786e8cbe2c38770dc9b53d7fdc5658d53caf79c"
+    },
+    {
+      "path": "source/Images/HII-9.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47cc49c6490363e5bd583fe924dd6d0bab519cb8",
+      "size": 216449,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/47cc49c6490363e5bd583fe924dd6d0bab519cb8"
+    },
+    {
+      "path": "source/Images/HII_Protocols-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "56e1ca1aeb14034ec695bd0c018897172287b3e9",
+      "size": 30096,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/56e1ca1aeb14034ec695bd0c018897172287b3e9"
+    },
+    {
+      "path": "source/Images/HII_Protocols-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d47c7ae48854beaa150ae95a13598cf386df29dd",
+      "size": 41895,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/d47c7ae48854beaa150ae95a13598cf386df29dd"
+    },
+    {
+      "path": "source/Images/HII_Protocols-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66849767dea0f4bf99296ea931eddb8c9015cc15",
+      "size": 60710,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/66849767dea0f4bf99296ea931eddb8c9015cc15"
+    },
+    {
+      "path": "source/Images/Introduction-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "072e85104214634c1a31c111850284f1ca5e1cce",
+      "size": 11400,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/072e85104214634c1a31c111850284f1ca5e1cce"
+    },
+    {
+      "path": "source/Images/Network_Protocols_ARP_and_DHCP-10.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d337c0933784d6f0f36902296dccd7df154678aa",
+      "size": 83107,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/d337c0933784d6f0f36902296dccd7df154678aa"
+    },
+    {
+      "path": "source/Images/Network_Protocols_ARP_and_DHCP-11.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d16f876f57276be53a961c2131998acdac71d66",
+      "size": 65752,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/2d16f876f57276be53a961c2131998acdac71d66"
+    },
+    {
+      "path": "source/Images/Network_Protocols_ARP_and_DHCP-12.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "81ef214e7d8ca0d254e8b511d62777825787e0f6",
+      "size": 36240,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/81ef214e7d8ca0d254e8b511d62777825787e0f6"
+    },
+    {
+      "path": "source/Images/Network_Protocols_ARP_and_DHCP-13.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e6546f612175c60abc478fec344cd40d1b058d0",
+      "size": 91195,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/9e6546f612175c60abc478fec344cd40d1b058d0"
+    },
+    {
+      "path": "source/Images/Network_Protocols_ARP_and_DHCP-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0c7ba9bb5c036f5ff5529b6eccc69092f254504",
+      "size": 40796,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/a0c7ba9bb5c036f5ff5529b6eccc69092f254504"
+    },
+    {
+      "path": "source/Images/Network_Protocols_ARP_and_DHCP-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a6f884afd971da985b2b8e1d1802cec39a5a0220",
+      "size": 70609,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/a6f884afd971da985b2b8e1d1802cec39a5a0220"
+    },
+    {
+      "path": "source/Images/Network_Protocols_ARP_and_DHCP-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "384b41ae5b6de430eb6aa398971fe8ccdbcc269b",
+      "size": 93484,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/384b41ae5b6de430eb6aa398971fe8ccdbcc269b"
+    },
+    {
+      "path": "source/Images/Network_Protocols_ARP_and_DHCP-5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9955f36e238c82c6ac413400c5b5d82b67b399d",
+      "size": 106410,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/d9955f36e238c82c6ac413400c5b5d82b67b399d"
+    },
+    {
+      "path": "source/Images/Network_Protocols_ARP_and_DHCP-6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "965064140f41d686a441259daad7f725cd729b87",
+      "size": 118252,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/965064140f41d686a441259daad7f725cd729b87"
+    },
+    {
+      "path": "source/Images/Network_Protocols_ARP_and_DHCP-7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "789b631963a0c6d2235c3fe1a17882c553a499ca",
+      "size": 65407,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/789b631963a0c6d2235c3fe1a17882c553a499ca"
+    },
+    {
+      "path": "source/Images/Network_Protocols_ARP_and_DHCP-8.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d8e9ddabfcf01ecc98ba3bb414f0757e5c323bc",
+      "size": 27738,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/8d8e9ddabfcf01ecc98ba3bb414f0757e5c323bc"
+    },
+    {
+      "path": "source/Images/Network_Protocols_ARP_and_DHCP-9.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4338a65abdbc3399c2a5c960697749638968a523",
+      "size": 109650,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/4338a65abdbc3399c2a5c960697749638968a523"
+    },
+    {
+      "path": "source/Images/Network_Protocols_SNP_PXE_BIS-10.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd243bd62e3abc7483a9784c5023c2bc9336535a",
+      "size": 37749,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/dd243bd62e3abc7483a9784c5023c2bc9336535a"
+    },
+    {
+      "path": "source/Images/Network_Protocols_SNP_PXE_BIS-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "983b595d0880a9ed07b71c8d80678e17a973981b",
+      "size": 131481,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/983b595d0880a9ed07b71c8d80678e17a973981b"
+    },
+    {
+      "path": "source/Images/Network_Protocols_SNP_PXE_BIS-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b822362e2d51212e6b02bcea1a60957da79f0264",
+      "size": 118478,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/b822362e2d51212e6b02bcea1a60957da79f0264"
+    },
+    {
+      "path": "source/Images/Network_Protocols_SNP_PXE_BIS-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19b7d5130eefc24fee07f13e12c21f3fa1168147",
+      "size": 132515,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/19b7d5130eefc24fee07f13e12c21f3fa1168147"
+    },
+    {
+      "path": "source/Images/Network_Protocols_SNP_PXE_BIS-5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9486ac4d252016ce554dd86f11440e7b315b8942",
+      "size": 43612,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/9486ac4d252016ce554dd86f11440e7b315b8942"
+    },
+    {
+      "path": "source/Images/Network_Protocols_SNP_PXE_BIS-5a.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d05d116604a60ffa42a8c5d466d06c5dea7f7b41",
+      "size": 113261,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/d05d116604a60ffa42a8c5d466d06c5dea7f7b41"
+    },
+    {
+      "path": "source/Images/Network_Protocols_SNP_PXE_BIS-6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "721b0d2235ab73254262cd9388a49ddf146a73ab",
+      "size": 34314,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/721b0d2235ab73254262cd9388a49ddf146a73ab"
+    },
+    {
+      "path": "source/Images/Network_Protocols_SNP_PXE_BIS-7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a4ae62bed99ef6907a8dcd191ebdec3e9845e72c",
+      "size": 191318,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/a4ae62bed99ef6907a8dcd191ebdec3e9845e72c"
+    },
+    {
+      "path": "source/Images/Network_Protocols_SNP_PXE_BIS-8.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d8b11582fe6aacf14a2aaad9ff0c1b45e315458",
+      "size": 76880,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/5d8b11582fe6aacf14a2aaad9ff0c1b45e315458"
+    },
+    {
+      "path": "source/Images/Overview-10.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c3bc2e03c70ad52fc7e512f3b1662c3f71b1067",
+      "size": 25172,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/6c3bc2e03c70ad52fc7e512f3b1662c3f71b1067"
+    },
+    {
+      "path": "source/Images/Overview-11.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fbede2e16ef4c1e7363ec7510a72341f62be8a98",
+      "size": 17283,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/fbede2e16ef4c1e7363ec7510a72341f62be8a98"
+    },
+    {
+      "path": "source/Images/Overview-12.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "620873564f5be7e9ce8bcd16e6e864149ccb7b1c",
+      "size": 31023,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/620873564f5be7e9ce8bcd16e6e864149ccb7b1c"
+    },
+    {
+      "path": "source/Images/Overview-13.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de469da7cfcc3070b12839e50d5d4e6fb30fad51",
+      "size": 21856,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/de469da7cfcc3070b12839e50d5d4e6fb30fad51"
+    },
+    {
+      "path": "source/Images/Overview-14.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3249a8c3943848c712c99943db2316b1472dea01",
+      "size": 27268,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/3249a8c3943848c712c99943db2316b1472dea01"
+    },
+    {
+      "path": "source/Images/Overview-15.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "413cdc1c23bf2e0ff8a5acb9820e96b8f9cdfaa3",
+      "size": 23490,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/413cdc1c23bf2e0ff8a5acb9820e96b8f9cdfaa3"
+    },
+    {
+      "path": "source/Images/Overview-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec9d4b3c7232e536b8ce16c2da32ac2a24eec078",
+      "size": 35023,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/ec9d4b3c7232e536b8ce16c2da32ac2a24eec078"
+    },
+    {
+      "path": "source/Images/Overview-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb69a3d7a91c9b1e97bfdc61ce847258e58e4c15",
+      "size": 14773,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/cb69a3d7a91c9b1e97bfdc61ce847258e58e4c15"
+    },
+    {
+      "path": "source/Images/Overview-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "908c3e20c53012986d492fc0937679a514137221",
+      "size": 14045,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/908c3e20c53012986d492fc0937679a514137221"
+    },
+    {
+      "path": "source/Images/Overview-5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4030c5b79ba05deaaf6090fdfbf896a7df5f11e8",
+      "size": 45860,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/4030c5b79ba05deaaf6090fdfbf896a7df5f11e8"
+    },
+    {
+      "path": "source/Images/Overview-6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "673d9a98c939d1406790b9b8061d6c28aa777b27",
+      "size": 46161,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/673d9a98c939d1406790b9b8061d6c28aa777b27"
+    },
+    {
+      "path": "source/Images/Overview-7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4b7464b8c61cdf87b3e8d2077976da47009a608",
+      "size": 46893,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/c4b7464b8c61cdf87b3e8d2077976da47009a608"
+    },
+    {
+      "path": "source/Images/Overview-8.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4528a51b4c472914dd180fcc0f18869a89978022",
+      "size": 17030,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/4528a51b4c472914dd180fcc0f18869a89978022"
+    },
+    {
+      "path": "source/Images/Overview-9.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0813565fde99c1d8ee922ab8422974ac44d33e5c",
+      "size": 48140,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/0813565fde99c1d8ee922ab8422974ac44d33e5c"
+    },
+    {
+      "path": "source/Images/Protocols_Compression_Algorithm_Specification-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "023492a1333e5f90d03ccb1b731bcb40d914a66e",
+      "size": 12535,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/023492a1333e5f90d03ccb1b731bcb40d914a66e"
+    },
+    {
+      "path": "source/Images/Protocols_Compression_Algorithm_Specification-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1bf0a2f2c27bd6d127cd6004d302386aaf3e4465",
+      "size": 13394,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/1bf0a2f2c27bd6d127cd6004d302386aaf3e4465"
+    },
+    {
+      "path": "source/Images/Protocols_Compression_Algorithm_Specification-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1bb2af3a82eca608e3360e850f01abff0c57c26",
+      "size": 5265,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/a1bb2af3a82eca608e3360e850f01abff0c57c26"
+    },
+    {
+      "path": "source/Images/Protocols_Compression_Algorithm_Specification-5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f4e53c6aac36799e255cc66c8f7863dfb566be2",
+      "size": 12362,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/6f4e53c6aac36799e255cc66c8f7863dfb566be2"
+    },
+    {
+      "path": "source/Images/Protocols_Compression_Algorithm_Specification-6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "870191592cec9261829955d62ba3ad7bd655e48a",
+      "size": 57147,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/870191592cec9261829955d62ba3ad7bd655e48a"
+    },
+    {
+      "path": "source/Images/Protocols_Compression_Algorithm_Specification-7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a723b81df4b1e09efe514b86f1657f701a3efeac",
+      "size": 73736,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/a723b81df4b1e09efe514b86f1657f701a3efeac"
+    },
+    {
+      "path": "source/Images/Protocols_Console_Support-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62fdf9478cdaa20e541d2a24bf71d2a81a005f69",
+      "size": 43252,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/62fdf9478cdaa20e541d2a24bf71d2a81a005f69"
+    },
+    {
+      "path": "source/Images/Protocols_Debugger_Support-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c65cf5af10c7c880b6c5badbbd6675114e708f96",
+      "size": 34737,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/c65cf5af10c7c880b6c5badbbd6675114e708f96"
+    },
+    {
+      "path": "source/Images/Protocols_Media_Access-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32aa1766fd9c109b5c3019248443f4aaf77026fd",
+      "size": 11397,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/32aa1766fd9c109b5c3019248443f4aaf77026fd"
+    },
+    {
+      "path": "source/Images/Protocols_Media_Access-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b14ed469d3f8449bb147cf6281516ad20fa258ec",
+      "size": 32417,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/b14ed469d3f8449bb147cf6281516ad20fa258ec"
+    },
+    {
+      "path": "source/Images/Protocols_Media_Access-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19f911c5de7403b31d9b272e6ffefb50a181cca6",
+      "size": 10888,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/19f911c5de7403b31d9b272e6ffefb50a181cca6"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-10.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d880324814a9f1685bf98d897f864889a95f5b7",
+      "size": 10656,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/1d880324814a9f1685bf98d897f864889a95f5b7"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-11.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c874513f2249ad28e38ab75374b2bbb8872379c8",
+      "size": 6556,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/c874513f2249ad28e38ab75374b2bbb8872379c8"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-12.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "88a240613b845babe4b4caf94214863715ad140c",
+      "size": 13879,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/88a240613b845babe4b4caf94214863715ad140c"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-13.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "317f5eb80fbad46057330083ef948b875dca50f8",
+      "size": 12208,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/317f5eb80fbad46057330083ef948b875dca50f8"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-14.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8428b1206a97b4eabe5515740bc68bb023b4adb4",
+      "size": 9858,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/8428b1206a97b4eabe5515740bc68bb023b4adb4"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-15.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c8cce106377fbe81dfb7d70801e2aa5df6348cda",
+      "size": 18752,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/c8cce106377fbe81dfb7d70801e2aa5df6348cda"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c76ec1f09036def1816476b565b902614759c83",
+      "size": 13127,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/6c76ec1f09036def1816476b565b902614759c83"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-17.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb5ff224fe8da6ea98a911b30250d8f8099ca70d",
+      "size": 37321,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/eb5ff224fe8da6ea98a911b30250d8f8099ca70d"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-18.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a92a1f8bcdfe8b10a1b29f598c03332d67eb16a8",
+      "size": 15681,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/a92a1f8bcdfe8b10a1b29f598c03332d67eb16a8"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-19.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3d3dece784a5165d6757323fc06ca35ffcf77cba",
+      "size": 10694,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/3d3dece784a5165d6757323fc06ca35ffcf77cba"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ea2e32636e81499403cab595926164dfbfb9c09",
+      "size": 11736,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/2ea2e32636e81499403cab595926164dfbfb9c09"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-20.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8f3e3a0a300452cb1082cb8735cc01d3bd84caa",
+      "size": 14885,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/a8f3e3a0a300452cb1082cb8735cc01d3bd84caa"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1eac19ebedfbd68c1e289f8f0d9ac6fd7d97848d",
+      "size": 16180,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/1eac19ebedfbd68c1e289f8f0d9ac6fd7d97848d"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2189b8ef8b9892f31c22d7cfd067abc32910250f",
+      "size": 28917,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/2189b8ef8b9892f31c22d7cfd067abc32910250f"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2257105a42f91f4af7a59bb50005477ca8098ad6",
+      "size": 15233,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/2257105a42f91f4af7a59bb50005477ca8098ad6"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffc751b92c44fdbe00cb9fc4926dccd534597e3a",
+      "size": 11843,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/ffc751b92c44fdbe00cb9fc4926dccd534597e3a"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50799f0d13b30d5d8b423a38447bdd3cf39b4446",
+      "size": 12694,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/50799f0d13b30d5d8b423a38447bdd3cf39b4446"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-8.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47c16bf7ee2453155ef0e2cebc5fea386deefa2e",
+      "size": 5489,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/47c16bf7ee2453155ef0e2cebc5fea386deefa2e"
+    },
+    {
+      "path": "source/Images/Protocols_PCI_Bus_Support-9.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e859a51a07ddd451cca1146b47c8f8f9fb1e12d",
+      "size": 26276,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/2e859a51a07ddd451cca1146b47c8f8f9fb1e12d"
+    },
+    {
+      "path": "source/Images/Protocols_SCSI_Driver_Models_and_Bus_Support-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20bd0623d5752b64183968f9f5fe2a79eb2c2dca",
+      "size": 10202,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/20bd0623d5752b64183968f9f5fe2a79eb2c2dca"
+    },
+    {
+      "path": "source/Images/Protocols_SCSI_Driver_Models_and_Bus_Support-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26dfb9df92cf63c9ec46dff5dba1fec1b617e1ef",
+      "size": 6436,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/26dfb9df92cf63c9ec46dff5dba1fec1b617e1ef"
+    },
+    {
+      "path": "source/Images/Protocols_UEFI_Driver_Model-new.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75695bb487660836845d8af7730672ba70cf754c",
+      "size": 86926,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/75695bb487660836845d8af7730672ba70cf754c"
+    },
+    {
+      "path": "source/Images/Protocols_USB_Support-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3e2d2e8e85a7b30c7e05acfba2f6e7fab658905",
+      "size": 5788,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/d3e2d2e8e85a7b30c7e05acfba2f6e7fab658905"
+    },
+    {
+      "path": "source/Images/Protocols_USB_Support-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "96a4e9e6acc9caf30fed39eeba0a01963f248a64",
+      "size": 7881,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/96a4e9e6acc9caf30fed39eeba0a01963f248a64"
+    },
+    {
+      "path": "source/Images/Protocols_USB_Support-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d185ac9e8c8ed8150a006efa314a882614e489df",
+      "size": 56715,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/d185ac9e8c8ed8150a006efa314a882614e489df"
+    },
+    {
+      "path": "source/Images/Secure_Boot_and_Driver_Signing-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11e8682caf05eb54d20dce0a4e6651197e0dacfd",
+      "size": 28973,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/11e8682caf05eb54d20dce0a4e6651197e0dacfd"
+    },
+    {
+      "path": "source/Images/Secure_Boot_and_Driver_Signing-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05630a6873f2307110c76d9222f07f083e5b165d",
+      "size": 22230,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/05630a6873f2307110c76d9222f07f083e5b165d"
+    },
+    {
+      "path": "source/Images/Secure_Boot_and_Driver_Signing-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ec87e9308f170ffec82564e0748e68449304e6b",
+      "size": 75305,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/9ec87e9308f170ffec82564e0748e68449304e6b"
+    },
+    {
+      "path": "source/Images/Secure_Boot_and_Driver_Signing-5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc7dc1873d808b3b4fdc8388ebfa84101368a1d9",
+      "size": 145437,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/fc7dc1873d808b3b4fdc8388ebfa84101368a1d9"
+    },
+    {
+      "path": "source/Images/Secure_Boot_and_Driver_Signing-6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "469282560961b7144c4598a9c5e9d8b1fbb2d4fe",
+      "size": 12177,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/469282560961b7144c4598a9c5e9d8b1fbb2d4fe"
+    },
+    {
+      "path": "source/Images/Secure_Boot_and_Driver_Signing-7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7d5fbe5e935168a74b0bfa5199ee7a0000ea7c6",
+      "size": 46282,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/e7d5fbe5e935168a74b0bfa5199ee7a0000ea7c6"
+    },
+    {
+      "path": "source/Images/Secure_Boot_and_Driver_Signing-8.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1630385724a88ca9e091ff85db2feb7286bc9ee8",
+      "size": 69242,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/1630385724a88ca9e091ff85db2feb7286bc9ee8"
+    },
+    {
+      "path": "source/Images/Secure_Technologies-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b60133866bf1c8cef37f5f32895527c387c45baf",
+      "size": 234886,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/b60133866bf1c8cef37f5f32895527c387c45baf"
+    },
+    {
+      "path": "source/Images/Services_Boot_Services-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e392d4638fa16c820a44afa4feb65dbb46ede9c9",
+      "size": 88888,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/e392d4638fa16c820a44afa4feb65dbb46ede9c9"
+    },
+    {
+      "path": "source/Images/Services_Boot_Services-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5efe9b2748709f68d1e24f8ace1f0ba390cd2a9",
+      "size": 29200,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/b5efe9b2748709f68d1e24f8ace1f0ba390cd2a9"
+    },
+    {
+      "path": "source/Images/Services_Runtime_Services-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7042329a2488496ffdae0ef696e883a41fd279ab",
+      "size": 57047,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/7042329a2488496ffdae0ef696e883a41fd279ab"
+    },
+    {
+      "path": "source/Images/Universal_Network_Driver_Interfaces-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07507d5179a50252c689c0ead48ac5783a4b9f98",
+      "size": 125271,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/07507d5179a50252c689c0ead48ac5783a4b9f98"
+    },
+    {
+      "path": "source/Images/Universal_Network_Driver_Interfaces-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9036edd2c70f151ad60f9bb9a219217bf23aea40",
+      "size": 194687,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/9036edd2c70f151ad60f9bb9a219217bf23aea40"
+    },
+    {
+      "path": "source/Images/Universal_Network_Driver_Interfaces-4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eae07716ec94ab8d83be507d5fa811236df8e6bc",
+      "size": 151174,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/eae07716ec94ab8d83be507d5fa811236df8e6bc"
+    },
+    {
+      "path": "source/Images/Universal_Network_Driver_Interfaces-5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee5a01f3ec955203bd7ef8fa432310b19274313f",
+      "size": 80187,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/ee5a01f3ec955203bd7ef8fa432310b19274313f"
+    },
+    {
+      "path": "source/Images/Universal_Network_Driver_Interfaces-6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0af035a0b8eac0b258d3713c8ee5123ff51cc24",
+      "size": 41636,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/a0af035a0b8eac0b258d3713c8ee5123ff51cc24"
+    },
+    {
+      "path": "source/Images/Universal_Network_Driver_Interfaces-7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40bb0a517e796f7dfa0f445e9f51ceca73eeb592",
+      "size": 88611,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/40bb0a517e796f7dfa0f445e9f51ceca73eeb592"
+    },
+    {
+      "path": "source/Images/Universal_Network_Driver_Interfaces-8.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b56b6b3d2d64c86021cfd48c5692631c24557967",
+      "size": 47585,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/b56b6b3d2d64c86021cfd48c5692631c24557967"
+    },
+    {
+      "path": "source/Images/Universal_Network_Driver_Interfaces-9.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e75a1532feb7f9c5bfa6f06d73b2d0b745ec832",
+      "size": 55678,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/5e75a1532feb7f9c5bfa6f06d73b2d0b745ec832"
+    },
+    {
+      "path": "source/Images/User_Identification-2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5db4cbc0f3012713cae51649b65966012cfac86c",
+      "size": 14310,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/5db4cbc0f3012713cae51649b65966012cfac86c"
+    },
+    {
+      "path": "source/Images/User_Identification-3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ded03730a6f8ba338e0405f563ba0b1341925a6",
+      "size": 21368,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/9ded03730a6f8ba338e0405f563ba0b1341925a6"
+    },
+    {
+      "path": "source/index.rst",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41b1cd331890c72651f4641b863ab50b48503e7c",
+      "size": 2417,
+      "url": "https://api.github.com/repos/UEFI/UEFI-Specification-Release/git/blobs/41b1cd331890c72651f4641b863ab50b48503e7c"
+    }
+  ],
+  "truncated": false
+}
