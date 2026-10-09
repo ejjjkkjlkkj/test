@@ -1,6 +1,6 @@
 # ADMWS12 Adapter — implementation contract
 
-Status: SPECIFIED, NOT IMPLEMENTED, NOT TESTED
+Status: IMPLEMENTED PARTIALLY, TESTS ADDED, NOT EXECUTED
 Target: ZERO Go bootstrap, package `zero`
 Date: 2026-10-09
 
@@ -59,3 +59,13 @@ Reject empty identities, unknown source kinds, and unknown state values. Do not 
 Current status: `SPECIFIED / NOT_IMPLEMENTED / NOT_TESTED`.
 
 This contract intentionally does not claim a working adapter. Implementation must follow only after the current ZERO Go test gate produces a recorded result.
+
+
+## Implementation update (2026-10-09)
+
+- Added `bootstrap/go/admws12_mapping.go` with `MapADMWS12Record`.
+- The adapter accepts the explicitly enumerated Capability and Evidence states, rejects unknown kind/state and empty identity, fixes Source/Target/Time, and always sets Proof to `UNPROVEN`.
+- Payload uses a fixed field order and ZERO's escaping function. Values are not promoted to proof.
+- Added two regression checks to `bootstrap/go/canonical_test.go` for the basic capability mapping and rejection of an invalid state.
+- Commits: adapter `f261f76d8caf06c910985c8dd16c15a3e480bf68`; canonical escaping adjustment `e229341ab8ce1eb4b309fab99491ae7e63e37deb`; regression checks `6457fb6f6bd3f3a152fb01150dd4b8d1eb471f21`.
+- Validation: **NOT_RUN**. No local Go execution or successful GitHub Actions result has been observed for these commits. Do not mark the adapter PASS until `go test ./...` and `go vet ./...` succeed on the exact commit.
