@@ -216,3 +216,11 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - L'adaptateur mappe rôle, rôle natif, nom accessible et états vers un record `SEMANTIC_NODE`; conserve les rôles/états inconnus pour compatibilité future et n'accepte aucun champ de valeur brute, pour éviter de sérialiser accidentellement le contenu d'un contrôle. La preuve reste `UNPROVEN`.
 - Tests CI sur le commit `72a78afb9e065be69a61295e82e512617e3dd6a0` : `ZERO bootstrap validation` run `37917266841` PASS ; `ZERO validation` run `37917266796` PASS ; `ZERO Go validation` run `37917266847` PASS.
 - Cela valide les adaptateurs au niveau du code et des tests, pas le runtime natif UIA ni un résultat matériel. Aucun code Rust source n'a été copié dans ZERO.
+
+
+### Inventaire complet des branches de ZERO (2026-10-09)
+
+- Workflow `ZERO repository inventory` run `37917266856` : **SUCCESS**. Il a interrogé l'API pour les branches de ZERO, puis généré un manifeste JSONL complet par branche et un résumé TSV. Artefact `zero-inventory-37917266856`, ID `11610175770`, rétention configurée à 90 jours.
+- Les 12 branches découvertes, leurs commits, Tree SHA, tailles et nombres de fichiers sont consignés dans `ZERO-BRANCH-INVENTORY.md`, commit `1d8af25548e858c87fc7b1a3ba2cae0d2ae2d3a8`.
+- Ce contrôle prouve que chaque branche retournée a un manifeste de fichiers, pas que son code est correct. Les branches sont conservées ; aucune fusion/suppression automatique.
+- Le manifeste a été capturé pendant que `main` évoluait ; il faut relancer après les derniers changements pour une photographie parfaitement alignée sur le HEAD actuel.
