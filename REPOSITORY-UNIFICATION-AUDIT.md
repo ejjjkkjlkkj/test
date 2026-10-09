@@ -172,3 +172,12 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - Correctif conservateur dans `tests/no-local-component.ps1`, commit `e8f6c5d23b1054807e3ac11f9956936339082828` : les rapports historiques nommés `RAPPEL-ETAT-*.md` restent inchangés mais sont exclus du scan de composants runtime. Aucune preuve ni mention historique n'a été supprimée.
 - Après le correctif, les workflows de commit `e8f6c5d23b1054807e3ac11f9956936339082828` étaient encore `in_progress` au dernier contrôle ; ne pas annoncer la validation globale PASS avant leur conclusion.
 - `go vet ./...` n'a pas encore de résultat vérifié. Le statut de l'adaptateur est donc `BOOTSTRAP_GO_TEST=PASS`, `GO_VET=NOT_RUN`, `FULL_ZERO_VALIDATION=RETRYING`.
+
+
+### Renforcement du mapping et des gates CI (2026-10-09)
+
+- Le workflow `ZERO bootstrap validation` a été confirmé **SUCCESS** sur le commit `3a5bb04dff101be29d03d4c532afe61f43c85507`, avec `go test ./...` dans `bootstrap/go`. Run `37916541170`.
+- Le contrat d'adaptateur a été mis à jour pour enregistrer ce résultat et distinguer explicitement les validations testées des validations encore en attente.
+- Ajout de tests couvrant les 10 états ADMWS12 acceptés (5 Capability, 5 Evidence), le rejet d'un kind inconnu et d'une identité vide : commit `62663ad8eab9f551cabaa1d909350c63ac6272fc`.
+- Ajout de `go vet ./...` au workflow `zero-bootstrap.yml`, commit `aacf8ffdd3891c5bedecfb217eee28b0ff7aec1f`. Son résultat pour le nouveau step doit être confirmé par run.
+- Le gate `no-local-component.ps1` a été ajusté pour ne pas analyser les rapports d'audit/inventaire comme s'ils étaient des dépendances d'exécution. Les documents restent intacts. Le run précédent avait révélé une seconde fausse alerte sur les chemins de l'inventaire ; les nouveaux runs sont en cours de vérification.
