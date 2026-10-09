@@ -68,7 +68,10 @@ This contract intentionally does not claim a working adapter. Implementation mus
 - Payload uses a fixed field order and ZERO's escaping function. Values are not promoted to proof.
 - Added two regression checks to `bootstrap/go/canonical_test.go` for the basic capability mapping and rejection of an invalid state.
 - Commits: adapter `f261f76d8caf06c910985c8dd16c15a3e480bf68`; canonical escaping adjustment `e229341ab8ce1eb4b309fab99491ae7e63e37deb`; regression checks `6457fb6f6bd3f3a152fb01150dd4b8d1eb471f21`.
-- Validation: **NOT_RUN**. No local Go execution or successful GitHub Actions result has been observed for these commits. Do not mark the adapter PASS until `go test ./...` and `go vet ./...` succeed on the exact commit.
+- Validation: GitHub Actions workflow `ZERO bootstrap validation` ran `go test ./...` from `bootstrap/go` and completed **SUCCESS** on commit `3a5bb04dff101be29d03d4c532afe61f43c85507` (run `37916541170`, job `113774000501`). This validates the bootstrap Go package at that exact SHA. `go vet ./...` remains **NOT_RUN / NOT_CONFIRMED**; full ZERO validation is tracked separately and had a historical failure in the archival-report cleanliness gate.
 
 - Added an additional regression check for Evidence state `ABSENT`, escaped payload content, and canonical Encode/Decode round-trip in commit `24ea4985d92b0c3523a532dba8ba7fd93146fd8e`.
 - Current validation remains **NOT_RUN / NOT_CONFIRMED**: the GitHub combined status endpoint returned an empty status list for the latest test commit. Empty statuses are not a pass.
+
+
+Current code validation state: `BOOTSTRAP_GO_TEST=PASS` at `3a5bb04dff101be29d03d4c532afe61f43c85507`; `GO_VET=NOT_RUN`; `FULL_ZERO_VALIDATION=RETRYING` after the archival-report exclusion fix.
