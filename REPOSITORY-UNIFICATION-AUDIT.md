@@ -181,3 +181,12 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - Ajout de tests couvrant les 10 états ADMWS12 acceptés (5 Capability, 5 Evidence), le rejet d'un kind inconnu et d'une identité vide : commit `62663ad8eab9f551cabaa1d909350c63ac6272fc`.
 - Ajout de `go vet ./...` au workflow `zero-bootstrap.yml`, commit `aacf8ffdd3891c5bedecfb217eee28b0ff7aec1f`. Son résultat pour le nouveau step doit être confirmé par run.
 - Le gate `no-local-component.ps1` a été ajusté pour ne pas analyser les rapports d'audit/inventaire comme s'ils étaient des dépendances d'exécution. Les documents restent intacts. Le run précédent avait révélé une seconde fausse alerte sur les chemins de l'inventaire ; les nouveaux runs sont en cours de vérification.
+
+
+### Résultat de validation complet et correction du workflow Go (2026-10-09)
+
+- Run `37916800172`, workflow `ZERO validation`, commit `62663ad8eab9f551cabaa1d909350c63ac6272fc` : **SUCCESS**. Les tests bootstrap/core et les gates format, vérité, exécution, format machine, ISA, moteur de référence, support physique, portabilité, accessibilité et propreté ont tous passé.
+- Run `37916800200`, workflow `ZERO bootstrap validation`, même commit : **SUCCESS**. Les tests Go du bootstrap passent avec les tests complets des états ADMWS12.
+- Le workflow distinct `ZERO Go validation` a échoué au commit `62663ad8eab9f551cabaa1d909350c63ac6272fc` car il lançait `go test ./...` depuis la racine, regroupant des validateurs Go autonomes de `tests/` qui déclarent chacun `main` et des types homonymes. Le code source n'était pas le problème : le mauvais périmètre de commande l'était.
+- Correction dans `.github/workflows/go.yml`, commit `214a0a8e94948ab6b7fbeba850456db67e9f8f2f` : `go test ./...` et `go vet ./...` s'exécutent désormais dans `bootstrap/go`, où se trouve le module Go. Le résultat de cette nouvelle exécution doit encore être confirmé.
+- La propreté globale est PASS au SHA `62663ad8eab9f551cabaa1d909350c63ac6272fc` après exclusion des rapports d'audit/inventaire du scan de dépendances runtime. Les documents sont conservés intacts.
