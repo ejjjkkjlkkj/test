@@ -1,0 +1,2 @@
+{"repository":"example/source","branch":"main","commit_sha":"0123456789abcdef","tree_sha":"abcdef0123456789","path":"src/lib.rs","path_base64":"c3JjL2xpYi5ycw==","type":"blob","mode":"100644","object_sha":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","size_bytes":512}
+{"repository":"example/source","branch":"main","commit_sha":"0123456789abcdef","tree_sha":"abcdef0123456789","path":"src/main.rs","path_base64":"c3JjL21haW4ucnM=","type":"blob","mode":"100644","object_sha":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","size_bytes":256}
