@@ -1,0 +1,8 @@
+[package]
+name = "zero-propagation"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Measures local compute time against real sound/light propagation reference times"
+
+[dependencies]
