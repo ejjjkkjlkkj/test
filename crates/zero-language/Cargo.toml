@@ -1,0 +1,8 @@
+[package]
+name = "zero-language"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Initial executable ZERO-IR reference interpreter"
+
+[dependencies]
