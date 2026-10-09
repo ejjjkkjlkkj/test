@@ -124,3 +124,14 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - Nouvelle lecture d'`accessible-windows` : README consolidé (blob `1eef452167295024869ae6a085682fdcfab2708c`), `docs/STATUS.md` de la branche consolidée (blob `780acbc2111171535f12277065af809b3fbdbd67`) et de `main` (blob `a8717fe5fe16ee60851ad708f6c7821f65e8c9a9`). Les résultats physiques sont des déclarations source datées ; le run indiqué comme queued doit être revérifié. Aucun fichier n'a été fusionné.
 - Nouvelle lecture de `project/README.md` (blob `29696f6c4fd9a3c83d07b5026db335dddf6e8268`), qui décrit une extraction limitée de voix/navigation et un commit source figé ; classé `DUPLICATE_CANDIDATE`, non doublon confirmé.
 - Limite d'outillage : l'interface GitHub utilisée ici ne fournit pas d'énumération récursive de l'arbre. L'audit complet fichier par fichier n'est donc pas terminé ; le registre rend explicites les éléments lus, les chemins en 404 et les éléments `NOT_REVIEWED`. Aucun dépôt, branche ou historique n'a été supprimé.
+
+
+### Audit fichier par fichier — lot 2 (2026-10-09)
+
+- Le registre détaillé `FILE-BY-FILE-AUDIT.md` a été enrichi au commit `7837d33e93dd3a424ecb8c496a772af6dc09fd86`.
+- Lecture de `NVDA-RUST-UIA-STANDALONE/Cargo.toml` (blob `cdc0d994e359eb09aa153b02ba103a383cded3f2`) et `src/lib.rs` (blob `852b5af11540af229863f8aacda0d68215db81c3`). Dépendance Windows crate épinglée ; licence au chemin `LICENSE` non trouvée.
+- Lecture de `u/Cargo.toml` (blob `e4624290a34c94373934ce3793c0def4664165c0`) et `u/src/lib.rs` (blob `50957bedec5f55495beff6563da81a5954371d02`). La synthèse vocale est Rust, avec modules audio/engine/frontend/FFI ; comparaison de provenance avec la voix intégrée à omni-os encore requise.
+- Lecture de `solution/pyproject.toml` (blob `14ff7514f9de721da743fe9f698196963b3e80a0`) et `solution/src/omni/cli.py` (blob `f874d644a0e71de2c0ddf0a2f689372ebb0fdbb6`). La licence déclarée est 0BSD ; la CLI relie plusieurs modules de validation Python.
+- Relecture de `ADMWS12/src/platform/capability.py` (blob `852c6e852918f71c804ed5a9f766900bcc79bb2f`), `evidence.py` (blob `45f70957a19995685f85d9a55ee64487fc3cf0da`) et `hal.py` (blob `dc4f853248baee4368c65e5861e1eedad2707f39`). Les états UNKNOWN/ABSENT/UNSUPPORTED/FAILED doivent rester distincts dans le contrat ZERO.
+- Plusieurs chemins testés retournent 404 ; ils sont consignés comme `PATH_NOT_FOUND`, jamais comme preuve d'absence du composant ou de ses tests.
+- Aucun code source n'a été copié, aucune fusion de branches n'a été effectuée et aucun test n'est déclaré exécuté par cette session.
