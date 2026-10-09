@@ -233,3 +233,14 @@ La liste ci-dessous provient de l'inventaire GitHub accessible le 2026-10-09. La
 - Exact content comparison completed between `u/src/synth_inc.rs` and `omni-os/voice-st/src/synth_inc.rs`: not identical; distinct blob SHAs and sizes, first difference at offset 1706. This resolves the earlier tentative relationship note: they are related candidate implementations, not a byte-identical shared source.
 - `omni-os/os/crates/aw-voice/src/lib.rs` includes `../../../../voice-st/src/synth_inc.rs` directly. That establishes intra-repository source reuse for omni-os, not equivalence with the separate `u` repository.
 - Next gate: compare APIs, golden corpora, license notices, output sample rate, mastering/resampling, latency and intelligibility before selecting a single voice backend. No voice source was copied or merged.
+
+
+## Voice source and licence gate — resolved blocker, 2026-10-09
+
+| Source | Exact evidence | Finding | Decision |
+|---|---|---|---|
+| `omni-os/voice-st` | `voice-st/Cargo.toml` blob `3b18bc7d39dd126a81418de57fd3373216bf651c`; declares package `st` 0.6.0-rc.3, license `0BSD`. `voice-st/LICENSE-THIRD-PARTY.md` blob `f7f5988ec28f4fbb243e17940ceff654095a6d69`. | Compact Rust engine has a declared 0BSD project license and separate third-party notices; neural backend is optional and separated. | CANDIDATE for ZERO's no_std/offline speech backend after tests and licence review. Prefer compact backend only for the Rust base. |
+| `u` | `Cargo.toml` blob `e4624290a34c94373934ce3793c0def4664165c0`; no root `LICENSE` found at the tested path; `LICENSE-THIRD-PARTY.md` blob `ffe9e30bc110abc4a56d2e4d1d2d600e54082781`. | Same crate name/version as omni-os, but source file is not byte-identical; the third-party inventory describes the ST engine as proprietary to that project. | LEGAL_BLOCKER for copying/reusing `u` code until a clear project licence is located and reconciled. |
+| `u/src/synth_inc.rs` vs `omni-os/voice-st/src/synth_inc.rs` | Blobs `e446a31a488abf1e2af9dd4186c0d3e9abe55c36` and `2ec524e16552d5435c7d3b34da710f50b3ddf044`; direct content comparison differs at offset 1706. | Not a shared byte-identical implementation. | No copying or automatic merge. Compare behavior, corpus, performance and licensing separately. |
+
+The README performance values are source-reported and not independently reproduced in this audit. The omni-os compact engine still needs its own test/build results and a physical intelligibility/latency evaluation; QEMU is not physical proof.
