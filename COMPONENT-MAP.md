@@ -41,3 +41,21 @@ Target repository: `ejjjkkjlkkj/test` (ZERO), branch `main`.
 - No tests or builds from the candidate repositories were executed during this source review.
 - No physical hardware, firmware write, NVRAM write, USB format or reboot validation was performed.
 - No performance, accessibility parity, or 99.99% reliability claim is established.
+
+
+## Follow-up: exact accessible-windows status evidence (2026-10-09)
+
+Directly fetched `docs/STATUS.md` from `accessible-windows@repo-clean-consolidation-20260924`, blob `780acbc2111171535f12277065af809b3fbdbd67`.
+
+The source document reports:
+- successful GitHub Actions run `35846636674` dated 2026-09-23 on a Windows self-hosted runner, using project commit `8302a95b0b4d2fe4d57e2832bcc945819728b80d`;
+- reported markers for LocalSystem identity, native voice build, codec round-trip, NAVIGATION.EFI build, VMware UEFI boot and screen-reader discovery;
+- 16 kHz speech output for that baseline;
+- a later failure at run `35848464855` in the physical PsExec stage, after `STAGE=SYSTEM_VOICE_READY`;
+- the 24 kHz target and screen-reader parity closure remain open.
+
+**Evidence classification:** `SOURCE-REPORTED`, not independently re-run in this session. These historical markers are scoped to the exact commits and workflow runs above; they do not establish current HEAD success or final parity.
+
+## Follow-up: adapter implementation gate
+
+Created `ADMWS12-ADAPTER-IMPLEMENTATION.md` at commit `5babd9006d847a322a369dbed6ec0d7d99b17d48`. It defines loss-minimizing state mapping and tests. It is a specification only; adapter code has not been added and tests have not been run.
