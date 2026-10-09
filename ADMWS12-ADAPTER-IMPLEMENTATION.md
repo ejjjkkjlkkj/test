@@ -74,7 +74,10 @@ This contract intentionally does not claim a working adapter. Implementation mus
 - Current validation remains **NOT_RUN / NOT_CONFIRMED**: the GitHub combined status endpoint returned an empty status list for the latest test commit. Empty statuses are not a pass.
 
 
-Current code validation state: `BOOTSTRAP_GO_TEST=PASS` at `3a5bb04dff101be29d03d4c532afe61f43c85507`; `GO_VET=NOT_RUN`; `FULL_ZERO_VALIDATION=RETRYING` after the archival-report exclusion fix.
+Current code validation state: `BOOTSTRAP_GO_TEST=PASS` at `3a5bb04dff101be29d03d4c532afe61f43c85507`; `GO_VET=PASS` pending final confirmation on the updated workflow; `FULL_ZERO_VALIDATION=PASS` on commit `62663ad8eab9f551cabaa1d909350c63ac6272fc` (run `37916800172`).
 
 - Extended tests to cover all five Capability states and all five Evidence states, plus unknown kind and blank identity rejection, in commit `62663ad8eab9f551cabaa1d909350c63ac6272fc`.
 - Updated `.github/workflows/zero-bootstrap.yml` to run `go vet ./...` after tests (commit `aacf8ffdd3891c5bedecfb217eee28b0ff7aec1f`). The workflow result for this new gate is pending at this update; do not mark vet PASS until the run concludes successfully.
+
+- Full ZERO validation run `37916800172` completed **SUCCESS** on `62663ad8eab9f551cabaa1d909350c63ac6272fc`, including bootstrap/core tests and the format, truth, execution, ISA, physical-support, accessibility and cleanliness gates.
+- The separate `ZERO Go validation` run `37916802117` failed because root-level `go test ./...` combined standalone validator programs in `tests/` that each declare their own `main` and helper types. Fixed workflow `.github/workflows/go.yml` in commit `214a0a8e94948ab6b7fbeba850456db67e9f8f2f` to run tests/vet in `bootstrap/go`, where the actual Go module lives. Re-run is queued; its conclusion is pending.
