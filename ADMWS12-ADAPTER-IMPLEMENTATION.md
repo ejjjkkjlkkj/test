@@ -41,7 +41,7 @@ Reject empty identities, unknown source kinds, and unknown state values. Do not 
 3. Set record `Proof=UNPROVEN` for a translation-only adapter. A source claim of AVAILABLE or OBSERVED is not an independent ZERO proof.
 4. Do not turn ABSENT into UNAVAILABLE without an explicit capability/evidence policy; they are distinct source semantics.
 5. Never convert UNKNOWN, FAILED, or UNSUPPORTED into AVAILABLE.
-6. Serialize the mapping payload deterministically. Prefer a fixed-field struct and standard JSON encoder, then test byte-stable output.
+6. Serialize the mapping payload deterministically. The implementation uses fixed-order escaped key/value fields (`source_project`, `source_kind`, `source_state`, `value`) and `DecodeADMWS12Payload` validates the shape and state pair.
 7. Keep this adapter in the ZERO Go package. Do not add a second platform state machine or copy ADMWS12's Python HAL wholesale.
 
 ## Required tests before implementation is considered complete
@@ -63,7 +63,7 @@ This contract intentionally does not claim a working adapter. Implementation mus
 
 ## Implementation update (2026-10-09)
 
-- Added `bootstrap/go/admws12_mapping.go` with `MapADMWS12Record`.
+- Added `bootstrap/go/admws12_mapping.go` with `MapADMWS12Record` and `DecodeADMWS12Payload`.
 - The adapter accepts the explicitly enumerated Capability and Evidence states, rejects unknown kind/state and empty identity, fixes Source/Target/Time, and always sets Proof to `UNPROVEN`.
 - Payload uses a fixed field order and ZERO's escaping function. Values are not promoted to proof.
 - Added two regression checks to `bootstrap/go/canonical_test.go` for the basic capability mapping and rejection of an invalid state.
@@ -84,3 +84,5 @@ Current code validation state: `BOOTSTRAP_GO_TEST=PASS` at `3a5bb04dff101be29d03
 
 - Final confirmation: `ZERO Go validation` run `37916948231` on commit `214a0a8e94948ab6b7fbeba850456db67e9f8f2f` completed **SUCCESS**. Both `Test bootstrap package` (`go test ./...`) and `Vet bootstrap package` (`go vet ./...`) passed.
 - Status at the validated code SHA: `BOOTSTRAP_GO_TEST=PASS`, `GO_VET=PASS`; full ZERO validation had also passed at `62663ad8eab9f551cabaa1d909350c63ac6272fc`. A newer documentation-only commit is pending its own full workflow confirmation.
+
+- The reversible payload decoder was added in commits `5286ea0ddc9780dbec15be1f5b109550801a157d` / corrected in `9ff28a97617543800aab323c2f0ffa00f4e02337`; tests for escaped Unicode, delimiters and invalid state are in `e97ab5b8ad09254e471b031ad2292101406e3753`. The first decoder commit failed CI due a compile error, then was corrected; only the later successful run may be counted as validation.
