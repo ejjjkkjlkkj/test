@@ -164,3 +164,41 @@ func TestADMWS12PayloadDecoderRejectsInvalidState(t *testing.T) {
 		t.Fatal("payload with an invalid capability state was accepted")
 	}
 }
+
+func TestUIASemanticMappingRoundTrip(t *testing.T) {
+	states := []string{"focused", "checked", "future_state"}
+	r, err := MapUIASemanticRecord("uia-42", "check_box", "ControlType.CheckBox", "Café | sauvegarder", states, 12)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if r.Type != "SEMANTIC_NODE" || r.Source != "NVDA-RUST-UIA-STANDALONE" || r.Target != "ZERO" || r.Proof != "UNPROVEN" {
+		t.Fatalf("unexpected UIA mapping: %#v", r)
+	}
+	role, nativeRole, name, gotStates, err := DecodeUIASemanticPayload(r.Payload)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if role != "check_box" || nativeRole != "ControlType.CheckBox" || name != "Café | sauvegarder" || strings.Join(gotStates, ",") != strings.Join(states, ",") {
+		t.Fatalf("UIA semantics changed: %q %q %q %#v", role, nativeRole, name, gotStates)
+	}
+	wire, err := Encode(r)
+	if err != nil {
+		t.Fatal(err)
+	}
+	got, err := Decode(wire)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got != r {
+		t.Fatalf("UIA record round trip changed: %#v != %#v", got, r)
+	}
+}
+
+func TestUIASemanticMappingRejectsInvalidIdentityAndState(t *testing.T) {
+	if _, err := MapUIASemanticRecord(" ", "button", "", "Save", nil, 1); err == nil {
+		t.Fatal("blank identity was accepted")
+	}
+	if _, err := MapUIASemanticRecord("id", "button", "", "Save", []string{"bad,state"}, 1); err == nil {
+		t.Fatal("state containing delimiter was accepted")
+	}
+}
