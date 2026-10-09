@@ -35,14 +35,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          mkdir -p audit-output/branches audit-output/manifests
+          mkdir -p audit-output/manifests
           repo="${GITHUB_REPOSITORY}"
           git fetch --all --prune
-
           gh api --paginate "repos/${repo}/branches?per_page=100" > audit-output/branches.json
           jq -r '.[] | [.name, .commit.sha] | @tsv' audit-output/branches.json > audit-output/branches.tsv
-
           printf 'repository\tbranch\tcommit_sha\ttree_sha\tfiles\tbytes\tstatus\n' > audit-output/summary.tsv
+
           while IFS=$'\t' read -r branch commit; do
             [ -n "${branch}" ] || continue
             safe="$(printf '%s' "${branch}" | sha256sum | cut -c1-16)"
@@ -55,15 +54,41 @@ jobs:
             fi
 
             tree="$(git rev-parse "${commit}^{tree}")"
-            manifest="audit-output/manifests/${safe}.tsv"
-            git ls-tree -r -l --full-tree "${commit}" |
-              awk 'BEGIN { OFS="\t" } { mode=$1; type=$2; sha=$3; size=$4; $1=$2=$3=$4=""; sub(/^\t?/, "", $0); print mode,type,sha,size,$0 }' > "${manifest}"
-            files="$(wc -l < "${manifest}" | tr -d ' ')"
-            bytes="$(awk -F '\t' '$2=="blob" && $4 ~ /^[0-9]+$/ {s+=$4} END {printf "%.0f",s}' "${manifest}")"
+            manifest="audit-output/manifests/${safe}.jsonl"
+            python3 - "${commit}" "${manifest}" <<'PY'
+          import base64, json, subprocess, sys
+          commit, output = sys.argv[1], sys.argv[2]
+          raw = subprocess.check_output(["git", "ls-tree", "-r", "-l", "-z", "--full-tree", commit])
+          with open(output, "w", encoding="utf-8", newline="\n") as f:
+              for record in raw.split(b"\0"):
+                  if not record:
+                      continue
+                  meta, path = record.split(b"\t", 1)
+                  mode, kind, sha, size_text = meta.decode("ascii").split(" ", 3)
+                  size = int(size_text) if size_text != "-" else None
+                  row = {
+                      "mode": mode, "type": kind, "object_sha": sha,
+                      "size_bytes": size, "path": path.decode("utf-8", "replace"),
+                      "path_base64": base64.b64encode(path).decode("ascii")
+                  }
+                  f.write(json.dumps(row, ensure_ascii=True, separators=(",", ":")) + "\n")
+          PY
+            read -r files bytes < <(python3 - "${manifest}" <<'PY'
+          import json, sys
+          count = total = 0
+          with open(sys.argv[1], encoding="utf-8") as f:
+              for line in f:
+                  row = json.loads(line)
+                  count += 1
+                  if row["type"] == "blob" and row["size_bytes"] is not None:
+                      total += row["size_bytes"]
+          print(count, total)
+          PY
+          )
             printf '%s\t%s\t%s\t%s\t%s\t%s\tPASS\n' "${repo}" "${branch}" "${commit}" "${tree}" "${files}" "${bytes}" >> audit-output/summary.tsv
           done < audit-output/branches.tsv
 
-          printf 'Generated at UTC: %s\nRepository: %s\nBranches: %s\n' "$(date -u +%FT%TZ)" "${repo}" "$(($(wc -l < audit-output/branches.tsv)))" > audit-output/README.txt
+          printf 'Generated at UTC: %s\nRepository: %s\nBranches: %s\n' "$(date -u +%FT%TZ)" "${repo}" "$(wc -l < audit-output/branches.tsv | tr -d ' ')" > audit-output/README.txt
           cat audit-output/summary.tsv
 
       - name: Validate inventory completeness
@@ -72,13 +97,12 @@ jobs:
           set -euo pipefail
           test -s audit-output/branches.json
           test -s audit-output/summary.tsv
-          test -s audit-output/branches.tsv
           jq -e 'type == "array"' audit-output/branches.json >/dev/null
           branch_count="$(jq 'length' audit-output/branches.json)"
           summary_count="$(($(wc -l < audit-output/summary.tsv)-1))"
           test "${branch_count}" -eq "${summary_count}"
-          echo "PASS: every listed branch has a summary row."
-          echo "NOTE: manifest creation status is recorded per branch; PASS here validates inventory coverage, not source correctness."
+          echo "PASS: each API-listed branch has a summary row."
+          echo "This checks inventory coverage, not source correctness."
 
       - name: Preserve audit artifacts
         uses: actions/upload-artifact@v4
