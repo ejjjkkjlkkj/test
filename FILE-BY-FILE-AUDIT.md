@@ -165,3 +165,37 @@ La liste ci-dessous provient de l'inventaire GitHub accessible le 2026-10-09. La
 - Les crates UIA Windows sont spécifiques à leur plateforme ; les objets sémantiques doivent rester indépendants du backend.
 - Les 404 indiquent uniquement que le chemin testé n'a pas été trouvé. Ils ne prouvent ni absence de tests ni absence de licence dans le dépôt.
 - Aucun code source n'a été copié ; aucune branche, aucun fichier source et aucun historique n'ont été supprimés.
+
+
+## Fichiers supplémentaires consultés — lot 3 (2026-10-09)
+
+### NVDA-RUST-UIA-STANDALONE — branche `main`
+
+| Chemin | Blob SHA | Observation | Statut / décision |
+|---|---|---|---|
+| `src/semantic.rs` | `a068aef2811b16eb1911c82dfebb932e8deeec92` | Définit un modèle de rôles sémantiques accessibles, incluant notamment Unknown, Application, Window, Dialog, Document, Heading, Paragraph et contrôles | CANDIDATE ; comparer le vocabulaire et les états au modèle canonique ZERO. |
+| `src/presentation.rs` | `38212a887a2565c17258a1e1d97052d05d4414f9` | Définit une présentation vocale avec priorités Background, Normal, Focus et Urgent | CANDIDATE ; garder la politique de présentation séparée de la sémantique et de la machine. |
+| `src/platform/mod.rs` | — | 404 au chemin testé | PATH_NOT_FOUND ; retrouver les modules exacts sans inférer leur absence. |
+| `.github/workflows/ci.yml` | — | 404 au chemin testé | PATH_NOT_FOUND ; CI non vérifiée par ce chemin. |
+
+### omni-security — branche `main`
+
+| Chemin | Blob SHA | Observation | Statut / décision |
+|---|---|---|---|
+| `SECURITY.md` | `48534ea9c423ee388e2a44415a5ac205a8672a5e` | Politique de sécurité ; périmètre couvrant cryptographie, firmware, boot, réseau, confidentialité, supply chain, identité et chemin d'accessibilité de confiance | CANDIDATE comme exigences de sécurité ; ce n'est pas une preuve de conformité du code. |
+| `LICENSE`, `LICENSE.md`, `docs/THREAT-MODEL.md` | — | 404 aux chemins testés | LICENSE/THREAT_MODEL_NOT_FOUND_AT_TESTED_PATHS ; licence et modèle de menace complets restent à localiser. |
+
+### omni-os — manifestes de crates, branche `main`
+
+| Chemin | Blob SHA | Observation | Statut / décision |
+|---|---|---|---|
+| `os/crates/aw-accessibility/Cargo.toml` | `0ce26e8ab778f8f5ca2a760b088460639dc1a3cf` | Crate accessible partagé dans le workspace, édition/licence/lints hérités | CANDIDATE ; inspecter les types et tests avant mapping vers ZERO. |
+| `os/crates/aw-kernel-contract/Cargo.toml` | `a07c5548c38c22bd8fd02c7a108f1ad814d7edf2` | Crate de contrats kernel séparé | CANDIDATE ; comparer les contrats à ZERO sans importer des détails de plateforme. |
+| `os/crates/aw-x86-platform/Cargo.toml` | `df15cf4e999d806cc38dd5cbadaf413f953ec34e` | Crate de plateforme x86, sans dépendances déclarées dans l'extrait consulté | CANDIDATE ; spécifique backend x86, pas langage universel. |
+| `os/crates/aw-voice/src/tests.rs` | — | 404 au chemin testé | PATH_NOT_FOUND ; tests à localiser dans l'arborescence exacte. |
+
+### Notes du lot 3
+
+- Le prototype UIA distingue déjà le modèle sémantique de la présentation vocale. C'est une séparation utile à préserver dans ZERO, mais le code ne doit pas être copié avant comparaison des rôles, états, événements, tests et licence.
+- `omni-security/SECURITY.md` peut alimenter les exigences transversales. L'absence de LICENSE au chemin racine testé empêche encore toute conclusion de réutilisation juridique.
+- Aucun test n'a été exécuté, aucun statut CI n'a été validé, aucun fichier source n'a été copié et aucune branche n'a été fusionnée.
