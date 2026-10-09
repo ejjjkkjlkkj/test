@@ -32,7 +32,9 @@ jobs:
         with:
           go-version-file: go.mod
           cache: true
-      - name: Test
+      - name: Test bootstrap package
+        working-directory: bootstrap/go
         run: go test ./...
-      - name: Vet
+      - name: Vet bootstrap package
+        working-directory: bootstrap/go
         run: go vet ./...
