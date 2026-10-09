@@ -143,3 +143,24 @@ func TestADMWS12RejectsUnknownKindAndEmptyIdentity(t *testing.T) {
 		t.Fatal("blank identity was accepted")
 	}
 }
+
+func TestADMWS12PayloadDecoderPreservesEscapedValue(t *testing.T) {
+	value := "café | \\ value = exact"
+	r, err := MapADMWS12Record("Evidence", "device", "OBSERVED", value, 7)
+	if err != nil {
+		t.Fatal(err)
+	}
+	kind, state, decoded, err := DecodeADMWS12Payload(r.Payload)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if kind != "Evidence" || state != "OBSERVED" || decoded != value {
+		t.Fatalf("payload changed: kind=%q state=%q value=%q", kind, state, decoded)
+	}
+}
+
+func TestADMWS12PayloadDecoderRejectsInvalidState(t *testing.T) {
+	if _, _, _, err := DecodeADMWS12Payload("source_project=ADMWS12|source_kind=Capability|source_state=OBSERVED|value=x"); err == nil {
+		t.Fatal("payload with an invalid capability state was accepted")
+	}
+}
