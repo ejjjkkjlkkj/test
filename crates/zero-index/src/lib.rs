@@ -105,7 +105,7 @@ pub fn build_index(manifest_paths: &[PathBuf], source_root: Option<&Path>) -> io
                 Err(e) => {
                     incomplete += 1;
                     records.push(FileRecord {
-                        origin: Origin { repository: String::new(), branch: String::new(), commit_sha: String::new(), path: format!("{}:line:{}", manifest_path.display(), line_no + 1), blob_sha: String::new(), size_bytes: None },
+                        origin: Origin { repository: String::new(), branch: String::new(), commit_sha: String::new(), path: format!("{}:line:{}", manifest_path.display(), line_no + 1), path_base64: None, blob_sha: String::new(), size_bytes: None },
                         indexed_sha256: None, indexed_bytes: None, status: "INVALID_MANIFEST_ROW".into(), note: Some(e.to_string()),
                     });
                     continue;
