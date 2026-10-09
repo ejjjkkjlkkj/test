@@ -39,3 +39,12 @@ jobs:
         run: cargo clippy --manifest-path crates/zero-index/Cargo.toml --all-targets -- -D warnings
       - name: Release build
         run: cargo build --release --manifest-path crates/zero-index/Cargo.toml
+      - name: Benchmark cached lookups (measurement, not a global-completion claim)
+        run: cargo run --release --manifest-path crates/zero-index/Cargo.toml -- --benchmark --out target/zero-index-benchmark.json crates/zero-index/fixtures/sample.jsonl
+      - name: Preserve benchmark report
+        uses: actions/upload-artifact@v4
+        with:
+          name: zero-index-benchmark-${{ github.run_id }}
+          path: target/zero-index-benchmark.json
+          if-no-files-found: error
+          retention-days: 30
