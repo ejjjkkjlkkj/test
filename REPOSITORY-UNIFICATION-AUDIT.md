@@ -75,4 +75,8 @@ ZERO-MACHINE-FORMAT.md définit neuf champs après le marqueur RECORD ; bootstra
 ## Journal
 
 - 2026-10-09 : première lecture de fichiers de référence dans ZERO, ADMWS12 et plusieurs dépôts candidats.
-- 2026-10-09 : inventaire partiel ; audit exhaustif et tests globaux non exécutés.
+- 2026-10-09 : inventaire des 30 dépôts visibles dans REPOSITORY-INVENTORY.md ; les branches secondaires restent à examiner.
+- 2026-10-09 : ajout du contrat provisoire ADMWS12-ZERO-ADAPTER-CONTRACT.md.
+- 2026-10-09 : bootstrap/go/record.go rejette désormais les séquences non canoniques avec zéros initiaux ; canonical_test.go couvre séquence non canonique, échappement inconnu, Unicode et round-trip.
+- 2026-10-09 : commits code/tests : ebc3b07203b25e93192a8c72e904e757c036046b et 59a52a2e4ea28662fd80230b47938f2ad2d8cfd7. Aucun workflow ni statut CI associé trouvé lors de la vérification ; tests non exécutés dans un runtime local par cette session.
+- 2026-10-09 : audit complet de toutes les branches, licences, dépendances et composants reste NOT_RUN.
