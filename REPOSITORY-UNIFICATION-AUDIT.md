@@ -198,3 +198,12 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - Étape `Test bootstrap package` (`go test ./...`) : PASS.
 - Étape `Vet bootstrap package` (`go vet ./...`) : PASS.
 - La correction du workflow est donc validée à ce SHA. La validation globale ZERO avait passé au SHA `62663ad8eab9f551cabaa1d909350c63ac6272fc`; les runs du commit le plus récent doivent encore finir avant d'affirmer que le HEAD actuel a toutes les gates vertes.
+
+
+### Adaptateur réversible et test de la charge utile (2026-10-09)
+
+- `DecodeADMWS12Payload` ajouté pour relire les champs fixes `source_project|source_kind|source_state|value` avec les échappements canoniques ZERO ; validation du couple kind/state sans élévation de preuve.
+- Le premier commit de décodeur `5286ea0ddc9780dbec15be1f5b109550801a157d` a échoué au test Go ; la compilation a été corrigée dans `9ff28a97617543800aab323c2f0ffa00f4e02337`. Cet échec reste visible dans l'historique.
+- Run `37917101740`, workflow `ZERO Go validation`, commit `e97ab5b8ad09254e471b031ad2292101406e3753` : **SUCCESS** pour `go test ./...` et `go vet ./...` du module `bootstrap/go`, y compris les tests de décodage Unicode, séparateurs et états invalides.
+- Le contrat `ADMWS12-ADAPTER-IMPLEMENTATION.md` précise maintenant le format de payload réellement implémenté (échappements fixes) au lieu de recommander JSON.
+- Les workflows globaux du HEAD le plus récent sont relancés après la mise à jour documentaire ; attendre leurs conclusions avant de déclarer le HEAD entier vert.
