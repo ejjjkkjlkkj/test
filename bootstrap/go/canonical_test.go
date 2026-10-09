@@ -1,6 +1,9 @@
 package zero
 
-import "testing"
+import (
+	"strings"
+	"testing"
+)
 
 func TestCanonicalEscaping(t *testing.T) {
 	r := Record{
@@ -78,5 +81,29 @@ func TestADMWS12MappingPreservesUnprovenState(t *testing.T) {
 func TestADMWS12MappingRejectsUnknownState(t *testing.T) {
 	if _, err := MapADMWS12Record("Capability", "cpu", "OBSERVED", "present", 1); err == nil {
 		t.Fatal("invalid capability state was accepted")
+	}
+}
+
+func TestADMWS12EvidenceStateAndPayloadRoundTrip(t *testing.T) {
+	r, err := MapADMWS12Record("Evidence", "device", "ABSENT", "café | \\ value", 2)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if r.Type != "OBSERVATION" || r.Proof != "UNPROVEN" {
+		t.Fatalf("unexpected evidence mapping: %#v", r)
+	}
+	wire, err := Encode(r)
+	if err != nil {
+		t.Fatal(err)
+	}
+	got, err := Decode(wire)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got != r {
+		t.Fatalf("mapping round trip changed record: %#v != %#v", got, r)
+	}
+	if !strings.Contains(got.Payload, "source_state=ABSENT") {
+		t.Fatalf("source state not preserved: %q", got.Payload)
 	}
 }
