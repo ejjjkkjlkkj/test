@@ -199,3 +199,30 @@ La liste ci-dessous provient de l'inventaire GitHub accessible le 2026-10-09. La
 - Le prototype UIA distingue déjà le modèle sémantique de la présentation vocale. C'est une séparation utile à préserver dans ZERO, mais le code ne doit pas être copié avant comparaison des rôles, états, événements, tests et licence.
 - `omni-security/SECURITY.md` peut alimenter les exigences transversales. L'absence de LICENSE au chemin racine testé empêche encore toute conclusion de réutilisation juridique.
 - Aucun test n'a été exécuté, aucun statut CI n'a été validé, aucun fichier source n'a été copié et aucune branche n'a été fusionnée.
+
+
+## Integration progress — ZERO-native adapters (2026-10-09)
+
+### ADMWS12 → ZERO
+
+- Implementation: `bootstrap/go/admws12_mapping.go`.
+- Mapping: Capability states UNKNOWN/AVAILABLE/UNAVAILABLE/UNSUPPORTED/FAILED and Evidence states OBSERVED/ABSENT/UNSUPPORTED/FAILED/UNKNOWN are accepted exactly; unknown kind/state and blank identity are rejected.
+- Payload: fixed-order escaped fields; decoder validates and reverses the payload.
+- Safety: `Source=ADMWS12`, `Target=ZERO`, `Time=UNKNOWN`, `Proof=UNPROVEN`; no source state is upgraded into independent proof.
+- Tests: all 10 source states, invalid kind/state/identity, escaped Unicode/delimiters and round-trip.
+
+### NVDA-RUST-UIA-STANDALONE → ZERO
+
+- Source files: `src/semantic.rs` blob `a068aef2811b16eb1911c82dfebb932e8deeec92` and `src/presentation.rs` blob `38212a887a2565c17258a1e1d97052d05d4414f9`.
+- Implemented ZERO adapter: `bootstrap/go/uia_mapping.go`; maps identity, role, native role, accessible name and state names to `SEMANTIC_NODE` records.
+- Forward compatibility: unknown role/state names are preserved rather than dropped.
+- Privacy boundary: the adapter accepts no raw control value; only accessible name and semantic states are serialized.
+- Proof: remains `UNPROVEN`; this does not prove the native UIA runtime is running or that a physical Windows desktop was observed.
+- Tests: Unicode/delimiter round-trip, unknown state preservation, invalid identity and invalid state delimiters.
+
+### CI evidence for the adapters
+
+- `ZERO bootstrap validation` run `37917266841`, commit `72a78afb9e065be69a61295e82e512617e3dd6a0`: **SUCCESS**.
+- `ZERO validation` run `37917266796`, same commit: **SUCCESS**.
+- `ZERO Go validation` run `37917266847`, same commit: **SUCCESS**.
+- The later documentation-only commit `2f3e67d9ebd98086e8fb4be01fb6d400a614c125` has its own global workflow in progress at the time of this update.
