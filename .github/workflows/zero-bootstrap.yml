@@ -21,3 +21,6 @@ jobs:
       - name: Deterministic tests
         working-directory: bootstrap/go
         run: go test ./...
+      - name: Static analysis
+        working-directory: bootstrap/go
+        run: go vet ./...
