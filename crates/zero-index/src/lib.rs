@@ -12,6 +12,7 @@ pub struct Origin {
     pub branch: String,
     pub commit_sha: String,
     pub path: String,
+    pub path_base64: Option<String>,
     pub blob_sha: String,
     pub size_bytes: Option<u64>,
 }
@@ -118,7 +119,8 @@ pub fn build_index(manifest_paths: &[PathBuf], source_root: Option<&Path>) -> io
             let size = parsed.get("size_bytes").or_else(|| parsed.get("size")).and_then(|v| v.as_u64());
             let typ = parsed.get("type").and_then(|v| v.as_str()).unwrap_or("blob");
             if typ != "blob" { continue; }
-            let origin = Origin { repository: repo, branch, commit_sha: commit, path: path.to_owned(), blob_sha: blob_sha.to_owned(), size_bytes: size };
+            let path_base64 = parsed.get("path_base64").and_then(|v| v.as_str()).map(str::to_owned);
+            let origin = Origin { repository: repo, branch, commit_sha: commit, path: path.to_owned(), path_base64, blob_sha: blob_sha.to_owned(), size_bytes: size };
             if !seen.insert(origin.clone()) { continue; }
             if !unique_blobs.insert(blob_sha.to_owned()) { duplicate_count += 1; }
 
@@ -202,7 +204,7 @@ mod tests {
     use super::*;
 
     fn origin(repo: &str, branch: &str, path: &str, sha: &str) -> Origin {
-        Origin { repository: repo.into(), branch: branch.into(), commit_sha: "commit1".into(), path: path.into(), blob_sha: sha.into(), size_bytes: Some(12) }
+        Origin { repository: repo.into(), branch: branch.into(), commit_sha: "commit1".into(), path: path.into(), path_base64: None, blob_sha: sha.into(), size_bytes: Some(12) }
     }
 
     #[test]
