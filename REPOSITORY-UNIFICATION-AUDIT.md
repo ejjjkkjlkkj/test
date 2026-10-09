@@ -240,3 +240,10 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - `omni-os/os/crates/aw-voice/src/lib.rs` inclut directement `../../../../voice-st/src/synth_inc.rs`. Cela prouve la réutilisation interne de la voix `voice-st` dans omni-os, mais pas l'équivalence avec le dépôt séparé `u`.
 - Le registre fichier par fichier a été corrigé au commit `8c8371499695e2964a286c0f632cba20fbf0a4c0`. Aucune voix n'a été copiée ni fusionnée.
 - Prochaine décision : comparer API, corpus golden, licence, sample rate, mastering/resampling, latence et intelligibilité avant de choisir un backend de voix unique.
+
+
+### Voix ST : provenance et licence (2026-10-09)
+
+- Le manifeste `omni-os/voice-st/Cargo.toml` (blob `3b18bc7d39dd126a81418de57fd3373216bf651c`) déclare 0BSD ; le fichier de notices tiers est `voice-st/LICENSE-THIRD-PARTY.md` (blob `f7f5988ec28f4fbb243e17940ceff654095a6d69`). Le backend compact Rust/no_std est candidat après tests.
+- Le dépôt `u` ne présente pas de LICENSE racine au chemin vérifié ; son inventaire tiers (blob `ffe9e30bc110abc4a56d2e4d1d2d600e54082781`) donne un statut de licence différent. Les deux fichiers `synth_inc.rs` ne sont pas identiques : blobs `e446a31a488abf1e2af9dd4186c0d3e9abe55c36` et `2ec524e16552d5435c7d3b34da710f50b3ddf044`, première différence à l'offset 1706.
+- Décision : ne pas copier ni fusionner la source de `u` avant clarification de licence ; ne pas considérer les deux synthétiseurs comme doublons. Les chiffres de performance du README restent SOURCE-REPORTED.
