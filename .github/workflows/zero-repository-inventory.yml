@@ -60,9 +60,9 @@ jobs:
 
             tree="$(git rev-parse "${commit}^{tree}")"
             manifest="audit-output/manifests/${safe}.jsonl"
-            python3 - "${commit}" "${manifest}" <<'PY'
+            python3 - "${commit}" "${manifest}" "${repo}" "${branch}" "${tree}" <<'PY'
           import base64, json, subprocess, sys
-          commit, output = sys.argv[1], sys.argv[2]
+          commit, output, repo, branch, tree = sys.argv[1:]
           raw = subprocess.check_output(["git", "ls-tree", "-r", "-l", "-z", "--full-tree", commit])
           with open(output, "w", encoding="utf-8", newline="\n") as f:
               for record in raw.split(b"\0"):
@@ -72,6 +72,7 @@ jobs:
                   mode, kind, sha, size_text = meta.decode("ascii").split(" ", 3)
                   size = int(size_text) if size_text != "-" else None
                   row = {
+                      "repository": repo, "branch": branch, "commit_sha": commit, "tree_sha": tree,
                       "mode": mode, "type": kind, "object_sha": sha,
                       "size_bytes": size, "path": path.decode("utf-8", "replace"),
                       "path_base64": base64.b64encode(path).decode("ascii")
