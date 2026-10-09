@@ -80,3 +80,26 @@ ZERO-MACHINE-FORMAT.md définit neuf champs après le marqueur RECORD ; bootstra
 - 2026-10-09 : bootstrap/go/record.go rejette désormais les séquences non canoniques avec zéros initiaux ; canonical_test.go couvre séquence non canonique, échappement inconnu, Unicode et round-trip.
 - 2026-10-09 : commits code/tests : ebc3b07203b25e93192a8c72e904e757c036046b et 59a52a2e4ea28662fd80230b47938f2ad2d8cfd7. Aucun workflow ni statut CI associé trouvé lors de la vérification ; tests non exécutés dans un runtime local par cette session.
 - 2026-10-09 : audit complet de toutes les branches, licences, dépendances et composants reste NOT_RUN.
+
+
+## Mise à jour — revue source ciblée (2026-10-09)
+
+Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eeeb1b66197443672c57afbdcbe34c666a8fc`. Il consigne les chemins et SHA de blobs consultés, les rôles candidats, les limites de licence et les gates qui restent à vérifier.
+
+### Résultats factuels
+
+- **ADMWS12 — PARTIAL :** lecture directe de `src/platform/capability.py`, `src/platform/evidence.py` et `src/platform/hal.py`. Ces modèles sont des références sémantiques possibles, pas un runtime à copier tel quel.
+- **omni-os — PARTIAL / UNPROVEN :** README et licence racine consultés. Le README décrit loader UEFI, noyau Rust, HII/IFR et audio ; ce sont des déclarations de projet, pas une validation indépendante ici. Le manifeste Cargo racine n'a pas été trouvé au chemin testé.
+- **accessible-windows — PARTIAL :** README indique que la ligne cohérente est `repo-clean-consolidation-20260924`, commit de consolidation `b53b62895ddb57094aa944cb1cdc549f0523668d`. Il précise que l'issue de parité #4 reste ouverte et que la cible voix 24 kHz n'est pas PASS. Les fichiers de cette branche doivent encore être inspectés directement.
+- **NVDA-RUST-UIA-STANDALONE — PARTIAL :** README et `Cargo.toml` consultés ; backend Windows UIA/COM et modèle d'événement portable identifiés. Licence, build Windows et tests restent à vérifier.
+- **u (ST) — PARTIAL :** README et `Cargo.toml` consultés ; interface Rust et moteur compact sans dépendance runtime externe identifiés. La voie neurale mentionne des éléments Python privés : elle n'est pas retenue comme dépendance obligatoire du noyau ZERO.
+- **solution — PARTIAL :** README et licence 0BSD consultés ; méthodologie de gates et séparation logiciel/matériel potentiellement réutilisables. Le manifeste Cargo racine n'a pas été trouvé au chemin testé ; les commandes documentées sont Python.
+- **omni-security — PARTIAL :** README consulté pour les exigences transversales sécurité + accessibilité ; aucune implémentation n'est déclarée validée sur la seule base de ce document.
+
+### Changements et limites
+
+- Création de `COMPONENT-MAP.md` sur `main`.
+- Aucun code n'a été copié ou fusionné depuis les dépôts candidats.
+- Aucun test/build candidat n'a été exécuté dans cette passe.
+- La correction précédente du parseur Go et ses tests ajoutés ne sont toujours pas déclarés PASS fonctionnel : aucun résultat d'exécution n'est disponible.
+- Le périmètre compte toujours 30 dépôts recensés dans l'inventaire initial ; l'audit complet des branches, sous-modules, licences et fichiers reste NOT_RUN.
