@@ -34,7 +34,7 @@ func MapADMWS12Record(kind, identity, state, value string, sequence uint64) (Rec
 		"source_kind=" + escape(kind),
 		"source_state=" + escape(state),
 		"value=" + escape(value),
-	}, ";")
+	}, "|")
 	r := Record{
 		Version: "1", Type: recordType, Identity: identity, Sequence: sequence,
 		Time: "UNKNOWN", Source: "ADMWS12", Target: "ZERO",
