@@ -115,3 +115,53 @@ La liste ci-dessous provient de l'inventaire GitHub accessible le 2026-10-09. La
 4. Ajouter dans ZERO des contrats et adaptateurs seulement après que les tests de référence sont reproductibles.
 5. Vérifier les statuts CI par run et SHA ; exécuter les tests localement quand un runtime est disponible.
 6. Après chaque lot, mettre à jour ce registre et `REPOSITORY-UNIFICATION-AUDIT.md`. Aucun lot ne vaut validation matérielle sans preuve matérielle correspondante.
+
+
+## Fichiers supplémentaires consultés — lot 2 (2026-10-09)
+
+### NVDA-RUST-UIA-STANDALONE — branche `main`
+
+| Chemin | Blob SHA | Observation | Statut / décision |
+|---|---|---|---|
+| `Cargo.toml` | `cdc0d994e359eb09aa153b02ba103a383cded3f2` | Crate Rust 2024 ; dépendance Windows crate épinglée à une révision Git précise et features UI Automation | CANDIDATE ; vérifier les modules, build Windows et tests. |
+| `src/lib.rs` | `852b5af11540af229863f8aacda0d68215db81c3` | Expose modules platform, presentation, semantic et réglage du moniteur | CANDIDATE ; comparer les contrats sémantiques avec ZERO sans importer le runtime Windows dans le noyau portable. |
+| `LICENSE` | — | 404 au chemin racine testé | LICENSE_NOT_FOUND_AT_PATH ; ne pas supposer de licence avant examen des autres fichiers et métadonnées. |
+
+### u — synthèse vocale ST, branche `main`
+
+| Chemin | Blob SHA | Observation | Statut / décision |
+|---|---|---|---|
+| `Cargo.toml` | `e4624290a34c94373934ce3793c0def4664165c0` | Package `st` version `0.6.0-rc.3`, Rust 2021, crate `cdylib` + `rlib`, dépendances `libm` et `serde_json` | CANDIDATE ; vérifier fonctionnalités et licences de données/voix. |
+| `src/lib.rs` | `50957bedec5f55495beff6563da81a5954371d02` | Modules audio, engine, frontend, FFI v1 ; synthèse liée à `synth_inc.rs` | CANDIDATE ; comparer octet par octet à la source utilisée par `omni-os/os/crates/aw-voice`. |
+| `tests/synth_tests.rs` | — | 404 au chemin testé | PATH_NOT_FOUND ; localiser le vrai dossier de tests via arborescence avant toute conclusion. |
+
+### solution — vérification, branche `main`
+
+| Chemin | Blob SHA | Observation | Statut / décision |
+|---|---|---|---|
+| `pyproject.toml` | `14ff7514f9de721da743fe9f698196963b3e80a0` | Package Python `omniexec-solution`, licence déclarée 0BSD, Python >=3.11, dépendances runtime déclarées vides | CANDIDATE pour méthodologie de vérification ; pas une dépendance obligatoire du runtime ZERO. |
+| `src/omni/cli.py` | `f874d644a0e71de2c0ddf0a2f689372ebb0fdbb6` | CLI assemble modules ceiling, firmware, IFR, voice frontend/pipeline/quality | CANDIDATE ; inspecter chaque module et les tests avant de réutiliser un validateur. |
+| `tests/test_integrity.py` | — | 404 au chemin testé | PATH_NOT_FOUND ; les tests ne sont pas déclarés absents, seulement non localisés. |
+
+### ADMWS12 — modèles de plateforme, branche `main`
+
+| Chemin | Blob SHA | Observation | Statut / décision |
+|---|---|---|---|
+| `src/platform/capability.py` | `852c6e852918f71c804ed5a9f766900bcc79bb2f` | CapabilityState distingue UNKNOWN, AVAILABLE, UNAVAILABLE, UNSUPPORTED, FAILED | CANDIDATE pour mapping sémantique ; conserver les états sans les promouvoir implicitement. |
+| `src/platform/evidence.py` | `45f70957a19995685f85d9a55ee64487fc3cf0da` | EvidenceState inclut OBSERVED, ABSENT, UNSUPPORTED, FAILED, UNKNOWN | CANDIDATE ; préserver la distinction entre absence observée et inconnue. |
+| `src/platform/hal.py` | `dc4f853248baee4368c65e5861e1eedad2707f39` | PlatformContext relie lifecycle, capabilities, discovery et état de plateforme | CANDIDATE pour spécification d'adaptateur ; aucune intégration Go n'est déclarée réalisée. |
+
+### android — branche `main`
+
+| Chemin testé | Résultat | Statut |
+|---|---|---|
+| `README.md` | Lu au lot précédent ; décrit une distribution Android 17 x86-64 accessible en VM, ISO/installation et audio | SOURCE-CLAIM ; les artefacts et workflows doivent être vérifiés. |
+| `Cargo.toml`, `LICENSE` | 404 aux chemins racine testés | PATH_NOT_FOUND ; ce dépôt n'est pas supposé être Rust et la licence reste à localiser. |
+
+### Conclusions du lot 2
+
+- Le modèle de capacité et d'évidence ADMWS12 peut informer les contrats ZERO, mais le code Python n'est pas intégré au runtime.
+- La voix de `u` et celle annoncée par `omni-os` présentent un lien source explicite ; il faut prouver la provenance exacte et éviter de dupliquer ou de remplacer la version de référence sans tests comparatifs.
+- Les crates UIA Windows sont spécifiques à leur plateforme ; les objets sémantiques doivent rester indépendants du backend.
+- Les 404 indiquent uniquement que le chemin testé n'a pas été trouvé. Ils ne prouvent ni absence de tests ni absence de licence dans le dépôt.
+- Aucun code source n'a été copié ; aucune branche, aucun fichier source et aucun historique n'ont été supprimés.
