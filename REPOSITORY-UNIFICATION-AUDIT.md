@@ -224,3 +224,10 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - Les 12 branches découvertes, leurs commits, Tree SHA, tailles et nombres de fichiers sont consignés dans `ZERO-BRANCH-INVENTORY.md`, commit `1d8af25548e858c87fc7b1a3ba2cae0d2ae2d3a8`.
 - Ce contrôle prouve que chaque branche retournée a un manifeste de fichiers, pas que son code est correct. Les branches sont conservées ; aucune fusion/suppression automatique.
 - Le manifeste a été capturé pendant que `main` évoluait ; il faut relancer après les derniers changements pour une photographie parfaitement alignée sur le HEAD actuel.
+
+
+### Inventaire maintenu automatiquement après les changements d'audit (2026-10-09)
+
+- Le workflow `zero-repository-inventory.yml` a été ajusté au commit `799959f972aecf0c4f646c61a13e12cac244daeb` pour relancer l'inventaire des branches et des fichiers lorsque les registres d'audit/inventaire changent, en plus des changements du bootstrap Go.
+- Le premier inventaire complet de ZERO a réussi au run `37917266856`, artefact `11610175770`, couvrant les 12 branches découvertes à cette date. Une nouvelle exécution est attendue après l'extension des déclencheurs pour aligner le manifeste sur le HEAD courant.
+- Le total de 7 823 fichiers dans `REPOSITORY-TREE-INVENTORY.md` correspond aux 30 branches par défaut capturées, pas à l'ensemble des branches de tous les dépôts. L'audit de toutes les branches des 30 dépôts reste à faire ; les dépôts NVDA volumineux ont plus de 100 branches et exigent une pagination explicite.
