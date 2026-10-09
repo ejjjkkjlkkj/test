@@ -9,7 +9,6 @@ param(
     [string]$OutputDirectory = (Join-Path (Get-Location) ("audit-output\multi-repo-" + (Get-Date -Format "yyyyMMdd-HHmmss"))),
     [string]$Owner = "",
     [int]$MaxRepositories = 0,
-    [int]$MaxParallel = 1,
     [switch]$IncludeArchived
 )
 
@@ -60,7 +59,7 @@ function Write-JsonLines {
 
 Write-Host "[INFO] ZERO multi-repository inventory — READ ONLY" -ForegroundColor Cyan
 Write-Host "[INFO] Output: $OutputDirectory"
-Write-Host "[INFO] MaxParallel=$MaxParallel (API requests intentionally sequential to protect rate limits)"
+Write-Host "[INFO] API requests are sequential to protect rate limits."
 if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
     Write-Host "[FAIL] GitHub CLI (gh) is not installed or not on PATH." -ForegroundColor Red
 } else {
