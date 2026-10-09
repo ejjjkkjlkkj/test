@@ -40,7 +40,7 @@ jobs:
       - name: Release build
         run: cargo build --release --manifest-path crates/zero-index/Cargo.toml
       - name: Benchmark cached lookups (measurement, not a global-completion claim)
-        run: cargo run --release --manifest-path crates/zero-index/Cargo.toml -- --benchmark --out target/zero-index-benchmark.json crates/zero-index/fixtures/sample.jsonl
+        run: cargo run --release --manifest-path crates/zero-index/Cargo.toml -- --benchmark --out target/zero-index-snapshot.json --benchmark-report target/zero-index-benchmark.json crates/zero-index/fixtures/sample.jsonl
       - name: Preserve benchmark report
         uses: actions/upload-artifact@v4
         with:
