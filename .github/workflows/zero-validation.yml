@@ -71,16 +71,22 @@ jobs:
       - name: Cross-repository audit script syntax
         shell: pwsh
         run: |
-          $tokens = $null
-          $parseErrors = $null
-          [System.Management.Automation.Language.Parser]::ParseFile(
-            (Join-Path $PWD 'tools/audit/all-repositories.ps1'),
-            [ref]$tokens,
-            [ref]$parseErrors
-          ) | Out-Null
-          if ($parseErrors.Count -gt 0) {
-            $parseErrors | ForEach-Object { Write-Error $_.Message }
-            throw 'PowerShell audit script syntax validation failed.'
+          $scriptPaths = @(
+            'scripts/audit/Invoke-ZeroMultiRepoInventory.ps1',
+            'tools/audit/all-repositories.ps1'
+          )
+          foreach ($scriptPath in $scriptPaths) {
+            $tokens = $null
+            $parseErrors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile(
+              (Join-Path $PWD $scriptPath),
+              [ref]$tokens,
+              [ref]$parseErrors
+            ) | Out-Null
+            if ($parseErrors.Count -gt 0) {
+              $parseErrors | ForEach-Object { Write-Error "$($scriptPath): $($_.Message)" }
+              throw "PowerShell audit script syntax validation failed: $scriptPath"
+            }
           }
           Write-Output 'AUDIT_SCRIPT_SYNTAX=PASS'
 
