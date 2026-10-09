@@ -1,0 +1,5 @@
+# Minimal executable ZERO-IR program
+const a 299792458
+const b 1
+add result a b
+print result
