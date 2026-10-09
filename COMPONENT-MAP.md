@@ -27,10 +27,10 @@ Target repository: `ejjjkkjlkkj/test` (ZERO), branch `main`.
 
 ## Integration order
 
-1. **Semantic contract first:** map ADMWS12 capability/evidence states into ZERO's existing capability and proof model. Keep source state and provenance; never silently map unknown/failed to available.
+1. **Semantic contract first — initial implementation complete:** MapADMWS12Record maps all declared Capability/Evidence states, preserves provenance, rejects invalid states and always sets Proof=UNPROVEN. DecodeADMWS12Payload validates and reverses the fixed-order escaped payload. Full state and round-trip tests added; exact latest CI result still required after new adapters.
 2. **Verification gates second:** extract only reusable, license-cleared test methodology from `solution`; represent NOT_RUN and UNPROVEN as blockers.
 3. **Pre-OS runtime research:** inspect `omni-os` and the exact `accessible-windows` consolidation branch at crate/file level before selecting a single source path for loader, HII/IFR, audio and kernel.
-4. **Windows semantic observation:** evaluate UIA standalone as an adapter behind ZERO's input/observation interfaces.
+4. **Windows semantic observation:** ZERO now has MapUIASemanticRecord / DecodeUIASemanticPayload in bootstrap/go/uia_mapping.go. This imports role/name/native-role/state semantics into a ZERO record, preserves unknown state names, and deliberately omits raw control values. The native UIA runtime itself is not copied or merged.
 5. **Speech:** prototype the compact Rust ST backend behind a replaceable speech interface; keep neural assets/runtime optional and local.
 6. **Security gates:** map `omni-security` requirements to explicit ZERO capability authorization, proof and recovery checks.
 
@@ -59,3 +59,11 @@ The source document reports:
 ## Follow-up: adapter implementation gate
 
 Created `ADMWS12-ADAPTER-IMPLEMENTATION.md` at commit `5babd9006d847a322a369dbed6ec0d7d99b17d48`. It defines loss-minimizing state mapping and tests. It is a specification only; adapter code has not been added and tests have not been run.
+
+
+## Implementation delta — 2026-10-09
+
+- ADMWS12 adapter: implemented in ZERO Go bootstrap; source states are preserved and proof remains UNPROVEN.
+- UIA semantic adapter: added as a ZERO-native mapping layer. It does not copy the Rust UIA runtime and does not serialize raw control values.
+- Validation reference points: bootstrap tests + vet passed on 214a0a8e94948ab6b7fbeba850456db67e9f8f2f; full ZERO validation passed on 62663ad8eab9f551cabaa1d909350c63ac6272fc; UIA adapter commits are newer and await their own completed CI run.
+- No candidate source repository has been merged or modified by this adapter work.
