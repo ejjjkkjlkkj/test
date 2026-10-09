@@ -1,0 +1,89 @@
+name: ZERO repository inventory
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * *"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/zero-repository-inventory.yml"
+      - "bootstrap/go/**"
+      - "go.mod"
+      - "go.sum"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: zero-inventory-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout complete Git history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build deterministic branch and file manifests
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p audit-output/branches audit-output/manifests
+          repo="${GITHUB_REPOSITORY}"
+          git fetch --all --prune
+
+          gh api --paginate "repos/${repo}/branches?per_page=100" > audit-output/branches.json
+          jq -r '.[] | [.name, .commit.sha] | @tsv' audit-output/branches.json > audit-output/branches.tsv
+
+          printf 'repository\tbranch\tcommit_sha\ttree_sha\tfiles\tbytes\tstatus\n' > audit-output/summary.tsv
+          while IFS=$'\t' read -r branch commit; do
+            [ -n "${branch}" ] || continue
+            safe="$(printf '%s' "${branch}" | sha256sum | cut -c1-16)"
+            if ! git cat-file -e "${commit}^{commit}" 2>/dev/null; then
+              git fetch origin "${branch}:refs/remotes/origin/${branch}" || true
+            fi
+            if ! git cat-file -e "${commit}^{commit}" 2>/dev/null; then
+              printf '%s\t%s\t%s\tUNKNOWN\t0\t0\tCOMMIT_NOT_AVAILABLE\n' "${repo}" "${branch}" "${commit}" >> audit-output/summary.tsv
+              continue
+            fi
+
+            tree="$(git rev-parse "${commit}^{tree}")"
+            manifest="audit-output/manifests/${safe}.tsv"
+            git ls-tree -r -l --full-tree "${commit}" |
+              awk 'BEGIN { OFS="\t" } { mode=$1; type=$2; sha=$3; size=$4; $1=$2=$3=$4=""; sub(/^\t?/, "", $0); print mode,type,sha,size,$0 }' > "${manifest}"
+            files="$(wc -l < "${manifest}" | tr -d ' ')"
+            bytes="$(awk -F '\t' '$2=="blob" && $4 ~ /^[0-9]+$/ {s+=$4} END {printf "%.0f",s}' "${manifest}")"
+            printf '%s\t%s\t%s\t%s\t%s\t%s\tPASS\n' "${repo}" "${branch}" "${commit}" "${tree}" "${files}" "${bytes}" >> audit-output/summary.tsv
+          done < audit-output/branches.tsv
+
+          printf 'Generated at UTC: %s\nRepository: %s\nBranches: %s\n' "$(date -u +%FT%TZ)" "${repo}" "$(($(wc -l < audit-output/branches.tsv)))" > audit-output/README.txt
+          cat audit-output/summary.tsv
+
+      - name: Validate inventory completeness
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s audit-output/branches.json
+          test -s audit-output/summary.tsv
+          test -s audit-output/branches.tsv
+          jq -e 'type == "array"' audit-output/branches.json >/dev/null
+          branch_count="$(jq 'length' audit-output/branches.json)"
+          summary_count="$(($(wc -l < audit-output/summary.tsv)-1))"
+          test "${branch_count}" -eq "${summary_count}"
+          echo "PASS: every listed branch has a summary row."
+          echo "NOTE: manifest creation status is recorded per branch; PASS here validates inventory coverage, not source correctness."
+
+      - name: Preserve audit artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: zero-inventory-${{ github.run_id }}
+          path: audit-output/
+          if-no-files-found: error
+          retention-days: 90
