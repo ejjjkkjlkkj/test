@@ -135,3 +135,12 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - Relecture de `ADMWS12/src/platform/capability.py` (blob `852c6e852918f71c804ed5a9f766900bcc79bb2f`), `evidence.py` (blob `45f70957a19995685f85d9a55ee64487fc3cf0da`) et `hal.py` (blob `dc4f853248baee4368c65e5861e1eedad2707f39`). Les états UNKNOWN/ABSENT/UNSUPPORTED/FAILED doivent rester distincts dans le contrat ZERO.
 - Plusieurs chemins testés retournent 404 ; ils sont consignés comme `PATH_NOT_FOUND`, jamais comme preuve d'absence du composant ou de ses tests.
 - Aucun code source n'a été copié, aucune fusion de branches n'a été effectuée et aucun test n'est déclaré exécuté par cette session.
+
+
+### Audit fichier par fichier — lot 3 (2026-10-09)
+
+- Le registre détaillé `FILE-BY-FILE-AUDIT.md` a été complété avec un troisième lot, commit `c055924f0fcb3a4d1d3da928484e0a7a9d983778`.
+- Lecture de `NVDA-RUST-UIA-STANDALONE/src/semantic.rs` (blob `a068aef2811b16eb1911c82dfebb932e8deeec92`) et `src/presentation.rs` (blob `38212a887a2565c17258a1e1d97052d05d4414f9`). La séparation rôles sémantiques / priorités de présentation est un candidat architectural, pas une intégration.
+- Lecture de `omni-security/SECURITY.md` (blob `48534ea9c423ee388e2a44415a5ac205a8672a5e`) ; les exigences de sécurité et d'accessibilité peuvent guider les gates ZERO. Licence et modèle de menace ne sont pas encore localisés aux chemins testés.
+- Lecture des manifestes `omni-os/os/crates/aw-accessibility/Cargo.toml` (blob `0ce26e8ab778f8f5ca2a760b088460639dc1a3cf`), `aw-kernel-contract/Cargo.toml` (blob `a07c5548c38c22bd8fd02c7a108f1ad814d7edf2`) et `aw-x86-platform/Cargo.toml` (blob `df15cf4e999d806cc38dd5cbadaf413f953ec34e`).
+- Aucun test n'a été exécuté ; aucun code n'a été copié ; aucun dépôt ou historique n'a été supprimé. L'audit fichier par fichier reste incomplet jusqu'à obtention d'un inventaire exact des arbres et branches.
