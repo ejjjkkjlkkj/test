@@ -103,3 +103,13 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - Aucun test/build candidat n'a été exécuté dans cette passe.
 - La correction précédente du parseur Go et ses tests ajoutés ne sont toujours pas déclarés PASS fonctionnel : aucun résultat d'exécution n'est disponible.
 - Le périmètre compte toujours 30 dépôts recensés dans l'inventaire initial ; l'audit complet des branches, sous-modules, licences et fichiers reste NOT_RUN.
+
+
+### Suite de la revue — preuves de statut et contrat d'adaptation (2026-10-09)
+
+- Lecture de `accessible-windows/docs/STATUS.md` sur la branche `repo-clean-consolidation-20260924`, blob `780acbc2111171535f12277065af809b3fbdbd67`.
+- Le document source rapporte une baseline historique verte au run `35846636674`, commit projet `8302a95b0b4d2fe4d57e2832bcc945819728b80d`, avec voix à 16 kHz, build NAVIGATION.EFI et découverte du lecteur d'écran en VMware. Statut dans ZERO : `SOURCE-REPORTED`, non rejoué ici.
+- Le même document rapporte un run ultérieur `35848464855` échoué dans l'étape PsExec physique après `STAGE=SYSTEM_VOICE_READY`. La cible 24 kHz et la parité finale restent ouvertes. Ne pas transformer la baseline historique en preuve de réussite du HEAD actuel.
+- Création de `ADMWS12-ADAPTER-IMPLEMENTATION.md`, commit `5babd9006d847a322a369dbed6ec0d7d99b17d48`. Le contrat préserve les états source, interdit toute promotion implicite de preuve et exige des tests explicites. Il reste `SPECIFIED / NOT_IMPLEMENTED / NOT_TESTED`.
+- Mise à jour de `COMPONENT-MAP.md`, commit `e2591b338450d58b9a281c124cae83975c463fe7`.
+- Contrôles CI consultés pour le commit de la spécification : aucun statut ni workflow associé n'a été retourné. Le workflow Go est présent, mais son succès n'est pas encore établi.
