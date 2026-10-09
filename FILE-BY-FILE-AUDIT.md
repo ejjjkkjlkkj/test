@@ -102,7 +102,7 @@ La liste ci-dessous provient de l'inventaire GitHub accessible le 2026-10-09. La
 
 - ZERO a des artefacts de format, parser Go, moteur de transition, tests et workflow. Le code et les tests sont lus ; **les tests n'ont pas été exécutés par cette session**.
 - `omni-os` contient un workspace sous `os/`; la racine du dépôt n'a pas de `Cargo.toml` au chemin testé. Plusieurs composants boot/kernel sont explicitement exclus du workspace : leur validation doit être indépendante.
-- `omni-os` et `u` semblent avoir une relation de partage de code de voix ; aucune fusion de copie ne doit être faite avant vérification octet par octet.
+- Voice provenance comparison completed: `u/src/synth_inc.rs` blob `e446a31a488abf1e2af9dd4186c0d3e9abe55c36` (106,262 characters returned) differs from `omni-os/voice-st/src/synth_inc.rs` blob `2ec524e16552d5435c7d3b34da710f50b3ddf044` (113,267 characters returned); first content difference at byte offset 1706. Do not call them duplicates or merge them without a semantic/performance diff. `omni-os/os/crates/aw-voice/src/lib.rs` directly includes its own `voice-st` source.
 - `accessible-windows` a au moins deux lignes ayant des rôles différents : `main` pour l'orchestration et la branche consolidée pour la source UEFI. Ne pas fusionner les historiques.
 - `project` est annoncé comme extraction partielle de `accessible-windows`, donc doublon candidat, pas doublon confirmé.
 - Les sous-dépôts NVDA ne doivent pas être traités comme 16 projets indépendants à fusionner : les liens de provenance, versions, sous-modules et patchs doivent être établis avant tout choix.
@@ -132,7 +132,7 @@ La liste ci-dessous provient de l'inventaire GitHub accessible le 2026-10-09. La
 | Chemin | Blob SHA | Observation | Statut / décision |
 |---|---|---|---|
 | `Cargo.toml` | `e4624290a34c94373934ce3793c0def4664165c0` | Package `st` version `0.6.0-rc.3`, Rust 2021, crate `cdylib` + `rlib`, dépendances `libm` et `serde_json` | CANDIDATE ; vérifier fonctionnalités et licences de données/voix. |
-| `src/lib.rs` | `50957bedec5f55495beff6563da81a5954371d02` | Modules audio, engine, frontend, FFI v1 ; synthèse liée à `synth_inc.rs` | CANDIDATE ; comparer octet par octet à la source utilisée par `omni-os/os/crates/aw-voice`. |
+| `src/lib.rs` | `50957bedec5f55495beff6563da81a5954371d02` | Modules audio, engine, frontend, FFI v1 ; synthèse liée à `synth_inc.rs` | CANDIDATE ; the file was compared directly to `omni-os/voice-st/src/synth_inc.rs` and is NOT byte-identical. |
 | `tests/synth_tests.rs` | — | 404 au chemin testé | PATH_NOT_FOUND ; localiser le vrai dossier de tests via arborescence avant toute conclusion. |
 
 ### solution — vérification, branche `main`
@@ -226,3 +226,10 @@ La liste ci-dessous provient de l'inventaire GitHub accessible le 2026-10-09. La
 - `ZERO validation` run `37917266796`, same commit: **SUCCESS**.
 - `ZERO Go validation` run `37917266847`, same commit: **SUCCESS**.
 - The later documentation-only commit `2f3e67d9ebd98086e8fb4be01fb6d400a614c125` has its own global workflow in progress at the time of this update.
+
+
+## Voice provenance comparison (2026-10-09)
+
+- Exact content comparison completed between `u/src/synth_inc.rs` and `omni-os/voice-st/src/synth_inc.rs`: not identical; distinct blob SHAs and sizes, first difference at offset 1706. This resolves the earlier tentative relationship note: they are related candidate implementations, not a byte-identical shared source.
+- `omni-os/os/crates/aw-voice/src/lib.rs` includes `../../../../voice-st/src/synth_inc.rs` directly. That establishes intra-repository source reuse for omni-os, not equivalence with the separate `u` repository.
+- Next gate: compare APIs, golden corpora, license notices, output sample rate, mastering/resampling, latency and intelligibility before selecting a single voice backend. No voice source was copied or merged.
