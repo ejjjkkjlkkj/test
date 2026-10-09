@@ -154,3 +154,12 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - Contrat `ADMWS12-ADAPTER-IMPLEMENTATION.md` actualisé, commit `4afdc2ba6bcf37cc5673c5312deb8eca36a2593f`.
 - Validation : **CODE ADDED / TESTS ADDED / NOT_RUN / NOT_CONFIRMED**. Le statut combiné GitHub pour le commit de tests a retourné une liste vide ; cela ne constitue pas une réussite. Il faut confirmer la compilation et exécuter `go test ./...` et `go vet ./...` sur le SHA exact.
 - Aucun code Python ADMWS12 copié, aucun changement firmware/NVRAM, aucun dépôt ou historique supprimé.
+
+
+### Accélération de l'audit : inventaire récursif et première intégration (2026-10-09)
+
+- Interrogation de l'API Git Trees récursive sur les branches par défaut des 30 dépôts. Les 30 réponses ont retourné `truncated=false`; total recensé : **7 823 fichiers suivis**. Le détail des branches et Tree SHA est dans `REPOSITORY-TREE-INVENTORY.md`, commit `2dfedeaf8a9e16860a198b52aaf1400bb720a2d3`.
+- Inventaire exact des 171 fichiers de ZERO pour le snapshot `7f1ac40661b0d20cb314fa09df9278369f190731`, avec chemins, tailles et blob SHA, découpé en trois fichiers : `ZERO-FILE-INVENTORY-PART-1.md` commit `f6de3ea98ad2344b65c1653e4a5bbb10aaa90eb0`, `PART-2` commit `94cec2452bb764a61a4d933eb36f5825b1eac306`, `PART-3` commit `36dc1cdc9f8ea46b43644f743e5c75ae1bde4e3b`. Ce snapshot ne comprend pas les inventaires ajoutés ensuite ; les trois parties restent cohérentes entre elles.
+- L'inventaire des arbres est complet pour les branches par défaut capturées, mais **ce n'est pas encore un audit du contenu de 7 823 fichiers**. Les branches non par défaut, sous-modules et licences par fichier restent à comparer.
+- Implémentation Go de `MapADMWS12Record` ajoutée et tests de régression complétés. L'adaptateur conserve les états sources et impose `Proof=UNPROVEN`. Les tests sont définis mais restent `NOT_RUN` ; le statut GitHub du commit de test était vide.
+- Prochaine accélération : lire les fichiers de code/tests/manifests par lots prioritaires, faire les comparaisons exactes de source de voix, sémantique UIA, UEFI/HII/IFR et sécurité, puis exécuter les gates sur des commits exacts. Aucune fusion ou suppression n'a été effectuée.
