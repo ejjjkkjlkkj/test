@@ -1,0 +1,41 @@
+name: ZERO Rust index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "crates/zero-index/**"
+      - ".github/workflows/zero-rust-index.yml"
+  pull_request:
+    paths:
+      - "crates/zero-index/**"
+      - ".github/workflows/zero-rust-index.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: zero-rust-index-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: crates/zero-index
+      - name: Format
+        run: cargo fmt --manifest-path crates/zero-index/Cargo.toml -- --check
+      - name: Tests
+        run: cargo test --manifest-path crates/zero-index/Cargo.toml --locked
+      - name: Clippy
+        run: cargo clippy --manifest-path crates/zero-index/Cargo.toml --locked --all-targets -- -D warnings
+      - name: Release build
+        run: cargo build --release --manifest-path crates/zero-index/Cargo.toml --locked
