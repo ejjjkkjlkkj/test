@@ -26,7 +26,7 @@ $manifestRoot = Join-Path $OutputRoot 'manifests'
 New-Item -ItemType Directory -Path $manifestRoot -Force | Out-Null
 
 $tab = [string][char]9
-$repoLines = @(& gh api --paginate "users/$Owner/repos?per_page=100&type=owner" --jq '.[] | [.full_name, .default_branch, (.private|tostring)] | @tsv')
+$repoLines = @(& gh api --paginate "user/repos?per_page=100&affiliation=owner,collaborator,organization_member" --jq '.[] | [.full_name, .default_branch, (.private|tostring)] | @tsv')
 if ($LASTEXITCODE -ne 0) {
     throw "BLOCKED: could not enumerate repositories for owner $Owner."
 }
@@ -34,7 +34,7 @@ if ($LASTEXITCODE -ne 0) {
 $repositories = foreach ($line in $repoLines) {
     if ([string]::IsNullOrWhiteSpace($line)) { continue }
     $parts = $line -split $tab, 3
-    if ($parts.Count -ge 3) {
+    if ($parts.Count -ge 3 -and $parts[0] -like "$Owner/*") {
         [pscustomobject]@{
             Name = $parts[0]
             DefaultBranch = $parts[1]
