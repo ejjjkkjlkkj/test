@@ -207,3 +207,12 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - Run `37917101740`, workflow `ZERO Go validation`, commit `e97ab5b8ad09254e471b031ad2292101406e3753` : **SUCCESS** pour `go test ./...` et `go vet ./...` du module `bootstrap/go`, y compris les tests de décodage Unicode, séparateurs et états invalides.
 - Le contrat `ADMWS12-ADAPTER-IMPLEMENTATION.md` précise maintenant le format de payload réellement implémenté (échappements fixes) au lieu de recommander JSON.
 - Les workflows globaux du HEAD le plus récent sont relancés après la mise à jour documentaire ; attendre leurs conclusions avant de déclarer le HEAD entier vert.
+
+
+### Deuxième intégration fonctionnelle : modèle sémantique UIA (2026-10-09)
+
+- Nouvelle implémentation ZERO-native : `bootstrap/go/uia_mapping.go`, commit `969f9dc07cea8556f203f593714e45d0cb34becb`; tests ajoutés dans `bootstrap/go/canonical_test.go`, commit `72a78afb9e065be69a61295e82e512617e3dd6a0`.
+- Sources UIA relues : `NVDA-RUST-UIA-STANDALONE/src/semantic.rs`, blob `a068aef2811b16eb1911c82dfebb932e8deeec92`, et `src/presentation.rs`, blob `38212a887a2565c17258a1e1d97052d05d4414f9`.
+- L'adaptateur mappe rôle, rôle natif, nom accessible et états vers un record `SEMANTIC_NODE`; conserve les rôles/états inconnus pour compatibilité future et n'accepte aucun champ de valeur brute, pour éviter de sérialiser accidentellement le contenu d'un contrôle. La preuve reste `UNPROVEN`.
+- Tests CI sur le commit `72a78afb9e065be69a61295e82e512617e3dd6a0` : `ZERO bootstrap validation` run `37917266841` PASS ; `ZERO validation` run `37917266796` PASS ; `ZERO Go validation` run `37917266847` PASS.
+- Cela valide les adaptateurs au niveau du code et des tests, pas le runtime natif UIA ni un résultat matériel. Aucun code Rust source n'a été copié dans ZERO.
