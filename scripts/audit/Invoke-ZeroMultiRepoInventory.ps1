@@ -30,11 +30,19 @@ function Invoke-GhJson {
 
 function Get-PaginatedArray {
     param([Parameter(Mandatory)][string]$Endpoint)
-    $data = Invoke-GhJson -Arguments @("api", "--paginate", "--slurp", $Endpoint)
+    $raw = & gh api --paginate --slurp $Endpoint 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        throw ("gh pagination failed (code {0}): {1}" -f $LASTEXITCODE, ($raw -join [Environment]::NewLine))
+    }
+    $text = ($raw -join [Environment]::NewLine).Trim()
+    $pages = @()
+    if (-not [string]::IsNullOrWhiteSpace($text)) {
+        $pages = ConvertFrom-Json -InputObject $text -Depth 100 -NoEnumerate
+    }
     $items = [System.Collections.Generic.List[object]]::new()
-    foreach ($page in @($data)) {
+    foreach ($page in $pages) {
         if ($null -eq $page) { continue }
-        foreach ($item in @($page)) { if ($null -ne $item) { $items.Add($item) } }
+        foreach ($item in $page) { if ($null -ne $item) { $items.Add($item) } }
     }
     return ,$items.ToArray()
 }
