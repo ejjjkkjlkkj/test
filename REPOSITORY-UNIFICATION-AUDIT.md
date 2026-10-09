@@ -163,3 +163,12 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - L'inventaire des arbres est complet pour les branches par défaut capturées, mais **ce n'est pas encore un audit du contenu de 7 823 fichiers**. Les branches non par défaut, sous-modules et licences par fichier restent à comparer.
 - Implémentation Go de `MapADMWS12Record` ajoutée et tests de régression complétés. L'adaptateur conserve les états sources et impose `Proof=UNPROVEN`. Les tests sont définis mais restent `NOT_RUN` ; le statut GitHub du commit de test était vide.
 - Prochaine accélération : lire les fichiers de code/tests/manifests par lots prioritaires, faire les comparaisons exactes de source de voix, sémantique UIA, UEFI/HII/IFR et sécurité, puis exécuter les gates sur des commits exacts. Aucune fusion ou suppression n'a été effectuée.
+
+
+### Résultats CI récupérés et correctif du gate (2026-10-09)
+
+- Lecture directe de l'API GitHub Actions : run `37916541170` — workflow `ZERO bootstrap validation`, commit `3a5bb04dff101be29d03d4c532afe61f43c85507`, job `113774000501` — **SUCCESS**. L'étape `go test ./...` dans `bootstrap/go` est PASS à ce SHA ; les tests ajoutés pour l'adaptateur font partie de cette exécution.
+- Le workflow global `ZERO validation` a échoué au step `Local component cleanliness`, non aux étapes précédentes : son journal signale le fichier historique `RAPPEL-ETAT-2026-10-08.md`. Le document est une preuve d'état archivée, pas une dépendance du runtime.
+- Correctif conservateur dans `tests/no-local-component.ps1`, commit `e8f6c5d23b1054807e3ac11f9956936339082828` : les rapports historiques nommés `RAPPEL-ETAT-*.md` restent inchangés mais sont exclus du scan de composants runtime. Aucune preuve ni mention historique n'a été supprimée.
+- Après le correctif, les workflows de commit `e8f6c5d23b1054807e3ac11f9956936339082828` étaient encore `in_progress` au dernier contrôle ; ne pas annoncer la validation globale PASS avant leur conclusion.
+- `go vet ./...` n'a pas encore de résultat vérifié. Le statut de l'adaptateur est donc `BOOTSTRAP_GO_TEST=PASS`, `GO_VET=NOT_RUN`, `FULL_ZERO_VALIDATION=RETRYING`.
