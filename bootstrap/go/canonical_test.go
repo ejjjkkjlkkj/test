@@ -107,3 +107,39 @@ func TestADMWS12EvidenceStateAndPayloadRoundTrip(t *testing.T) {
 		t.Fatalf("source state not preserved: %q", got.Payload)
 	}
 }
+
+func TestADMWS12AllSupportedStates(t *testing.T) {
+	cases := []struct {
+		kind, state, wantType string
+	}{
+		{"Capability", "UNKNOWN", "CAPABILITY"},
+		{"Capability", "AVAILABLE", "CAPABILITY"},
+		{"Capability", "UNAVAILABLE", "CAPABILITY"},
+		{"Capability", "UNSUPPORTED", "CAPABILITY"},
+		{"Capability", "FAILED", "CAPABILITY"},
+		{"Evidence", "OBSERVED", "OBSERVATION"},
+		{"Evidence", "ABSENT", "OBSERVATION"},
+		{"Evidence", "UNSUPPORTED", "OBSERVATION"},
+		{"Evidence", "FAILED", "OBSERVATION"},
+		{"Evidence", "UNKNOWN", "OBSERVATION"},
+	}
+	for _, tc := range cases {
+		r, err := MapADMWS12Record(tc.kind, "item", tc.state, "v", 9)
+		if err != nil {
+			t.Errorf("%s/%s rejected: %v", tc.kind, tc.state, err)
+			continue
+		}
+		if r.Type != tc.wantType || r.Proof != "UNPROVEN" || !strings.Contains(r.Payload, "source_state="+tc.state) {
+			t.Errorf("%s/%s mapped unsafely: %#v", tc.kind, tc.state, r)
+		}
+	}
+}
+
+func TestADMWS12RejectsUnknownKindAndEmptyIdentity(t *testing.T) {
+	if _, err := MapADMWS12Record("Other", "item", "UNKNOWN", "v", 1); err == nil {
+		t.Fatal("unknown source kind was accepted")
+	}
+	if _, err := MapADMWS12Record("Capability", "  ", "AVAILABLE", "v", 1); err == nil {
+		t.Fatal("blank identity was accepted")
+	}
+}
