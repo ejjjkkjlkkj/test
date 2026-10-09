@@ -3,7 +3,7 @@ use sha2::{Digest, Sha256};
 use std::collections::{BTreeMap, BTreeSet};
 use std::fs::{self, File};
 use std::io::{self, BufRead, BufReader, Read, Write};
-use std::path::{Path, PathBuf};
+use std::path::{Component, Path, PathBuf};
 use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Eq, PartialOrd, Ord)]
@@ -124,7 +124,17 @@ pub fn build_index(manifest_paths: &[PathBuf], source_root: Option<&Path>) -> io
 
             let mut record = FileRecord { origin, indexed_sha256: None, indexed_bytes: None, status: "INVENTORIED_NOT_CONTENT_VERIFIED".into(), note: None };
             if let Some(root) = source_root {
-                let source_file = root.join(&record.origin.repository.replace('/', "__")).join(&record.origin.branch).join(path);
+                let relative = Path::new(path);
+                let safe_relative = !relative.is_absolute()
+                    && relative.components().all(|component| matches!(component, Component::Normal(_)));
+                if !safe_relative {
+                    record.status = "REJECTED_UNSAFE_RELATIVE_PATH".into();
+                    record.note = Some("Manifest path is absolute or contains traversal components".into());
+                    incomplete += 1;
+                    records.push(record);
+                    continue;
+                }
+                let source_file = root.join(&record.origin.repository.replace('/', "__")).join(&record.origin.branch).join(relative);
                 match hash_file(&source_file) {
                     Ok((digest, bytes)) => {
                         record.indexed_sha256 = Some(digest);
