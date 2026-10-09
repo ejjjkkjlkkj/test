@@ -59,7 +59,7 @@ fn main() {
     if benchmark {
         let index = MemoryIndex::from_snapshot(&snapshot);
         let keys: Vec<String> = snapshot.records.iter()
-            .map(|r| format!("{}\\0{}\\0{}", r.origin.repository, r.origin.branch, r.origin.path))
+            .map(|r| format!("{}\0{}\0{}", r.origin.repository, r.origin.branch, r.origin.path))
             .collect();
         if keys.is_empty() {
             println!("[BENCH] NOT_RUN: no file records to query.");
