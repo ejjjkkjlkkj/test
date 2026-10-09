@@ -75,3 +75,6 @@ This contract intentionally does not claim a working adapter. Implementation mus
 
 
 Current code validation state: `BOOTSTRAP_GO_TEST=PASS` at `3a5bb04dff101be29d03d4c532afe61f43c85507`; `GO_VET=NOT_RUN`; `FULL_ZERO_VALIDATION=RETRYING` after the archival-report exclusion fix.
+
+- Extended tests to cover all five Capability states and all five Evidence states, plus unknown kind and blank identity rejection, in commit `62663ad8eab9f551cabaa1d909350c63ac6272fc`.
+- Updated `.github/workflows/zero-bootstrap.yml` to run `go vet ./...` after tests (commit `aacf8ffdd3891c5bedecfb217eee28b0ff7aec1f`). The workflow result for this new gate is pending at this update; do not mark vet PASS until the run concludes successfully.
