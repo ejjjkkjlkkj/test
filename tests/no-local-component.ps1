@@ -15,10 +15,14 @@ $violations = @()
 foreach ($path in Get-ChildItem -LiteralPath $root -Recurse -File -Force) {
     if ($path.FullName -like "$root\.git\*") { continue }
 
-    # Archived state reports are retained as evidence, not runtime dependencies.
-    # Keep them intact and exclude only this historical report family from the
-    # source-component cleanliness gate.
-    if ($path.Name -like 'RAPPEL-ETAT-*.md') { continue }
+    # Audit reports, inventories, and historical state snapshots are retained
+    # as evidence, not runtime dependencies. Keep them intact and out of this
+    # source-component gate; scan implementation and active configuration files.
+    if ($path.Name -like 'RAPPEL-ETAT-*.md' -or
+        $path.Name -like '*AUDIT*.md' -or
+        $path.Name -like '*INVENTORY*.md' -or
+        $path.Name -like '*FILE-INVENTORY-*.md' -or
+        $path.Name -eq 'COMPONENT-MAP.md') { continue }
 
     if ($extensions -notcontains $path.Extension.ToLowerInvariant()) { continue }
 
