@@ -68,6 +68,22 @@ jobs:
         shell: pwsh
         run: ./tests/zero-accessibility-gate.ps1
 
+      - name: Cross-repository audit script syntax
+        shell: pwsh
+        run: |
+          $tokens = $null
+          $parseErrors = $null
+          [System.Management.Automation.Language.Parser]::ParseFile(
+            (Join-Path $PWD 'tools/audit/all-repositories.ps1'),
+            [ref]$tokens,
+            [ref]$parseErrors
+          ) | Out-Null
+          if ($parseErrors.Count -gt 0) {
+            $parseErrors | ForEach-Object { Write-Error $_.Message }
+            throw 'PowerShell audit script syntax validation failed.'
+          }
+          Write-Output 'AUDIT_SCRIPT_SYNTAX=PASS'
+
       - name: Local component cleanliness
         shell: pwsh
         run: ./tests/no-local-component.ps1
