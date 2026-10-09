@@ -190,3 +190,11 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - Le workflow distinct `ZERO Go validation` a échoué au commit `62663ad8eab9f551cabaa1d909350c63ac6272fc` car il lançait `go test ./...` depuis la racine, regroupant des validateurs Go autonomes de `tests/` qui déclarent chacun `main` et des types homonymes. Le code source n'était pas le problème : le mauvais périmètre de commande l'était.
 - Correction dans `.github/workflows/go.yml`, commit `214a0a8e94948ab6b7fbeba850456db67e9f8f2f` : `go test ./...` et `go vet ./...` s'exécutent désormais dans `bootstrap/go`, où se trouve le module Go. Le résultat de cette nouvelle exécution doit encore être confirmé.
 - La propreté globale est PASS au SHA `62663ad8eab9f551cabaa1d909350c63ac6272fc` après exclusion des rapports d'audit/inventaire du scan de dépendances runtime. Les documents sont conservés intacts.
+
+
+### Confirmation finale du bootstrap Go (2026-10-09)
+
+- Run `37916948231`, workflow `ZERO Go validation`, commit `214a0a8e94948ab6b7fbeba850456db67e9f8f2f` : **SUCCESS**.
+- Étape `Test bootstrap package` (`go test ./...`) : PASS.
+- Étape `Vet bootstrap package` (`go vet ./...`) : PASS.
+- La correction du workflow est donc validée à ce SHA. La validation globale ZERO avait passé au SHA `62663ad8eab9f551cabaa1d909350c63ac6272fc`; les runs du commit le plus récent doivent encore finir avant d'affirmer que le HEAD actuel a toutes les gates vertes.
