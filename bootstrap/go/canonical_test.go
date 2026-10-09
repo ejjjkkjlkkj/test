@@ -64,3 +64,19 @@ func TestRoundTripIsCanonicalAndStable(t *testing.T) {
 		t.Fatalf("round-trip changed canonical bytes: %q != %q", got, line)
 	}
 }
+
+func TestADMWS12MappingPreservesUnprovenState(t *testing.T) {
+	r, err := MapADMWS12Record("Capability", "cpu", "AVAILABLE", "present", 1)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if r.Type != "CAPABILITY" || r.Source != "ADMWS12" || r.Target != "ZERO" || r.Proof != "UNPROVEN" {
+		t.Fatalf("unexpected mapping: %#v", r)
+	}
+}
+
+func TestADMWS12MappingRejectsUnknownState(t *testing.T) {
+	if _, err := MapADMWS12Record("Capability", "cpu", "OBSERVED", "present", 1); err == nil {
+		t.Fatal("invalid capability state was accepted")
+	}
+}
