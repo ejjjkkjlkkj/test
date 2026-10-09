@@ -11,6 +11,11 @@ on:
       - "bootstrap/go/**"
       - "go.mod"
       - "go.sum"
+      - "FILE-BY-FILE-AUDIT.md"
+      - "REPOSITORY-UNIFICATION-AUDIT.md"
+      - "REPOSITORY-TREE-INVENTORY.md"
+      - "ZERO-BRANCH-INVENTORY.md"
+      - "ZERO-FILE-INVENTORY-PART-*.md"
 
 permissions:
   contents: read
