@@ -81,3 +81,6 @@ Current code validation state: `BOOTSTRAP_GO_TEST=PASS` at `3a5bb04dff101be29d03
 
 - Full ZERO validation run `37916800172` completed **SUCCESS** on `62663ad8eab9f551cabaa1d909350c63ac6272fc`, including bootstrap/core tests and the format, truth, execution, ISA, physical-support, accessibility and cleanliness gates.
 - The separate `ZERO Go validation` run `37916802117` failed because root-level `go test ./...` combined standalone validator programs in `tests/` that each declare their own `main` and helper types. Fixed workflow `.github/workflows/go.yml` in commit `214a0a8e94948ab6b7fbeba850456db67e9f8f2f` to run tests/vet in `bootstrap/go`, where the actual Go module lives. Re-run is queued; its conclusion is pending.
+
+- Final confirmation: `ZERO Go validation` run `37916948231` on commit `214a0a8e94948ab6b7fbeba850456db67e9f8f2f` completed **SUCCESS**. Both `Test bootstrap package` (`go test ./...`) and `Vet bootstrap package` (`go vet ./...`) passed.
+- Status at the validated code SHA: `BOOTSTRAP_GO_TEST=PASS`, `GO_VET=PASS`; full ZERO validation had also passed at `62663ad8eab9f551cabaa1d909350c63ac6272fc`. A newer documentation-only commit is pending its own full workflow confirmation.
