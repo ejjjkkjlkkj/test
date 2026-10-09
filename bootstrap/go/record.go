@@ -140,6 +140,10 @@ func Decode(line string) (Record, error) {
 	if err != nil {
 		return Record{}, errors.New("invalid sequence")
 	}
+	// The canonical wire format forbids leading zeros (except the value "0").
+	if strconv.FormatUint(seq, 10) != fields[4] {
+		return Record{}, errors.New("non-canonical sequence")
+	}
 	r := Record{
 		Version: fields[1], Type: fields[2], Identity: fields[3],
 		Sequence: seq, Time: fields[5], Source: fields[6],
