@@ -144,3 +144,13 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - Lecture de `omni-security/SECURITY.md` (blob `48534ea9c423ee388e2a44415a5ac205a8672a5e`) ; les exigences de sécurité et d'accessibilité peuvent guider les gates ZERO. Licence et modèle de menace ne sont pas encore localisés aux chemins testés.
 - Lecture des manifestes `omni-os/os/crates/aw-accessibility/Cargo.toml` (blob `0ce26e8ab778f8f5ca2a760b088460639dc1a3cf`), `aw-kernel-contract/Cargo.toml` (blob `a07c5548c38c22bd8fd02c7a108f1ad814d7edf2`) et `aw-x86-platform/Cargo.toml` (blob `df15cf4e999d806cc38dd5cbadaf413f953ec34e`).
 - Aucun test n'a été exécuté ; aucun code n'a été copié ; aucun dépôt ou historique n'a été supprimé. L'audit fichier par fichier reste incomplet jusqu'à obtention d'un inventaire exact des arbres et branches.
+
+
+### Première intégration fonctionnelle — adaptateur ADMWS12 vers ZERO (2026-10-09)
+
+- Implémentation ajoutée : `bootstrap/go/admws12_mapping.go`, blob actuel `760ca2514ff6421bf1e53cc200d17b66d0cbd474`, commit initial `f261f76d8caf06c910985c8dd16c15a3e480bf68`, puis correction du séparateur canonique dans `e229341ab8ce1eb4b309fab99491ae7e63e37deb`.
+- `MapADMWS12Record` convertit Capability en `CAPABILITY` et Evidence en `OBSERVATION`, vérifie les états explicitement autorisés, rejette kind/state inconnus et identité vide, fixe `Source=ADMWS12`, `Target=ZERO`, `Time=UNKNOWN`, et garde `Proof=UNPROVEN`.
+- Tests de régression ajoutés dans `bootstrap/go/canonical_test.go`, commit `6457fb6f6bd3f3a152fb01150dd4b8d1eb471f21`, puis test de l'état Evidence ABSENT et round-trip canonique, commit `24ea4985d92b0c3523a532dba8ba7fd93146fd8e`.
+- Contrat `ADMWS12-ADAPTER-IMPLEMENTATION.md` actualisé, commit `4afdc2ba6bcf37cc5673c5312deb8eca36a2593f`.
+- Validation : **CODE ADDED / TESTS ADDED / NOT_RUN / NOT_CONFIRMED**. Le statut combiné GitHub pour le commit de tests a retourné une liste vide ; cela ne constitue pas une réussite. Il faut confirmer la compilation et exécuter `go test ./...` et `go vet ./...` sur le SHA exact.
+- Aucun code Python ADMWS12 copié, aucun changement firmware/NVRAM, aucun dépôt ou historique supprimé.
