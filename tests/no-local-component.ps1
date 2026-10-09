@@ -14,6 +14,12 @@ $violations = @()
 
 foreach ($path in Get-ChildItem -LiteralPath $root -Recurse -File -Force) {
     if ($path.FullName -like "$root\.git\*") { continue }
+
+    # Archived state reports are retained as evidence, not runtime dependencies.
+    # Keep them intact and exclude only this historical report family from the
+    # source-component cleanliness gate.
+    if ($path.Name -like 'RAPPEL-ETAT-*.md') { continue }
+
     if ($extensions -notcontains $path.Extension.ToLowerInvariant()) { continue }
 
     $text = Get-Content -LiteralPath $path.FullName -Raw -ErrorAction Stop
