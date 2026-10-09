@@ -43,7 +43,7 @@ function Get-PaginatedArray {
         if ($null -eq $page) { continue }
         foreach ($item in $page) { if ($null -ne $item) { $items.Add($item) } }
     }
-    return ,$items.ToArray()
+    return $items.ToArray()
 }
 
 function Write-JsonLines {
@@ -83,7 +83,8 @@ if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
         foreach ($repo in $repositories) {
             $repoIndex++
             $fullName = [string]$repo.full_name
-            $safeRepo = ($fullName -replace '[^A-Za-z0-9._-]', '_')
+            $repoHash = [Convert]::ToHexString([System.Security.Cryptography.SHA256]::HashData([System.Text.Encoding]::UTF8.GetBytes($fullName))).Substring(0, 16).ToLowerInvariant()
+            $safeRepo = (($fullName -replace '[^A-Za-z0-9._-]', '_') + "-" + $repoHash)
             $repoDir = Join-Path $OutputDirectory $safeRepo
             New-Item -ItemType Directory -Path $repoDir -Force | Out-Null
             Write-Host ("[{0}/{1}] {2}" -f $repoIndex, $repositories.Count, $fullName)
@@ -103,7 +104,8 @@ if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
                 foreach ($branch in $branches) {
                     $branchName = [string]$branch.name
                     $commitSha = [string]$branch.commit.sha
-                    $branchSafe = ($branchName -replace '[^A-Za-z0-9._-]', '_')
+                    $branchHash = [Convert]::ToHexString([System.Security.Cryptography.SHA256]::HashData([System.Text.Encoding]::UTF8.GetBytes($branchName))).Substring(0, 16).ToLowerInvariant()
+                    $branchSafe = (($branchName -replace '[^A-Za-z0-9._-]', '_') + "-" + $branchHash)
                     $status = "INVENTORIED"
                     $treeSha = ""
                     $fileCount = 0
