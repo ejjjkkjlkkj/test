@@ -69,6 +69,12 @@ impl MemoryIndex {
         idx
     }
 
+    /// Allocation-free lookup when the caller supplies the precomposed key:
+    /// "{repository}\\0{branch}\\0{path}". This reports a count without cloning origins.
+    pub fn lookup_path_key_count(&self, key: &str) -> usize {
+        self.by_path.get(key).map_or(0, Vec::len)
+    }
+
     pub fn lookup_path(&self, repository: &str, branch: &str, path: &str) -> LookupResult {
         let key = format!("{repository}\0{branch}\0{path}");
         let matches = self.by_path.get(&key).cloned().unwrap_or_default();
