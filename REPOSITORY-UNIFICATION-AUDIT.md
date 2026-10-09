@@ -231,3 +231,12 @@ Le fichier [COMPONENT-MAP.md](COMPONENT-MAP.md) a été créé au commit `e29eee
 - Le workflow `zero-repository-inventory.yml` a été ajusté au commit `799959f972aecf0c4f646c61a13e12cac244daeb` pour relancer l'inventaire des branches et des fichiers lorsque les registres d'audit/inventaire changent, en plus des changements du bootstrap Go.
 - Le premier inventaire complet de ZERO a réussi au run `37917266856`, artefact `11610175770`, couvrant les 12 branches découvertes à cette date. Une nouvelle exécution est attendue après l'extension des déclencheurs pour aligner le manifeste sur le HEAD courant.
 - Le total de 7 823 fichiers dans `REPOSITORY-TREE-INVENTORY.md` correspond aux 30 branches par défaut capturées, pas à l'ensemble des branches de tous les dépôts. L'audit de toutes les branches des 30 dépôts reste à faire ; les dépôts NVDA volumineux ont plus de 100 branches et exigent une pagination explicite.
+
+
+### Diff exact des sources de voix — résultat important (2026-10-09)
+
+- Comparaison directe des contenus : `u/src/synth_inc.rs` blob `e446a31a488abf1e2af9dd4186c0d3e9abe55c36` et `omni-os/voice-st/src/synth_inc.rs` blob `2ec524e16552d5435c7d3b34da710f50b3ddf044`.
+- Résultat : **NOT_IDENTICAL**. Longueurs retournées : 106 262 et 113 267 caractères ; première différence à l'offset 1 706. Il ne faut pas les traiter comme une source partagée byte-for-byte.
+- `omni-os/os/crates/aw-voice/src/lib.rs` inclut directement `../../../../voice-st/src/synth_inc.rs`. Cela prouve la réutilisation interne de la voix `voice-st` dans omni-os, mais pas l'équivalence avec le dépôt séparé `u`.
+- Le registre fichier par fichier a été corrigé au commit `8c8371499695e2964a286c0f632cba20fbf0a4c0`. Aucune voix n'a été copiée ni fusionnée.
+- Prochaine décision : comparer API, corpus golden, licence, sample rate, mastering/resampling, latence et intelligibilité avant de choisir un backend de voix unique.
