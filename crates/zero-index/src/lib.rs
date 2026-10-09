@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
-use std::collections::{BTreeMap, BTreeSet};
+use std::collections::{BTreeSet, HashMap};
 use std::fs::{self, File};
 use std::io::{self, BufRead, BufReader, Read, Write};
 use std::path::{Component, Path, PathBuf};
@@ -49,14 +49,18 @@ pub struct LookupResult {
 
 #[derive(Default)]
 pub struct MemoryIndex {
-    by_path: BTreeMap<String, Vec<Origin>>,
-    by_blob: BTreeMap<String, Vec<Origin>>,
+    by_path: HashMap<String, Vec<Origin>>,
+    by_blob: HashMap<String, Vec<Origin>>,
     built_unix_ms: u128,
 }
 
 impl MemoryIndex {
     pub fn from_snapshot(snapshot: &IndexSnapshot) -> Self {
-        let mut idx = Self { built_unix_ms: snapshot.generated_unix_ms, ..Self::default() };
+        let mut idx = Self {
+            by_path: HashMap::with_capacity(snapshot.records.len()),
+            by_blob: HashMap::with_capacity(snapshot.records.len()),
+            built_unix_ms: snapshot.generated_unix_ms,
+        };
         for record in &snapshot.records {
             let key = format!("{}\0{}\0{}", record.origin.repository, record.origin.branch, record.origin.path);
             idx.by_path.entry(key).or_default().push(record.origin.clone());
