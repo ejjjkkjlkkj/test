@@ -73,7 +73,7 @@ foreach ($repository in $repositories) {
         $cacheKey = "$($repository.Name)|$commit"
 
         if (-not $treeCache.ContainsKey($cacheKey)) {
-            $treeJson = & gh api "repos/$($repository.Name)/git/trees/$commit?recursive=1"
+            $treeJson = (& gh api "repos/$($repository.Name)/git/trees/$commit?recursive=1" | Out-String)
             if ($LASTEXITCODE -ne 0) {
                 $treeCache[$cacheKey] = [pscustomobject]@{
                     TreeSHA = ''; Files = 0; Bytes = 0; Truncated = ''
