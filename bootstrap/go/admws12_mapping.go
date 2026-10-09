@@ -57,35 +57,20 @@ func DecodeADMWS12Payload(payload string) (kind, state, value string, err error)
 	if len(fields) != 4 || fields[0] != "source_project=ADMWS12" {
 		return "", "", "", errors.New("invalid ADMWS12 payload shape")
 	}
-	kindField, ok := strings.Cut(fields[1], "=")
-	if !ok || kindField != "source_kind" {
+	kindKey, kindValue, ok := strings.Cut(fields[1], "=")
+	if !ok || kindKey != "source_kind" {
 		return "", "", "", errors.New("invalid ADMWS12 kind field")
 	}
-	stateField, ok := strings.Cut(fields[2], "=")
-	if !ok || stateField != "source_state" {
+	stateKey, stateValue, ok := strings.Cut(fields[2], "=")
+	if !ok || stateKey != "source_state" {
 		return "", "", "", errors.New("invalid ADMWS12 state field")
 	}
-	valueField, ok := strings.Cut(fields[3], "=")
-	if !ok || valueField != "value" {
+	valueKey, valueValue, ok := strings.Cut(fields[3], "=")
+	if !ok || valueKey != "value" {
 		return "", "", "", errors.New("invalid ADMWS12 value field")
 	}
-	if _, err := MapADMWS12Record(kindFieldValue(fields[1]), kindFieldValue(fields[1]), stateFieldValue(fields[2]), valueFieldValue(fields[3]), 0); err != nil {
+	if _, err := MapADMWS12Record(kindValue, "payload-check", stateValue, valueValue, 0); err != nil {
 		return "", "", "", err
 	}
-	return kindFieldValue(fields[1]), stateFieldValue(fields[2]), valueFieldValue(fields[3]), nil
-}
-
-func kindFieldValue(field string) string {
-	_, value, _ := strings.Cut(field, "=")
-	return value
-}
-
-func stateFieldValue(field string) string {
-	_, value, _ := strings.Cut(field, "=")
-	return value
-}
-
-func valueFieldValue(field string) string {
-	_, value, _ := strings.Cut(field, "=")
-	return value
+	return kindValue, stateValue, valueValue, nil
 }
